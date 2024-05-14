@@ -17,4 +17,4 @@ YouTube videos have transcripts with index offsets into the video itself but the
 
 Twitter archive - need to process it to remove DMs, then the rest is public anyway
 
-Mastodon archite - available as an RSS feed. Medium blog platform - available as an RSS feed. Need to import an RSS feed. Also would be good to have this be incremental so that the training material can be updated efficiently as new blog posts and toots appear.
+Mastodon archive - available as an RSS feed. Medium blog platform - available as an RSS feed. Need to import an RSS feed. Also would be good to have this be incremental so that the training material can be updated efficiently as new blog posts and toots appear.
