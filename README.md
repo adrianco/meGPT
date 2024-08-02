@@ -11,7 +11,7 @@ Creative Commons - attribution share-alike. Permission explicitly granted for an
 Resulting in a Chatbot that can answer questions as if it was me, with reference to published content. I'd call my own build of this virtual_adrianco - with opinions on cloud computing, sustainability, performance tools, microservices, speeding up innovation, Wardley mapping, open source, chaos engineering, resilience, Sun Microsystems, Netflix, AWS etc. etc. I would share the model. I don't need to monetize this, I'm semi-retired and have managed to monetize this content well enough already, I don't work for a big corporation any more.
 
 # Notes
-I have been assembling my content for a while, and will post the files and links to sources as I get it organized.
+I have been assembling my content for a while, and will update the references table now and again https://github.com/adrianco/meGPT/blob/main/Published%20Content%20-%20July%202024.csv
 
 YouTube videos have transcripts with index offsets into the video itself but the transcript quality isn't good, and they can only be read via API by the owner of the video. It's easier to download videos with pytube and process them with whisper to generate more curated transcripts that identify when the author is talking if there is more than one speaker.
 
