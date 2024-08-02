@@ -4,7 +4,7 @@ I have 30 years of public content I've produced and presented over my career
 - 4 published books, ~10 forewords to books, ~100 blog posts (text)
 - Twitter and Mastodon archive (conversation text)
 - Github projects (code)
-- ~100 presentation decks (images)
+- ~100 presentation decks (images) greatest hits: https://github.com/adrianco/slides/tree/master/Greatest%20Hits
 - ~20 podcasts, ~50 videos of talks and interviews (audio/video/YouTube playlists)
 
 Creative Commons - attribution share-alike. Permission explicitly granted for anyone to use as a training set to develop the meGPT concept for use by any author/speaker/expert
