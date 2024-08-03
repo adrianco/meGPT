@@ -5,8 +5,10 @@ I have 30 years of public content I've produced and presented over my career
 - Twitter archive 2008-2022 (conversation text)
 - Mastodon.social - 2021-now https://mastodon.social/@adrianco (RSS at https://mastodon.social/@adrianco.rss)
 - Github projects (code)
+- Blog posts mostly at https://adrianco.medium.com
 - ~100 presentation decks (images) greatest hits: https://github.com/adrianco/slides/tree/master/Greatest%20Hits
-- ~20 podcasts, ~50 videos of talks and interviews (audio/video/YouTube playlists)
+- ~20 podcasts (audio conversations, should be good Q&A training material)
+- ~50 videos of talks and interviews (audio/video/YouTube playlists)
 
 Creative Commons - attribution share-alike. Permission explicitly granted for anyone to use as a training set to develop the meGPT concept for use by any author/speaker/expert
 Resulting in a Chatbot that can answer questions as if it was me, with reference to published content. I'd call my own build of this virtual_adrianco - with opinions on cloud computing, sustainability, performance tools, microservices, speeding up innovation, Wardley mapping, open source, chaos engineering, resilience, Sun Microsystems, Netflix, AWS etc. etc. I would share the model. I don't need to monetize this, I'm semi-retired and have managed to monetize this content well enough already, I don't work for a big corporation any more.
