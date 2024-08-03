@@ -2,7 +2,8 @@
 
 I have 30 years of public content I've produced and presented over my career
 - 4 published books, ~10 forewords to books, ~100 blog posts (text)
-- Twitter and Mastodon archive (conversation text)
+- Twitter archive 2008-2022 (conversation text)
+- Mastodon.social - 2021-now https://mastodon.social/@adrianco (RSS at https://mastodon.social/@adrianco.rss)
 - Github projects (code)
 - ~100 presentation decks (images) greatest hits: https://github.com/adrianco/slides/tree/master/Greatest%20Hits
 - ~20 podcasts, ~50 videos of talks and interviews (audio/video/YouTube playlists)
@@ -15,6 +16,6 @@ I have been assembling my content for a while, and will update the references ta
 
 YouTube videos have transcripts with index offsets into the video itself but the transcript quality isn't good, and they can only be read via API by the owner of the video. It's easier to download videos with pytube and process them with whisper to generate more curated transcripts that identify when the author is talking if there is more than one speaker.
 
-Twitter archive - need to process it to remove DMs, then the rest is public anyway
+Twitter archive - the raw archive files were over 100MB and too big for github. The extract_conversations script was used to pull out only the tweets that were part of a conversation, so they can be further analyzed to find questions and answers. The code to do this was written by ChatGPT, worked first time, but if there are any problems with the output I'm happy to share the raw tweets. File an issue.
 
 Mastodon archive - available as an RSS feed. Medium blog platform - available as an RSS feed. Need to import an RSS feed. Also would be good to have this be incremental so that the training material can be updated efficiently as new blog posts and toots appear.
