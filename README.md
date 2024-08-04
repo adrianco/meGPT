@@ -2,7 +2,7 @@
 
 I have 20 years of public content I've produced and presented over my career, and I'd like to have an LLM that is trained to answer questions and generate summaries of my opinions, in my "voice", At this point, this LLM doesn't exist, but to encourage development I have organized my public content and references to sources in this repo. For now, if you want to know my opinions on things, you have to watch all my videos and listent to my podcasts yourself!
 
-My own content is stored in authors/virtiual_adrianco and consists of:
+My own content is stored or linked to in authors/virtiual_adrianco and consists of:
 - 4 published books (pdf of one provided), ~10 forewords to books, ~100 blog posts (text)
 - Twitter archive 2008-2022 (conversation text)
 - Mastodon.social - 2021-now https://mastodon.social/@adrianco (RSS at https://mastodon.social/@adrianco.rss)
