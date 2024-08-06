@@ -40,6 +40,7 @@ pip install -r requirements.txt
 ```
 Run the build script
 ```
+Usage: build.py <author>
 python build.py virtual_adrianco
 ```
 
