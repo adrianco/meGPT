@@ -16,6 +16,31 @@ If another author wants to use this repo as a starting point, clone it and add y
 
 Creative Commons - attribution share-alike. Permission explicitly granted for anyone to use as a training set to develop the meGPT concept. Free for use by any author/speaker/expert resulting in a Chatbot that can answer questions as if it was the author, with reference to published content. I have called my own build of this virtual_adrianco - with opinions on cloud computing, sustainability, performance tools, microservices, speeding up innovation, Wardley mapping, open source, chaos engineering, resilience, Sun Microsystems, Netflix, AWS etc. etc. I'm happy to share any models that are developed. I don't need to monetize this, I'm semi-retired and have managed to monetize this content well enough already, I don't work for a big corporation any more..
 
+# Building an Author
+To use this repo, clone it to a local disk, setup the python environment, run the build.py script for an author and it will walk through the published content table for that author processing each line in turn. The build script will create a downloads/<author> directory and create a state.json file in it which records successful processing steps so that incremental runs of build.py will not re-run the same downloads. Each kind of data needs a corresponding script in the processors directory.
+
+```
+git clone https://github.com/adrianco/megpt.git
+cd megpt
+python -m venv venv
+```
+Windows:
+```
+venv\Scripts\activate
+```
+macOS/Linux:
+```
+source venv/bin/activate
+```
+```
+pip install -r requirements.txt
+```
+Run the build script
+```
+python build.py virtual_adrianco
+```
+
+
 # Notes
 I have been assembling my content for a while, and will update the references table now and again https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/published_content.csv
 
