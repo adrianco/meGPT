@@ -40,7 +40,12 @@ Run the build script
 python build.py virtual_adrianco
 ```
 
-At present there are no processor scripts, but build.py appears to be operating correctly.
+For test purposes process a single kind of data from an arbitrary URL, output to downloads without updating the state.json file
+```
+Usage: python process.py <author> <Kind> <URL>
+```
+
+At present there are no processor scripts, but build.py and process.py appear to be operating correctly.
 
 # Notes
 I have been assembling my content for a while, and will update the references table now and again https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/published_content.csv
