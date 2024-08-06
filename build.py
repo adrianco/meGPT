@@ -40,6 +40,7 @@ def process_content(author, kind, url):
     :param author: The author's name.
     :param kind: The type of content.
     :param url: The URL of the content.
+    :return: Boolean indicating if processing was successful.
     """
     # Processor script based on content type
     processor_script = f"processors/{kind}_processor.py"
@@ -47,14 +48,16 @@ def process_content(author, kind, url):
     # Check if the processor script exists
     if not Path(processor_script).exists():
         print(f"Processor for content type '{kind}' not found.")
-        return
+        return False  # Indicate failure
     
     # Author's download directory
     author_download_dir = Path(DOWNLOADS_DIR) / author
     
     # Execute the processor script
     command = ["python", processor_script, url, str(author_download_dir)]
-    subprocess.run(command, check=True)
+    result = subprocess.run(command)
+    
+    return result.returncode == 0
 
 def main(author):
     """
@@ -79,7 +82,11 @@ def main(author):
             url = row.get("URL")
             kind = row.get("Kind")
 
-            # Skip if already processed
+            # Skip if URL is blank or already processed
+            if not url:
+                print(f"Skipping blank URL in CSV row.")
+                continue
+
             if url in state["processed"]:
                 print(f"Skipping already processed URL: {url}")
                 continue
@@ -87,12 +94,15 @@ def main(author):
             print(f"Processing {kind} from {url}...")
             try:
                 # Process the content
-                process_content(author, kind, url)
+                success = process_content(author, kind, url)
                 
-                # Update the state
-                state["processed"].append(url)
-                save_state(author, state)
-                print(f"Successfully processed {kind} from {url}")
+                if success:
+                    # Update the state only if processing was successful
+                    state["processed"].append(url)
+                    save_state(author, state)
+                    print(f"Successfully processed {kind} from {url}")
+                else:
+                    print(f"Failed to process {kind} from {url}: Processor not found.")
             
             except Exception as e:
                 print(f"Failed to process {kind} from {url}: {e}")
