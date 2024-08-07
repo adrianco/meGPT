@@ -43,21 +43,32 @@ def process_content(author, kind, url):
     :return: Boolean indicating if processing was successful.
     """
     # Processor script based on content type
-    processor_script = f"processors/{kind}_processor.py"
+    processor_script = Path("processors") / f"{kind}_processor.py"
     
     # Check if the processor script exists
-    if not Path(processor_script).exists():
-        print(f"Processor for content type '{kind}' not found.")
+    if not processor_script.exists():
+        print(f"Processor for content type '{kind}' not found at {processor_script}.")
         return False  # Indicate failure
     
     # Author's download directory
     author_download_dir = Path(DOWNLOADS_DIR) / author
     
     # Execute the processor script
-    command = ["python", processor_script, url, str(author_download_dir)]
-    result = subprocess.run(command)
-    
-    return result.returncode == 0
+    command = ["python", str(processor_script), url, str(author_download_dir)]
+    print(f"Executing command: {' '.join(command)}")  # Debug statement
+
+    try:
+        result = subprocess.run(command, check=True, capture_output=True, text=True)
+        print(f"Successfully processed {kind} from {url}")
+        print(f"Output:\n{result.stdout}")
+        if result.stderr:
+            print(f"Warnings:\n{result.stderr}")
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"Error processing {kind} from {url}: {e}")
+        print(f"Output:\n{e.output}")
+        print(f"Error Message:\n{e.stderr}")
+        return False
 
 def main(author):
     """
@@ -80,7 +91,7 @@ def main(author):
         reader = csv.DictReader(csvfile)
         for row in reader:
             url = row.get("URL")
-            kind = row.get("Kind")
+            kind = row.get("Kind").lower()  # Ensure kind is in lowercase
 
             # Skip if URL is blank or already processed
             if not url:
@@ -102,7 +113,7 @@ def main(author):
                     save_state(author, state)
                     print(f"Successfully processed {kind} from {url}")
                 else:
-                    print(f"Failed to process {kind} from {url}: Processor not found.")
+                    print(f"Failed to process {kind} from {url}.")
             
             except Exception as e:
                 print(f"Failed to process {kind} from {url}: {e}")

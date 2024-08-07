@@ -24,11 +24,18 @@ def process_content(author, kind, url):
 
     # Execute the processor script
     command = ["python", str(processor_script), url, str(author_download_dir)]
+    print(f"Executing command: {' '.join(command)}")  # Debug statement
+
     try:
-        result = subprocess.run(command, check=True)
+        result = subprocess.run(command, check=True, capture_output=True, text=True)
         print(f"Successfully processed {kind} from {url}")
+        print(f"Output:\n{result.stdout}")
+        if result.stderr:
+            print(f"Warnings:\n{result.stderr}")
     except subprocess.CalledProcessError as e:
         print(f"Error processing {kind} from {url}: {e}")
+        print(f"Output:\n{e.output}")
+        print(f"Error Message:\n{e.stderr}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:

@@ -1,29 +1,51 @@
+import sys
 import os
 import requests
+from pathlib import Path
 
-def process(url, author_downloads_dir):
+def download_book(url, download_dir):
     """
-    Process a book PDF given its URL.
-    
-    :param url: The URL of the book PDF to process.
-    :param author_downloads_dir: The directory to save processed content.
+    Download a book from the given URL and save it to the specified directory.
+
+    :param url: The URL of the book.
+    :param download_dir: The directory to save the downloaded book.
     """
+    print(f"Starting download from URL: {url}")  # Debug statement
+
+    # Make a request to get the book
     try:
-        # Fetch the PDF from the URL
-        response = requests.get(url, stream=True)
+        response = requests.get(url)
         response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"Failed to download the book: {e}")
+        return
 
-        # Determine the filename from the URL
-        filename = os.path.basename(url)
-        
-        # Save the PDF to a file
-        save_path = os.path.join(author_downloads_dir, filename)
-        
-        with open(save_path, 'wb') as file:
-            for chunk in response.iter_content(chunk_size=8192):
-                file.write(chunk)
-        
-        print(f"Book PDF downloaded and saved to {save_path}")
+    # Define a file name for the book
+    book_filename = os.path.basename(url) or "book.pdf"
+    if not book_filename.endswith(".pdf"):
+        book_filename += ".pdf"
     
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to download book PDF from {url}: {e}")
+    # Ensure the download directory exists
+    Path(download_dir).mkdir(parents=True, exist_ok=True)
+    
+    # Save the book to a file
+    book_filepath = Path(download_dir) / book_filename
+    with open(book_filepath, "wb") as f:
+        f.write(response.content)
+    
+    print(f"Book downloaded and saved to {book_filepath}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: book_processor.py <url> <download_dir>")
+        sys.exit(1)
+
+    book_url = sys.argv[1]
+    download_directory = sys.argv[2]
+
+    print(f"book_processor.py invoked with URL: {book_url} and Download Directory: {download_directory}")  # Debug statement
+
+    try:
+        download_book(book_url, download_directory)
+    except Exception as e:
+        print(f"Error processing book from {book_url}: {e}")
