@@ -25,8 +25,8 @@ book,Foreword: The Value Chain Flywheel Effect,IT Revolution - David Anderson,,
 book,Foreword: Reaching Cloud Velocity,"AWS: Jonathan Allen, Thomas Blood",,
 book,Foreword: In Search of Certainty,Mark Burgess,,
 book,Foreword: Irresistable APIs,Kirsten Hunter,,
-book,Capacity Planning for Internet Services,"Sun Press Blueprints - adrianco, Walker",2000,https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/caphi.pdf
-book,Resource Management,"Sun Press Blueprints  - McDougall, adrianco etc.",1999,https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/rm.pdf
+book,Capacity Planning for Internet Services,"Sun Press Blueprints - adrianco, Walker",2000,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/caphi.pdf
+book,Resource Management,"Sun Press Blueprints  - McDougall, adrianco etc.",1999,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/rm.pdf
 book,Sun Performance and Tuning: Java and the Internet,Prentice Hall - adrianco and Rich Pettit,1998,
 book,Sun Performance and Tuning: SPARC and Solaris,Prentice Hall - adrianco,1995,
 interview,Microservices and DevOps,Infoq Charles Humble,7/11/2014,https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/
