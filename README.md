@@ -46,12 +46,12 @@ python build.py virtual_adrianco
 
 For test purposes process a single kind of data from an arbitrary URL, output to downloads without updating the state.json file
 ```
-Usage: python process.py <author> <Kind> <URL>
+Usage: python process.py <author> <Kind> <SubKind> <URL>
 ```
 
 # Current functional status
 Build.py and process.py appear to be operating correctly and book_processor.py correctly downloaded pdfs of books, Any raw file downloads can clone this processor.
-Each website download is going to need customized extraction, and The New Stack (thenewstack.io) has been added as a kind, and correct text content download is working.
+Each website download is going to need customized extraction, and the correct div name for The New Stack (thenewstack.io) has been added as a Subkind, and correct text content download is working for stories.
 
 # Notes
 I have been assembling my content for a while, and will update the references table now and again https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/published_content.csv
