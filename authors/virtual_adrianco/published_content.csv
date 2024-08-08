@@ -18,7 +18,7 @@ podcast,"Interview, early life etc",Sam Newman's Magpie Talkshow,10/8/2016,https
 podcast,Microservices,SE Radio with Stefan Tilkov,12/10/2014,https://se-radio.net/2014/12/episode-216-adrian-cockcroft-on-the-modern-cloud-based-platform/
 podcast,Cloud and HPC,Inside HPC with Shahin Khan and Doug Black,2022,https://insidehpc.com/2022/09/hpcpodcast-aws-sun-ebay-netflix-and-others-vet-adrian-cockcroft-talks-cloud-hpc-ai-and-the-amazon-sustainability-data-initiative/
 podcast,SC23 summary,Inside HPC with Shahin Khan and Doug Black,2023,https://insidehpc.com/2023/11/hpcpodcast-tech-analyst-adrian-cockcroft-on-trends-driving-future-hpc-architectures/
-infoq,What we learned and didn't learn from Netflix,Infoq - QCon London talk/video integrated together,3/28/2023,https://www.infoq.com/presentations/microservices-netflix-industry/
+infoqvideo,What we learned and didn't learn from Netflix,Infoq - QCon London talk/video integrated together,3/28/2023,https://www.infoq.com/presentations/microservices-netflix-industry/
 book,Q&A: Serverless Development on AWS - sustainability expert section,O'Reilly - Sheen Brisals and Luke Hedger,3/14/2024,
 book,Foreword: Building Green Software,O'Reilly - Anne Curry,,
 book,Foreword: The Value Chain Flywheel Effect,IT Revolution - David Anderson,,
@@ -29,12 +29,12 @@ book,Capacity Planning for Internet Services,"Sun Press Blueprints - adrianco, W
 book,Resource Management,"Sun Press Blueprints  - McDougall, adrianco etc.",1999,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/rm.pdf
 book,Sun Performance and Tuning: Java and the Internet,Prentice Hall - adrianco and Rich Pettit,1998,
 book,Sun Performance and Tuning: SPARC and Solaris,Prentice Hall - adrianco,1995,
-interview,Microservices and DevOps,Infoq Charles Humble,7/11/2014,https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/
-interview,High availability,Richard Seroter on Infoq,,https://www.infoq.com/articles/cockcroft-high-availability/
-story,Failing Over Without Falling Over,Stackoverflow,2020,https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
+infoq,Microservices and DevOps,Infoq Charles Humble,7/11/2014,https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/
+infoq,High availability,Richard Seroter on Infoq,,https://www.infoq.com/articles/cockcroft-high-availability/
+stackoverflow,Failing Over Without Falling Over,Stackoverflow,2020,https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
 medium,Lots of blog posts,Adrian's medium account - rss feed only gets last 10,,https://adrianco.medium.com
 youtube,Adrian Cockcroft Appearance Playlist on YouTube,Many different accounts - technical content,,https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5
-story,Enterprise Indigestion at NVIDIA GTC,The New Stack,2024,https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/
-story,SC23 update,InsideHPC,2023,https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/
-story,SC22 predictions,InsideHPC,2022,https://insidehpc.com/2022/12/sc22-cxl3-0-the-future-of-hpc-interconnects-and-frontier-vs-fugaku/
-story,"Sustainability: Comparing AWS, Azure and Google",The New Stack,2024,https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/
+thenewstack,Enterprise Indigestion at NVIDIA GTC,The New Stack,2024,https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/
+insidehpc,SC23 update,InsideHPC,2023,https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/
+insidehpc,SC22 predictions,InsideHPC,2022,https://insidehpc.com/2022/12/sc22-cxl3-0-the-future-of-hpc-interconnects-and-frontier-vs-fugaku/
+thenewstack,"Sustainability: Comparing AWS, Azure and Google",The New Stack,2024,https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/
