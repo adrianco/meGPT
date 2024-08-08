@@ -1,128 +1,85 @@
 import os
+import sys
 import csv
-import json
 import subprocess
+import json
 from pathlib import Path
 
-# Constants
-DOWNLOADS_DIR = "downloads"
-AUTHORS_DIR = "authors"
-STATE_FILENAME = "state.json"
-
-def load_state(author):
-    """
-    Load the state.json file for a given author.
-
-    :param author: The author's name.
-    :return: A dictionary representing the state.
-    """
-    state_path = Path(DOWNLOADS_DIR) / author / STATE_FILENAME
-    if state_path.exists():
-        with open(state_path, "r", encoding="utf-8") as f:
+def load_state(state_file):
+    if os.path.exists(state_file):
+        with open(state_file, 'r') as f:
             return json.load(f)
-    return {"processed": []}
+    return {}
 
-def save_state(author, state):
-    """
-    Save the state.json file for a given author.
-
-    :param author: The author's name.
-    :param state: A dictionary representing the state.
-    """
-    state_path = Path(DOWNLOADS_DIR) / author / STATE_FILENAME
-    with open(state_path, "w", encoding="utf-8") as f:
+def save_state(state_file, state):
+    with open(state_file, 'w') as f:
         json.dump(state, f, indent=4)
 
-def process_content(author, kind, url):
-    """
-    Process content by calling the appropriate processor script.
+def process_author(author):
+    # Define paths
+    author_dir = Path(f"authors/{author}")
+    download_dir = Path(f"downloads/{author}")
+    state_file = author_dir / "state.json"
+    content_csv = author_dir / "published_content.csv"
 
-    :param author: The author's name.
-    :param kind: The type of content.
-    :param url: The URL of the content.
-    :return: Boolean indicating if processing was successful.
-    """
-    # Processor script based on content type
-    processor_script = Path("processors") / f"{kind}_processor.py"
-    
-    # Check if the processor script exists
-    if not processor_script.exists():
-        print(f"Processor for content type '{kind}' not found at {processor_script}.")
-        return False  # Indicate failure
-    
-    # Author's download directory
-    author_download_dir = Path(DOWNLOADS_DIR) / author
-    
-    # Execute the processor script
-    command = ["python", str(processor_script), url, str(author_download_dir)]
-    print(f"Executing command: {' '.join(command)}")  # Debug statement
+    # Ensure directories exist
+    download_dir.mkdir(parents=True, exist_ok=True)
 
-    try:
-        result = subprocess.run(command, check=True, capture_output=True, text=True)
-        print(f"Successfully processed {kind} from {url}")
-        print(f"Output:\n{result.stdout}")
-        if result.stderr:
-            print(f"Warnings:\n{result.stderr}")
-        return True
-    except subprocess.CalledProcessError as e:
-        print(f"Error processing {kind} from {url}: {e}")
-        print(f"Output:\n{e.output}")
-        print(f"Error Message:\n{e.stderr}")
-        return False
+    # Load previous state
+    state = load_state(state_file)
 
-def main(author):
-    """
-    Main function to process published content for a given author.
+    # Read CSV
+    if not content_csv.exists():
+        print(f"No published_content.csv found for author {author}.")
+        return
 
-    :param author: The author's name.
-    """
-    # Path to author's published content CSV
-    csv_path = Path(AUTHORS_DIR) / author / "published_content.csv"
-    
-    # Load the current state
-    state = load_state(author)
-    
-    # Ensure the downloads directory exists
-    author_download_dir = Path(DOWNLOADS_DIR) / author
-    author_download_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Process each row in the CSV
-    with open(csv_path, "r", encoding="utf-8") as csvfile:
+    with open(content_csv, 'r', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
+
         for row in reader:
-            url = row.get("URL")
-            kind = row.get("Kind").lower()  # Ensure kind is in lowercase
+            url = row['URL'].strip()
+            kind = row['Kind'].strip()
+            subkind = row.get('SubKind', '').strip()  # Read SubKind
 
-            # Skip if URL is blank or already processed
-            if not url:
-                print(f"Skipping blank URL in CSV row.")
+            if not url:  # Skip empty URL
+                print(f"Skipping empty URL for kind {kind}.")
                 continue
 
-            if url in state["processed"]:
-                print(f"Skipping already processed URL: {url}")
+            # Check if already processed
+            state_key = f"{url}_{kind}_{subkind}"  # Include SubKind in state key
+            if state.get(state_key):
+                print(f"Skipping {url} as it has already been processed.")
                 continue
-            
-            print(f"Processing {kind} from {url}...")
+
+            processor_script = Path(f"processors/{kind}_processor.py")
+            if not processor_script.exists():
+                print(f"No processor found for kind {kind}. Skipping.")
+                continue
+
             try:
-                # Process the content
-                success = process_content(author, kind, url)
-                
-                if success:
-                    # Update the state only if processing was successful
-                    state["processed"].append(url)
-                    save_state(author, state)
-                    print(f"Successfully processed {kind} from {url}")
-                else:
-                    print(f"Failed to process {kind} from {url}.")
-            
-            except Exception as e:
-                print(f"Failed to process {kind} from {url}: {e}")
+                print(f"Processing {url} with kind {kind} and subkind {subkind}...")
+                subprocess.run(
+                    [sys.executable, str(processor_script), url, str(download_dir), subkind],
+                    check=True
+                )
+                print(f"Successfully processed {url}.")
+
+                # Update state
+                state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
+                save_state(state_file, state)
+
+            except subprocess.CalledProcessError as e:
+                print(f"Error processing {url} with kind {kind}: {e}")
 
 if __name__ == "__main__":
-    import sys
     if len(sys.argv) != 2:
         print("Usage: build.py <author>")
         sys.exit(1)
 
-    author = sys.argv[1]
-    main(author)
+    author_name = sys.argv[1]
+    print(f"Building content for author: {author_name}")
+
+    try:
+        process_author(author_name)
+    except Exception as e:
+        print(f"An error occurred while processing author {author_name}: {e}")
