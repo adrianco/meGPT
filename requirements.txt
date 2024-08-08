@@ -1,0 +1,11 @@
+beautifulsoup4==4.12.3
+bs4==0.0.2
+certifi==2024.7.4
+charset-normalizer==3.3.2
+idna==3.7
+mutagen==1.47.0
+pydub==0.25.1
+pytube==15.0.0
+requests==2.32.3
+soupsieve==2.5
+urllib3==2.2.2
