@@ -1,40 +1,40 @@
-Kind,What,Where,Published,URL
-podcast,Chat about open source and platforms,Kubernetes for Humans,3/27/2024,https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/
-podcast,Nvidia’s Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
-podcast,Monitoring for AI,The New Stack Analysts with Alex Williams,3/28/2024,https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/
-podcast,From Code to Climate,Unlearn Podcast with Barry O'Reilly,1/31/2024,https://barryoreilly.com/explore/podcast/sustainable-future-for-technology/
-podcast,Microservices and Teraservices,Infoq with Wesley Reisz,,https://www.infoq.com/podcasts/adrian-cockcroft/
-podcast,Episode 15,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft/
-podcast,Episode 24,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft-ep-24/
-podcast,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
-podcast,Netflix on AWS,CloudFix,,https://cloudfix.com/podcast/when-netflix-bet-on-aws/
-podcast,Serverless and continuous resilience,Charles Humble/Container Solutions,,https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience
-podcast,Future Architectures,HPC Podcastmwith Shahin/OrionX,11/1/2023,https://orionx.net/2023/11/hpcpodcast-77-adrian-cockcroft-on-future-architectures/
-podcast,ESG and HPC,HPC Podcast with Shahin/OrionX,5/1/2023,https://orionx.net/2023/05/hpcpodcast-57-decarbonization-renewable-energy-esg-w-adrian-cockcroft/
-podcast,Evolution of Microservices,ACM Bytecast,6/17/2016,https://learning.acm.org/techtalks/microservices
-podcast,Scheduling,Software Engineering Daily,7/6/2016,https://softwareengineeringdaily.com/2016/07/06/schedulers-with-adrian-cockcroft/
-podcast,Architecting for cloud,Infoq interview with Michael Floyd,1/24/2013,https://www.infoq.com/interviews/Adrian-Cockcroft-Netflix/
-podcast,"Interview, early life etc",Sam Newman's Magpie Talkshow,10/8/2016,https://samnewman.io/blog/2016/10/08/magpie-talkshow-episode-22-adrian-cockcroft/
-podcast,Microservices,SE Radio with Stefan Tilkov,12/10/2014,https://se-radio.net/2014/12/episode-216-adrian-cockcroft-on-the-modern-cloud-based-platform/
-podcast,Cloud and HPC,Inside HPC with Shahin Khan and Doug Black,2022,https://insidehpc.com/2022/09/hpcpodcast-aws-sun-ebay-netflix-and-others-vet-adrian-cockcroft-talks-cloud-hpc-ai-and-the-amazon-sustainability-data-initiative/
-podcast,SC23 summary,Inside HPC with Shahin Khan and Doug Black,2023,https://insidehpc.com/2023/11/hpcpodcast-tech-analyst-adrian-cockcroft-on-trends-driving-future-hpc-architectures/
-infoqvideo,What we learned and didn't learn from Netflix,Infoq - QCon London talk/video integrated together,3/28/2023,https://www.infoq.com/presentations/microservices-netflix-industry/
-book,Q&A: Serverless Development on AWS - sustainability expert section,O'Reilly - Sheen Brisals and Luke Hedger,3/14/2024,
-book,Foreword: Building Green Software,O'Reilly - Anne Curry,,
-book,Foreword: The Value Chain Flywheel Effect,IT Revolution - David Anderson,,
-book,Foreword: Reaching Cloud Velocity,"AWS: Jonathan Allen, Thomas Blood",,
-book,Foreword: In Search of Certainty,Mark Burgess,,
-book,Foreword: Irresistable APIs,Kirsten Hunter,,
-book,Capacity Planning for Internet Services,"Sun Press Blueprints - adrianco, Walker",2000,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/caphi.pdf
-book,Resource Management,"Sun Press Blueprints  - McDougall, adrianco etc.",1999,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/rm.pdf
-book,Sun Performance and Tuning: Java and the Internet,Prentice Hall - adrianco and Rich Pettit,1998,
-book,Sun Performance and Tuning: SPARC and Solaris,Prentice Hall - adrianco,1995,
-infoq,Microservices and DevOps,Infoq Charles Humble,7/11/2014,https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/
-infoq,High availability,Richard Seroter on Infoq,,https://www.infoq.com/articles/cockcroft-high-availability/
-stackoverflow,Failing Over Without Falling Over,Stackoverflow,2020,https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
-medium,Lots of blog posts,Adrian's medium account - rss feed only gets last 10,,https://adrianco.medium.com
-youtube,Adrian Cockcroft Appearance Playlist on YouTube,Many different accounts - technical content,,https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5
-thenewstack,Enterprise Indigestion at NVIDIA GTC,The New Stack,2024,https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/
-insidehpc,SC23 update,InsideHPC,2023,https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/
-insidehpc,SC22 predictions,InsideHPC,2022,https://insidehpc.com/2022/12/sc22-cxl3-0-the-future-of-hpc-interconnects-and-frontier-vs-fugaku/
-thenewstack,"Sustainability: Comparing AWS, Azure and Google",The New Stack,2024,https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/
+Kind,SubKind,What,Where,Published,URL
+podcast,,Chat about open source and platforms,Kubernetes for Humans,3/27/2024,https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/
+podcast,,Nvidia’s Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
+podcast,,Monitoring for AI,The New Stack Analysts with Alex Williams,3/28/2024,https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/
+podcast,,From Code to Climate,Unlearn Podcast with Barry O'Reilly,1/31/2024,https://barryoreilly.com/explore/podcast/sustainable-future-for-technology/
+podcast,,Microservices and Teraservices,Infoq with Wesley Reisz,,https://www.infoq.com/podcasts/adrian-cockcroft/
+podcast,,Episode 15,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft/
+podcast,,Episode 24,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft-ep-24/
+podcast,,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
+podcast,,Netflix on AWS,CloudFix,,https://cloudfix.com/podcast/when-netflix-bet-on-aws/
+podcast,,Serverless and continuous resilience,Charles Humble/Container Solutions,,https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience
+podcast,,Future Architectures,HPC Podcastmwith Shahin/OrionX,11/1/2023,https://orionx.net/2023/11/hpcpodcast-77-adrian-cockcroft-on-future-architectures/
+podcast,,ESG and HPC,HPC Podcast with Shahin/OrionX,5/1/2023,https://orionx.net/2023/05/hpcpodcast-57-decarbonization-renewable-energy-esg-w-adrian-cockcroft/
+podcast,,Evolution of Microservices,ACM Bytecast,6/17/2016,https://learning.acm.org/techtalks/microservices
+podcast,,Scheduling,Software Engineering Daily,7/6/2016,https://softwareengineeringdaily.com/2016/07/06/schedulers-with-adrian-cockcroft/
+podcast,,Architecting for cloud,Infoq interview with Michael Floyd,1/24/2013,https://www.infoq.com/interviews/Adrian-Cockcroft-Netflix/
+podcast,,"Interview, early life etc",Sam Newman's Magpie Talkshow,10/8/2016,https://samnewman.io/blog/2016/10/08/magpie-talkshow-episode-22-adrian-cockcroft/
+podcast,,Microservices,SE Radio with Stefan Tilkov,12/10/2014,https://se-radio.net/2014/12/episode-216-adrian-cockcroft-on-the-modern-cloud-based-platform/
+podcast,,Cloud and HPC,Inside HPC with Shahin Khan and Doug Black,2022,https://insidehpc.com/2022/09/hpcpodcast-aws-sun-ebay-netflix-and-others-vet-adrian-cockcroft-talks-cloud-hpc-ai-and-the-amazon-sustainability-data-initiative/
+podcast,,SC23 summary,Inside HPC with Shahin Khan and Doug Black,2023,https://insidehpc.com/2023/11/hpcpodcast-tech-analyst-adrian-cockcroft-on-trends-driving-future-hpc-architectures/
+infoqvideo,,What we learned and didn't learn from Netflix,Infoq - QCon London talk/video integrated together,3/28/2023,https://www.infoq.com/presentations/microservices-netflix-industry/
+book,,Q&A: Serverless Development on AWS - sustainability expert section,O'Reilly - Sheen Brisals and Luke Hedger,3/14/2024,
+book,,Foreword: Building Green Software,O'Reilly - Anne Curry,,
+book,,Foreword: The Value Chain Flywheel Effect,IT Revolution - David Anderson,,
+book,,Foreword: Reaching Cloud Velocity,"AWS: Jonathan Allen, Thomas Blood",,
+book,,Foreword: In Search of Certainty,Mark Burgess,,
+book,,Foreword: Irresistable APIs,Kirsten Hunter,,
+book,,Capacity Planning for Internet Services,"Sun Press Blueprints - adrianco, Walker",2000,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/caphi.pdf
+book,,Resource Management,"Sun Press Blueprints  - McDougall, adrianco etc.",1999,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/rm.pdf
+book,,Sun Performance and Tuning: Java and the Internet,Prentice Hall - adrianco and Rich Pettit,1998,
+book,,Sun Performance and Tuning: SPARC and Solaris,Prentice Hall - adrianco,1995,
+story,,Microservices and DevOps,Infoq Charles Humble,7/11/2014,https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/
+story,,High availability,Richard Seroter on Infoq,,https://www.infoq.com/articles/cockcroft-high-availability/
+story,,Failing Over Without Falling Over,Stackoverflow,2020,https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
+medium,,Lots of blog posts,Adrian's medium account - rss feed only gets last 10,,https://adrianco.medium.com
+youtube,,Adrian Cockcroft Appearance Playlist on YouTube,Many different accounts - technical content,,https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5
+story,tns-post-body-content,Enterprise Indigestion at NVIDIA GTC,The New Stack,2024,https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/
+story,,SC23 update,InsideHPC,2023,https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/
+story,,SC22 predictions,InsideHPC,2022,https://insidehpc.com/2022/12/sc22-cxl3-0-the-future-of-hpc-interconnects-and-frontier-vs-fugaku/
+story,tns-post-body-content,"Sustainability: Comparing AWS, Azure and Google",The New Stack,2024,https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/
