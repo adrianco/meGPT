@@ -17,7 +17,7 @@ If another author wants to use this repo as a starting point, clone it and add y
 Creative Commons - attribution share-alike. Permission explicitly granted for anyone to use as a training set to develop the meGPT concept. Free for use by any author/speaker/expert resulting in a Chatbot that can answer questions as if it was the author, with reference to published content. I have called my own build of this virtual_adrianco - with opinions on cloud computing, sustainability, performance tools, microservices, speeding up innovation, Wardley mapping, open source, chaos engineering, resilience, Sun Microsystems, Netflix, AWS etc. etc. I'm happy to share any models that are developed. I don't need to monetize this, I'm semi-retired and have managed to monetize this content well enough already, I don't work for a big corporation any more..
 
 # I am not a Python programmer
-All the code in this repo has been written by the free version of ChatGPT 4 based on short prompts, with no subsequent edits, in a few minutes of my time here and there. I can read Python amd mostly make sense of it but I'm not an experienced Python programmer. Look in the relevant issue for a public link to the chat thread that generated the code. So far all the code has worked first time, with minor changes to the requested functionality. This is a ridiculously low friction and easy way to write code.
+All the code in this repo has been written by the free version of ChatGPT 4 based on short prompts, with no subsequent edits, in a few minutes of my time here and there. I can read Python amd mostly make sense of it but I'm not an experienced Python programmer. Look in the relevant issue for a public link to the chat thread that generated the code. This is a ridiculously low friction and easy way to write code.
 
 # Building an Author
 To use this repo, clone it to a local disk, setup the python environment, run the build.py script for an author and it will walk through the published content table for that author processing each line in turn. The build script will create a downloads/<author> directory and create a state.json file in it which records successful processing steps so that incremental runs of build.py will not re-run the same downloads. Each kind of data needs a corresponding script in the processors directory.
@@ -49,7 +49,8 @@ For test purposes process a single kind of data from an arbitrary URL, output to
 Usage: python process.py <author> <Kind> <URL>
 ```
 
-At present there are no processor scripts, but build.py and process.py appear to be operating correctly.
+# Current functional status
+Build.py and process.py appear to be operating correctly and book_processor.py correctly downloaded pdfs of books, Any raw file downloads can clone this processor.
 
 # Notes
 I have been assembling my content for a while, and will update the references table now and again https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/published_content.csv
