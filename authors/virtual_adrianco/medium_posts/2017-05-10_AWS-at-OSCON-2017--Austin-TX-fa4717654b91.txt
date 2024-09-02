@@ -1,0 +1,17 @@
+AWS at OSCON 2017, Austin TX
+Austin locals @erictessmerband playing on the Sunday evening before OSCON
+#OSCON2017 @AWSopen awsopen@amazon.com — see you there!
+
+There are about 20 attendees from AWS and Amazon at OSCON this year, including the open source community engagement team, speakers, open source project committers and contributors from the engineering teams, and even some Austin area solutions architects.
+
+After several years of attending OSCON as individuals, we are very happy to have AWS be a Diamond Sponsor this year, and to have the AWS logo on the OSCON conference T-shirt.
+
+In line with the #1 Amazon leadership principle of “Customer Obsession” we are starting with some “Community Obsession” and want to know how we can best help open source communities and open source projects. You can come and chat with us in person in the exhibit hall, where instead of a booth, we’ve setup a lounge, so you can also rest your feet and recharge your devices.
+Wednesday 10th-Thursday 11th — AWS Lounge — EXHIBIT HALL #601
+On Wednesday evening we’ll be attending a BoF session where we can have a bigger group discussion.
+WEDNESDAY May 10–7:00 PM | Room 8BoF: Meet the team at AWS Open Source — how can we work together?
+We’re also sponsoring Open Container Day on Tuesday and have Arun Gupta and Abby Fuller speaking there.
+TUESDAY May 9 — 11:30 AM | Ballroom GArun Gupta: Service discovery in container orchestrationTUESDAY May 9 — 3:50 PM | Ballroom GAbby Fuller: Flexible container orchestration with Amazon ECS
+On Thursday, Zaheda is giving a keynote on the people that make open source happen, and I’m presenting a session on the topic of how AWS supports many open source artificial intelligence frameworks, why we’ve decided to put extra effort into Apache MXNet, and an overview of the technology itself. In the afternoon Greg Bulmash from Amazon will show how to use browser based open source tooling to hook up some of the higher level AWS artificial intelligence services into a personal assistant.
+THURSDAY May 11 — 9:50 AM | | Ballroom DKeynote: Zaheda Bhorat: We the people…are open sourceTHURSDAY May 11 — 11:00 AM | Room 14Adrian Cockcroft: Open Source AI at AWS and Apache MXNetTHURSDAY May 11 — 2:35 PM | Room18 A/BGreg Bulmash: Can you roll your own virtual assistant?
+We’re very happy to be able to immerse ourselves in some “community obsession” at OSCON and gather input on where we should focus our efforts.

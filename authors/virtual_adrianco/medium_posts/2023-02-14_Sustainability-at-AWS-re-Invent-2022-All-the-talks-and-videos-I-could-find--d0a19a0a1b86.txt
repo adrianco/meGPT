@@ -1,0 +1,75 @@
+Sustainability at AWS re:Invent 2022 -All the talks and videos I could find…
+Las Vegas MSG Sphere under construction next door to the Venetian Sands Expo Center — Photo by Adrian
+This blog post is long overdue — I spent too long trying to find time to watch all the videos, and finally gave up and listed a few below that I haven’t seen.
+
+The keynotes didn’t feature anything new on carbon, just re-iterated the existing path to 100% green energy by 2025. AWS did have some new goals around sustainable water use that are quite agressive and welcome.
+
+There was some new sustainability information that was quietly added to Amazon’s Sustainability in the Cloud page in October 2022 that is significant. But they didn’t go out of their way to promote it. There was also no news or updates to the AWS Customer Carbon Footprint Tool. I asked around and heard that they are still working on it, but the AWS hiring freeze means that they don’t have the headcount they expected and are making slow progress on an API, more detailed metrics, and scope 3, which everyone is waiting for.
+
+The new information from October 2022 states:
+To achieve our goal of powering our operations with 100% renewable energy by 2025 — five years ahead of our original 2030 target — Amazon contracts for renewable power from utility scale wind and solar projects that add clean energy to the grid. These new renewable projects support hundreds of jobs while providing hundreds of millions of dollars of investment in local communities. We also may choose to support these grids through the purchase of environmental attributes, like Renewable Energy Certificates and Guarantees of Origin, in line with our Renewable Energy Methodology.As a result, in 2021, the following AWS Regions were powered by over 95% renewable energy:US East (Northern Virginia)GovCloud (US-East)US East (Ohio)US West (Oregon)GovCloud (US-West)US West (Northern California)Canada (Central)Europe (Ireland)Europe (Frankfurt)Europe (London)Europe (Milan)Europe (Paris)Europe (Stockholm)
+This is actually a very useful statement. It basically says that near-as-dammit all the regions in the EU and US are already being supplied by renewable energy. So when you see zero or near zero carbon in your AWS Customer Carbon Footprint Tool report, that’s expected. Most of the carbon emissions will be in other parts of the world, even if that’s a small part of your AWS footprint, and that’s what they are currently working on for 2025.
+
+It’s complex and different people have different opinions on how to account for it, but I found some details on how over 20GW of Amazon power purchase agreements (PPAs) are accounted for to zero out most of the carbon.
+
+There were many sustainability talks at reInvent. In 2021 Elise Greve from my team at Amazon persuaded the reInvent team to create a sustainability track, and although it was small and lightly attended, it had the effect we wanted, and it was great to see so many more talks in 2022. If I missed any or have anything wrong please let me know and I’ll post an update.
+
+There is a very helpful Sustainability Talks Playlist by Ryan Burke — I picked out the most relevant and watched as many as I could.
+
+COM201 Being ethical in tech: Sustainability tips for work and life — no video, but here is a video of Aerin Booth presenting an earlier version of the talk. I’m working with Aerin on a Sustainability in the Cloud Maven class in the UK at the moment, and we’re looking for attendees..
+
+SUS201 Detecting deforestation with geospacial images and Amazon SageMaker — Parth Patel AWS SA and Isha Duo AWS SA — no video.
+
+SUS202 Using Amazon SageMaker, AutoGluon, and ASDI to predicst air quality — Charles Roberts AWS Senior Security Consultant and Aaron Soto AWS Senior Sustainability SA — no video
+
+SUS203 Carbon emissions reporting using modern data architecture on AWS — Anthony Howell AWS SA and Janahan Gnanachandran AWS SA — no video
+
+SUS204 Sustainability in AWS global infrastructure — Cornelia Robinson AWS Infrastructure Senior Manager Inclusion and Outreach and Charley Daitch AWS Director Energy and Water. Talk by the team that is actually working on reducing the carbon footprint of AWS. They optimized airflow in datacenters to reduce cooling energy use by 20%. Discussion of the water positive goal and optimizations that let AWS return water directly for irrigation rather than to the sewage system. Amazon (not just AWS) is now at 19GW of renewable capacity, 85% renewable across the world. Lots of detail on new projects including creating the renewables market in places like India, Alberta, and Singapore where the local grid is very dirty. Portfolio is currently reducing Amazons carbon footprint by 19 Million Metric Tons of CO2e. Good discussion of the management and optimization of the portfolio. Low carbon cement and steel for new buildings. Cornelia talks about how AWS does community outreach in places where the datacenter and power facilities are sited.
+
+SUS205 Architecting sustainably and reducing your AWS carbon footprint — Elliott Nash Amazon Senior Manager and Margaret O’Toole AWS WW Tech Leader Sustainability. Margaret leads the worldwide solution architect program for sustainability, and gives an excellent talk on how customers should think about optimizing their workloads.
+
+SUS206 Sustainability and AWS silicon — Kamran Khan AWS Senior Product Manager Inferential/Trainium/FPGA, David Chaiken Pinterest Chief Architect, and Paul Mazurkiewicz AWS Senior Principal Engineer. Good discussion of the embodied carbon of silicon chip production. Provides comparison of inference workload on P4dn GPU instances vs. AWS Trainium saving 92% energy and 90% cost, and training workload on P4dn vs. AWS Inferentia 2.6x shorter training time, saving 54% energy and 75% cost.
+
+SUS207 Patterns for obtaining insights from sustainability data — Div Shekhar AWS SA and Sandipan Bhaumik AWS Specialist Analytics SA — no video
+
+SUS208 Utilizing sustainability data at scale — Bishesh Adhikari AWS ML Prototyping Architect and Patti Carroll AWS Senior Sustainability Strategist — Discussion of sustainable agriculture and food security, showing architecture patterns and customer case studies.
+
+SUS209 — there was no talk with this code.
+
+SUS210 Modeling climate change impacts and risks at scale — Pierre Souchay AXA Climate CTO and Max Richter AWS Global SA.
+
+SUS211 Water stewardship and renewable energy at scale — Paul Reed AWS Industry Products GM Sustainability and Clean Energy and Will Hewes AWS Global Lead Water Sustainability. AWS made a new water positive commitment at re:Invent 2022 — by 2030 AWS will return more water to communities than they use. They use recycled and rain water where possible. They now publish a water intensity of 0.25 liters/KWh which is 4–8 times better than typical unoptimized businesses, so they use less, then they return clean water to farmers for irrigation in places like Oregon. In countries like India and Indonesia, they are bringing clean water to communities along with charities like Water.org
+
+SUS212 Accelerating decarbonization and sustainability transformation — Sree Anandavally Magna International Senior Director Smart Factory Solutions and Jessica Benoit AWS Senior Strategist Sustainability. This is the AWS Professional Services built tooling that customers can use to track the carbon footprint of their operations and processes, along with a customer example. Good example, well presented interesting new material.
+
+STP213 Scaling global carbon footprint management — Blake Blackwell Persefoni Manager Data Engineering and Michael Floyd AWS Head of Sustainability Solutions.
+
+GEO216 (Portugese Vinicius Senger AWS Senior Developer Advocate and Ana Cunha AWS Developer Advocate), GEO030 (Italian Simone D’Antone AWS Global Accounts M&E Business Leader) Architecting for sustainability
+
+SUS301 Sustainable machine learning for protecting natural resources — Benoit de Chateauveiux AWS Startup SA and Nelson Gonzalez AWS Head Global Impact Computing. Engaging presentation on an important topic, with some good advice on optimizing ML workloads.
+
+SUS302 Optimizing architectures for sustainability — Katja Philipp AWS SA and Szymon Kochanski AWS SA.
+
+SUS303 Delivering sustainable, high-performing architectures — Thomas Coombs AWS Principal TAM, Sam Mokhari AWS Sustainability Pillar Lead, Chie Hayashida AWS Japan SA — summary of the Well Architected Guide (which hasn’t changed since last year), a demo of the Customer Carbon Footprint tool (which hasn’t changed since last year) and a worked example of reducing the impact of a data science workload that was new.
+
+SUS304 to SUS311 No talks with these codes.
+
+SUS312 How innovators are driving more sustainable manufacturing — Marcus Ulmefors Northvolt Director Data and ML Platforms and Muhammad Sajid AWS SA. Building a data lake of detailed information about energy use of many physical devices. It includes a demo of AWS Twinmaker and a discussion of lithium battery production and recycling by Northvolt in Sweden, who are using serverless on AWS to build factories-as-code.
+
+STP213 Scaling global carbon footprint management.
+
+SUP304 Continuous cost and sustainability optimization — Francesc Sala AWS Principal TAM and Enrico Bonnaccorsi AWS Principal TAM.
+
+CMP204 Build a cost-, energy-, and resource-efficient compute environment — Steffen Grunwald, AWS EMEA Principal Sustainability Solutions Architect, Troy Gasaway Arm Ltd Vice President Infrastructure & Engineering, Adam Boeglin AWS Principal Specialist EC2. I gave the Well Architected talk last year with Steffen, it was good to see his updated talk for this year, along with a customer example from ARM.
+
+DOP315 Sustainability in the cloud with Rust and AWS Graviton — Emil Lerch AWS Principal DevOps Specialist and Esteban Kuber AWS Principal Software Engineer.
+
+PEX201 Building a sustainable practice for tomorrow — Mansi Vaghela AWS SA, Deborshi Choudhury AWS Partner SA, Rolf Korski Knowit VP Technology. Partner oriented session getting everyone up to speed on what AWS sees as the customer needs, motivations, business outcomes and architectures around sustainability. Well presented, plenty of new content and viewpoints, builds on the AWS standard deck better than SUS303.
+
+IOT204 How Amazon uses AWS IoT to improve sustainability across its buildings — Rob Aldrich AWS Senior Sustainability Strategist, Dramel Frazier Amazon Senior TPM, Ryan Burke AWS Senior Application Consultant.
+
+IMP205 Open data for impact: Quantify and manage climate-related risks — Chris Stoner AWS Open Data Program, Adrienne Simonson NOAA Director Open Data Dissemination, and OS-Climate. Climate risk is the dual of carbon emissions. As well as the impact your company is having on the climate, you need to understand the impact the climate is having on your company. When I was working at Amazon, I managed the Amazon Sustainability Data Initiative which is part of the open data program. I also got Amazon to join the non-profit OS-Climate and managed the relationship and contributions to building their data products. Excellent talk on the NOAA programs to share data and build communities around it.
+
+One more talk that I found interesting, but not related to sustainability:
+
+NFX303 The Evolution of Chaos Engineering at Netflix — good explanation of the evolution of this system, including advanced traffic routing techniques that most microservice architectures don’t support.

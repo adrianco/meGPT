@@ -1,0 +1,19 @@
+What Adrian Did Next — Joined OrionX to do some analyst and advisory work
+Castle Rock lit by an orange sunset — picture by Adrian
+I retired from Amazon and full time corporate work at the beginning of June 2022. However I’m signing up to be a long term advisor at a few companies where I already have good connections, and also was introduced to an opportunity to do some consulting advisory work for a month or so, before taking vacation in August. So while I have retired from corporate life, I have ideas to share, as an analyst and presenter, and needed a framework to support consulting and analysis work. I reached out to my friend and former manager from Sun, Shahin Khan, who along with a few ex-Sun partners have been building OrionX into a commercial entity that is very much aligned with that objective. After catching up with Shahin, Stephen Perrenod, and Cindee Mock, we agreed that I would join them as a “Partner and Analyst”, help out with some of their projects, and use OrionX to setup my own consulting work. Together, we can also develop and share ideas around technology trends.
+
+OrionX has an ambitious agenda, to identify the biggest technology trends and track how those trends influence each other, and to translate that to business strategy and market execution in a very broad set of markets. Having worked with something like 70 large and small companies over the past decade, the business processes and best practices have been tested and work well. The group has focused on quality at the expense of size and that has led to an excellent reputation. After several years of studying tech trends and working with several clients in each area, OrionX has developed relatively deep expertise in IoT, AI, Cybersecurity, Cryptocurrencies, and Quantum technologies. The group has deep roots in High Performance Computing (that’s what Shahin, Steve, and I did at Sun). So right from the beginning, I’m happy to spend some time getting back up to speed and developing some of my ideas around new hardware capabilities. Amongst other things, HPC is becoming more cloud centric, and blending with both quantum computing, and AI/ML. Stephen and Shahin have also been analyzing Bitcoin and developments in crypto currencies. While most of the work only occasionally gets published in the form of papers, the group is very active with other media:
+
+@HPCpodcast, a weekly podcast on HPC/AI, in association with InsideHPC.com co-hosted by Shahin and Doug Black
+
+Mktg_Podcast, a biweekly podcast on B2B and B2C marketing, co-hosted by Shahin and Doug Garnett
+
+OrionX Download, a quarterly (or so) podcast on quantum computing and cryptocurrencies, and other advanced tech
+
+Quantum Analyst Roundtable, a monthly video cast with four other analyst firms, a pretty unique project
+
+The OrionX YouTube channel, which has become a collaboration with the Washington, DC Quantum Computing Meetup, and includes lots of academic and non-academic talks.
+
+My own consulting work is initially in two areas. One is general technology advice on the state of the art in development practices, along the lines of the Cloud for CEOs booklet I published for AWS in 2019. The other is around monitoring and measuring carbon, and helping some startups figure out how to do that effectively. I’m speaking at various events as I mentioned in this blog post, getting back up to speed with the state of art in HPC, and will attend the Supercomputing show with Shahin.
+
+I’m happy with how things have worked out, with the flexibility to take time out, along with an established platform at OrionX for sharing ideas as an analyst, occasional consulting work, and some advisory positions that will be announced soon.

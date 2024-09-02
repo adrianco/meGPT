@@ -1,0 +1,11 @@
+What Adrian Did Next — Retire
+Moonrise — photo taken by Adrian Cockcroft
+After a long career working at the leading edge of technology, I retire from full time work on June 3rd 2022. I joined Amazon in October 2016, as a VP in AWS Marketing focused on building relationships with customers. I keynoted 20 AWS Summits around the world, presented on technical and management topics at many events, and hired the open source community engagement team. Moving to Amazon Worldwide Sustainability in March 2021, I led sustainability marketing for AWS, invested in the Amazon Sustainability Data Initiative, helped coordinate the rapid growth in sustainability related headcount across AWS, and helped author, launch and promote the Well Architected Pillar for Sustainability.
+
+I learned to code fifty years ago in high school, graduated in Applied Physics and Electronics from The City University, London forty years ago, and worked for Cambridge Consultants Ltd, Sun Microsystems, eBay, Netflix and Battery Ventures before joining Amazon.
+
+I’m going to take a break, re-design the IoT systems for my house near Monterey California, play guitar more, spend time with my parents in the UK, travel to some new places, and go on some long driving tours with my wife Laurel. Please keep in touch via twitter @adrianco and connect via Linked in.
+
+After taking a break, I’ll think about some part time advisory, board level, speaking and investing roles in the enterprise sustainability space that I’ve been focused on for the last few years.
+
+I’ll be covering the stories of my time at Cambridge Consultants Ltd, Sun Microsystems, eBay, Netflix, Battery Ventures and Amazon in future blog posts in this series on What Adrian Did Next…

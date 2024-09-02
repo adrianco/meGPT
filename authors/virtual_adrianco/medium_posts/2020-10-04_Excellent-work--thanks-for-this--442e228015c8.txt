@@ -1,0 +1,1 @@
+Excellent work, thanks for this. The 10Gbit network seems to be a bottleneck, what happens if you run pod to pod on the same node, or on a 100Gbit network?

@@ -1,0 +1,25 @@
+AWS Lambda is Everywhere
+
+Two years ago AWS Lambda was launched, and the core idea of event driven functions now has wide support as part of a larger “serverless” ecosystem.
+
+The latest announcements let you take Lambda events and functions and run them everywhere. Let’s take this step by step, starting with the pre-announcement functionality:
+
+Lambda functions started out in the data storage tier as methods triggered by actions on the object store S3, database triggers in DynamoDB and by consuming Kinesis streams.
+
+For processing and generating user notification events, integrations include the Simple Notification Service, Simple Email Service, Scheduled Events and Cognito mobile event service.
+
+To track management and deployment events in an AWS account, AWS Config, CodeCommit, CloudFormation, and CloudWatch have all been integrated with Lambda.
+
+To build user facing applications, Amazon API Gateway handles the endpoint, and Lambda provides the handlers for each type of request.
+
+Given Lambda support from the endpoint all the way down to storage, Lambda-based applications are growing in both size and scope, with many functions and non-trivial workflow. To help build, visualize and debug these applications there are open source projects from AWS providing a serverless application model, the Express framework, and a Python microframework called Chalice.
+
+From the community there are more options including the serverless framework, WSGI support from Zappa, and Go language support via Apex.run. Two new AWS Lambda related services were announced at re:Invent. Workflow oriented applications can be designed and operated using AWS Step Functions, and at runtime, end to end tracing of requests through the system can be collected and visualized using AWS X-Ray.
+
+Lambda functions already run behind end-points in 10 AWS regions worldwide, with additional regions coming, but there are points of presence for AWS at many more CloudFront CDN locations, with low latency connectivity to customers. While it’s not possible to obtain an instance at a CloudFront location, Lambda@Edge provides the capability to specify a Lambda function that runs globally at those locations. This is truly “serverless”, as you can’t get a server, you have to build your application using Lambda to reach to the edge. Naturally there are more constraints on Lambda functions that can be run at the edge, but the programming model is identical.
+
+Moving from Lambda at a regional endpoint, and at the edge of the network, the next logical step is to provide Lambda embedded in devices, with direct local connectivity between functions on the device, and support for device shadows, to cache and synchronize state during intermittent network connections. This new capability is called AWS Greengrass.
+
+Finally, the new rugged Snowball Edge device provides compute, storage and AWS services in a package that can be installed almost anywhere. AWS Greengrass is included, so the Snowball Edge can be remotely configured with AWS Lambda functions that process and manage data and services everywhere.
+
+With AWS Lambda everywhere, including locations where there are no provisionable servers, serverless application architecture patterns provide access to new capabilities that will be used to build new kinds of applications. I was a judge at the AWS re:Invent Hackathon, and was very impressed by the highly functional entries, and how fast they were built, most of them using Lambda. You can even run map-reduce directly from Lambda, I’m looking forward to seeing what everyone else comes up with!

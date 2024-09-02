@@ -1,0 +1,63 @@
+Map Camp 2021 — links to my maps from the Green Economy session with Carlota Perez and Andra Sonea
+Red sky sunset — photo taken by Adrian in Monterey County, California
+This year at Map Camp, I was happy to have my Amazon Sustainability team sponsor the Sustainability track, sharing the support with Liam Maxwell of AWS UK Public Sector, and to share the online stage with two awesome speakers, the famous economist Carlota Perez — author of the book Technological Revolutions and Financial Capital, and finance researcher Andra Sonea.
+Mapcamp 2021 The Green Economy on YouTube — three talks in 95min
+Carlota went first, explaining the way revolutions follow each other, and that we are in the middle of the Information Technology revolution, at one of the most disruptive phases, and her prediction that there could be a more stable golden age coming next. Andra talked about the role of financial frameworks and institutions have in biasing the banking system towards investing in fossil fuels and how that needs to be changed. I went last, and produced a series of maps to try and explain some of Carlota and Andra’s points. My goal was to understand their positions better, and also to show people some mapping techniques, and how I approach building maps using the onlinewardleymaps tool. I spent some time before the session, reading Carlota’s book, watching a video of her speak earlier this year, and producing some maps that I hoped would represent her ideas. During both talks, I live-mapped some points that I hadn’t covered in my pre-work. All the maps are available as clone links below, and these links create your own private copy of the live map that you can play around with.
+
+The maps are made through the lens of the things I found interesting and wanted to talk about. They leave out a lot, and that’s one of the things about the map maker role, you have to be mindful about what isn’t being discussed, and be open to making more maps. In this case Carlota and Andra didn’t have maps in their presentations, so I probably over-editorialized my view of the discussion in what follows.
+
+My first map explored Carlota’s description of the start of the Age of Automobiles, Oil, Plastics and Mass Production from a technology evolution perspective, using a consumer anchor for the value chain. This dates back to the launch of the Model T Ford, in 1908 or so. Marketing of products to consumers and financing purchase of those products were new ideas at the time. I revealed the map gradually, by uncommenting each section.
+
+[Note, apologies but I misspelt Carlota as Carlotta in the image titles at the time, but fixed it for the maps at the clone links]
+
+https://onlinewardleymaps.com/#clone:WHaMUc5iAqXY86zv2D
+The start of the age of Automobiles, Oil, Plastics and Mass Production
+We can represent the evolution of some of these components through this age, which ended in 1971, although the map starts to get hard to read.
+Evolution of the age of Automobiles, Oil, Plastics and Mass Production
+Consumer finance by this time is a utility, via credit cards. Mass production is also a utility, outsourced to places like China, not generally owned by the companies selling the products. Oil has also become a globally traded commodity with managed prices and production levels.
+
+Since this is hard to read, I created a map that only shows the end state, including moving Plastics to be a product.
+
+https://onlinewardleymaps.com/#clone:vzPZ45l0BwgOzDjeKy
+End of the age of Automobiles, Oil, Plastics and Mass Production
+Next, we can use this as the basis for the start of the IT age, by removing some components that aren’t relevant, and pushing others down to make space for the innovations that depend on them, to show some technologies that were in place in the 1980’s, following invention of the microprocessor in 1971.
+
+https://onlinewardleymaps.com/#clone:PPIlhwYoRYvf6B5YgP
+Start of The Age of Information Technology and Telecommunications
+Next I tried to update this to the technologies that we see around us now, picking a few key ones, and leaving out many more.
+
+https://onlinewardleymaps.com/#clone:12qJQo7buLVYqUfMkg
+Now in the Age of Information Technology and Telecommunications
+I decided to highlight a few things that I think are significant, focus on the smartphone and ignore laptops and other devices. Marketing has reversed from selling products to people, to selling people to products, as “free” services like Facebook and Youtube extract value from the way people use their services. Secondly, there is an interesting trend away from commodity microprocessors, in that Apple, AWS and NVIDIA are all building highly differentiated CPUs to their own design, to optimize for very different workloads. Renewable energy is not yet a commodity, as large consumers are placing power purchase agreements and funding wind, solar and battery farms directly. However telecommunications has largely become a “dumb pipe” connecting smartphones to the Internet with ever higher bandwidth, to support the emergence of video based applications. The automobile is gradually being replaced by smartphone based rideshare services.
+
+Thinking about where this may go next, I made the map below to highlight a few trends, and then got into some discussion with Carlota and Andra about whether this captured the essence of their ideas or not.
+
+https://onlinewardleymaps.com/#clone:D3EidZsAjITsKDOTeY
+A possible future for the Age of Information Technology and Telecommunications
+One observation is that social apps are not a static product, it appears that every few years a new app appears, like Tiktok getting to billions of users in a few years, so there is a pipeline of innovations that rapidly monetize as a marketing platform. Facebook saw this and bought Instagram and WhatsApp as they took off, but Snap, Telegram, Tiktok and others provide alternatives.
+
+Video is moving from download focused (Netflix, Youtube, etc.) to bidirectional (Zoom, Facetime etc.) which is going to enable new innovations as the deployment of 5G and broadband at home spreads around the world, and brings the developing nations into the mix.
+
+Rideshare is going electric, and incrementally to autonomous rides, driven by the cost savings for “easy” routes that can be navigated without having to pay for a driver.
+
+Renewable energy will become the default for grids globally, and together with the end of the gasoline powered automobile market, and the trends away from gas for heating, and from high carbon footprint plastics, there’s going to be a rough ride for fossil fuel companies. I’m expecting wild price swings and the eventual collapse of the sector.
+
+During her talk, Carlotta spoke about the role of Government, and Andra pointed out that finance needed to be included, so I live mapped what I was hearing, using an evolution axis based on the acceptance of ideas in society, rather than technology maturity.
+
+https://onlinewardleymaps.com/#clone:6fnXJnSUwe8DHQxO3S
+The Role of Government in the Age of IT
+There are three areas of focus. Post pandemic reconstruction, the climate threat, and social sustainability. In particular, education moves from institutionalized to personalized, and supports creativity and meaning rather than rote learning of facts in a classroom. Carlota is clear that the opportunity for a golden age to develop depends upon policies that need to become socially accepted, voted for and adopted by governments around the world.
+
+I also re-worked the evolution of society map that I produced for Map Camp 2020, to align with the beginning and current points in the age of IT.
+
+https://onlinewardleymaps.com/#clone:uCuwB3bYGgxLJwHNnU
+
+There are several points I made but here I will start with the minimum wage, which was introduced in 1938, but was extended to more categories of workers in the 1960’s. It hasn’t kept pace with inflation and is a subject that executives of large corporations have shared their opinions on to try and influence the debate.
+Evolution of Society on the concept of Minimum Wage
+Uiversal basic income is emerging as a more controversial topic. It’s still building consensus and is regarded as experimental, but could be part of the golden age societal norms in the coming years. The point of this kind of map is to explore emerging concepts and figure out “what if” scenarios for executives and corporations to decide what and when they should be advocating for as ideas mature.
+Evolution of Society on the concept of Universal Basic Income
+We ended the discussion with a map of Andra’s talk. She discussed how banks collateralize their lending and that it currently is stacked to favor fossil fuel companies. This was a good idea back when the most valuable companies in the world were fossil fuel companies, but is now causing problems as they are becoming risky bets, however the rules and policies need to change, and the more people that understand the issue, and can advocate for the change, the better. There’s a more recent discussion of this issue in this Canary Media story.
+
+https://onlinewardleymaps.com/#clone:RiIfjg2OC86375lbKa
+
+I waited for the video of the session to be on YouTube before publishing, so this took place a few weeks ago. I hope people find it interesting and useful, and that it helps build awareness of mapping and sustainability.
