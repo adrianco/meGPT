@@ -7,7 +7,8 @@ My own content is stored or linked to in authors/virtiual_adrianco and consists 
 - Twitter archive 2008-2022 (conversation text)
 - Mastodon.social - 2021-now https://mastodon.social/@adrianco (RSS at https://mastodon.social/@adrianco.rss)
 - Github projects (code)
-- Blog posts from https://adrianco.medium.com extracted as text to authors/virtual_adrianco/medium_posts
+- Blog posts from https://adrianco.medium.com extracted as text to authors/virtual_adrianco/medium_posts (with extraction script)
+- Blog posts from https://perfcap.blogspot.com extracted as text to authors/virtual_adrianco/blogger_percap_posts (with extraction script)
 - ~100 presentation decks (images) greatest hits: https://github.com/adrianco/slides/tree/master/Greatest%20Hits
 - ~20 podcasts (audio conversations, should be good Q&A training material)
 - ~50 videos of talks and interviews (audio/video/YouTube playlists)
