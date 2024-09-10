@@ -1,0 +1,4 @@
+Title: MyPhone Making Progress and ETel Conference
+URL: https://perfcap.blogspot.com/2007/03/myphone-making-progress-and-etel.html
+
+I'm at the O'Reilly ETel conference this week, lots of new and interesting things happening. I've met the OpenMoko people and held the phone (nice hardware, quite compact).<br /><br />Several people from the SVHMPC are also attending, we have been showing off the cases I made a few weeks ago, and I've been spending way too long on a new and much cooler case design. I've posted my design including all the cad files (this is a completely open source project, including hardware designs) to a page on the <a href="http://www.hbmobile.org/wiki/index.php?title=Portrait_oriented_case">Homebrew Mobile Wiki</a>.<br /><br />Thats the main reason there have been relatively few postings in the last week...

@@ -1,0 +1,37 @@
+Title: Starting a new role at Battery Ventures
+URL: https://perfcap.blogspot.com/2014/01/starting-new-role-at-battery-ventures.html
+
+Careful what you wish for. Take some side interests and activities that
+aren't central to your real job, have a bit too much fun with them,
+mention to <a href="http://www.battery.com/our-team/member/mike-dauber/" target="_blank">a friend</a> that it would be cool to do them for real, and have
+him convince his company to create a completely new position tailored for
+you that they've never had before, and haven't heard of anyone else doing. In a week.<br />
+<br />
+Over the last few years I've given a lot of talks, and the industry&nbsp;reaction to Netflix's all-in public cloud strategy has evolved from <i>"It&nbsp;won't work"</i> through <i>"It only works for unicorns like Netflix"</i> to <i>"How do&nbsp;we get there?"</i> My answer to that question is the Netflix Open Source&nbsp;Software (NetflixOSS) platform, consisting of around forty distinct&nbsp;projects shared at <a href="http://netflix.github.com/" target="_blank">netflix.github.com</a> that provides an on-ramp for&nbsp;applications to move to a cloud native architecture.<br />
+<br />
+I have presented aspects of this work to different audiences at public&nbsp;conferences, private events and directly within companies. For developers,&nbsp;I concentrated on explaining the NetflixOSS components, DevOps and&nbsp;continuous delivery patterns. For managers I concentrated on how an open&nbsp;source and cloud native strategy delivers rapid product evolution,&nbsp;scalability and high availability. As interest from individual companies&nbsp;grew it became clear that there was an opportunity to take what I had&nbsp;learned and apply it directly to a wider audience.<br />
+<div>
+<br /></div>
+<div>
+In my new role at&nbsp;Battery Ventures I will be continuing my conversations with large&nbsp;enterprise companies planning a move to cloud native, and SaaS vendors who&nbsp;are re-architecting for scale, to understand the gaps and demands of this&nbsp;market. With that context I will work in the Battery Ventures team that is&nbsp;looking for opportunities to fund companies who are enabling the&nbsp;transformation of enterprise IT, and I will also provide advice and&nbsp;mentoring for portfolio companies.<br />
+<br />
+The role is called <i>Technology Fellow</i>. It's different to the short term&nbsp;Entrepreneur in Residence (EIR) position, and is similar to full time investing staff.&nbsp;Battery just raised their tenth fund, and have a total of $900M to invest.&nbsp;My job is to help spend that wisely and get the best return. That also&nbsp;means even more conference presentations, more international coverage, and&nbsp;a broader range of subjects to discuss.<br />
+<br />
+I will no longer explain how Netflix works, so the starting point for my&nbsp;new presentation materials is going to be something like <a href="http://perfcap.blogspot.com/2013/12/velocity-and-volume-speed-wins-keynote.html" target="_blank">my Flowcon talk</a>&nbsp;with the Netflix specific parts removed. If you still want a Netflix&nbsp;Architecture overview talk, start with <a href="https://twitter.com/jedberg" target="_blank">@jedberg</a>, he's a very highly rated&nbsp;speaker, and he can also connect you to the many excellent speakers at&nbsp;Netflix that cover their own specific areas.<br />
+<br />
+It¹s going to take me a little while to figure out the new role, but a big&nbsp;part of the job is meeting lots of people. I'm taking bookings for&nbsp;February...<br />
+<br />
+<h4>
+Press Coverage</h4>
+<a href="http://www.marketwired.com/press-release/Adrian-Cockcroft-Joins-Battery-Ventures-as-Technology-Fellow-1866835.htm" target="_blank">Press Release</a> by Battery Ventures<br />
+<a href="http://thewholestack.com/2014/01/07/cold-pizza-and-aws-adrian-cockcroft-joins-battery-from-netflix/" target="_blank">The Full Stack blog post</a> by Mike Dauber of Battery Ventures<br />
+<a href="http://www.businessweek.com/articles/2014-01-07/netflix-loses-its-cloud-guru-to-a-vc-firm" target="_blank">Business Week</a> story by Ashlee Vance<br />
+<a href="http://gigaom.com/2014/01/07/netflixs-cloud-architect-adrian-cockcroft-is-leaving-to-join-battery-ventures/" target="_blank">GigaOm story</a> by Stacy Higginbotham<br />
+<a href="http://uk.news.yahoo.com/battery-ventures-lands-netflix-executive-cockcroft-200627603--sector.html" target="_blank">Reuters story on Yahoo UK</a><br />
+<a href="http://www.boston.com/business/innovation/blogs/inside-the-hive/2014/01/07/battery-ventures-hires-netflix-executive/X83gBm94A1MNsQtTyGUsMK/blog.html" target="_blank">Boston Globe story</a> by Michael Farrell<br />
+<a href="http://blogs.wsj.com/venturecapital/2014/01/07/netflix-cloud-expert-joins-battery-ventures-to-help-startups-tablets-expert-departs/" target="_blank">Wall Street Journal story</a> by Deborah Gage<br />
+<a href="http://www.theregister.co.uk/2014/01/08/netflix_cockcroft_battery_ventures/" target="_blank">The Register story</a> by Jack Clark<br />
+<a href="http://venturebeat.com/2014/01/07/netflix-cloud-architect-to-share-his-wisdom-from-new-post-at-venture-firm/" target="_blank">Venture Beat story</a> by Jordan Novet<br />
+<h4>
+About Battery Ventures</h4>
+Battery invests in cutting-edge, category-defining businesses in markets&nbsp;including software and services, Web infrastructure, e-commerce, digital&nbsp;media and industrial technologies. Founded in 1983, the firm backs&nbsp;companies at stages ranging from seed to buyout and invests globally from&nbsp;offices in Boston, Silicon Valley and Israel. To learn more, visit&nbsp;<a href="http://ctt.marketwire.com/?release=1062754&amp;id=3586642&amp;type=1&amp;url=http%3a%2f%2fwww.battery.com%2f" target="_blank">www.battery.com</a>&nbsp;and follow the firm on Twitter <a href="https://twitter.com/BatteryVentures" target="_blank">@BatteryVentures</a>.</div>

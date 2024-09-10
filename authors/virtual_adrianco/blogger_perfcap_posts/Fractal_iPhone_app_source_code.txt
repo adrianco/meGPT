@@ -1,0 +1,4 @@
+Title: Fractal iPhone app source code
+URL: https://perfcap.blogspot.com/2009/04/fractal-iphone-app-source-code.html
+
+<a href="http://code.google.com/p/fractal-band-iphone-app/">I have posted the source to Fractal's iPhone app to google code</a>. I'm hoping that other bands can replace the artwork and URLs and quickly get their own promotional apps out there. If we end up with bug-fixes and improvements, then everyone gains....

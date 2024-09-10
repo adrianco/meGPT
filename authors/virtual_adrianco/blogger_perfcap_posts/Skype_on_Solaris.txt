@@ -1,0 +1,4 @@
+Title: Skype on Solaris
+URL: https://perfcap.blogspot.com/2006/11/skype-on-solaris.html
+
+<p><a href="http://blogs.sun.com/darren/entry/skype_1.3.0.53_on_solaris_via">http://blogs.sun.com/darren/entry/skype_1.3.0.53_on_solaris_via</a></p> <p><!-- PProtector -->Solaris has a Linux compatible subsystem called BrandZ for running Linux binaries that don't have Solaris builds (like Skype). Darren figured out how to get the Linux build of Skype to run on Opensolaris.</p> <p><!-- PProtector -->Thanks to <a href="http://www.crypticide.com/dropsafe">Alec</a> for pointing this out.</p> <p><br /></p>

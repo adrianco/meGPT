@@ -1,0 +1,18 @@
+Title: Load Average Differences Between Solaris and Linux
+URL: https://perfcap.blogspot.com/2007/04/load-average-differences-between.html
+
+A lot of people monitor their servers using load average as the primary metric. Tools such as <a href="http://ganglia.sourceforge.net/">Ganglia</a> colorize all the nodes in a cluster view using load average. However there are a few things that aren't well understood about the calculation and how it varies between Solaris and Linux.<br />
+<br />
+For a detailed explanation of the algorithm behind the metric, <a href="http://www.perfdynamics.com/Manifesto/gcaprules.html" target="_blank">Neil Gunther has posted a series of articles</a> that show how Load Average is a time-decayed metric that reports the number of active processes on the system with a one, five and fifteen minute decay period.<br />
+<br />
+The source of the number of active processes can be seen in vmstat as the first few columns, and this is where Solaris and Linux differ. For example, some Linux vmstat from a busy file server is shown below.<br />
+<pre>procs -----------memory---------- ---swap-- -----io---- --system-- ----cpu----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in    cs us sy id wa
+ 4 43      0  32384 2993312 3157696  0    0  6662  3579 11345 7445  7 65  0 27</pre>
+<br />
+<br />
+The first two columns show the number of processes that are in the run queue waiting for CPU time and in the blocked queue waiting for disk I/O to complete. These metrics are calculated in a similar manner in both Linux and Solaris, but the difference is that the load average calculation is fed by just the "r" column for Solaris, and by the "r" plus the "b" column for Linux. This means that a Linux based file server that has many disks could be running quite happily from a CPU perspective but show a large load average.<br />
+<br />
+The logic behind the load average metric is that it should be a kind of proxy for responsiveness on a system. To get a more scalable measure of responsiveness, it is common to divide the load average by the number of CPUs in the system, since more CPUs will take jobs off the run queue faster. For disk intensive workloads on Linux, it may also make sense to divide the load average by the number of active disks, but this is an awkward calculation to make.<br />
+<br />
+It would be best to take <span style="font-weight: bold;">r/CPU count</span> and <span style="font-weight: bold;">b/active disk count</span> then average this combination with a time decay and give it a new name, maybe the "slowed average" would be good?

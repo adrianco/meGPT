@@ -1,0 +1,4 @@
+Title: Netflix and Silverlight and Joost
+URL: https://perfcap.blogspot.com/2007/05/netflix-and-silverlight-and-joost.html
+
+Very interesting <a href="http://www.hackingnetflix.com/2007/05/netflix_demos_s.html">demo of Microsoft Silverlight as a Netflix application</a> from MIX07.<br /><br />This seems like a nice, high performance multiplatform way to build web based user interfaces. It should give Flash some competition...<br /><br />I'm handing back eBay's Dell D600 with Windows XP and getting a MacBook when I start at Netflix, it will be nice to have XP running only when I need it, and when the Silverlight version of Netflix web video ships, it will support Mac.<br /><br />Joost has also released a new beta build, however I don't have a machine I can run it on during this transition. They don't support my old PowerBook G4 yet....

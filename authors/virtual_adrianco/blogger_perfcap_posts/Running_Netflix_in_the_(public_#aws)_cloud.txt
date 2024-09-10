@@ -1,0 +1,4 @@
+Title: Running Netflix in the (public #aws) cloud
+URL: https://perfcap.blogspot.com/2010/08/running-netflix-in-public-aws-cloud.html
+
+my talk at #qconsf in Nov http://qconsf.com/sf2010/presentation/Running+Netflix+in+the+Cloud

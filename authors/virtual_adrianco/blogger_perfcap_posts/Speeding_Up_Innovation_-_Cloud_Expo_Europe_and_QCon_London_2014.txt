@@ -1,0 +1,25 @@
+Title: Speeding Up Innovation - Cloud Expo Europe and QCon London 2014
+URL: https://perfcap.blogspot.com/2014/03/speeding-up-innovation-cloud-expo.html
+
+There is a huge transformation going on in enterprise IT at the moment. Decades old companies are discovering that IT which used to be a small side operation keeping track of things like employees and inventory, is now perhaps a thousand times more demanding and is central to their ability to compete.<br />
+<br />
+<ul>
+<li>From tracking inventory levels at sales outlets to handling web based sales directly.</li>
+<li>From managing a few employees to managing huge numbers of connected devices and mobile applications.</li>
+<li>From placing print adverts in newspapers and trade journals each month to using big data analytics to do real time bidding on internet adverts and sales force optimization.</li>
+</ul>
+<br />
+Technologies and practices that have been developed in the leading web scale companies are finding their way into cloud based services that address the broadening of demand for these technologies, while packaging them to make them easier to implement. In addition, the pace of product development has greatly increased, and the ability to get faster feedback from customers and act on it conveys a significant competitive advantage.<br />
+<br />
+The opening keynote talk I gave at Cloud Expo Europe on Feb 26th is aimed at setting the context and explaining why management needs to act. It ends with a few pointers towards next steps. The slideshare below doesn't include the builds that unfold with the explanation, and there isn't a video of the event, but I will be giving similar talks at other events in the coming months.<br />
+<br />
+<iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/31799721?rel=0" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="427"> </iframe> <br />
+<div style="margin-bottom: 5px;">
+<strong> <a href="https://www.slideshare.net/adriancockcroft/speeding-up-31799721" target="_blank" title="Speeding Up Innovation">Speeding Up Innovation</a> </strong> from <strong><a href="http://www.slideshare.net/adriancockcroft" target="_blank">Adrian Cockcroft</a></strong> </div>
+<br />
+On Thursday next week I will be giving a developer oriented talk at <a href="http://qconlondon.com/" target="_blank">QCon London</a> "Migrating to Microservices". The talk goes into details on transitional techniques, architectures and tools that can be used to move a product development organization from the old world to a highly agile and innovative cloud based operation. This is an excellent conference and registration is still open, so I hope to see you there.<br />
+<br />
+In my new role at Battery Ventures, we are looking for opportunities to fund companies in the enterprise IT space that can support the transition to this new world.<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,4 @@
+Title: iPhone apps that don&#39;t work on 3.0beta2
+URL: https://perfcap.blogspot.com/2009/04/iphone-apps-that-don-work-on-30beta2.html
+
+Both dictionary.com and PocketFlix fail immediately after they launch with iPhone os 3.0beta2<br/><br/>Most other apps seem to be working, and beta2 is faster and more stable. <div class="iblogger-footer"><br clear="all"/><p style="text-align:right;font-size:10px;">[Posted with <a href="http://illuminex.com/iBlogger/index.html">iBlogger</a>]</p><br/></div><br />

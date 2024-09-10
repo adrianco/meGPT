@@ -1,0 +1,4 @@
+Title: Updated Ad Setup
+URL: https://perfcap.blogspot.com/2006/09/updated-ad-setup.html
+
+<div xmlns="http://www.w3.org/1999/xhtml"><p>I just changed to the flash based ad sidebar. It lets you pick different keywords without reloading the page by clicking on the top tab.</p>  <p>I also continued to focus on Technology Books, picking some specific categories to try and exclude the certification and training books that I find less interesting. I then excluded Microsoft and mcse as keywords, and ended up with Cisco certification so I excluded them as well, and it looks like a more reasonable selection now.</p><p style="font-size:10px;text-align:right;"><p style="text-align: right; font-size: 8px">Blogged with <a href="http://www.flock.com" target="_new" title="Flock">Flock</a></p></div>

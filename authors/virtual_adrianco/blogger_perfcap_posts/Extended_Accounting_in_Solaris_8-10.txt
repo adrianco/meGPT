@@ -1,0 +1,4 @@
+Title: Extended Accounting in Solaris 8-10
+URL: https://perfcap.blogspot.com/2005/02/extended-accounting-in-solaris-8-10.html
+
+<p class="mobile-post">This is a very under-used facility introduced in Solaris 8. Solaris 10<br />extends it so that you can get TCP flow accounting as well as extended<br />process accounting info. It also adds a perl interface.</p><p class="mobile-post">Unlike traditional unix accounting - which is low overhead but stores<br />very poor quality information - extended accounting can save data at<br />fixed time intervals (as well as at process termination). It can be<br />configured to store detailed information, and in Solaris 10 since<br />microstate accounting is enabled for all processes by default you can<br />get the microstate details for everything with no extra overhead. I'll<br />be digging into the details of how to configure and process this data<br />soon.</p>

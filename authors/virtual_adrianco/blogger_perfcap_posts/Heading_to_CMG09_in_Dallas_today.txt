@@ -1,0 +1,4 @@
+Title: Heading to CMG09 in Dallas today
+URL: https://perfcap.blogspot.com/2009/12/heading-to-cmg09-in-dallas-today.html
+
+various talks on capacity planning in the cloud on Wed, then I'm presenting on Thurs. My slides are at http://www.slideshare.net/adrianco - this is probably my last visit to CMG, its been shrinking for a while, we will see how it looks on the ground.

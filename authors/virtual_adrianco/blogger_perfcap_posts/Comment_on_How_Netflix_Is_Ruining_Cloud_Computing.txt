@@ -1,0 +1,52 @@
+Title: Comment on How Netflix Is Ruining Cloud Computing
+URL: https://perfcap.blogspot.com/2013/03/comment-on-how-netflix-is-ruining-cloud.html
+
+<br />
+I wrote a long comment response to&nbsp;<a href="http://www.informationweek.com/cloud-computing/platform/how-netflix-is-ruining-cloud-computing/240151650" target="_blank">how-netflix-is-ruining-cloud-computing</a>&nbsp;on Information Week, but they don't seem in a hurry to post it. Luckily I saved a copy so here it is:<br />
+<br />
+<br />
+<br />
+<div style="font-family: Helvetica; font-size: 12px;">
+There should be a http://techblog.netflix.com post in the next day or so that will give more context to the Cloud Prize and clarify most of the points above. However I will address some of the specific issues here.</div>
+<div style="font-family: Helvetica; font-size: 12px; min-height: 14px;">
+<br /></div>
+<div style="font-family: Helvetica; font-size: 12px;">
+Cloud 1.0 vs. 2.0?</div>
+<div style="font-family: Helvetica; font-size: 12px;">
+I would argue that the way most people are doing cloud today is to forklift part of their existing architecture into a cloud and run a hybrid setup. That's what I would call Cloud 1.0. What Netflix has done is show how to build much more agile green field native cloud applications, which might justify being called Cloud 2.0. The specific IaaS provider used underneath, and whether you do this with public or private clouds is irrelevant to the architectural constructs we've explained.</div>
+<div style="font-family: Helvetica; font-size: 12px; min-height: 14px;">
+<br /></div>
+<div style="font-family: Helvetica; font-size: 12px;">
+Outages</div>
+<div style="font-family: Helvetica; font-size: 12px;">
+The outages that have been mentioned were regional, they didn't apply to Netflix operations in Europe for example. Our current work is to build tooling for multi-regional support on AWS (East cosat/West coast), including the DNS management that was mentioned. This removes the failure mode with the least effort and disruption to our existing operations.</div>
+<div style="font-family: Helvetica; font-size: 12px; min-height: 14px;">
+<br /></div>
+<div style="font-family: Helvetica; font-size: 12px;">
+Portability</div>
+<div style="font-family: Helvetica; font-size: 12px;">
+Other cloud vendors have a feature set and scale comparable to AWS in 2008-2009. We're still waiting for them to catch up. There are many promises but nothing usable for Netflix itself. However there is demand to use NetflixOSS for other smaller and simpler applications, in both public and private clouds, and Eucalyptus have demonstrated Asgard, Edda and Chaos Monkey running, and will ship soon in Eucalyptus 3.3. There are signs of interest from people to add the missing features to OpenStack, CloudStack and Google Compute so that NetflixOSS can also run on them.</div>
+<div style="font-family: Helvetica; font-size: 12px; min-height: 14px;">
+<br /></div>
+<div style="font-family: Helvetica; font-size: 12px;">
+Edda</div>
+<div style="font-family: Helvetica; font-size: 12px;">
+You've completely missed the point of Edda. It does three important things. 1) if you run at large scale your automation will overload the cloud API endpoint, Edda buffers this information and provides a query capability for efficient lookups. 2) Edda stores a history of your config, it's a CMDB that can be used to query for what changed. 3) Edda cross integrates multiple data sources, the cloud API, our own service registry Eureka, Appdynamics call flow information and can be extended to include other data sources.</div>
+<div style="font-family: Helvetica; font-size: 12px; min-height: 14px;">
+<br /></div>
+<div style="font-family: Helvetica; font-size: 12px;">
+AMInator</div>
+<div style="font-family: Helvetica; font-size: 12px;">
+If you want to spin up 500 identical instances, having them each run Chef or Puppet after they boot creates a failure mode dependency on the Chef/Puppet service, wastes startup time, and if anything can go wrong with the install you end up with an inconsistent set of instances. By using AMInator to run Chef once at build time, there is less to go wrong at run time. It also makes red/black pushes and roll-backs trivial and reliable.</div>
+<div style="font-family: Helvetica; font-size: 12px; min-height: 14px;">
+<br /></div>
+<div style="font-family: Helvetica; font-size: 12px;">
+Cloud Prize</div>
+<div style="font-family: Helvetica; font-size: 12px;">
+The prize includes a portability category. It's a broad category and might be won by someone who adds new language support to NetflixOSS (Erlang, Go, Ruby?) or someone who makes parts of NetflixOSS run on a broader range of IaaS options. The reality is that AWS is actually dominating cloud deployments today, so contributions that run on AWS will have the greatest utility by the largest number of people. The alternatives to AWS are being hyped by everyone else, and are showing some promise, but have some way to go.</div>
+<div style="font-family: Helvetica; font-size: 12px; min-height: 14px;">
+<br /></div>
+<div style="font-family: Helvetica; font-size: 12px;">
+We hope that NetflixOSS provides a useful driver for higher baseline functionality that more IaaS APIs can converge on, and move from 2008-era EC2 functionality to 2010-era EC2 functionality across more vendors. Meanwhile Netflix itself will be enjoying the benefits of 2013 AWS functionality like RedShift.</div>
+<div style="font-family: Helvetica; font-size: 12px;">
+<br /></div>

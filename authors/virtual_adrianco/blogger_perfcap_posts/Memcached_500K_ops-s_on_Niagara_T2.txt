@@ -1,0 +1,4 @@
+Title: Memcached 500K ops/s on Niagara T2
+URL: https://perfcap.blogspot.com/2009/05/memcached-500k-opss-on-niagara-t2.html
+
+This is some nice work, scalability analysis to fix lock contention in memcached, then running on an out of the box Solaris T2 gets 500K ops/s or 9.6Gbits/s depending on payload size. The Niagara 2 based T2 has built-in 10Gbit network, and 8 cores with 8 threads in one chip. Sub-millisecond response.<br /><br /><a href="http://blogs.sun.com/zoran/entry/scaling_memcached_500_000_ops">http://blogs.sun.com/zoran/entry/scaling_memcached_500_000_ops</a>

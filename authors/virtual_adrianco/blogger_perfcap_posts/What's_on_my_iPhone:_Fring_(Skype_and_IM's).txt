@@ -1,0 +1,4 @@
+Title: What's on my iPhone: Fring (Skype and IM's)
+URL: https://perfcap.blogspot.com/2009/02/whats-on-my-iphone-fring-skype-and-ims.html
+
+When I want to make an international call from my iPhone (or from my home phone) I use Skype. There is no native Skype application for the iPhone, so I use Fring, <br /><a href="http://share.skype.com/sites/en/2009/02/nokia_and_skype_partnering_in.html">although today's announcement of a deal with Nokia</a> includes hints that they are working on more mobile platforms. They support Android already, so their main missing link at this point is the iPhone.<br /><br />Fring is a decent substitute for now. I mostly use it to keep up with Skype and YIM chat sessions when I'm away from my laptop.

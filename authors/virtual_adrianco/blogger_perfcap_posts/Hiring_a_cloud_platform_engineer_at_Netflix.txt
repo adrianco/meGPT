@@ -1,0 +1,4 @@
+Title: Hiring a cloud platform engineer at Netflix
+URL: https://perfcap.blogspot.com/2010/04/hiring-cloud-platform-engineer-at.html
+
+If you are interested in <a href="http://www.cloudera.com/blog/2010/04/cap-confusion-problems-with-partition-tolerance/">the CAP theorem</a> NoSQL systems like <a href="http://www.infoq.com/presentations/Project-Voldemort-Scaling-Simple-Storage">Voldemort, </a> Cassandra and SimpleDB, <a href="http://www.infoq.com/presentations/Horizontal-Scalability">scalability</a> and expect to be at the <a href="http://en.oreilly.com/velocity2010">Velocity Conference</a> in June, then you are the <a href="http://jobs.netflix.com/DetailFlix.asp?jobid=flix3571">kind of engineer I'm interested in hiring</a>. Netflix is aggressively moving to new technology, hiring only the very best and most experienced engineers and our growth is accelerating.

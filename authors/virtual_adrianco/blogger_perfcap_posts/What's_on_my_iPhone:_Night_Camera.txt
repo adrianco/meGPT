@@ -1,0 +1,4 @@
+Title: What's on my iPhone: Night Camera
+URL: https://perfcap.blogspot.com/2009/01/whats-on-my-iphone-night-camera.html
+
+Its very simple but it works amazingly well. When its dark, most non-flash digital pictures suffer from a lot of motion blur due to camera shake. The night camera app uses the accelerometer to wait until the camera has been still for long enough to get a clear picture.

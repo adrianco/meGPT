@@ -1,0 +1,4 @@
+Title: WiFi upgrade
+URL: https://perfcap.blogspot.com/2010/03/wifi-upgrade.html
+
+My five year old wifi hardware got flaky and slow, so I looked around and decided to go with the D-Link DIR-825 as my central node and a DAP-1522 to bridge to my TV etc.<br /><br />They are both N spec dual frequency systems. Arrived today from Amazon for $225 for the pair.<div><br /></div><div>[Update: they are working fine, I have a 130Mbit/s link speed reported on the 5GHz link between the DIR-825 and the DAP-1522, and I've shut down all the old WiFi networks].<div class="iblogger-footer"> <p style="text-align:right;font-size:10px;">[Posted with <a href="http://illuminex.com/iBlogger/index.html">iBlogger</a> from my iPhone]</p><br /></div><br /></div>

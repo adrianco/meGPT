@@ -1,0 +1,4 @@
+Title: Grid overview presentation at ACM
+URL: https://perfcap.blogspot.com/2005/02/grid-overview-presentation-at-acm.html
+
+<p class="mobile-post">I gave <a href=http://www.sfbayacm.org/events/2004-10-20.html>this talk</a> at the SF Bay ACM meeting last October</p><br /><p class="mobile-post">They <a href=http://www.sfbayacm.org/events/slides/2004-10-20_Grid-ACM.pdf>posted the slides</a>, which were the first part of my half day<br />tutorial at CMG04 in December. The talk went well, was well attended and I caught up with some old friends afterwards.<br /></p>

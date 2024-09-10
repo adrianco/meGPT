@@ -1,0 +1,4 @@
+Title: Solid State Disks - 1 TB in a 2.5 inch announced
+URL: https://perfcap.blogspot.com/2009/01/solid-state-disks-1-tb-in-25-inch.html
+
+Like I said... the next thing for SSD's is to have higher storage capacity in each of the form factors than spinning rust. Here's another step in that direction. <a href="http://www.engadget.com/2009/01/10/puresilicon-introduces-worlds-first-1tb-2-5-inch-ssd/">http://www.engadget.com/2009/01/10/puresilicon-introduces-worlds-first-1tb-2-5-inch-ssd/</a>. SSD's already have disks beaten on all the performance metrics. This one maxes out the SATA interface and does 300MBytes/s transfer rates.<br /><br />I've also been seeing prices dropping as volumes increase for laptops with SSDs. I think the end of the line for rust will be 2010, as SSD's will no longer have a worse cost/GB and they already have higher capacity and performance.

@@ -1,0 +1,4 @@
+Title: Usenix 09 - San Diego in June
+URL: https://perfcap.blogspot.com/2009/05/usenix-09-san-diego-in-june.html
+
+I'm presenting again next month, <a href="http://www.usenix.org/events/usenix09/">at Usenix 09 in San Diego</a>. I'm giving an all day workshop/tutorial on Tuesday June 16th. I have just updated my slides, combining the talks I have been developing over the years into Solaris/Linux Performance Tools and Tuning, which includes the Capacity Planning with Free Tools material that Mario Jauvin and I developed for CMG.<br /><br /><a href="http://www.usenix.org/usenix09/promote"> <img src="http://www.usenix.org/events/usenix09/art/usenix09_button.jpg" border="0" width="125" height="125" alt="USENIX '09"> </a><br /><br />I have also posted the slides to <a href="http://www.slideshare.net/adrianco">http://www.slideshare.net/adrianco<br /></a>.<br /><br />Please come along, I look forward to seeing you in San Diego.<br /><br />Cheers Adrian

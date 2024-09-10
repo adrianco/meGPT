@@ -1,0 +1,4 @@
+Title: Parallel Application Performance and Tuning with OpenMP
+URL: https://perfcap.blogspot.com/2007/11/parallel-application-performance-and.html
+
+I just had dinner with my old friend Ruud van der Pas, who works for Sun's developer tools organization. He is a world class expert in making parallelized applications scale, and recently gave a talk with a very amusing <a href="http://www.thinkingparallel.com/2007/09/25/openmp-does-not-scale-or-does-it/">performance conversation</a>.<br /><br /><a href="http://blogs.sun.com/ruud/">Ruud is an advocate and expert</a> in OpenMP, and has just published an excellent book on the subject. "Using OpenMP". Published by MIT Press. The work was done together with Barbara Chapman and Gabriele Jost. The ISBN numbers are ISBN-10: 0-262-53302-2 and ISBN-13: 978-0-262-53302-7.<br /><br />Even if you aren't using OpenMP, the concepts for performance and scaling are the same for everyone...

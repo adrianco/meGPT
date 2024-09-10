@@ -1,0 +1,4 @@
+Title: Tutorial at LISA08 San Diego Nov 9th
+URL: https://perfcap.blogspot.com/2008/09/tutorial-at-lisa08-san-diego-nov-9th.html
+
+<a href="http://www.usenix.org/lisa08/going"> <img src="http://www.usenix.org/events/lisa08/art/lisa08_going.jpg" border="0" width="162" height="57" alt="I'm going to LISA '08"> </a><br /><br />I'm giving my usual performance tools and tuning for Solaris/Linux class on Sunday 9th Nov in San Diego.

@@ -1,0 +1,4 @@
+Title: HPTS at Asilomar
+URL: https://perfcap.blogspot.com/2009/10/hpts-at-asilomar.html
+
+I'm attending the High Performance Transaction Systems workshop http;//hpts,ws over the next few days. I'm chairing a session on moving to the cloud. Quality crowd - Bechtolsheim, Stonebraker, Patterson, and so on, see the Agenda... Second time for me, it's an honor to be invited back. <div class="iblogger-footer"><br clear="all"/><p style="text-align:right;font-size:10px;">[Posted with <a href="http://illuminex.com/iBlogger/index.html">iBlogger</a> from my iPhone]</p><br/></div><br />

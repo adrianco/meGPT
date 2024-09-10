@@ -1,0 +1,4 @@
+Title: eBay AdContext Contextual Adverts
+URL: https://perfcap.blogspot.com/2006/06/ebay-adcontext-contextual-adverts.html
+
+I've been running contextual ads on this site for a few months, using the CTXbay service that won an eBay developers program award. I don't think I've had many people click through, since the ads aren't very relevant, and seem fixated on the word "Adrian".<br /><br />Now that eBay has announced its own AdContext service is on the way, I'm planning to replace CTXbay with the official service as soon as I can get access to it. The eBay service has access to a lot more information and is quite customizable. I asked about it at the Developers Conference and was told that I could set a default category and control what kind of items appear.

@@ -1,0 +1,4 @@
+Title: Playing with Hadoop in the Cloud
+URL: https://perfcap.blogspot.com/2009/06/playing-with-hadoop-in-cloud.html
+
+I just finished writing a paper for CMG that is a tutorial on Amazon Elastic Map Reduce. I signed up, it was easy, and after I ran two of their demo jobs I owed them 26 cents. Very cool...

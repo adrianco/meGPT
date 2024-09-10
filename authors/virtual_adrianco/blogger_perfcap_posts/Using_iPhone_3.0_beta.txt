@@ -1,0 +1,4 @@
+Title: Using iPhone 3.0 beta
+URL: https://perfcap.blogspot.com/2009/03/using-iphone-30-beta.html
+
+So far its working well, all the previously installed apps that I have tried work. I did a cut and paste from notes to Facebook, listened to some Pandora, downloaded a new app from the AppStore. I was a bit concerned about jumping on the release so early, but haven't found any downsides yet.<br /><br />I have an older Mac that my first gen iPhone treats as its home machine, I upgraded that one to SDK3.0beta and also used it to do the full backup and restore and re-sync needed to get my iPhone running 3.0. I have a newer MacBook Air that is my work machine, and I have left that with SDK2.2.1, so I can work on current apps and make sure they run on 3.0.

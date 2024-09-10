@@ -1,0 +1,4 @@
+Title: extracct 1.0
+URL: https://perfcap.blogspot.com/2005/05/extracct-10.html
+
+I cleaned up the build directory and renamed the program extracct - extract useful info from exacct - and its been running fine on Solaris 10/x64 for a while. If anyone wants to try it out let me know and I'll email a tarfile, I haven't yet got around to testing it on SPARC. I built it on Opteron using gmake/gcc from /usr/sfw/bin.<br /><br />I'm also wondering how best to make it more generally available, perhaps via orcaware.com or sunfreeware.com, or I could post it to BigAdmin or the OpenSolaris source code as an updated demo. Any opinions out there?

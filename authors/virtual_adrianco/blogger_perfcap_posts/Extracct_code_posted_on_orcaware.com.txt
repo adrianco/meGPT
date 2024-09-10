@@ -1,0 +1,4 @@
+Title: Extracct code posted on orcaware.com
+URL: https://perfcap.blogspot.com/2005/07/extracct-code-posted-on-orcawarecom.html
+
+Since the code I was writing to extract useful information from extended accounting logs is intended to end up as a data source for Orca, it made sense to host it on that site. I haven't had a chance to do any more development on it for a few months, so the source, including SPARC and x86 binaries is now posted there. Thanks to Blair Zajac for the space.<br /><br /><a href=http://www.orcaware.com/orca/pub/extracct/>extracct - extract useful data from extended Solaris accounting</a><br /><br />If anyone feels inspired to develop it further, please send me any changes you make.<br /><br />Cheers Adrian<br /><br />Update Feb 2006: I just downloaded it and untar'd it with no problem, so try downloading it again if you have any problems, should be about 54K long.<br /><br />Adrian

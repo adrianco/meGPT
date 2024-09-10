@@ -1,0 +1,11 @@
+Title: Where should I start...
+URL: https://perfcap.blogspot.com/2004/06/where-should-i-start.html
+
+I googled ["Web services" performance] and got a bunch of nice hits
+<br />
+<br /><a href=http://wspi.ca.com/>CA's product</a> is interesting, lets you track the actual performance of public web services. CA seem to be using WSDM to do this.
+<br />I'm more interested in characterizing the attributes of web service performance that would lead to capacity planning methods for web services infrastructure.
+<br />
+<br />As I find more about what is the actual state of the art, I'll list links to it here, then start synthesizing and extending off into uncharted territory.
+<br />
+<br />I think I'm down to do a Grid/Web Services tutorial at the <a href=http://www.cmg.org>CMG04</a> meeting in Vegas in December so this is a place for me to collect and discuss some of the content in blog form.

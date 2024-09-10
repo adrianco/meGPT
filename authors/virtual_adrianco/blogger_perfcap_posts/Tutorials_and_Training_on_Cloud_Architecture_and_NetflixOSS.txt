@@ -1,0 +1,13 @@
+Title: Tutorials and Training on Cloud Architecture and NetflixOSS
+URL: https://perfcap.blogspot.com/2013/04/tutorials-and-training-on-cloud.html
+
+There are two places that I'm giving in-depth training on cloud architecture and NetflixOSS this year.<br />
+<br />
+On May 22nd-23rd at <a href="http://www.gluecon.com/2013/" target="_blank">Gluecon 2013</a> in Broomfield Colorado I'm giving one of the opening keynote talks that introduces the concepts of a Cloud Native Architecture, then spending all afternoon on a tutorial to go into the details of how to get there and how to use NetflixOSS tools as an on-ramp to accelerate the process.<br />
+<br />
+For people in Europe, I'm teaching at a summer school on "<a href="http://laser.inf.ethz.ch/2013/" target="_blank">Software for the Cloud and Big Data</a>" September 8th-14th in Italy. It's organized by ETH Zurich. I'll be giving six one-hour talks over a week, and there are seven other speakers.<br />
+<br />
+<a href="http://laser.inf.ethz.ch/2013/" target="_blank" title="LASER 2013: Software for the Cloud and Big Data"><img alt="LASER 2013 banner" src="http://laser.inf.ethz.ch/2013/img/banner.png" /></a><br />
+<br />
+When I get back from LASER, it will be time to start evaluating nominations for the NetflixOSS Cloud Prize, and these are both opportunities to figure out how to build a strong entry.<br />
+<br />

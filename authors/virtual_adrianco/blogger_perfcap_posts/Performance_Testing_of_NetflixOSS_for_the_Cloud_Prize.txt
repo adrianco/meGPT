@@ -1,0 +1,38 @@
+Title: Performance Testing of NetflixOSS for the Cloud Prize
+URL: https://perfcap.blogspot.com/2013/09/performance-testing-of-netflixoss-for.html
+
+<br />
+Where is everyone? I've been writing blogging and tweeting about performance and capacity planning for many years, so I thought I was connected to one or two performance folks....<br />
+<br />
+When we setup the <a href="https://github.com/Netflix/Cloud-Prize" target="_blank">NetflixOSS cloud prize</a> I created a category just for you:<br />
+<br />
+<table cellpadding="0" cellspacing="0" dir="ltr" style="font-family: arial,sans,sans-serif; font-size: 13px; table-layout: fixed;"><colgroup><col width="362"></col></colgroup><tbody>
+<tr style="height: 17px;"><td style="border-color: rgb(0, 0, 0) rgb(204, 204, 204) rgb(204, 204, 204); border-style: solid; border-width: 1px; direction: ltr; padding: 0px 3px; text-align: left; vertical-align: bottom;">Best Contribution to Performance Improvements</td></tr>
+<tr style="height: 17px;"><td style="border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc; padding: 0 3px; vertical-align: bottom;"></td></tr>
+<tr style="height: 17px;"><td style="border-bottom-color: rgb(0, 0, 0); border-bottom-style: solid; border-bottom-width: 1px; border-left-color: rgb(204, 204, 204); border-left-style: solid; border-left-width: 1px; border-right-color: rgb(204, 204, 204); border-right-style: solid; border-right-width: 1px; direction: ltr; padding: 0px 3px; text-align: left; vertical-align: bottom;">New performance testing tools, results of performance tests and performance oriented bugs. Since this may be aggregated across many pull requests, they should be listed and documented in the Submission.</td></tr>
+</tbody></table>
+<br />
+While there are some interesting contestants in other categories, I've seen very little activity in this one.<br />
+<br />
+There's $10K cash and $5K of AWS credits waiting for someone to do enough work to claim them!<br />
+<br />
+It takes a bit of resource to run tests, so I also have a $100 AWS gift card that I will pass on to the first person to make an entry in this category, regardless of whether they win the prize or have generated any useful data at that point. Make a valid submission to the Cloud Prize by forking the github repo, editing the Submission.md file to describe your entry, entering your details (email/address etc) in the Mailchimp form, and then post a comment here claiming the $100 AWS card, and I'll mail it to you.<br />
+<br />
+After the first one, if you make a case for having generated lots of good data, I'll get some more $100 AWS cards.<br />
+<br />
+Here's some performance project ideas.<br />
+<br />
+<ul>
+<li>Run throughput and latency stress tests on the Zuul API gateway on various instance types</li>
+<li>Run stress tests for sizing data against other service level projects - Eureka, Edda, Ice, etc.</li>
+<li>Make the cass_jmeter project better in some way</li>
+<li>Analyze the code paths in Astyanax and find ways to make it run faster and use less memory</li>
+</ul>
+<div>
+Go for it, only a few days left. Contest ends at midnight Pacific time Sunday Sept 15th.</div>
+<div>
+<br /></div>
+<div>
+Best wishes</div>
+<div>
+Adrian</div>

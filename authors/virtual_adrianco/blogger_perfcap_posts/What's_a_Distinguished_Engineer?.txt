@@ -1,0 +1,25 @@
+Title: What's a Distinguished Engineer?
+URL: https://perfcap.blogspot.com/2012/10/whats-distinguished-engineer.html
+
+A <a href="http://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer/" target="_blank">recent post by John Allspaw on what it means to be a senior engineer</a> reminded me of something I put together years ago while I was a Distinguished Engineer at Sun. One question from senior engineers looking at their career path was what did it take to become a Distinguished Engineer?<br />
+<br />
+Although Sun is no more, across the industry, there are engineers who are "distinguished" and the title is used in a few places. At Sun, there were between 50 and 100 people in the role, who were mostly director level individual contributors, although there were also Sun Fellows who were VP level, and some were also line managers.<br />
+<br />
+I boiled it down into a few questions.<br />
+<br />
+First I made a list of the names of all the Sun Distinguished Engineers and Fellows, and the first question was "how many of these names do you recognize, and know what they did". The intent is to get a baseline level of understanding of what might be expected. The list included people who invented software languages and frameworks that lots of people use, microprocessor architects, and fundamental researchers in security and networking. There were also CTOs of companies that Sun had acquired, and a few like me who mostly got in through writing books that everyone else had read.<br />
+<br />
+The next question is "how many of these people know who you are?". If you think you did do something special, we would expect that the existing Distinguished Engineers would have heard of it. Since at Sun the way to become a DE involved having the existing DE and Fellows vote for you, this was critical.<br />
+<br />
+The final question was "how many DE and Fellows are hanging around your cube on a regular basis waiting to talk to you?". This shows that you are the go-to person for something that matters.<br />
+<br />
+Translating this into a broader context, more current questions for being distinguished might be "Do the top conferences invite you to speak?", "How many of the other invited speakers and conference organizers do you know?" and "how many know you?". The other dimension of what you did to deserve it is nowadays a mixture of open source projects that lots of people use, or key ideas shared through books or blogs.<br />
+<br />
+Here's the original slide from 2002, how many of these names do you know, what did they do then and where are they now?<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikKv3AE85jCqyeY9RvZYteLwpzpDwIVVxgYhP-eDAE5QjezHxeRMT1dhXm1v12cbYmpd9bwBJlUSKno-mPrWwMpCa5r2VC3Za0kM142eoSai4lhC0Ih3s_4udyBUKUXEP9wDm9/s1600/SunDEs.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="214" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikKv3AE85jCqyeY9RvZYteLwpzpDwIVVxgYhP-eDAE5QjezHxeRMT1dhXm1v12cbYmpd9bwBJlUSKno-mPrWwMpCa5r2VC3Za0kM142eoSai4lhC0Ih3s_4udyBUKUXEP9wDm9/s320/SunDEs.png" width="320" /></a></div>
+<br />
+<br />
+<br />
+<br />

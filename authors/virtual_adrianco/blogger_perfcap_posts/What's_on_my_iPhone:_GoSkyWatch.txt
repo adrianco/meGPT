@@ -1,0 +1,4 @@
+Title: What's on my iPhone: GoSkyWatch
+URL: https://perfcap.blogspot.com/2009/02/whats-on-my-iphone-goskywatch.html
+
+Years ago when I had a Treo, a my friend Gred Oakes introduced me a to planetarium app, and I really liked being able to look up at night, and be able to identify the stars and planets. I live on top of a mountain, and have a great view of the night sky, and one of the first apps I paid for on my iPhone was GoSkyWatch. It has a cool feature that the accelerometer can tell you are holding it upside down snd it attempts to align its view with what you should be seeing. On a 2G iPhone with no GPS it doesn't know which way north is, so that doesn't work so well.

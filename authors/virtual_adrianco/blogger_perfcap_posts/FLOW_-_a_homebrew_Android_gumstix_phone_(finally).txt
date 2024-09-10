@@ -1,0 +1,4 @@
+Title: FLOW - a homebrew Android gumstix phone (finally)
+URL: https://perfcap.blogspot.com/2009/05/flow-homebrew-android-gumstix-phone.html
+
+<a href="http://www.gizmoforyou.com/e107_plugins/content/content.php?content.32">See more here</a>.<br /><br />A few years ago the Silicon Valley Homebrew Mobile Phone Club (SVHMPC) formed out of frustration with the closed market for phones, and set out to build something we could program in our pocket. We made some progress but the prototype Gumstix Goliath board never made it into production, and along came the iPhone, which gave some of us the application platform we were looking for to customize. The OpenMoko project is also limping along, and Google Android is finally out there in volume. The FLOW project is open hardware running Android with a Gumstix CPU module. Nice combination for making custom devices.

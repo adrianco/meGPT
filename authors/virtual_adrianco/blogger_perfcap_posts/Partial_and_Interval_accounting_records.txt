@@ -1,0 +1,4 @@
+Title: Partial and Interval accounting records
+URL: https://perfcap.blogspot.com/2005/03/partial-and-interval-accounting.html
+
+Traditional accounting generates a record only when the process terminates. The current process data from ps contains different information so its not possible to keep the two in sync. Extended accounting includes the <b>wracct</b> command that forces an accounting record to be generated for a process or task. The partial record is tagged differently as shown below, but contains the same information.<br /><br /><pre><br />   106  group-proc-partial              [group of 35 object(s)]<br />  1000   pid                            664<br />...<br /></pre><br /><br />For a process, partial records provide the total resource usage since process creation. For a task, an additional option allows for resource usage over the interval since the previous record was written.

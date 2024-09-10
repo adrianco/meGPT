@@ -1,0 +1,4 @@
+Title: IPad makes it hard to embed YouTube in blog
+URL: https://perfcap.blogspot.com/2010/04/ipad-makes-it-hard-to-embed-youtube-in.html
+
+I'm trying to compose a blog post that embeds a YouTube video, but YouTube doesn't want to give me the HTML fragment to embed the video. If you browse to YouTube on an iPad it doesn't show any options to pick up the embed because it renders in "touch" mode. At the bottom of the page I found an option to switch to desktop mode and get the full page. This renders an embed option but doesn't let me select it to copy here. <br /><br />So I need to use my MacBook to compose posts. <br /><br />As the iPad moves the boundaries between content consumption and content generation, people need to rethink the functionality of the mobile and iPhone optimized web sites.

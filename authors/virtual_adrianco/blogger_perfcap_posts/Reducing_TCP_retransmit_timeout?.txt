@@ -1,0 +1,4 @@
+Title: Reducing TCP retransmit timeout?
+URL: https://perfcap.blogspot.com/2010/08/reducing-tcp-retransmit-timeout.html
+
+Cloud networks are lossy and low latency, reducing TCP_RTO_MIN and TCP_DELACK_MIN looks like a good idea, but it looks as if this needs a linux kernel recompile. Anyone else looked at this? <br />Here is a relevant paper “Safe and Effective Fine-grained TCP Retransmissions for Datacenter Communication“<br />http://www.cs.cmu.edu/~vrv/papers/sigcomm147-vasudevan.pdf

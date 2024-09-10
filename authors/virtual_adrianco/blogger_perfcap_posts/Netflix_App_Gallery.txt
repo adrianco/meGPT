@@ -1,0 +1,4 @@
+Title: Netflix App Gallery
+URL: https://perfcap.blogspot.com/2009/05/netflix-app-gallery.html
+
+The Netflix API now has an <a href="http://www.netflix.com/AppGallery">App Gallery http://www.netflix.com/AppGallery</a> which features my Instant Queue Add for Netflix iPhone app.

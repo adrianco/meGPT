@@ -1,0 +1,18 @@
+Title: Velocity and Volume - Speed Wins - Keynote at Flowcon
+URL: https://perfcap.blogspot.com/2013/12/velocity-and-volume-speed-wins-keynote.html
+
+November 1st was the first ever Flowcon, held in San Francisco, a new event to focus on continuous delivery related development topics.<br />
+<br />
+I was honored to be asked to present as the opening keynote speaker, and I owe a big thank you to Jez Humble and Gene Kim for the invitation.<br />
+<br />
+The material I presented was less focused on Netflix related technologies than most of my talks, and instead looks at the challenges and motivations of speeding up the page of development. I also tried to provide a historical perspective of how the state of the art for software delivery has changed over the last few decades.<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://img.youtube.com/vi/wyWI3gLpB8o/0.jpg" height="266" width="320"><param name="movie" value="http://youtube.googleapis.com/v/wyWI3gLpB8o&source=uds" /><param name="bgcolor" value="#FFFFFF" /><param name="allowFullScreen" value="true" /><embed width="320" height="266"  src="http://youtube.googleapis.com/v/wyWI3gLpB8o&source=uds" type="application/x-shockwave-flash" allowfullscreen="true"></embed></object></div>
+<br />
+There was a second chance to present these slides with a bit more time a few days later, and the slides for that are linked below. There's a bit more of an introduction, and a more discussion of tools on the end, but it's basically the same message.<br />
+<br />
+<br />
+<iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/28103959?rel=0" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px;" width="427"> </iframe> <br />
+<div style="margin-bottom: 5px;">
+<strong> <a href="https://www.slideshare.net/adrianco/flowcon-added-to-for-cmg-keynote-talk-on-how-speed-wins-and-how-netflix-is-doing-continuous-delivery" target="_blank" title="Flowcon (added to for CMG) Keynote talk on how Speed Wins and how Netflix is doing Continuous Delivery">Flowcon (added to for CMG) Keynote talk on how Speed Wins and how Netflix is doing Continuous Delivery</a> </strong> from <strong><a href="http://www.slideshare.net/adrianco" target="_blank">Adrian Cockcroft</a></strong> </div>

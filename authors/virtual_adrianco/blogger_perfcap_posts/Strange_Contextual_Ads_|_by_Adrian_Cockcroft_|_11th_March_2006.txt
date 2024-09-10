@@ -1,0 +1,4 @@
+Title: Strange Contextual Ads | by Adrian Cockcroft | 11th March 2006
+URL: https://perfcap.blogspot.com/2006/03/strange-contextual-ads-by-adrian.html
+
+The eBay contextual ads seems to be fixated on the word "margin" which is not present in the content of my blog. However the CSS template that is used to host this blog contains the word margin over and over again. I think Alex needs to do a better job of filtering out formatting words before he does his context analysis....

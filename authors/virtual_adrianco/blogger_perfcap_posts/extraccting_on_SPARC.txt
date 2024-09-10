@@ -1,0 +1,4 @@
+Title: extraccting on SPARC
+URL: https://perfcap.blogspot.com/2005/05/extraccting-on-sparc.html
+
+I made it with no problems on SPARC Solaris 10 (using /usr/sfw/bin/gcc) and it seems to be working fine. The binary doesn't work on Solaris 8 because its looking for a later version SUNW_1.2 of libexacct.so.1 and I don't have a compiler on this Solaris 8 machine, so thats enough testing for today...

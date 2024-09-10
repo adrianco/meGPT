@@ -1,0 +1,4 @@
+Title: Motivation
+URL: https://perfcap.blogspot.com/2005/02/motivation.html
+
+I started this blog, but didn't get far with it last summer. I just updated it and aim to be much more active, as I'm collecting information on free performance and capacity planning tools and want a place to share it.<br /><br />For those that know me from my books, I left Sun last summer and started work at eBay in the Operations Architecture group in September 2004.

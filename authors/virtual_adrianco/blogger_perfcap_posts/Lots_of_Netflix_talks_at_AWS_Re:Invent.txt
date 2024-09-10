@@ -1,0 +1,161 @@
+Title: Lots of Netflix talks at AWS Re:Invent
+URL: https://perfcap.blogspot.com/2012/11/lots-of-netflix-talks-at-aws-reinvent.html
+
+<!--StartFragment-->
+
+<br />
+<br />
+[Update: here's video's of these talks&nbsp;<a href="http://techblog.netflix.com/2012/12/videos-of-netflix-talks-at-aws-reinvent.html">http://techblog.netflix.com/2012/12/videos-of-netflix-talks-at-aws-reinvent.html</a>&nbsp;along with slides]<br />
+<br />
+There is a Netflix booth in the expo center, we will be talking about our open source tools from <a href="http://netflix.github.com/">http://netflix.github.com</a> and collecting resumes from anyone interested in joining us.<br />
+<br />
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; mso-yfti-tbllook: 1056; width: 684px;">
+ <colgroup><col style="mso-width-source: userset; width: 137pt;" width="137"></col>
+ <col style="mso-width-source: userset; width: 158pt;" width="158"></col>
+ <col style="mso-width-source: userset; width: 389pt;" width="389"></col>
+ </colgroup><tbody>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small; font-weight: bold;">Date/Time</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small; font-weight: bold;">Presenter</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small; font-weight: bold;">Topic</span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Wed 8:30-10:00</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Reed Hastings</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Keynote with Andy</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;">
+  Jassy</span></span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Wed 1:00-1:45</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Coburn Watson</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Optimizing</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;">
+  Costs with AWS</span></span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Wed 2:05-2:55</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Kevin McEntee</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small; font-style: italic;">Netflix’s Transcoding
+  Transformation</span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Wed 3:25-4:15</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial;">Neil Hunt /</span><span style="font-family: Arial; vertical-align: baseline;"> Yury I.</span></span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Netflix:</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;">
+  Embracing the Cloud</span></span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Wed 4:30-5:20</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Adrian Cockcroft</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small; font-style: italic;">High Availability Architecture at
+  Netflix</span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Thu 10:30-11:20</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Jeremy Edberg</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small; font-style: italic;">Rainmakers – Operating Clouds</span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Thu 11:35-12:25</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Kurt Brown</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Data Science</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;">
+  with Elastic Map Reduce (EMR)</span></span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Thu 11:35-12:25</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial;">Jason</span><span style="font-family: Arial; vertical-align: baseline;"> Chan</span></span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Security Panel: Learn from</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;">
+  CISOs working with AWS</span></span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Thu 3:00-3:50</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Adrian Cockcroft</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Compute &amp; Networking</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;">
+  Masters Customer Panel</span></span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Thu 3:00-3:50</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial;">Ruslan</span><span style="font-family: Arial; vertical-align: baseline;"> M./Gregg U.</span></span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Optimizing Your Cassandra
+  Database</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;"> on
+  AWS</span></span></div>
+</td>
+ </tr>
+<tr height="27" style="height: 26.86pt; mso-height-source: userset;">
+  <td class="oa1" height="27" style="height: 26.86pt; width: 137pt;" width="137"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Thu 4:05-4:55</span></div>
+</td>
+  <td class="oa1" style="width: 158pt;" width="158"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-family: Arial; font-size: x-small;">Ariel Tseitlin</span></div>
+</td>
+  <td class="oa1" style="width: 389pt;" width="389"><div style="direction: ltr; margin-bottom: 0pt; margin-left: 0in; margin-top: 0pt; mso-line-break-override: none; punctuation-wrap: hanging; text-align: left; unicode-bidi: embed; word-break: normal;">
+<span style="font-size: x-small;"><span style="font-family: Arial; font-style: italic;">Intro</span><span style="font-family: Arial; font-style: italic; vertical-align: baseline;"> to
+  Chaos Monkey and the Simian Army</span></span></div>
+</td>
+ </tr>
+</tbody></table>
+<!--EndFragment-->

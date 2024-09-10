@@ -1,0 +1,85 @@
+Title: Looking back at 2013, with pointers to 2014
+URL: https://perfcap.blogspot.com/2013/12/looking-back-at-2013-with-pointers-to.html
+
+<br />
+I wrote a prediction post a year ago so I'm going to review and update it. Here's last year in full "<a href="http://perfcap.blogspot.com/2013/01/looking-back-at-2012-with-pointers-to.html" target="_blank">Looking back at 2012, with pointers to 2013</a>" .<br />
+<br />
+The headlines from last year, with comments and updates:<br />
+<br />
+<i>Mobile Bandwidth Greater than Fixed Bandwidth</i><br />
+This trend continues. LTE can get congested in cities, but the latest news is <a href="http://gigaom.com/2013/12/05/verizon-quietly-unleashes-its-lte-monster-tripling-4g-capacity-in-major-cities/" target="_blank">Verizon upgrading it's network</a> to have more capacity and speeds up to 100Mbit/s. I'm about to get an LTE MiFi for our house so that when we want higher speed or our local DSL gets congested, it's available, and when we go away we can take it with us. I'll keep the DSL for background connectivity, and to avoid hitting the MiFi bandwidth cap too much.<br />
+<br />
+<br />
+<i>Cutting The Cable/Satellite TV Feed</i><br />
+<br />
+We still don't have cable/satellite. I got a Google Chromecast, but it's slow and fiddly to use compared to the AppleTV, and buggy for streaming Pandora, keeps dropping the stream. The picture quality is good though.<br />
+<br />
+<br />
+<i>The Netflix Open Source Cloud Platform Got Traction</i><br />
+<br />
+We close out 2013 with 39 distinct projects at <a href="http://github.netflix.com/">github.netflix.com</a>, a successful Netflix Cloud Prize contest, endorsements from many more companies including IBM, and growing acceptance that Cloud Native is an important concept that supports highly agile continuous delivery, and NetflixOSS is an onramp that accelerates transitioning to Cloud Native.<br />
+<br />
+<br />
+<i>Netflix Cloud Architecture Presentations</i><br />
+<br />
+I presented even more than in 2012, see the slides I posted at <a href="http://www.slideshare.net/adrianco">http://www.slideshare.net/adrianco</a>. I've also got a permanent link to a full set of workshop slides at <a href="http://bit.ly/netflix-workshop">bit.ly/netflix-workshop</a>&nbsp;which is easier to remember, and lets me update the workshop slides from time to time.<br />
+<br />
+<br />
+<i>The Concept of Anti-Fragility Took Off</i><br />
+<br />
+<a href="http://www.amazon.com/Antifragile-Things-That-Disorder-ebook/dp/B0083DJWGO/ref=tmm_kin_title_0">Taleb's book</a>&nbsp;and concept&nbsp;became more accepted. Ariel Tseitlin wrote an ACM paper for Netflix on <a href="http://queue.acm.org/detail.cfm?id=2499552" target="_blank">The Antifragile Organization</a>.<br />
+<br />
+<br />
+<i>Cloud, Open Source, SaaS and the End of Enterprise Computing</i><br />
+<br />
+<div>
+"<i>During 2013 we will see if Google manages to invest heavily and execute well enough to build up a big user base.</i>"</div>
+<div>
+Google came out of beta and closed some gaps, but it's not clear that they are building up a big user base. They have their fans, and in some areas have some technical advantages, but still have a lot to prove. Other public cloud vendors didn't make much headway. Microsoft Azure remains strong in it's own ecosystem, but hasn't broken out into general use, and others are getting further behind or being bought.</div>
+<div>
+<br /></div>
+<div>
+"<i>I personally think in 2014 we will likely see [...] the scale, features and price point of AWS and Google clouds make everyone else irrelevant.</i>" I still think this is true. The 2013 Garner Magic Quadrant for IaaS didn't include Google as they were in beta, but showed AWS as dominant. It also included an estimate that AWS delivered capacity was five times bigger than the next 14 vendors combined. i.e. AWS was 85% of the market by delivered capacity (not by $ revenue). My tracking of AWS size by looking at their reserved IP address space <a href="http://bit.ly/awsiprange">bit.ly/awsiprange</a> continues to show that AWS is doubling in size every year, and has grown 10x over the last three years, reaching 5.1 million IP addresses in September 2013.<br />
+<br />
+Most big enterprise companies are actively working on their AWS rollout now. Most of them are also trying to get an in-house cloud to work, with varying amounts of success, but even the best private clouds are still years behind the feature set of public clouds, which is has a big impact on the agility and speed of product development.<br />
+<br />
+<br />
+<i>Solar Powered Electric Cars Are For Real Now</i><br />
+<br />
+Our Nissan Leaf is getting towards the end of it's three year lease, and we're replacing it with a Fiat 500e. The Fiat is smaller and lighter, but has the same size battery, so gets a bit more range. It's also cheaper and more fun to drive. During 2013 a lot of people bought Tesla Model S, including people who traded in Tesla Roadsters. We picked up a second hand 2010 Tesla Roadster with full factory warranty, and although the technology is a bit older, it's a great fun car with over 200 miles real world range for longer trips. Even with two electric cars, we still generated more electricity than we used this year, so the marginal cost of energy is still zero for our household and our gasoline spend is way down.<br />
+<br />
+<br />
+<i>Global Warming Arrived in the USA in 2012</i><br />
+<br />
+"<i>I'm going to try and re-balance my 401K retirement accounts to divest from oil companies. Many students are now<a href="http://gofossilfree.org/">pressuring their colleges</a> to divest from oil as well.</i>" I spent a few hours on Fidelity Investments web site and reduced my investments in the energy sector to a minimum. The divestment movement is also gathering momentum. The public conversation continues to shift, more extreme weather in the US and worldwide is helping, and the <a href="http://ipcc.ch/" target="_blank">IPCC</a> released an updated report.<br />
+<br />
+<br />
+<i>Twitter and Snapchat</i><br />
+<br />
+I had 6,500 followers on Twitter at the end of 2012, and I have 10,500 at the end of 2013. I correctly predicted that Snapchat would continue to grow in 2013, and it was reported that more photos are uploaded per day into Snapchat than into Facebook. Twitter had it's IPO, and is becoming part of the news and entertainment infrastructure with it's own ecosystem. I think they will figure out how to continue to grow and make money, so I bought a few shares to have skin in the game.</div>
+<div>
+<br /></div>
+<div>
+New for 2014:</div>
+<h4>
+Google Glass will have a successful public launch</h4>
+<div>
+I got Glass last summer, and have been using it a bit and letting other people try it a lot. I just got a hardware update that makes my developer set compatible with the final consumer version, and it's clear that Google is getting much closer to having a real product to launch. No-one knows the price, and that will determine how widely people get Glass, but the feature set and support is now quite interesting. There is a generational divide, in that many younger people like and want Glass, and older people are more wary or bothered by it. Trying it out in person lets people understand what it does and doesn't do, and greatly increases acceptance.</div>
+<div>
+<br /></div>
+<div>
+The Glass features that I was waiting for have mostly been addressed. The MyGlass app now supports iPhone, there is support for corporate Gmail accounts and multiple Gmail accounts on a single Glass. There is a headphone to supplement the built in speaker that was too quiet, and there will soon be prescription lens support. The last of those is the main reason I don't wear Glass every day, as I have to put in contact lenses to use it currently, and my contacts don't work as well as my glasses.</div>
+<div>
+<br /></div>
+<div>
+The ability to get personal GPS directions while walking (or cycling) is one of my favorite features. "First person" hangout support has huge potential although it's still too fiddly to setup, and needs good network bandwidth. Video use drains the battery quickly, although in normal use it lasts long enough to be useful all day. The add-on applications I have installed include Twitter, so I get notified immediately if someone mentions or DMs me; Evernote for keeping track of shared to-do lists; and Translate where you look at a sign and it makes an English version of the sign for you.</div>
+<div>
+<br /></div>
+<div>
+Voice control works better than most people expect, directions to local places is remarkably good, but voice input dictation is very random. It needs quite a lot of practice to get messages recorded that contain more than "on my way" or other simple phrases. But then I don't use Siri on my iPhone either.</div>
+<div>
+<br /></div>
+<div>
+Best wishes to everyone for 2014.</div>
+<div>
+<br /></div>

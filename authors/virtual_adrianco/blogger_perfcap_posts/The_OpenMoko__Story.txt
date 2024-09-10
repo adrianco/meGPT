@@ -1,0 +1,4 @@
+Title: The OpenMoko  Story
+URL: https://perfcap.blogspot.com/2007/03/openmoko-story.html
+
+Here is a link to the <a href="http://www.openmoko.com/files/OpenMoko_Neologics.pdf">OpenMoko slide set</a> presented at ETel. Worth a read, there is a lot of activity building around this platform at the <a href="http://www.openmoko.org/">OpenMoko community</a> site.

@@ -1,0 +1,4 @@
+Title: Usenix 08 - Tutorials and Invited Paper - Boston June 23-27
+URL: https://perfcap.blogspot.com/2008/05/usenix-08-tutorials-and-invited-paper.html
+
+<a href="http://www.usenix.org/usenix08/going"> <img src="http://www.usenix.org/events/usenix08/art/usenix08_going.jpg" border="0" width="162" height="57" alt="I'm going to USENIX '08"> </a><br /><br />I'm giving the two tutorials that I have been presenting at CMG the last few years, but at Usenix in Boston. The tutorials are the latest update of my Solaris/Linux performance metrics and tuning class, and Capacity Planning with Free Tools.<br /><br />I'm also giving an invited speaker talk on <a href="http://www.millicomputing.com">Millicomputing</a>, and have a nice big time slot, so will cover both the mobile and enterprise aspects in some depth, with time for discussion.<br /><br />I hope to see you there...

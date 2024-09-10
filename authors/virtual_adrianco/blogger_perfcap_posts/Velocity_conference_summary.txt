@@ -1,0 +1,4 @@
+Title: Velocity conference summary
+URL: https://perfcap.blogspot.com/2009/07/velocity-conference-summary.html
+
+<a href="http://radar.oreilly.com/2009/07/velocity-making-your-site-fast.html">Steve Souders writes a good summary</a> of the Velocity Conference. I'd like to present something next year, I have a few ideas already, and have been inspired to try some latency testing projects at work.

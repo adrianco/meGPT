@@ -1,0 +1,161 @@
+Title: Cloud Outage Reports
+URL: https://perfcap.blogspot.com/2012/11/cloud-outage-reports.html
+
+The detailed summaries of outages from cloud vendors are comprehensive and the response to each highlights many lessons in how to build robust distributed systems. For outages that significantly affected Netflix, the Netflix techblog report gives insight into how to effectively build reliable services on top of AWS. I've included some Google and Azure outages here because they illustrate different failure modes that should be taken into account. Recent AWS and Azure outage reports have far more detail than Google outage reports.<br />
+<br />
+I plan to collect reports here over time, and welcome links to other write-ups of outages and how to survive them. My naming convention is {vendor} {primary scope} {cause}. The scope may be global, a specific region, or a zone in the region. In some cases there are secondary impacts with a wider scope but shorter duration such as regional control planes becoming unavailable for a short time during a zone outage.<br />
+<br />
+This post was written while researching my AWS Re:Invent talk.<br />
+Slides:&nbsp;<a href="http://www.slideshare.net/AmazonWebServices/arc203-netflixha" target="_blank">http://www.slideshare.net/AmazonWebServices/arc203-netflixha</a><br />
+Video:&nbsp;<a href="http://www.youtube.com/watch?v=dekV3Oq7pH8" target="_blank">http://www.youtube.com/watch?v=dekV3Oq7pH8</a><br />
+<br />
+<hr />
+<h2>
+November 18th, 2014 - Azure Global Storage Outage</h2>
+<h4>
+Microsoft Reports</h4>
+<div>
+<a href="http://azure.microsoft.com/blog/2014/11/19/update-on-azure-storage-service-interruption/">http://azure.microsoft.com/blog/2014/11/19/update-on-azure-storage-service-interruption/</a><br />
+<br />
+<a href="http://azure.microsoft.com/blog/2014/12/17/final-root-cause-analysis-and-improvement-areas-nov-18-azure-storage-service-interruption/">http://azure.microsoft.com/blog/2014/12/17/final-root-cause-analysis-and-improvement-areas-nov-18-azure-storage-service-interruption/</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+January 10th, 2014 - Dropbox Global Outage</h2>
+<h4>
+Dropbox Report</h4>
+<div>
+<a href="https://tech.dropbox.com/2014/01/outage-post-mortem/">https://tech.dropbox.com/2014/01/outage-post-mortem/</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+April 20th, 2013 - Google Global API Outage</h2>
+<h4>
+Google Report</h4>
+<div>
+<a href="http://googledevelopers.blogspot.com/2013/05/google-api-infrastructure-outage.html">http://googledevelopers.blogspot.com/2013/05/google-api-infrastructure-outage.html</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+February 22nd, 2013 - Azure Global Outage Cert Expiry</h2>
+<h4>
+Azure Report</h4>
+<div>
+<a href="http://blogs.msdn.com/b/windowsazure/archive/2013/03/01/details-of-the-february-22nd-2013-windows-azure-storage-disruption.aspx">http://blogs.msdn.com/b/windowsazure/archive/2013/03/01/details-of-the-february-22nd-2013-windows-azure-storage-disruption.aspx</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+December 24th, 2012 - AWS US-East Partial Regional ELB State Overwritten</h2>
+<h4>
+AWS Service Event Report</h4>
+<a href="http://aws.amazon.com/message/680587/" target="_blank">http://aws.amazon.com/message/680587/</a><br />
+<h4>
+Netflix Techblog Report</h4>
+<a href="http://techblog.netflix.com/2012/12/a-closer-look-at-christmas-eve-outage.html" target="_blank">http://techblog.netflix.com/2012/12/a-closer-look-at-christmas-eve-outage.html</a><br />
+<h3>
+</h3>
+<hr />
+<h2>
+October 26th, 2012 - Google AppEngine Network Router Overload</h2>
+<h4>
+Google Outage Report</h4>
+<div>
+<a href="http://googleappengine.blogspot.com/2012/10/about-todays-app-engine-outage.html">http://googleappengine.blogspot.com/2012/10/about-todays-app-engine-outage.html</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+October 22, 2012 - AWS US-East Zone EBS Data Collector Bug</h2>
+<h4>
+AWS Outage Report</h4>
+<div>
+<a href="http://aws.amazon.com/message/680342/">http://aws.amazon.com/message/680342/</a></div>
+<div>
+<h4>
+Netflix Techblog Report</h4>
+</div>
+<div>
+<a href="http://techblog.netflix.com/2012/10/post-mortem-of-october-222012-aws.html">http://techblog.netflix.com/2012/10/post-mortem-of-october-222012-aws.html</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+June 29th 2012 -&nbsp;AWS US-East Zone Power Outage During Storm&nbsp;</h2>
+<h4>
+AWS Outage Report</h4>
+<div>
+<a href="http://aws.amazon.com/message/67457/">http://aws.amazon.com/message/67457/</a></div>
+<h4>
+Netflix Techblog Report</h4>
+<div>
+<a href="http://techblog.netflix.com/2012/07/lessons-netflix-learned-from-aws-storm.html">http://techblog.netflix.com/2012/07/lessons-netflix-learned-from-aws-storm.html</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+June 13th, 2012 - AWS US-East SimpleDB Region Outage</h2>
+<h4>
+AWS Outage Report</h4>
+<div>
+<a href="http://aws.amazon.com/message/65649/">http://aws.amazon.com/message/65649/</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+February 29th, 2012 - Microsoft Azure Global Leap-Year Outage</h2>
+<h4>
+Azure Outage Report</h4>
+<div>
+<a href="http://blogs.msdn.com/b/windowsazure/archive/2012/03/09/summary-of-windows-azure-service-disruption-on-feb-29th-2012.aspx">http://blogs.msdn.com/b/windowsazure/archive/2012/03/09/summary-of-windows-azure-service-disruption-on-feb-29th-2012.aspx</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+August 17th, 2011 - AWS EU-West Zone Power Outage</h2>
+<h4>
+AWS Outage Report</h4>
+<div>
+<a href="http://aws.amazon.com/message/2329B7/">http://aws.amazon.com/message/2329B7/</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+April 2011 - AWS US-East Zone EBS Outage</h2>
+<div>
+<h4>
+AWS Outage Report</h4>
+</div>
+<div>
+<a href="http://aws.amazon.com/message/65648/">http://aws.amazon.com/message/65648/</a></div>
+<div>
+<h4>
+Netflix Techblog Report</h4>
+</div>
+<div>
+<a href="http://techblog.netflix.com/2011/04/lessons-netflix-learned-from-aws-outage.html">http://techblog.netflix.com/2011/04/lessons-netflix-learned-from-aws-outage.html</a><br />
+<h3>
+</h3>
+<hr />
+<h2>
+February 24th, 2010 - Google App Engine Power Outage</h2>
+</div>
+<h4>
+Google Forum Report</h4>
+<div>
+<a href="https://groups.google.com/forum/#!topic/google-appengine/p2QKJ0OSLc8">https://groups.google.com/forum/#!topic/google-appengine/p2QKJ0OSLc8</a></div>
+<h3>
+</h3>
+<hr />
+<h2>
+July 20th, 2008 - AWS Global S3 Gossip Protocol Corruption</h2>
+<h4>
+AWS Outage Report</h4>
+<div style="text-align: justify;">
+<span style="color: #29303b; font-family: Georgia, Times New Roman, sans-serif; font-size: x-small;"><a href="http://status.aws.amazon.com/s3-20080720.html">http://status.aws.amazon.com/s3-20080720.html</a></span></div>
+<div style="text-align: justify;">
+<span style="color: #29303b; font-family: Georgia, Times New Roman, sans-serif; font-size: x-small;"><br /></span></div>
+<span style="background-color: #fff3db; color: #29303b; font-family: Georgia, 'Times New Roman', sans-serif; font-size: 13px; text-align: justify;"><br /></span>

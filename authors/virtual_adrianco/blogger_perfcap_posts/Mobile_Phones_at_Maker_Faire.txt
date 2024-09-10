@@ -1,0 +1,4 @@
+Title: Mobile Phones at Maker Faire
+URL: https://perfcap.blogspot.com/2007/04/mobile-phones-at-maker-faire.html
+
+The Silicon Valley Homebrew Mobile Phone Club is going to be featured at Maker Faire this May 19/20th. <a href="http://makerfaire.com/pub/e/319">One of my phone design pictures</a> was used on the site :-)<br /><br />I've also been continuing to develop the general purpose <a href="http://millicomputing.blogspot.com">millicomputing concepts and have been documenting them on my companion blog</a>. I have bought a Gumstix module for use in a phone, and I'm working on benchmarking it at the moment.

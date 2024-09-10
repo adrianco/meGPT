@@ -1,0 +1,4 @@
+Title: iPhone Tethering Review
+URL: https://perfcap.blogspot.com/2010/07/iphone-tethering-review.html
+
+Along with iOS4 and the new ATT data plans they now also support tethering. I setup my wife’s personal iPhone 3GS for tethering, and it worked fine on her work laptop with Windows XP over the USB cable (she could work from the passenger seat while we were driving freeways). You just need to have iTunes installed on the XP machine, even if that isn’t the machine that sync’s the iPhone.<br /><br />I also got Netflix to switch on tethering on my company iPhone 3GS, and I’m using it via bluetooth to my MacBook Air, easy setup and it also worked well for me.<br /><br />The downside is that you lose the unlimited data plan, but for a few dollars a month, it can be very useful.

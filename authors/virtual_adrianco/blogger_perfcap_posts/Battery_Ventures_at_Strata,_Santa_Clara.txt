@@ -1,0 +1,55 @@
+Title: Battery Ventures at Strata, Santa Clara
+URL: https://perfcap.blogspot.com/2014/02/battery-ventures-at-strata-santa-clara.html
+
+<br />
+<div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="color: black;"><span style="background-color: rgba(255, 255, 255, 0);"><a href="http://strataconf.com/strata2014">Strata</a>’s theme this year is “Making Data Work”. The conference is sold out, but some of the sessions will be available&nbsp;<a href="http://strataconf.com/strata2014/public/content/video">as a live stream</a>&nbsp;so you can follow along at home.<o:p></o:p></span></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="background-color: rgba(255, 255, 255, 0);">Battery Ventures kicked off the conference the night before, with friends and portfolio companies getting together nearby. &nbsp;For me attending Strata is a great way to keep track of what is going on in the rapidly developing Big Data space.<o:p></o:p></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="color: black;"><span style="background-color: rgba(255, 255, 255, 0);"><a href="x-apple-data-detectors://2" x-apple-data-detectors-result="2" x-apple-data-detectors-type="calendar-event" x-apple-data-detectors="true">On Wednesday at 1:30pm</a>&nbsp;Mike Dauber of Battery Ventures is moderating&nbsp;<a href="mailto:http://strataconf.com/strata2014/public/schedule/detail/33146">“Not your typical VC panel”</a>. (Follow Mike&nbsp;<a href="http://www.twitter.com/dauber">@dauber</a><span class="MsoHyperlink" style="text-decoration: underline;">)</span><o:p></o:p></span></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt 0.5in;">
+<span style="background-color: rgba(255, 255, 255, 0);"><i>A group of VCs who invest from very early, through later stage investments talk about all things Big Data. There will be no “3 Vs” discussion here. The Panelists are committed to making this a lively discussion about topics ranging from the typical (what sectors do they want to invest in) to the atypical (what’s out there that they don’t like? Which Hadoop Distros are in trouble? Should any entrepreneur care about Data Scientists?).</i><i><o:p></o:p></i></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="color: black;"><span style="background-color: rgba(255, 255, 255, 0);"><a href="x-apple-data-detectors://3" x-apple-data-detectors-result="3" x-apple-data-detectors-type="calendar-event" x-apple-data-detectors="true">On Thursday at 4:00pm</a>&nbsp;I’m a panelist in<a href="http://strataconf.com/strata2014/public/schedule/detail/33544">“The Great Debate: Technology Creates More Jobs than it Destroys”</a>. &nbsp;(Follow me<a href="http://www.twitter.com/adrianco">@adrianco</a><span class="MsoHyperlink" style="text-decoration: underline;">)</span><o:p></o:p></span></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt 0.5in;">
+<span style="background-color: rgba(255, 255, 255, 0);"><i>Is technology creating new jobs, and ridding us of drudgery? Or is it spawning an era of rampant unemployment and class divides? That’s what we’ll be debating.</i><i><o:p></o:p></i></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="background-color: rgba(255, 255, 255, 0);">Strata also features Battery Ventures portfolio companies as sponsors:<o:p></o:p></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt 0.5in;">
+<span style="color: black;"><span style="background-color: rgba(255, 255, 255, 0);"><a href="http://www.platfora.com/">Platfora</a>&nbsp;masks the complexity of Hadoop, making it easy for customers to understand all the facts in their business across events, actions, behaviors and time.<o:p></o:p></span></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt 0.5in;">
+<span style="color: black;"><span style="background-color: rgba(255, 255, 255, 0);"><a href="http://www.continuuity.com/">Continuuity</a>&nbsp;makes it easy for any Java developer to build, deploy, scale and manage Apache Hadoop and HBase applications in the cloud or on-premise.<o:p></o:p></span></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<br /></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="background-color: rgba(255, 255, 255, 0);">We look forward to catching up with everyone and finding new and interesting people and products to discuss.<o:p></o:p></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="background-color: rgba(255, 255, 255, 0);"><br /></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+Coming up next for me is a trip to the UK. I'm presenting at Cloud Expo Europe and QCon London.&nbsp;</div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="background-color: rgba(255, 255, 255, 0);"><br /></span></div>
+<div class="MsoNormal" style="margin: 0in 0in 0.0001pt;">
+<span style="background-color: rgba(255, 255, 255, 0);"><br /></span></div>
+</div>
+<span id="OLK_SRC_BODY_SECTION" style="background-color: rgba(255, 255, 255, 0);"></span><br />
+<div style="-webkit-composition-fill-color: rgba(175, 192, 227, 0.235294); -webkit-tap-highlight-color: rgba(26, 26, 26, 0.301961); -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; color: black; font-family: Calibri, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px;">
+<br /></div>
