@@ -1,6 +1,6 @@
 # meGPT - upload an author's content into an LLM
 
-I have 20 years of public content I've produced and presented over my career, and I'd like to have an LLM that is trained to answer questions and generate summaries of my opinions, in my "voice", At this point, this LLM doesn't exist, but to encourage development I have organized my public content and references to sources in this repo. For now, if you want to know my opinions on things, you have to watch all my videos and listent to my podcasts yourself!
+I have 20 years of public content I've produced and presented over my career, and I'd like to have an LLM that is trained to answer questions and generate summaries of my opinions, in my "voice", At this point, I've found a few companies that are building persona's and tried out soopra.ai. To encourage development and competition in this space I have organized my public content and references to sources in this repo.  
 
 My own content is stored or linked to in authors/virtual_adrianco and consists of:
 - 4 published books (pdf of two provided), ~10 forewords to books, ~100 blog posts (text)
@@ -50,11 +50,16 @@ For test purposes process a single kind of data from an arbitrary URL, output to
 Usage: python process.py <author> <Kind> <SubKind> <URL>
 ```
 
+# Creating a RAG based LLM Persona
+See this presentation for details on how to get RAGs to work better https://github.com/datastaxdevs/conference-2024-devoxx/
+See this issue https://github.com/adrianco/meGPT/issues/11 for my experiments using soopra.ai - currently just trained on a small subset of this content, and try it out at https://app.soopra.ai/Cockcroft/chat
+
 # Current functional status
 Build.py and process.py appear to be operating correctly.
 book_processor.py correctly downloads pdfs of books, but doesn't reliably break them into chapters.
 Each story download is going to need customized extraction, and the correct div name for The New Stack (thenewstack.io) has been added as a Subkind, and correct text content download is working for the story kind of content.
 Medium blog downloads are processed from an archive that can be requested by the author, into text files in the author's medium_posts directory.
+Blogger.com archives are processed into text files that include URLs to the original story.
 Twitter archives are processed to extract conversations from the archive, ignoring anything other than public tweets that were part of a conversation involving more than one tweet. The archive I used was saved before the naming transition from Twitter to X.
 
 # Notes
