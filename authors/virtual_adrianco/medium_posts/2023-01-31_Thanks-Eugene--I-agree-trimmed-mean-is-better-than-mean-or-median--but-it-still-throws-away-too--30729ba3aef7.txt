@@ -1,1 +1,0 @@
-Thanks Eugene, I agree trimmed mean is better than mean or median, but it still throws away too much interesting information from the distribution.

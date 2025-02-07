@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2015-12-31_Many-thanks-for-building-Guesstimate--f219b32d59ec
+
+Many thanks for building Guesstimate. I’ve been looking recently for something like this. I used a commercial Excel plugin to do this kind of analysis many years ago.

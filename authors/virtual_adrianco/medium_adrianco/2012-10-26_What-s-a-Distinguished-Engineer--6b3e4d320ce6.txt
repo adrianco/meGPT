@@ -1,0 +1,25 @@
+[URL] https://medium.com/@adrianco/2012-10-26_What-s-a-Distinguished-Engineer--6b3e4d320ce6
+
+What’s a Distinguished Engineer?
+
+A post by John Allspaw on what it means to be a senior engineer reminded me of something I put together years ago while I was a Distinguished Engineer at Sun Microsystems Inc. The question I had then from senior engineers looking at their career path was what did it take to become a Distinguished Engineer?
+
+I’ve had some more recent discussions with executives who are trying to increase talent density by attracting and retaining the best engineers in their industry, and are trying to understand the different ways to put together a distinguished engineer or fellow program.
+
+Although Sun is no more, across the industry, there are engineers who are “distinguished” and the title is used in a few places. At Sun, there were between 50 and 100 people in the role, who were mostly director level individual contributors, although there were also Sun Fellows who were VP level, and some were also line managers.
+
+I boiled it down into a few questions.
+
+First I made a list of the names of all the Sun Distinguished Engineers and Fellows, and the first question was “how many of these names do you recognize, and know what they did”. The intent is to get a baseline level of understanding of what might be expected. The list included people who invented software languages and frameworks that lots of people use, microprocessor architects, and fundamental researchers in security and networking. There were also CTOs of companies that Sun had acquired, and a few like me who mostly got in through writing books that everyone else had read.
+
+The next question is “how many of these people know who you are?”. If you think you did do something special, we would expect that the existing Distinguished Engineers would have heard of it. Since at Sun the way to become a DE involved having the existing DE and Fellows vote for you, this was critical.
+
+The final question was “how many DE and Fellows are hanging around your cube on a regular basis waiting to talk to you?”. This shows that you are the go-to person for something that matters.
+
+Translating this into a broader context, more current questions for being distinguished might be “Do the top conferences invite you to speak?”, “How many of the other invited speakers and conference organizers do you know?” and “how many know you?”. The other dimension of what you did to deserve it is nowadays a mixture of open source projects that lots of people use, or key ideas shared through books or blogs. It’s important to have been a key contributor to delivering a product, but there is extra credit if that product became well known as leading an industry trend.
+
+Here’s my original slide of Sun Microsystems Distinguished Engineers from 2002, how many of these names do you know, what did they do then and where are they now?
+
+I’m also interested to hear about similar programs at other companies.
+
+Originally published at perfcap.blogspot.com on October 26, 2012.

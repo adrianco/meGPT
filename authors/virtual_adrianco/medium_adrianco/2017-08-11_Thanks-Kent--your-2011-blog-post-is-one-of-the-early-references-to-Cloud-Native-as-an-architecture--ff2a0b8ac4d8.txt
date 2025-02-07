@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2017-08-11_Thanks-Kent--your-2011-blog-post-is-one-of-the-early-references-to-Cloud-Native-as-an-architecture--ff2a0b8ac4d8
+
+Thanks Kent, your 2011 blog post is one of the early references to Cloud Native as an architecture pattern. We’ve come a long way in tooling, but mostly these principles have become much more mainstream.

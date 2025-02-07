@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2023-05-08_It-s-hard-for-100--people-to-cooperate-together-to-build-a-monolith--but-if-you-had-10--teams-of-10--1e8d3d94809a
+
+It's hard for 100+ people to cooperate together to build a monolith, but if you had 10+ teams of 10 people deploying their own microservices it's easier to decouple and to deliver at whatever pace each team needs.

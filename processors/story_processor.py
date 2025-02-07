@@ -34,7 +34,7 @@ def download_story(url, download_dir, subkind):
     content_tags = story_div.find_all(['p', 'h1', 'h2', 'blockquote', 'li'])
 
     # List to hold each piece of text separately
-    text_chunks = []
+    text_chunks = [f"[URL]: {url}\n"]
 
     for tag in content_tags:
         # Extract text from each tag

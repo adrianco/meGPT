@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2018-06-21_Excellent-summary--c172e4aafe49
+
+Excellent summary. I published some ideas on cloud native cost optimization a few years ago. There’s a reInvent video, slideshare deck and this ACM paper http://dl.acm.org/citation.cfm?id=2693197

@@ -1,0 +1,27 @@
+[URL] https://medium.com/@adrianco/2018-04-18_Who-monitors-the-monitoring-systems--715a333f97fc
+
+Who monitors the monitoring systems?
+
+“Quis custodiet ipsos custodes?” — Juvenal
+Photo taken in Lisbon Portugal by Adrian Cockcroft
+The documentation for most monitoring tools describes how to use that tool in isolation, often as if no other tools exist, but sometimes with ways to import or export some of the data to other tools. In reality, in any non-trivial installation, there are multiple tools collecting, storing and displaying overlapping sets of metrics from many types of systems and different levels of abstraction. For each resource there’s usually an underlying or bare metal version, a virtualized resource and sometimes also a containerized resource. This is true for CPU, network, memory and storage, and also for bare metal, virtual machines, containers, processes, functions and threads.
+
+These monitoring systems provide critical observability capabilities that are needed to successfully configure, deploy, debug and troubleshoot installations and applications. In addition, for cloud native applications, a feedback loop is used to auto-scale the application resources based on metrics that report the utilization of current capacity.
+
+Monitoring systems are a critical part of any highly available system, as they are needed to detect failures and report whether users are impacted, then report whether the problem has gone away. When auto-scaling is used monitoring is also part of a critical feedback loop.
+
+What if your monitoring systems fail? You will be running blind, or your auto-scalers could be fed bad data and go out of control then take down your application. What happens if you have several monitoring systems and they disagree on a critical metric like CPU load or Network throughput? This can cause confusion and delay resolution of an incident. How do you even know when a monitoring system has failed? You need to monitor it, so how should you monitor the monitoring systems…
+
+The first thing that would be useful is to have a monitoring system that has failure modes which are uncorrelated with the infrastructure it is monitoring. For efficiency it is common to co-locate a monitoring system with the infrastructure, in the same datacenter or cloud region, but that sets up common dependencies that could cause both to fail together.
+
+One approach is to use an integrated monitoring system to efficiently gather bulk metrics and maintain the long term archive as part of the same infrastructure. Then also setup an external SaaS provider that’s not hosted in the same datacenter or region, and is monitoring a subset of metrics with a shorter retention period, to keep costs and traffic overheads under control. The SaaS provider can then also act as a monitor for the in-house systems.
+
+I don’t know of a specialized monitor-of-monitors product, which is one reason I wrote this blog post. I would want it to have plug-ins for monitoring different monitoring systems for availability and capacity because they can get overloaded easily by lots of things and lots of metrics per thing, and high rate of change of things. There are some services like latency.at or Catchpoint that will tell you whether your service is working and reachable.
+
+I also think it would be good to compare the common metrics across different monitoring systems to analyze how much variance there is. This could be done by looking for simple differences, or using a statistical technique called gauge repeatability and reproducibility. There are lots of sources of differences between tools that are trying to report the same thing. There could be bugs, virtualization faked metrics, differences in sampling and averaging algorithms, rounding errors, and timestamp offsets between tools. Summing up totals across processes or containers may not add up to the underlying host system or may add up to more than it should.
+
+I’ve seen problematic examples in the past. One is tools that accumulate CPU busy as everything except idle time, so that CPU wait time ends up being counted as busy, which is a bug. Another source of differences is that some metrics are maintained as time decayed averages, such as load average and process CPU consumption, while others are measured between two time points, like system level CPU usage. The time points at which samples are taken or the duration between samples won’t line up between two tools, so they will report different values. A third problem comes when metrics are summarized, for example averaging latency percentiles over time is mathematically meaningless, so the resulting metric will be misleading. Finally, CPU clock rates vary as the CPU gets busy or overheats, and virtualization supplies partial CPU capacity or oversubscribed CPUs such as the AWS T2 instance type, so that causes variance in CPU load and response time that isn’t related to changes in the workload.
+
+As highly available cloud native infrastructure and application workloads become more prevalent, more care needs to be taken to get the monitoring systems right, and to be sure that you are using dependable metrics to dynamically manage your environments.
+
+Thanks to Cindy Sridharan for review feedback on this post.

@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2020-10-04_Excellent-work--thanks-for-this--442e228015c8
+
+Excellent work, thanks for this. The 10Gbit network seems to be a bottleneck, what happens if you run pod to pod on the same node, or on a 100Gbit network?

@@ -1,0 +1,39 @@
+[URL] https://medium.com/@adrianco/2024-10-23_RISC-V---the-CPU-you-didn-t-know-you-already-have--ff2f385f7ec6
+
+RISC-V — the CPU you didn’t know you already have…
+Photo taken by Adrian at the RISC-V Summit Keynote
+I just attended the RISC-V Summit (Oct 22nd, 2024 at the Santa Clara Convention Center) to get up to date on the latest developments. I’ve been following processor architectures for most of my career, from when I was writing embedded code in the 1980s, through my time as a SPARC specialist at Sun Microsystems, and I gave a keynote at Usenix in 2008 where I talked about how ARM architecture (at that time in embedded and mobile phones only) would eventually end up running enterprise workloads in the datacenter, which it now does.
+
+Most people are aware of the Intel x86 based architecture that has been dominant in desktop and server systems for decades, which has now been joined by the ARM architecture in our mobile devices, in Apple’s current entire product range, cloud instance types like Graviton from AWS, supercomputers like Fugaku, and now the Grace CPU paired with GPUs in modules such as the GH200 and GB200 from NVIDIA. However most people don’t know that NVIDIA is also going to ship a billion or so RISC-V CPU cores in 2024. They are embedded in almost all the chips they make, as local control processors. They are also to be found in many of the computerized “things” you interact with in your daily life from light bulbs to cars. Why are so many embedded processors based on RISC-V? Surely that’s where ARM came from, so why isn’t everything using ARM?
+
+ARM is a technology licensing company that develops generations of CPU architectures aimed at everything from very low power embedded processors through the most powerful enterprise class CPUs. However they own the architecture, so if you want to do something fundamentally different, extend the basic designs for a specific use case, don’t want to pay licensing fees to ARM, or get into legal battles with them, people are looking for alternatives. That’s where RISC-V comes in. It’s an open design developed starting in 2010 by David Patterson’s team at Berkeley University, freely usable, kind of like Apache licensed open source software. You can fork the design and add whatever you want without paying anyone, or you can buy a supported version from a growing range of vendors such as SiFive and Andes. RISC-V ownership was transferred to a foundation in 2015, and it’s growth rates and industry support have picked up in recent years. Mainline Linux support was added in 2022, and the developer tools ecosystem is now mature enough that it’s become just another option alongside ARM. There are plenty of development boards and some RISC-V based laptops. There’s a growing library of standardized extensions to the architecture, and compliance testing to ensure software portability.
+
+One question that I had is why this didn’t happen with Sun’s SPARC, which was used as the basis of an IEEE standard, and had several commercial and research based implementations. Fujitsu used SPARC for everything from servers to embedded systems like cameras for a long time. One reason is that SPARC was also developed by David Patterson at Berkeley in the 1980s, and RISC-V was that team’s fifth try at a RISC design, moving away from some SPARC unique design decisions like register windows that turned out to be hard to optimize as transistor counts increased and CPU pipelines got more complex. Another reason is that most of the SPARC ecosystem was built around Solaris, rather than Linux, and the failure of Sun to survive and the replacement of Solaris by Linux based systems vendors took SPARC down with it. Success breeds enemies, and a dominant architecture from one vendor will cause the rest of the industry to come together around an alternative. This recurs over the years and RISC-V is driven in part by a similar reaction to the success of ARM, which was in part a reaction to the success of Intel.
+
+At the show there were many announcements (listed at the end of this post), mostly aimed at the embedded system on a chip (SoC) market. Beyond SoC one of the vendors that I find most interesting is Semidynamics, who have a flexible design for an AI and HPC oriented combined CPU/GPU/NPU (NPU is the AI specific neuron processor) that can be customized to put the silicon budget wherever you want. So for an HPC supercomputer, it could have lots of 64bit floating point vector capability, or for AI optimize for the right balance of FP8 and NPU for training or inference. There are also enterprise server oriented designs from several vendors including Alibaba’s XuanTie division, with performance comparable to leading x86 and ARM CPUs.
+
+The most interesting architecture extension I saw was CHERI, which provides fine grained memory protection and can be used to implement secure enlaves as part of a larger system.
+Photo by Adrian of posters about Codasip and Cheri at the RISC-V Expo
+Right now RISC-V is a secret ingredient in almost everyone’s daily lives. When will it become a headline ingredient that people notice? I think the key challenge is that RISC-V needs to be so much better or more cost effective than ARM that it ends up as a mainstream processor with it’s own family of cloud instances, laptops etc. It could either be a general purpose processor at a lower cost than ARM or have some novel AI capabilities built into the architecture. This is going to happen first in China, Brazil and Europe, where they don’t want to be dependent on foreign owned technology, and there is significant government investment in RISC-V.
+
+Announcements at the RISC-V Summit North America: RISC-V International announced the ratification of the RVA23 Profile Standard. The newly ratified RVA23 Profile is a major release for the RISC-V software ecosystem and will help accelerate widespread implementation among toolchains and operating systems.
+
+RISC-V Ecosystem News
+
+Andes Technology: Andes Announces the AndesCore™ 46-Series Family and the 3rd Generation Vector Processor AX46MPV with Matrix Extension
+
+Arteris: Arteris and SiFive Deliver Pre-verified Solution for the Datacenter Market
+
+Codasip: Codasip Enables Secure Linux by Donating CHERI RISC-V SDK to the CHERI Alliance
+
+Lauterbach GmbH: Lauterbach and Kernkonzept Enable Development of Virtualized RISC-V Systems
+
+Microchip Technologies: Microchip Expands 64-bit Portfolio with High-Performance, Post-Quantum Security-Enabled PIC64HX Microprocessors
+
+Qamcom: Olof Kindgren Published in Nature With Pragmatic and Harvard
+
+SEGGER Microcontroller: SEGGER’s Ozone Offers Enhanced Debugging With RISC-V Semihosting
+
+SiFive: SiFive HiFive Premier P550 Development Boards Now Shipping
+
+Tera Pines: Triton Kernel Performance on RISC-V CPU

@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2017-02-20_I-agree-with-your-point-on-outcomes--but-in-general-whoever-is-funding-developers-to-create--98d2d66efde2
+
+I agree with your point on outcomes, but in general whoever is funding developers to create business logic should in general have a reason related to an outcome they are optimizing for. The general principle I was looking at is: given that someone wants to create business logic, what’s the most effective way to do that.

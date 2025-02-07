@@ -1,1 +1,0 @@
-Thanks Kent, your 2011 blog post is one of the early references to Cloud Native as an architecture pattern. We’ve come a long way in tooling, but mostly these principles have become much more mainstream.

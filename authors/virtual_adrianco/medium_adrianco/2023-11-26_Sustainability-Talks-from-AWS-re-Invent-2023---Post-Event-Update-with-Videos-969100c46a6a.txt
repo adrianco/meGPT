@@ -1,0 +1,165 @@
+[URL] https://medium.com/@adrianco/2023-11-26_Sustainability-Talks-from-AWS-re-Invent-2023---Post-Event-Update-with-Videos-969100c46a6a
+
+Sustainability Talks from AWS re:Invent 2023 — Post Event Update with Videos and Reviews
+The Pantheon in Rome — Extremely sustainable architecture — photo by Adrian
+I wrote a medium post after AWS re:Invent 2022 summarizing the (lack of) news and all the talks related to Sustainability. The lack of progress on Scope 3 carbon reporting was picked up by Computer Weekly and the result was a statement from AWS that they are “working on it”. Google Cloud and Microsoft Azure released Scope 3 data in 2021. In their annual sustainability report in July 2023 AWS did update their list of sustainable regions to highlight 19 regions that are 100% sustainable — using an annual local market methodology for scope 1 and 2.
+
+There hasn’t been any other visible progress, and most of the people I used to work with on sustainability have now left Amazon. For re:Invent 2021 my team (but mostly Elise Greve) persuaded the re:Invent organizers to include Sustainability as a track code, and that was repeated for 2022 and now for 2023. I reported on the keynotes and announcements in real time using the #reinvent tag via my @adrianco@mastodon.social account, and as I get a chance to watch the track sessions, I’ll update this post with my thoughts. I’ve added all the videos I could find, but they are still being posted so some are missing and I’ll check again later.
+
+Energy Project Updates
+
+AWS are targeting 100% in-region renewable energy by 2025 and were at 90% globally in 2022. This is an annual net energy market methodology, and I’ve talked elsewhere about exactly what that means and how that compares with other cloud vendors. Their policy is a good one and they are investing at a very high level, as the largest commercial purchaser of renewable energy globally:
+
+We aim to have 100% of the electricity that we use to be attributable to renewable energy sources. We contract renewable power from utility-scale wind and solar projects that add clean energy to the grid. Many of these projects are enabled by long-term contracts such as power purchase agreements for large projects in the same energy grids as our electricity use.
+
+The AWS list of energy projects was quietly updated just before re:Invent, to add a bunch more, but it wasn’t mentioned in the conference keynotes. The AWS Energy team was represented by Abhishek Sharma’s SUS101 talk (video embedded in the list of talks below) that provided the basic AWS messaging, largely unchanged from when my team created it in 2021. He updated the Amazon public committed renewable energy generation project total from last year’s “over 20GW” to “over 26GW”, and reported good progress on the water usage commitment they made last year. The projects on the website aren’t a complete list, as I’ve heard that there are some that never get announced, and they are a mixture of rooftop solar and utility scale solar, wind and battery, distributed over Amazon retail, Amazon devices, and AWS. I’ve extracted the underlying data from the Amazon map display that includes rooftop solar etc, and the public AWS utility scale energy capacity list adds up to over 18GW, with excellent global coverage. The difference between 18GW and 26GW is capacity dedicated to non-AWS parts of Amazon, which is growing rapidly as the delivery fleet and fulfillment centers decarbonize. Amazon has more capacity over-all and much better global PPA coverage, including Japan, Korea, Indonesia, India and China, than Google Cloud and Microsoft Azure, who have very few PPAs in Asia. The projects are tagged by date, and some are coming online in future years. AWS policy states that they may buy unbundled renewable energy credits on the open market, and in particular in locations where they have a committed project that isn’t online yet. I think this is a good policy for limited use of RECs. I plotted the AWS capacity over time, which shows the rapid ramp up in delivered capacity and future commitments over the years:
+
+Keynotes
+
+Peter deSantis did a Monday evening technology keynote that usually has most of the sustainability related content in it. I expected an update on their water sustainability program that was announced last year, and a new number for the amount of private purchase agreement (PPA) power that Amazon has under contract. Peter had sustainability as an issue on one of his slides but didn’t mention or announce anything.
+
+The main keynote by Adam Selipsky spent a lot of time on generative AI, but also didn’t have any mention of sustainability topics.
+
+Werner’s keynote talked about sustainability, but only from the viewpoint of using cost as a proxy for optimization. This is pretty weak, as a dollar of CPU and a dollar of storage have very different carbon profiles, and customers need better ways to model and estimate actual carbon data in real time. There was a lot more more useful carbon optimization information in Steffen Grunwald’s SUS302 talk.
+
+Some of my favorite people at AWS, VPs Bill Vass, Francessca Vasquez and David Brown gave Innovation keynote talks that are worth watching.
+
+Sustainability Track Sessions and Workshops
+
+What follows are the catalog descriptions of the talks, after I’ve watched each of the videos I’ll update this post with my own commentary.
+
+ACT133/ACT134/ACT135/ACT304: AWS Sustainability Showcase — All day event at the Caesars Forum
+
+Innovation is key to achieving sustainability goals — challenges including water conservation and decarbonization of operations and energy are addressed through technologies that drive sustainable transformation. From the AWS family of custom chips such as AWS Inferentia and AWS Trainium to examples of customers using artificial intelligence (AI), machine learning (ML), and Internet of Things (IoT), visit the Sustainability Showcase to learn more about the tools available for organizations of all sizes and across all sectors to build and implement solutions that meet their sustainability goals.
+
+I visited the showcase and they had some good demos, including a public framework originally develped by Professional Services that can be used as the basis to build a carbon data collection and analysis service for a customer. There was also a demo of useful tool for figuring out all the terminology and concepts that are part of sustainability standards.
+
+ADM302: Running sustainable real-time advertising workloads in the cloud
+
+In this session for technology and engineering leaders, learn how companies are using the cloud to reduce costs and optimize performance for scaled real-time workloads while lowering their carbon footprint. Explore how these companies are bringing sustainability to the forefront of architectural designs. Speakers: John Briscoe (Annalect), Micah Walter, Rakshit Uppal (Amazon Ads), Stephanie Layser
+
+ARC204: Sustainability: Measure, optimize, and improve costs (Workshop)
+
+Building a sustainable business for your organization and the world we share is top of mind for nearly every organization. Join this workshop to delve into practical strategies for constructing and measuring sustainability key performance indicators (KPIs) while implementing sustainable serverless architectures on the AWS Cloud. Discover how to make sustainable decisions using powerful tools like AWS Graviton, Amazon CodeGuru Profiler, AWS Lambda Power Tuning, Amazon API Gateway, and AWS X-Ray, and uncover the symbiotic relationship between sustainability and overall efficiency. You must bring your laptop to participate. Speakers: Jang Whan Han, Miranda Li
+
+BIZ107: Digitizing energy management for a sustainable future with Iberdrola (sponsored by Deloitte)
+
+Iberdrola launched an Advanced Smart Assistant in May 2023, a connected energy solution that allows customers to take an active role in the energy transition. This session explores the solution, which runs on AWS with Deloitte as service provider, and how it helps reduce smart device energy consumption by 10% to 30%. Using AI/ML services, the application offers simple experiences to understand usage, consumption patterns, and areas of savings. For example, the solution makes it possible to reduce air conditioning consumption by considering the thermal inertia of the building. Learn how this development is just one of the growing strategic business lines of Iberdrola. This presentation is brought to you by Deloitte, an AWS Partner. Speakers: Guillermo Menéndez (Corral), Juan Ignacio Codoner (Deloitte Consulting SLU), Carlos Pascual Lopez (Iberdrola)
+
+BLD219: EcoEfficient: Harnessing AI for sustainable energy optimization
+
+EcoEfficient combines advanced AI tech with sustainability for efficient energy management. It demonstrates how buildings can optimize energy use and promotes cost-effective and eco-friendly strategies. EcoEfficient uses AI algorithms to optimize HVAC systems, lighting, and other energy devices by analyzing historical energy usage data, weather patterns, and occupancy levels. See the demo to understand how to create real-time energy savings and the costs and environmental benefits that arise. Speakers: Ayush Agrawal, Fraser Sequeira, Supreeth S Angadi
+
+CMP212: Sustainable compute: Reducing costs and carbon emissions with AWS
+
+Uncover the dual benefits of cost savings and sustainability with AWS compute. This session spotlights AWS compute services including AWS Graviton processors, Amazon EC2 Spot Instances, Amazon EC2 Auto Scaling, AWS Compute Optimizer, and Amazon EC2 Flex Instances, all geared toward optimizing resource use. Learn more about building sustainable and cost-efficient cloud operations that align with your business goals. Speakers: Robert McCone, Jackson Wagstaff, Sridhar Ayala (Adobe)
+
+CMP406: Reduce costs and improve sustainability with AWS Graviton (Workshop)
+
+AWS Graviton based instances can provide up to 40% better price performance over comparable current-generation instances for a wide variety of workloads, including application servers, microservices, high-performance computing, electronic design automation, gaming, open-source databases, and in-memory caches. Graviton based instances also use up to 60% less energy for the same performance than comparable Amazon EC2 instances would. In this workshop, learn how you can use Graviton based instances with AWS managed services and EC2 infrastructure including Amazon EKS, Amazon ECS, multi-architecture CI/CD pipelines, .NET Core, Amazon RDS, Amazon EMR, and Amazon OpenSearch Service. You must bring your laptop to participate. Speakers: Chad Schmutzer, Marcin Bednarz
+
+COP217: FinOps and GreenOps successes on AWS: A customer story
+
+In this lightning talk, learn about the latest chapter of Wehkamp’s AWS journey and how, after years of AWS Cloud experience, FinOps and GreenOps are driving cultural change and success in their Tech Hub. Learn about Wehkamp’s optimized use of AWS services and how the latest releases can have a positive impact on cloud costs and carbon efficiency. Join this talk to learn more about this journey toward responsible and sustainable cloud use, based on practical learnings from Wehkamp. This presentation is brought to you by Xebia, an AWS Partner.
+
+ENT226: Optimize SAP-based supply chains and improve sustainability with AI/ML
+
+Organizations in manufacturing and other industrial verticals need to position themselves to thrive despite supply chain volatility, while reducing the cost and carbon footprint of their operations. For many of these companies, SAP systems are their business process backbones. In this session, a leading telecommunications provider demonstrates how they use AWS AI/ML services including Amazon SageMaker Studio and Amazon SageMaker Data Wrangler in concert with SAP to reduce costs and energy consumption while improving demand planning accuracy. Speakers: Johan Sporre Lennberg, (Ericsson), Joe Currid, Rickard Wieselfors (Ericsson)
+
+ENT311: Build cost-optimized, sustainable, and resilient SAP systems (Workshop)
+
+In this workshop, review the AWS Well-Architected Framework to understand architectural best practices for SAP, with an emphasis on cost-optimization, resilience, and sustainability. Then, learn how to prove the resilience of mission-critical SAP workloads running on AWS by simulating common failure scenarios that can impact SAP workloads to demonstrate resilience, showing that system availability remains consistent. Finally, go through a cost and sustainability optimization exercise without impacting system availability. You must bring your laptop to participate. Speakers: khaliluddin siddiqui, Rozal Singh
+
+INO106: Driving efficiency and sustainability with AWS innovation mechanisms
+
+Globally, more priority is being given to sustainability efforts at the C-suite level. Successful sustainability programs do not just reduce an organization’s carbon footprint but also affect bottom-line costs to the business. In this session, hear how an organization utilized AWS mechanisms and services like the PRFAQ and prototyping center to drive operational efficiency and support sustainability efforts. Learn how they used AWS IoT TwinMaker to optimize manufacturing processes and provide employees with real-time visibility into utilization, traffic, and equipment status. Speakers: Irina Radu, Jason Mortensen, Juha-Matti Kuusinen
+
+MAE203: How ELF reduced their carbon footprint by broadcasting on AWS
+
+In this session, the European League of Football (ELF) shares their journey as a new sports league to adopt a built-in-the-cloud broadcasting production pipeline on AWS. By using AWS cloud-based remote production tools and infrastructure, the 2023 season saw positive impacts including lower video latency, better video quality, increased reliability, lower operational costs, and a reduction in the ELF’s carbon footprint. Learn methods for architecting media workloads efficiently in alignment with the AWS Well-Architected Framework sustainability pillar and how AWS can help with your sustainability journey. Speakers: Felix Wegner, Jason O’Malley, Zeljko Karajica (European League of Football)
+
+PRO203 | From factory to cloud: Enhancing operations & sustainability with IoT
+
+In this session, dive into Siemens Energy’s journey to using digitalization to shape its next-generation smart factories. In collaboration with AWS ProServe, Siemens Energy integrated IoT edge devices across more than 80 factories into the cloud. Explore the tangible benefits of smart factories, from improved problem-solving to increased machine uptime, which can lead to cost advantages. Learn about concrete examples demonstrating the impact of data connectivity on factory operations and Siemens Energy’s dedication to sustainability. Speakers: Guillaume Allain, Jeff Bramlett, Mario Pilz (Siemens Energy)
+
+SUP301: Continuous cost and sustainability optimization (Workshop)
+
+In this workshop, learn best practices for cost and sustainability optimization. Shift costs and sustainability responsibilities from the Cloud Center of Excellence (CCoE) to end users and application owners aided by automation and monitoring at scale. Explore how to use AWS services designed to optimize your infrastructure and your workloads with the aid of AI/ML algorithms to detect anomalies. Building upon real-world use cases, learn about cost efficiency implementing mechanisms that empower application owners to have clear, actionable tasks for cost and sustainability optimization. You must bring your laptop to participate. Speakers: Enrico Bonaccorsi, Francesc Sala
+
+SUS101: Sustainability innovation in AWS Global Infrastructure
+
+AWS is determined to make the cloud the cleanest and most energy-efficient way to run customers’ infrastructure and business. This includes providing the efficient, resilient services AWS customers expect, while minimizing their environmental footprint. In this session, learn how AWS focuses on efficiency across all aspects of its infrastructure and is innovating to find new ways to lower its carbon footprint, as it aims to reach net-zero carbon by 2040. Find out about Amazon’s progress toward powering its operations with 100 percent renewable energy, AWS’s reverse logistics program, and AWS’s commitment to being water positive by 2030. AWS speaker: Abhishek Sharma
+
+A good introduction to AWS Sustainability, if you haven’t already seen this pitch many times over the last three years (my team created it and I came up with some of the talking points and slide designs myself). There is some new data here on renewable project totals as I mentioned earlier in this post, and a progress update on water use metrics.
+
+SUS201: Using Amazon SageMaker, AutoGluon, and ASDI to predict air quality (Workshop)
+
+According to the World Health Organization (WHO), ambient air pollution leads to an estimated 4.2 million deaths per year and around 91 percent of the world’s population lives where air quality levels exceed WHO limits. In this workshop, investigate the relationship between air quality and weather using Amazon SageMaker Studio. Access open data from the Amazon Sustainability Data Initiative (ASDI) with Amazon S3 and an API to explore air quality by geography. Deploy a machine learning model that uses AutoGluon binary classification models to predict how weather features may result in unhealthy air quality. You must bring your laptop to participate. AWS speakers: Charles Roberts, Pauline Ting
+
+SUS202: Accelerate data-driven circular economy initiatives with AWS
+
+The use of digital technology to accelerate circular economy represents an opportunity to transform business operations. Yet many companies find it challenging to integrate digital technologies meaningfully into their operations, and they still rely on inefficient processes that generate unnecessary waste. In this session, SK ecoplant shares how they were able to unlock the power of digital technologies to improve natural resource management and reduce waste. Learn how SK ecoplant and AWS are collaborating to use IoT sensors to collect field data and AI to deliver water quality predictions, enhancing decision-making and delivering waste management insights. AWS speaker: Jenna Leiner, Customer speaker: Kyu Sam Om
+
+SUS203: Accelerating end-to-end supply chain transparency with AI/ML
+
+Organizations and consumers are demanding greater transparency and traceability within supply chains, while regulators are requesting that companies disclose more value chain data. In this session, learn how to build automated, serverless AWS architectures to upload, extract, process, verify, and validate supply chain documents, accelerating end-to-end supply chain transparency. Explore an implementation of this architecture with PVH, the parent company of Tommy Hilfiger and Calvin Klein. By ingesting data from suppliers and using Amazon Textract, Amazon Comprehend, and Amazon SageMaker, PVH has gained end-to-end visibility into their clothing supply chain and plans to provide visibility to their customers. AWS speaker: Laurens ten Cate, Customer speaker: Chris Verduyn
+
+SUS204: Using AI for ESG reporting and data-driven decision-making
+
+Organizations are making commitments to sustainability but face challenges in measuring and analyzing the data required to meet these goals. One of the key challenges organizations face is an ability to extract datasets from different sources. In this session, learn how AWS generative AI services power the FlexZero platform and offer a way to ingest and process carbon data using pre-existing industry standard carbon emission factors and calculations. Rehrig Pacific, a leader in supply chain solutions, shares insights on how they are accurately measuring and reporting on their carbon footprint, in collaboration with AWS and FlexZero. AWS speaker: Aditi Suresh, Customer speaker: Brian Rowe
+
+SUS205: Slowing down deforestation by using AI, ML, and open source data
+
+Organizations worldwide are developing solutions to evaluate, monitor, or predict land use and cover change in order to identify potential carbon credit projects, deforestation trends, and future wildfire risk areas. Open source geospatial AI/ML analysis, along with IoT-connected sensors, can provide near real-time data platforms built in the cloud and assist decision-making. In this session, learn how AWS has been supporting customers like the Territorial Intelligence Centre (CIT) in designing cutting-edge tools to address traceability in supply chains with deforestation risks by integrating governmental databases, innovative map services, and land-use data from high spatial resolution satellite imagery. AWS speaker: T. Luke Young, Customer speaker: Felipe Nunes
+
+SUS206: Measuring sustainability optimization of cloud workloads
+
+Optimizing cloud workloads for sustainability starts with defining metrics or KPIs that can help organizations adopt best practices recommended by the AWS Well-Architected Framework sustainability pillar. In this lightning talk, learn how to use AWS services and tools like the customer carbon footprint tool, AWS Trusted Advisor, and AWS Cost and Usage Reports to define proxy metrics and combine with business metrics to establish a show-back mechanism to evaluate and quantify the effect of the optimizations. Speakers: Deepthi Madamanchi, Raman Pujani
+
+SUS207: N/A
+
+SUS208: Building next-generation sustainability workloads with open data
+
+Future sustainability digital technologies will be driven by data, but limited access to and significant costs of acquiring sustainability datasets present a barrier to aspiring builders. Programs like Open Data on AWS provide free, publicly available datasets, accelerating sustainability innovation. In this lightning talk, find out how organizations are using open data and the broad range of AWS compute, AI/ML, and database services to build sustainability workloads in the cloud. Learn about the Natural History Museum Planetary Knowledge Base, a mission-driven research tool for understanding and addressing global biodiversity change, that was built with open data using AWS Glue, Amazon Neptune, and Amazon Neptune ML. Speakers: Sam Bydlon, Vincent Smith (Natural History Museum)
+
+SUS209: Optimizing generative AI workloads for sustainability
+
+With the increasing complexity, scale, and adoption of AI workloads, it is important to consider their environmental impact. This lightning talk provides environmental sustainability insights that are specific to large language models and how machine learning operations (MLOps) is critical to sustainable optimization. Explore practical best practices for different customization scenarios including training models from scratch, fine-tuning with additional data using full or parameter-efficient techniques, Retrieval Augmented Generation, and prompt engineering. Speakers: Isha Dua, Wafae Bakkali
+
+SUS210: Creating sustainable practices through operational excellence
+
+Creating a cloud operating model in the context of sustainability can be hard. In this lightning talk, explore the benefits to sustainable outcomes of driving a culture of operational excellence, bringing together two of the foundational pillars of the AWS Well-Architected Framework. Learn from two principal TAMs about how they help their customers build and implement sustainable IT programs. Speakers: Paul Moran, Thomas Coombs
+
+SUS211: How AWS is used to fight natural disasters and mitigate wildfire risk
+
+Technology stands as our beacon of hope, illuminating a path where disasters like wildfires are fought with innovation. By using technologies like data analytics and machine learning, AWS is empowering firefighters and organizations, like San Diego Gas & Electric, Exci, and BlackBerry AtHoc, to detect, monitor, and respond to wildfires more effectively. Organizations use drones, AI, and predictive modeling to inspect power lines and detect brush fires using cameras and satellite imagery. Through the power of cloud computing, AWS is enabling valuable insights to improve fire management strategies, ultimately aiding in the protection of lives, property, and the environment. Speakers: Rahul Sareen
+
+SUS212: How climate tech startups use AWS to drive sustainable innovation
+
+Join this lightning talk to explore how startups use the cloud to address the challenges of climate change. Hear real-world stories of how climate tech unicorns have built solutions on AWS to further their missions. Did you know that 87% of global climate and AI leaders believe AI is a helpful tool in the fight against climate change? Leave this talk knowing more about AI for climate use cases and relevant AWS programs to accelerate your journey. Be inspired by the potential of generative AI, IoT, analytics, and more to drive a sustainable future. Speaker: Ceren Tahtasiz
+
+SUS301: Renewable energy assets in the smart home: Managing demand flexibility (Workshop)
+
+In this workshop, learn how to manage demand flexibility for residential properties equipped with interconnected renewable energy assets using a digital twin, which includes an electric vehicle, solar panels, a heat pump, and battery storage. Develop strategies for efficiently managing a surge in energy production by utilizing renewable energy resources to their fullest extent while ensuring grid stability and reducing the need for grid-supplied energy. Learn how to integrate AWS services with a digital twin, explore strategies for optimizing renewable energy utilization, and understand the demand-side response in the context of variable renewable energy generation. You must bring your laptop to participate. AWS Speakers: Thomas Attree, Tamara Herbert
+
+SUS302: Sustainable architecture: Past, present, and future
+
+Since the launch of the sustainability pillar of the AWS Well-Architected Framework in 2021, the attention to environmental sustainability has grown to a key nonfunctional requirement of cloud workloads. This session revisits the pillar and its best practices. Dive deep into mechanisms and tools customers use to establish visibility of the resource and energy efficiency of their architectures and how they identify and prioritize optimizations. Through customer examples and a demo, learn how you can build a sustainability showback mechanism for your application teams and drive change. AWS speakers: Steffen Grunwald, Katja Philipp
+
+This is an excellent talk providing practical advice and demonstrating open source tooling that can be used to produce carbon accounting reports and to scan cloud formation templates to provide advice on how to be more sustainable. I co-presented the launch of the AWS Well Architected Guide for Sustainability with Steffen in 2001, and he’s a good source to reach out to for questions @steffeng@hachyderm.io.
+
+SUS303: Measuring sustainability optimization of cloud workloads
+
+Optimizing cloud workloads for sustainability starts with defining metrics or KPIs that can help organizations adopt best practices recommended by the AWS Well-Architected sustainability pillar. In this chalk talk, learn how to use AWS services and tools like the AWS Customer Carbon Footprint Tool, AWS Trusted Advisor, and AWS Cost and Usage Reports to define proxy metrics and combine with business metrics to establish a show-back mechanism to evaluate and quantify the effect of the optimizations. AWS speakers: Raman Pujani, Deepthi Madamanchi
+
+SUS304: Building next-generation sustainability workloads with open data
+
+Future sustainability digital technologies will be driven by data, but limited access to and significant costs of acquiring sustainability datasets present a barrier to aspiring builders. Programs like Open Data on AWS provide free, publicly available datasets, accelerating sustainability innovation. In this session, find out how AWS customers are using open data and AWS’s broad range of compute, AI/ML, and database services to build sustainability workloads in the cloud. Learn about the Natural History Museum Planetary Knowledge Base, a mission-driven research tool for understanding and addressing global biodiversity change, that was built with open data using AWS Glue, Amazon Neptune, and Amazon Neptune ML. AWS speaker: Sam Bydlon, Customer speaker: Vincent Smith
+
+SUS305: Optimizing generative AI workloads for sustainability
+
+With the increasing complexity, scale, and adoption of AI workloads, it is important to consider their environmental impact. This chalk talk provides environmental sustainability insights that are specific to large language models and how machine learning operations (MLOps) is critical to sustainable optimization. Explore practical best practices for different customization scenarios including training models from scratch, fine-tuning with additional data using full or parameter-efficient techniques, retrieval augmented generation, and prompt engineering. AWS speakers: Wafae Bakkali, Isha Dua
+
+WPS103: Lifesaving early warning systems and mitigation for climate disasters
+
+Every day, people around the world are impacted by the unexpected — from pandemics, to climate and human-wrought disasters, to economic crises. AWS is at the forefront of supporting public sector organizations as they adapt to natural disasters and seek to mitigate carbon emissions. Join this session for a discussion on topics such as developing early warning systems, monitoring carbon credit projects, identifying deforestation trends, and developing future wildfire risk. From floods in Central America to land cover change in Brazil, panelists share how the use the cloud to better prepare and respond to the impact of climate change.

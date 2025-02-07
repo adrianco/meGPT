@@ -1,1 +1,0 @@
-It's hard for 100+ people to cooperate together to build a monolith, but if you had 10+ teams of 10 people deploying their own microservices it's easier to decouple and to deliver at whatever pace each team needs.

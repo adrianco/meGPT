@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2017-01-04_Thanks-for-the-references-Simone--d89531bb44cf
+
+Thanks for the references Simone. However you missed Snowball Edge — which is the clusterable AWS appliance in a box you should have been talking about. Snowmobile is a sign of the huge scale of some AWS migrations but it doesn’t enable remote services like Snowball Edge and Greengrass. Also, while I’m working with the Blox team, my initial focus at AWS is to build an Open Source engagement team that works across several product and initiatives. best wishes for 2017!

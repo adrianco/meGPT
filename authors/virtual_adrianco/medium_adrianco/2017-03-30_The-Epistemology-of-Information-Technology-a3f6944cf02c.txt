@@ -1,0 +1,43 @@
+[URL] https://medium.com/@adrianco/2017-03-30_The-Epistemology-of-Information-Technology-a3f6944cf02c
+
+The Epistemology of Information Technology
+
+Compliance teams and auditors are fighting a losing battle as they try to know the un-knowable with their never-consistent CMDB
+Sometimes there are gaps in things you would like to depend on, like this road on my commute to work
+Which questions have answers? What would you like to know about your infrastructure and applications, what can you know and what do you need to know?
+Epistemology is the study of knowledge, and how we know what is knowable.
+Take a look at your datacenter, perhaps someone sold you a CMDB (Configuration Management Database) a few years ago, promising to help you keep track of the state of your infrastructure and applications, how did that work out? It turns out that CMDBs are never-consistent databases.
+The only thing you can guarantee is that the state of the datacenter will always be different from what the CMDB tells you.
+In theory your CMDB is supposed to record exactly where every piece of infrastructure is located, its asset record, and history, but I’ve never heard of a clean physical audit result in practice.
+
+Here’s a more typical scenario: there are things in your datacenter that no-one has any record or recollection of, what they do or how they got there. There are things that are powered down, so your network scans don’t find them. There are things that are powered up, but not connected to anything, or in a crashed/un-booted state. There are production services running on systems being used as foot-rests under office desks, that you think are in the datacenter.
+
+Your software installations don’t match their actual licensed usage. There are systems that were moved between racks and reconfigured during the scramble to recover during an outage a few years ago. There is a datacenter population of rogue Wifi interfaces, service modems, USB flash drives etc.
+
+I know of one datacenter that was declared “full” and unable to take more deployments. After a full physical audit, over six hundred idle, unallocated servers were uncovered, and a lot of free space created by clearing out obsolete equipment.
+
+This is a bit of a problem, because you would really like to be able to make a few strong assertions about the state of your IT. Here’s just a few examples:
+
+The attack surface of this entire datacenter building consists only of this set of IP addresses.
+
+This is a tamper-free log of every role that has made any production change since the last audit.
+
+I know where every cable goes, the exact network topology.
+
+Here is the configuration of the virtual machine (that no longer exists) which wrote this interesting log entry last Thursday at 8:43pm.
+
+For many organizations a messy datacenter is just an inconvenience, and some “spring cleaning” now and again is enough to clean up the worst of the mess. However in regulated industries, a compliance or risk management team will be trying to maintain conformance to policies and controls so that when the external auditor visits, they can pass without too many variances to fix.
+
+The auditor has a clip-board, a list of questions, and interviews people to make sure that they are filing tickets for changes, and processing the tickets according to policy. The compliance team and auditor are fighting a losing battle, as they are trying to know the un-knowable, but they do their best, with their never-consistent CMDB, trying to slow down the rate of change, so they can keep up.
+
+It gets worse! The “digital transformation” arrives with a collection of new buzzwords. The business needs a large scale globally distributed AWS cloud based microservices “system of engagement”, that connects them directly to their customers, and wants to move from agile to continuous delivery and DevOps practices.
+
+Ephemeral infrastructure and applications change continuously and the CMDB collapses under the load. In addition developers want to use API driven automation to create infrastructure rather than file tickets. Some of the auditors and compliance team start counting the years to retirement, but others dig in to the new world, and start to realize that rather than losing control, they may be some new capabilities they can leverage.
+
+I was in an executive briefing session with the IT team from a new AWS customer, a very large organization, and one of the team was in charge of security and compliance, and looked worried. I asked if they had looked at the AWS CloudTrail audit system yet, and pointed out that they could get a record of every change to every account, from empty new account to any point in time. He perked up a bit as this sank in.
+
+That could be fed into a CMDB, but really it just needs to be queried, so you could stream it to Amazon ElasticSearch or Splunk. Also AWS Identity and Access Management roles can be used to control who can do what, and have the action, role and identity of the user for every change recorded into AWS CloudTrail. He starts to look happier, and asks what the auditors would think about those logs? Well, the logs are written into an S3 bucket, you can search them directly with Amazon Athena and you can provide a secure key that proves they haven’t been tampered with.
+
+Check aws.amazon.com/compliance to see how AWS features and services meet SOC1, HIPPA, PCI-DSS and many other compliance standards around the world. Help with best practices is available from AWS and partners.
+
+While many companies are already running highly regulated applications on AWS, it’s still early days. There is still a large inventory of datacenter applications that AWS is helping to migrate. However, if we think about where we will end up over the next few years, as auditors get used to being able to know exactly what is going on in an AWS account, it’s going to become increasingly difficult to pass an audit in a datacenter.

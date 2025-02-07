@@ -1,0 +1,3 @@
+[URL] https://medium.com/@adrianco/2023-01-31_Thanks-Eugene--I-agree-trimmed-mean-is-better-than-mean-or-median--but-it-still-throws-away-too--30729ba3aef7
+
+Thanks Eugene, I agree trimmed mean is better than mean or median, but it still throws away too much interesting information from the distribution.
