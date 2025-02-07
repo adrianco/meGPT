@@ -26,7 +26,7 @@ To use this repo, clone it to a local disk, setup the python environment, run th
 ```
 git clone https://github.com/adrianco/megpt.git
 cd megpt
-python -m venv venv
+python3 -m venv venv
 ```
 Windows:
 ```
@@ -52,18 +52,18 @@ Usage: python process.py <author> <Kind> <SubKind> <URL>
 
 # Creating a RAG based LLM Persona
 See this presentation for details on how to get RAGs to work better https://github.com/datastaxdevs/conference-2024-devoxx/
-See this issue https://github.com/adrianco/meGPT/issues/11 for my experiments using soopra.ai - currently just trained on a small subset of this content, and try it out at https://app.soopra.ai/Cockcroft/chat
+See this issue https://github.com/adrianco/meGPT/issues/11 for my experiments using soopra.ai - currently trained on a subset of this content, and try it out at https://app.soopra.ai/Cockcroft/chat
 
 # Current functional status
 Build.py and process.py appear to be operating correctly.
-book_processor.py correctly downloads pdfs of books, but doesn't reliably break them into chapters.
+book_processor.py correctly downloads pdfs of books, and extracts page ranges so that relevant sections can be picked out, or mutiple authors can be separated.
 Each story download is going to need customized extraction, and the correct div name for The New Stack (thenewstack.io) has been added as a Subkind, and correct text content download is working for the story kind of content.
 Medium blog downloads are processed from an archive that can be requested by the author, into text files in the author's medium_posts directory.
 Blogger.com archives are processed into text files that include URLs to the original story.
 Twitter archives are processed to extract conversations from the archive, ignoring anything other than public tweets that were part of a conversation involving more than one tweet. The archive I used was saved before the naming transition from Twitter to X.
 
 # Notes
-I have been assembling my content for a while, and will update the references table now and again https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/published_content.csv
+I have been assembling my content for a while, and will update the references table and medium download now and again https://github.com/adrianco/meGPT/blob/main/authors/virtual_adrianco/published_content.csv
 
 YouTube videos have transcripts with index offsets into the video itself but the transcript quality isn't good, and they can only be read via API by the owner of the video. It's easier to download videos with pytube and process them with whisper to generate more curated transcripts that identify when the author is talking if there is more than one speaker.
 
