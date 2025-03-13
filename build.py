@@ -1,8 +1,9 @@
 import os
 import sys
 import csv
-import subprocess
+import shutil
 import json
+import subprocess  # Added import
 from pathlib import Path
 
 def load_state(state_file):
@@ -51,25 +52,43 @@ def process_author(author):
                 print(f"Skipping {url} as it has already been processed.")
                 continue
 
-            processor_script = Path(f"processors/{kind}_processor.py")
-            if not processor_script.exists():
-                print(f"No processor found for kind {kind}. Skipping.")
-                continue
+            source_path = Path(url)
 
-            try:
-                print(f"Processing {url} with kind {kind} and subkind {subkind}...")
-                subprocess.run(
-                    [sys.executable, str(processor_script), url, str(download_dir), subkind],
-                    check=True
-                )
-                print(f"Successfully processed {url}.")
-
-                # Update state
+            if source_path.exists():
+                try:
+                    if source_path.is_file():
+                        shutil.copy(source_path, download_dir / source_path.name)
+                        print(f"Copied file {source_path} to {download_dir}")
+                    elif source_path.is_dir():
+                        for file in source_path.iterdir():
+                            if file.is_file():
+                                shutil.copy(file, download_dir / file.name)
+                        print(f"Copied all files from {source_path} to {download_dir}")
+                except Exception as e:
+                    print(f"Error copying files from {source_path}: {e}")
                 state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
                 save_state(state_file, state)
+                continue
 
-            except subprocess.CalledProcessError as e:
-                print(f"Error processing {url} with kind {kind}: {e}")
+            if kind == "file":
+                print(f"Skipping processing for kind 'file'. Only copying was performed.")
+                continue
+
+            processor_script = Path(f"processors/{kind}_processor.py")
+            if processor_script.exists():
+                try:
+                    print(f"Processing {url} with kind {kind} and subkind {subkind}...")
+                    subprocess.run(
+                        [sys.executable, str(processor_script), url, str(download_dir), subkind],
+                        check=True
+                    )
+                    print(f"Successfully processed {url}.")
+                    state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
+                    save_state(state_file, state)
+                except subprocess.CalledProcessError as e:
+                    print(f"Error processing {url} with kind {kind}: {e}")
+            else:
+                print(f"No processor found for kind {kind}. Skipping.")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

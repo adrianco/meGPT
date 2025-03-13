@@ -24,6 +24,16 @@
         "kind": "story",
         "subkind": ""
     },
+    "./authors/virtual_adrianco/medium_adrianco/_file_": {
+        "url": "./authors/virtual_adrianco/medium_adrianco/",
+        "kind": "file",
+        "subkind": ""
+    },
+    "./authors/virtual_adrianco/blogger_perfcap_posts/_file_": {
+        "url": "./authors/virtual_adrianco/blogger_perfcap_posts/",
+        "kind": "file",
+        "subkind": ""
+    },
     "https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/_story_tns-post-body-content": {
         "url": "https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/",
         "kind": "story",
@@ -63,15 +73,5 @@
         "url": "https://thenewstack.io/cloud-pue-comparing-aws-azure-and-gcp-global-regions/",
         "kind": "story",
         "subkind": "tns-post-body-content"
-    },
-    "https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/medium_adrianco_textfiles_": {
-        "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/medium_adrianco",
-        "kind": "textfiles",
-        "subkind": ""
-    },
-    "https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/blogger_perfcap_posts_textfiles_": {
-        "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/blogger_perfcap_posts",
-        "kind": "textfiles",
-        "subkind": ""
     }
 }

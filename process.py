@@ -1,35 +1,62 @@
 import sys
 import subprocess
+import shutil
 from pathlib import Path
 
 def process_content(author, kind, subkind, url):
     """
     Process content based on author, kind, subkind, and URL.
     
+    If the URL is a file path, copy it to the author's download directory.
+    If the URL is a directory, copy all its files to the download directory.
+    If the kind is "file", only copy the file(s) and do not process them.
+    Otherwise, process it using the corresponding processor script.
+    
     :param author: The author name
     :param kind: The kind of content
     :param subkind: The subkind of content
-    :param url: The URL of the content
+    :param url: The URL or file path of the content
     """
     download_dir = Path(f"downloads/{author}")
     processor_script = Path(f"processors/{kind}_processor.py")
-
-    if not processor_script.exists():
-        print(f"No processor found for kind {kind}.")
-        return
+    source_path = Path(url)
 
     # Ensure download directory exists
     download_dir.mkdir(parents=True, exist_ok=True)
 
-    try:
-        print(f"Processing {url} with kind {kind} and subkind {subkind} for author {author}...")
-        subprocess.run(
-            [sys.executable, str(processor_script), url, str(download_dir), subkind],
-            check=True
-        )
-        print(f"Successfully processed {url} for author {author}.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error processing {url} with kind {kind} for author {author}: {e}")
+    if source_path.exists():
+        if source_path.is_file() or source_path.is_dir():
+            # If URL is actually a local file path or directory, copy it
+            try:
+                if source_path.is_file():
+                    shutil.copy(source_path, download_dir / source_path.name)
+                    print(f"Copied file {source_path} to {download_dir}")
+                elif source_path.is_dir():
+                    for file in source_path.iterdir():
+                        if file.is_file():
+                            shutil.copy(file, download_dir / file.name)
+                    print(f"Copied all files from {source_path} to {download_dir}")
+            except Exception as e:
+                print(f"Error copying files from {source_path}: {e}")
+            return
+    
+    if kind == "file":
+        print(f"Skipping processing for kind 'file'. Only copying was performed.")
+        return
+    
+    if processor_script.exists():
+        # Otherwise, process as usual
+        try:
+            print(f"Processing {url} with kind {kind} and subkind {subkind} for author {author}...")
+            subprocess.run(
+                [sys.executable, str(processor_script), url, str(download_dir), subkind],
+                check=True
+            )
+            print(f"Successfully processed {url} for author {author}.")
+        except subprocess.CalledProcessError as e:
+            print(f"Error processing {url} with kind {kind} for author {author}: {e}")
+    else:
+        print(f"No processor found for kind {kind}.")
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:

@@ -33,8 +33,8 @@ book,,Sun Performance and Tuning: SPARC and Solaris,Prentice Hall - adrianco,199
 story,,Microservices and DevOps,Infoq Charles Humble,7/11/2014,https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/
 story,,High availability,Richard Seroter on Infoq,,https://www.infoq.com/articles/cockcroft-high-availability/
 story,,Failing Over Without Falling Over,Stackoverflow,2020,https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
-textfiles,,Lots of blog post text extracted from medium archive,Directory created by code/medium_posts.py,2025,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/medium_adrianco
-textfiles,,Lots of blog post text extracted from blogger archive,Directory created by code/extract_blogger_posts.py,2014,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/blogger_perfcap_posts
+file,,Lots of blog post text extracted from medium archive,Directory created by code/medium_posts.py,2025,./authors/virtual_adrianco/medium_adrianco/
+file,,Lots of blog post text extracted from blogger archive,Directory created by code/extract_blogger_posts.py,2014,./authors/virtual_adrianco/blogger_perfcap_posts/
 youtube,,Adrian Cockcroft Appearance Playlist on YouTube,Many different accounts - technical content,,https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5
 story,tns-post-body-content,Enterprise Indigestion at NVIDIA GTC,The New Stack,2024,https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/
 story,,SC23 update,InsideHPC,2023,https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/
