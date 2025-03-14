@@ -1,3 +1,35 @@
+"""
+Build Script
+
+Purpose:
+This script automates the process of building and processing various types of content files. 
+It ensures that different content sources (such as text files, PDFs, and other structured data) 
+are correctly processed and saved in the appropriate output format.
+
+Key Design Choices:
+- Supports multiple content types and processing workflows.
+- Uses a common calling convention to integrate with other processor scripts.
+- Fetches and processes content from specified URLs or local directories.
+- Handles text, PDFs, and potentially other formats in a modular way.
+- Implements error handling for missing files, inaccessible URLs, and unexpected data formats.
+- Allows debugging mode for deeper inspection of intermediate processing steps.
+
+Important Considerations:
+- The script must correctly determine which processor to use based on file type or user input.
+- Network failures or missing resources should not halt the entire process.
+- Processing logic may need to be extended to support new content types in the future.
+- The script should maintain compatibility with the overall system's workflow and expected outputs.
+
+Usage:
+    build.py <source_url_or_path> <output_dir> <subkind>
+Example:
+    build.py https://example.com/content/ ./output debug
+
+Instruction:
+This comment provides essential context for the script. If this script is used in a new chat session, 
+this comment should be retained to preserve understanding without needing prior conversation.
+"""
+
 import os
 import sys
 import csv

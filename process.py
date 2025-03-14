@@ -1,3 +1,24 @@
+"""
+process.py - Processes content for a given author by either copying files or invoking a processor script.
+
+Key Features:
+- Accepts an author name, content kind, subkind, and a URL or file path as input.
+- If the URL is a local file, copies it to the author's "downloads" directory.
+- If the URL is a local directory, copies all its files to the "downloads" directory.
+- If the kind is "file", only copies the file(s) without further processing.
+- If a processor script exists in "processors/" for the specified kind, executes it with the provided arguments.
+
+Important Considerations:
+- Ensure processor scripts exist in "processors/" for non-"file" kinds.
+- Handles errors gracefully, logging issues instead of stopping execution.
+- This script is designed to be invoked via the command line.
+- Usage: `process.py <author> <kind> <subkind> <url>`
+
+Instruction:
+Keep this comment updated if modifying the script to reflect changes in behavior or functionality.
+"""
+
+
 import sys
 import subprocess
 import shutil

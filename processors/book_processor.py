@@ -1,3 +1,25 @@
+"""
+PDF Processor Script
+
+Purpose:
+This script downloads a PDF from a specified URL, extracts selected page ranges, and saves the extracted content to a new file.
+After extraction, the original downloaded file is deleted to save space.
+
+Key Design Choices:
+- Uses `requests` to download the PDF from a given URL.
+- Extracts specified page ranges based on user input.
+- Saves the extracted content in a new PDF file with a name derived from the original file.
+- Automatically deletes the downloaded PDF file after extraction to prevent clutter.
+
+Important Considerations:
+- Page ranges must be provided in a valid format (e.g., "1-4,8-22,83-").
+- A trailing '-' in the range means including pages until the end.
+- Invalid page numbers are skipped with a warning.
+- Requires `PyPDF2` for handling PDFs.
+
+This instruction block should always be included at the top of the script to maintain context for future modifications.
+"""
+
 import sys
 import re
 import requests

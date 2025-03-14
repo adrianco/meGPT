@@ -1,3 +1,26 @@
+"""
+story_processor.py
+
+This script downloads and processes web articles, extracting content based on a specified 
+<div> ID (subkind) or saving the entire webpage as a PDF if no subkind is provided.
+
+Key Features:
+- If a subkind (div ID) is provided, extracts the text from that section and saves it as a UTF-8 encoded .txt file.
+- If no subkind is specified, saves the entire webpage as a PDF, preserving text structure.
+- Handles Unicode characters safely, preventing encoding errors.
+- Ensures filenames are sanitized to avoid OS-related issues.
+- Uses BeautifulSoup for HTML parsing and FPDF for PDF generation.
+
+Usage:
+    python story_processor.py <url> <download_dir> [subkind]
+
+Dependencies:
+    pip install requests beautifulsoup4 fpdf
+
+    This instruction block should always be included at the top of the script to maintain context for future modifications.
+"""
+
+
 import sys
 import requests
 from bs4 import BeautifulSoup
