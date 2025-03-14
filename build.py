@@ -16,6 +16,7 @@ Key Design Choices:
 - Maintains state.json in the download directory to track processed content.
 - Creates JSON files for content types without dedicated processors for later processing.
 - Sanitizes filenames by replacing all non-alphanumeric characters with underscores.
+- Organizes output into subdirectories named after each kind of data.
 
 Important Considerations:
 - The script must correctly determine which processor to use based on file type or user input.
@@ -24,6 +25,7 @@ Important Considerations:
 - The script should maintain compatibility with the overall system's workflow and expected outputs.
 - When no processor exists for a content type, data is preserved in JSON format using the 'What' field for naming.
 - The published_content.csv file must have the header: Kind,SubKind,What,Where,Published,URL
+- Output is organized in subdirectories by content kind (e.g., downloads/author/blog/, downloads/author/tweet/).
 
 Usage:
     build.py <author>
@@ -33,9 +35,9 @@ Example:
 Process Flow:
 1. The script reads from the author's published_content.csv file
 2. For each content item, it checks if it's already been processed (via state.json)
-3. If a local file/directory is found, it copies the files to the download directory
+3. If a local file/directory is found, it copies the files to the kind-specific subdirectory
 4. For other content types, it attempts to find and use a matching processor script
-5. If no processor exists, it creates a JSON file with all the CSV row fields for later processing
+5. If no processor exists, it creates a JSON file with all the CSV row fields in the kind-specific subdirectory
 
 Instruction:
 This comment provides essential context for the script. If this script is used in a new chat session, 
@@ -93,6 +95,10 @@ def process_author(author):
             subkind = row.get('SubKind', '').strip()  # Read SubKind
             what = row.get('What', '').strip()  # Get the 'What' field for filename (corrected case)
 
+            # Create kind-specific subdirectory
+            kind_dir = download_dir / sanitize_filename(kind.lower())
+            kind_dir.mkdir(parents=True, exist_ok=True)
+
             # If 'What' field is empty, use a fallback naming strategy
             if not what:
                 what = f"{kind}_{sanitize_filename(url)}"
@@ -112,13 +118,13 @@ def process_author(author):
             if source_path.exists():
                 try:
                     if source_path.is_file():
-                        shutil.copy(source_path, download_dir / source_path.name)
-                        print(f"Copied file {source_path} to {download_dir}")
+                        shutil.copy(source_path, kind_dir / source_path.name)
+                        print(f"Copied file {source_path} to {kind_dir}")
                     elif source_path.is_dir():
                         for file in source_path.iterdir():
                             if file.is_file():
-                                shutil.copy(file, download_dir / file.name)
-                        print(f"Copied all files from {source_path} to {download_dir}")
+                                shutil.copy(file, kind_dir / file.name)
+                        print(f"Copied all files from {source_path} to {kind_dir}")
                 except Exception as e:
                     print(f"Error copying files from {source_path}: {e}")
                 state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
@@ -133,8 +139,9 @@ def process_author(author):
             if processor_script.exists():
                 try:
                     print(f"Processing {url} with kind {kind} and subkind {subkind}...")
+                    # Pass the kind_dir instead of download_dir to the processor
                     subprocess.run(
-                        [sys.executable, str(processor_script), url, str(download_dir), subkind],
+                        [sys.executable, str(processor_script), url, str(kind_dir), subkind],
                         check=True
                     )
                     print(f"Successfully processed {url}.")
@@ -148,7 +155,7 @@ def process_author(author):
                 
                 # Create a valid filename from the 'What' field (replace all punctuation)
                 json_filename = f"{sanitize_filename(what)}.json"
-                json_file_path = download_dir / json_filename
+                json_file_path = kind_dir / json_filename
                 
                 # Save all fields from the CSV row to the JSON file
                 with open(json_file_path, 'w', encoding='utf-8') as f:
