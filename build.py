@@ -13,17 +13,29 @@ Key Design Choices:
 - Handles text, PDFs, and potentially other formats in a modular way.
 - Implements error handling for missing files, inaccessible URLs, and unexpected data formats.
 - Allows debugging mode for deeper inspection of intermediate processing steps.
+- Maintains state.json in the download directory to track processed content.
+- Creates JSON files for content types without dedicated processors for later processing.
+- Sanitizes filenames by replacing all non-alphanumeric characters with underscores.
 
 Important Considerations:
 - The script must correctly determine which processor to use based on file type or user input.
 - Network failures or missing resources should not halt the entire process.
 - Processing logic may need to be extended to support new content types in the future.
 - The script should maintain compatibility with the overall system's workflow and expected outputs.
+- When no processor exists for a content type, data is preserved in JSON format using the 'What' field for naming.
+- The published_content.csv file must have the header: Kind,SubKind,What,Where,Published,URL
 
 Usage:
-    build.py <source_url_or_path> <output_dir> <subkind>
+    build.py <author>
 Example:
-    build.py https://example.com/content/ ./output debug
+    build.py virtual_adrianco
+
+Process Flow:
+1. The script reads from the author's published_content.csv file
+2. For each content item, it checks if it's already been processed (via state.json)
+3. If a local file/directory is found, it copies the files to the download directory
+4. For other content types, it attempts to find and use a matching processor script
+5. If no processor exists, it creates a JSON file with all the CSV row fields for later processing
 
 Instruction:
 This comment provides essential context for the script. If this script is used in a new chat session, 
@@ -35,7 +47,8 @@ import sys
 import csv
 import shutil
 import json
-import subprocess  # Added import
+import subprocess
+import re  # Added for regex pattern matching
 from pathlib import Path
 
 def load_state(state_file):
@@ -47,6 +60,11 @@ def load_state(state_file):
 def save_state(state_file, state):
     with open(state_file, 'w') as f:
         json.dump(state, f, indent=4)
+
+def sanitize_filename(filename):
+    """Replace all punctuation and special characters with underscores."""
+    # Replace any character that is not alphanumeric or underscore with an underscore
+    return re.sub(r'[^\w]', '_', filename)
 
 def process_author(author):
     # Define paths
@@ -73,6 +91,11 @@ def process_author(author):
             url = row['URL'].strip()
             kind = row['Kind'].strip()
             subkind = row.get('SubKind', '').strip()  # Read SubKind
+            what = row.get('What', '').strip()  # Get the 'What' field for filename (corrected case)
+
+            # If 'What' field is empty, use a fallback naming strategy
+            if not what:
+                what = f"{kind}_{sanitize_filename(url)}"
 
             if not url:  # Skip empty URL
                 print(f"Skipping empty URL for kind {kind}.")
@@ -120,7 +143,22 @@ def process_author(author):
                 except subprocess.CalledProcessError as e:
                     print(f"Error processing {url} with kind {kind}: {e}")
             else:
-                print(f"No processor found for kind {kind}. Skipping.")
+                # Instead of just skipping, create a JSON file with all fields from the CSV
+                print(f"No processor found for kind {kind}. Creating JSON file for later processing.")
+                
+                # Create a valid filename from the 'What' field (replace all punctuation)
+                json_filename = f"{sanitize_filename(what)}.json"
+                json_file_path = download_dir / json_filename
+                
+                # Save all fields from the CSV row to the JSON file
+                with open(json_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(row, f, indent=4)
+                    
+                print(f"Created JSON file: {json_file_path}")
+                
+                # Update state to indicate we've processed this item
+                state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
+                save_state(state_file, state)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
