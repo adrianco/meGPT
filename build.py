@@ -52,7 +52,7 @@ def process_author(author):
     # Define paths
     author_dir = Path(f"authors/{author}")
     download_dir = Path(f"downloads/{author}")
-    state_file = author_dir / "state.json"
+    state_file = download_dir / "state.json"
     content_csv = author_dir / "published_content.csv"
 
     # Ensure directories exist

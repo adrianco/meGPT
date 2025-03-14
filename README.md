@@ -39,6 +39,12 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+
+If any additional packages are installed during development, regenerate requirements via
+```
+pip freeze > requirements.txt
+```
+
 Run the build script
 ```
 Usage: build.py <author>
