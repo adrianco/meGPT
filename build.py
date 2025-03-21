@@ -68,7 +68,7 @@ def sanitize_filename(filename):
     # Replace any character that is not alphanumeric or underscore with an underscore
     return re.sub(r'[^\w]', '_', filename)
 
-def process_author(author):
+def process_author(author, specific_kind=None):
     # Define paths
     author_dir = Path(f"authors/{author}")
     download_dir = Path(f"downloads/{author}")
@@ -78,7 +78,7 @@ def process_author(author):
     # Ensure directories exist
     download_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load previous state
+    # Load previous state - always load it for updates
     state = load_state(state_file)
 
     # Read CSV
@@ -93,7 +93,11 @@ def process_author(author):
             url = row['URL'].strip()
             kind = row['Kind'].strip()
             subkind = row.get('SubKind', '').strip()  # Read SubKind
-            what = row.get('What', '').strip()  # Get the 'What' field for filename (corrected case)
+            what = row.get('What', '').strip()  # Get the 'What' field for filename
+
+            # Skip if processing specific kind and this row doesn't match
+            if specific_kind and kind.lower() != specific_kind.lower():
+                continue
 
             # Create kind-specific subdirectory
             kind_dir = download_dir / sanitize_filename(kind.lower())
@@ -107,9 +111,9 @@ def process_author(author):
                 print(f"Skipping empty URL for kind {kind}.")
                 continue
 
-            # Check if already processed
+            # Check if already processed - only if not processing a specific kind
             state_key = f"{url}_{kind}_{subkind}"  # Include SubKind in state key
-            if state.get(state_key):
+            if not specific_kind and state.get(state_key):
                 print(f"Skipping {url} as it has already been processed.")
                 continue
 
@@ -127,6 +131,8 @@ def process_author(author):
                         print(f"Copied all files from {source_path} to {kind_dir}")
                 except Exception as e:
                     print(f"Error copying files from {source_path}: {e}")
+                
+                # Always update state regardless of specific_kind
                 state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
                 save_state(state_file, state)
                 continue
@@ -139,12 +145,21 @@ def process_author(author):
             if processor_script.exists():
                 try:
                     print(f"Processing {url} with kind {kind} and subkind {subkind}...")
+                    
+                    # Set default subkind for podcast processor if it's empty
+                    effective_subkind = subkind
+                    if kind.lower() == "podcast" and not subkind:
+                        effective_subkind = "episode"
+                        print(f"Using default subkind 'episode' for podcast URL: {url}")
+                    
                     # Pass the kind_dir instead of download_dir to the processor
                     subprocess.run(
-                        [sys.executable, str(processor_script), url, str(kind_dir), subkind],
+                        [sys.executable, str(processor_script), url, str(kind_dir), effective_subkind],
                         check=True
                     )
                     print(f"Successfully processed {url}.")
+                    
+                    # Always update state regardless of specific_kind
                     state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
                     save_state(state_file, state)
                 except subprocess.CalledProcessError as e:
@@ -163,19 +178,26 @@ def process_author(author):
                     
                 print(f"Created JSON file: {json_file_path}")
                 
-                # Update state to indicate we've processed this item
+                # Always update state regardless of specific_kind
                 state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
                 save_state(state_file, state)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: build.py <author>")
+    if len(sys.argv) < 2 or len(sys.argv) > 3:
+        print("Usage: build.py <author> [kind]")
+        print("  - author: The author name to process content for")
+        print("  - kind (optional): Process only content of this specific kind")
         sys.exit(1)
 
     author_name = sys.argv[1]
-    print(f"Building content for author: {author_name}")
+    specific_kind = sys.argv[2] if len(sys.argv) == 3 else None
+    
+    if specific_kind:
+        print(f"Building {specific_kind} content for author: {author_name} (ignoring state checks for processing)")
+    else:
+        print(f"Building all content for author: {author_name}")
 
     try:
-        process_author(author_name)
+        process_author(author_name, specific_kind)
     except Exception as e:
         print(f"An error occurred while processing author {author_name}: {e}")
