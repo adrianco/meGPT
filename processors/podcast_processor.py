@@ -144,7 +144,8 @@ def extract_media_urls_from_webpage(url):
             'url': url,
             'audio_urls': [],
             'video_urls': [],
-            'iframe_srcs': []
+            'iframe_srcs': [],
+            'libsyn_episode_id': None  # Add a new field for Libsyn episode ID
         }
         
         # Look for direct audio files (mp3, m4a, ogg, etc.)
@@ -175,6 +176,35 @@ def extract_media_urls_from_webpage(url):
         # Look for iframes (could be embedded players like SoundCloud, Spotify, etc.)
         for iframe in soup.find_all('iframe', src=True):
             media_info['iframe_srcs'].append(iframe['src'])
+            
+            # Check for Libsyn player iframe
+            iframe_src = iframe['src']
+            # Check for Libsyn players with episode IDs
+            libsyn_id_match = re.search(r'id/(\d+)', iframe_src)
+            if libsyn_id_match:
+                media_info['libsyn_episode_id'] = libsyn_id_match.group(1)
+                logger.info(f"Found Libsyn episode ID: {media_info['libsyn_episode_id']}")
+            elif 'libsyn.com/embed' in iframe_src:
+                # Also look for libsyn iframes without direct id in URL
+                libsyn_id_match = re.search(r'episode/id/(\d+)', iframe_src)
+                if libsyn_id_match:
+                    media_info['libsyn_episode_id'] = libsyn_id_match.group(1)
+                    logger.info(f"Found Libsyn episode ID: {media_info['libsyn_episode_id']}")
+        
+        # If no ID found in iframe src, check for it elsewhere in the HTML
+        if not media_info['libsyn_episode_id']:
+            # Look for Libsyn episode ID in the HTML content
+            libsyn_pattern = re.search(r'libsyn\.com/embed/episode/id/(\d+)', html)
+            if libsyn_pattern:
+                media_info['libsyn_episode_id'] = libsyn_pattern.group(1)
+                logger.info(f"Found Libsyn episode ID in HTML: {media_info['libsyn_episode_id']}")
+            
+            # Try another pattern often used by Libsyn
+            if not media_info['libsyn_episode_id']:
+                libsyn_pattern = re.search(r'play\.libsyn\.com/embed/episode/id/(\d+)', html)
+                if libsyn_pattern:
+                    media_info['libsyn_episode_id'] = libsyn_pattern.group(1)
+                    logger.info(f"Found Libsyn episode ID in HTML: {media_info['libsyn_episode_id']}")
         
         # Look for common podcast player patterns
         # Simplecast
@@ -194,21 +224,73 @@ def extract_media_urls_from_webpage(url):
         if soundcloud_match:
             media_info['iframe_srcs'].append(soundcloud_match.group(0))
         
-        # Look for data attributes that might contain media URLs
-        data_sources = soup.find_all(attrs={"data-audio-source": True})
-        for source in data_sources:
-            media_info['audio_urls'].append(source["data-audio-source"])
-        
-        # Look for JSON-LD structured data which might contain media info
-        for script in soup.find_all('script', type='application/ld+json'):
-            try:
-                json_data = json.loads(script.string)
-                if isinstance(json_data, dict):
-                    # Check for AudioObject or PodcastEpisode schema
-                    if json_data.get('@type') in ['AudioObject', 'PodcastEpisode'] and 'contentUrl' in json_data:
-                        media_info['audio_urls'].append(json_data['contentUrl'])
-            except (json.JSONDecodeError, AttributeError):
-                pass
+        # SE Radio specific patterns
+        if 'se-radio.net' in url or 'seradio.net' in url:
+            logger.info("Detected SE Radio podcast, applying specific extraction techniques")
+            
+            # Look for the audio player and direct audio file URLs
+            se_radio_audio_elements = soup.find_all('audio', {'class': 'wp-audio-shortcode'})
+            for audio_element in se_radio_audio_elements:
+                sources = audio_element.find_all('source')
+                for source in sources:
+                    if source.get('src'):
+                        media_info['audio_urls'].append(source['src'])
+            
+            # SE Radio sometimes has direct links with specific class
+            se_radio_links = soup.find_all('a', {'class': 'powerpress_link_d'})
+            for link in se_radio_links:
+                if link.get('href'):
+                    media_info['audio_urls'].append(link['href'])
+            
+            # Search for MP3 URLs in the HTML
+            se_radio_mp3_pattern = re.search(r'(https?://[^"\'>\s]+\.mp3)', html)
+            if se_radio_mp3_pattern:
+                mp3_url = se_radio_mp3_pattern.group(1)
+                media_info['audio_urls'].append(mp3_url)
+            
+            # SE Radio often has links to podcast episodes with specific patterns
+            se_radio_links = soup.find_all('a', href=True)
+            for link in se_radio_links:
+                href = link.get('href', '')
+                if href.endswith('.mp3') or 'download' in href.lower() and '.mp3' in href:
+                    media_info['audio_urls'].append(href)
+            
+            # If we found a Libsyn episode ID, construct a direct HTML5 player URL
+            if media_info['libsyn_episode_id']:
+                html5_player_url = f"https://html5-player.libsyn.com/embed/episode/id/{media_info['libsyn_episode_id']}"
+                logger.info(f"Constructed Libsyn HTML5 player URL: {html5_player_url}")
+                # Add this URL to iframe sources so it can be used for download
+                media_info['iframe_srcs'].append(html5_player_url)
+            
+            # Look for RSS feed links which might contain direct MP3 URLs
+            rss_links = soup.find_all('a', href=True)
+            for link in rss_links:
+                href = link.get('href', '')
+                if 'feed' in href or 'rss' in href:
+                    try:
+                        # Try to fetch the RSS feed and extract the MP3 URL for this episode
+                        feed_response = requests.get(href, headers=headers, timeout=10)
+                        feed_soup = BeautifulSoup(feed_response.text, 'xml')
+                        
+                        # Extract episode number or title from current URL to match with RSS items
+                        current_episode_match = re.search(r'episode-(\d+)', url)
+                        current_episode_num = current_episode_match.group(1) if current_episode_match else None
+                        
+                        # Find matching item in RSS feed
+                        items = feed_soup.find_all('item')
+                        for item in items:
+                            item_title = item.find('title').text if item.find('title') else ''
+                            item_link = item.find('link').text if item.find('link') else ''
+                            
+                            # Check if this RSS item matches our episode
+                            if (current_episode_num and f"episode-{current_episode_num}" in item_link) or \
+                               (current_episode_num and f"Episode {current_episode_num}" in item_title):
+                                # Get enclosure URL which contains the MP3
+                                enclosure = item.find('enclosure')
+                                if enclosure and enclosure.get('url'):
+                                    media_info['audio_urls'].append(enclosure['url'])
+                    except Exception as e:
+                        logger.warning(f"Error fetching RSS feed {href}: {e}")
         
         # Komodor-specific: Look for specific patterns in Komodor podcast pages
         if 'komodor.com' in url:
@@ -225,6 +307,44 @@ def extract_media_urls_from_webpage(url):
             apple_iframe = soup.find('iframe', {'src': lambda src: src and 'podcasts.apple.com' in src})
             if apple_iframe and apple_iframe.get('src'):
                 media_info['iframe_srcs'].append(apple_iframe['src'])
+        
+        # Look for data attributes that might contain media URLs
+        data_sources = soup.find_all(attrs={"data-audio-source": True})
+        for source in data_sources:
+            media_info['audio_urls'].append(source["data-audio-source"])
+        
+        # Look for JSON-LD structured data which might contain media info
+        for script in soup.find_all('script', type='application/ld+json'):
+            try:
+                json_data = json.loads(script.string)
+                if isinstance(json_data, dict):
+                    # Check for AudioObject or PodcastEpisode schema
+                    if json_data.get('@type') in ['AudioObject', 'PodcastEpisode'] and 'contentUrl' in json_data:
+                        media_info['audio_urls'].append(json_data['contentUrl'])
+            except (json.JSONDecodeError, AttributeError):
+                pass
+        
+        # Try to find media URLs in JavaScript variables
+        script_tags = soup.find_all('script')
+        for script in script_tags:
+            if script.string:
+                # Look for MP3 URLs in JavaScript
+                mp3_matches = re.findall(r'(https?://[^"\'>\s]+\.mp3)', script.string)
+                for mp3_url in mp3_matches:
+                    media_info['audio_urls'].append(mp3_url)
+                
+                # Look for JSON data that might contain media URLs
+                json_matches = re.findall(r'({[\s\S]*?})', script.string)
+                for json_str in json_matches:
+                    try:
+                        json_data = json.loads(json_str)
+                        if isinstance(json_data, dict):
+                            # Check various common keys that might contain media URLs
+                            for key in ['url', 'audioUrl', 'media', 'src', 'audio', 'mp3']:
+                                if key in json_data and isinstance(json_data[key], str) and '.mp3' in json_data[key]:
+                                    media_info['audio_urls'].append(json_data[key])
+                    except (json.JSONDecodeError, ValueError):
+                        pass
         
         # Remove duplicates and convert relative URLs to absolute
         for key in ['audio_urls', 'video_urls', 'iframe_srcs']:
@@ -245,6 +365,7 @@ def extract_media_urls_from_webpage(url):
             'audio_urls': [],
             'video_urls': [],
             'iframe_srcs': [],
+            'libsyn_episode_id': None,
             'error': str(e)
         }
 
@@ -325,7 +446,8 @@ def get_podcast_info(podcast_url):
                         "scraped_media": {
                             "audio_urls": media_info.get('audio_urls', []),
                             "video_urls": media_info.get('video_urls', []),
-                            "iframe_srcs": media_info.get('iframe_srcs', [])
+                            "iframe_srcs": media_info.get('iframe_srcs', []),
+                            "libsyn_episode_id": media_info.get('libsyn_episode_id')
                         }
                     }
                 else:
@@ -363,7 +485,29 @@ def get_podcast_info(podcast_url):
                         "is_episode": is_episode_url(podcast_url)
                     }
         
-        # Fallback if we couldn't get info from yt-dlp
+        # If it's a SE Radio URL, try to scrape it for additional metadata
+        platform = determine_platform(podcast_url)
+        if platform == "SE Radio":
+            print("Detected SE Radio podcast, scraping for additional metadata...")
+            media_info = extract_media_urls_from_webpage(podcast_url)
+            
+            # If we found a Libsyn episode ID, add it to the podcast info
+            if media_info.get('libsyn_episode_id'):
+                return {
+                    "title": media_info.get('title', f"SE_Radio_{sanitize_filename(podcast_url)}"),
+                    "description": media_info.get('description', ''),
+                    "url": podcast_url,
+                    "platform": platform,
+                    "is_episode": is_episode_url(podcast_url),
+                    "scraped_media": {
+                        "audio_urls": media_info.get('audio_urls', []),
+                        "video_urls": media_info.get('video_urls', []),
+                        "iframe_srcs": media_info.get('iframe_srcs', []),
+                        "libsyn_episode_id": media_info.get('libsyn_episode_id')
+                    }
+                }
+        
+        # Fallback if we couldn't get info from yt-dlp or special handling
         return {
             "title": f"Podcast_{sanitize_filename(podcast_url)}",
             "url": podcast_url,
@@ -406,6 +550,8 @@ def determine_platform(url):
         return "YouTube"
     elif "komodor.com" in url:
         return "Komodor"
+    elif "se-radio.net" in url or "seradio.net" in url:
+        return "SE Radio"
     elif ".rss" in url or "/rss" in url or "/feed" in url:
         return "RSS Feed"
     else:
@@ -458,8 +604,15 @@ def process_podcast(podcast_url, download_dir, subkind=None):
     with open(output_dir / "podcast_info.json", "w", encoding="utf-8") as f:
         json.dump(podcast_info, f, indent=4, ensure_ascii=False)
     
+    # Check if we should use Libsyn episode ID for SE Radio podcasts
+    if podcast_info.get('platform') == 'SE Radio' and 'scraped_media' in podcast_info and podcast_info['scraped_media'].get('libsyn_episode_id'):
+        libsyn_episode_id = podcast_info['scraped_media']['libsyn_episode_id']
+        print(f"Found Libsyn episode ID for SE Radio: {libsyn_episode_id}")
+        # Use the Libsyn HTML5 player URL instead of the original URL
+        download_url = f"https://html5-player.libsyn.com/embed/episode/id/{libsyn_episode_id}"
+        print(f"Using Libsyn HTML5 player URL: {download_url}")
     # Check if we need to use the scraping fallback
-    if 'scraped_media' in podcast_info and (
+    elif 'scraped_media' in podcast_info and (
             podcast_info['scraped_media'].get('audio_urls') or 
             podcast_info['scraped_media'].get('video_urls') or
             podcast_info['scraped_media'].get('iframe_srcs')):
@@ -593,6 +746,89 @@ def process_podcast(podcast_url, download_dir, subkind=None):
         # Use cookies from browser to handle potential auth
         cmd.append("--cookies-from-browser")
         cmd.append("chrome")
+    elif platform == "SE Radio":
+        print("Applying SE Radio-specific optimizations")
+        
+        # Add user agent for browser-like requests
+        cmd.extend(["--add-header", 
+                    "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"])
+        
+        # If we have found direct audio URLs through scraping, use the first one directly instead
+        if 'scraped_media' in podcast_info and podcast_info['scraped_media'].get('audio_urls'):
+            audio_url = podcast_info['scraped_media']['audio_urls'][0]
+            print(f"Using direct SE Radio audio URL: {audio_url}")
+            download_url = audio_url
+            
+            # SE Radio direct downloads don't need most of yt-dlp's options, so simplify the command
+            cmd = [
+                "yt-dlp",
+                "-x",  # Extract audio
+                "--audio-format", "mp3",  # Convert to mp3
+                "--audio-quality", "0",  # Best quality
+                "--add-metadata",  # Add metadata to the file
+                "--paths", str(output_dir),
+                "--output", f"{sanitize_filename(podcast_info.get('title', 'SE_Radio_Episode'))}.%(ext)s",
+                "--no-overwrites",  # Don't overwrite existing files
+                "--retries", "5",  # More retries for direct links
+                download_url
+            ]
+            
+            # Skip the rest of the command building since we've built a custom command
+            try:
+                print(f"Executing SE Radio direct download: {' '.join(cmd)}")
+                
+                # Run the command
+                result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+                
+                # Process output to extract important information
+                output_lines = []
+                for line in result.stdout.split('\n'):
+                    if any(x in line for x in ["Destination", "download", "Extracting URL", "Writing metadata"]):
+                        output_lines.append(line)
+                
+                # Update podcast info with results
+                podcast_info["status"] = "success"
+                podcast_info["download_date"] = time.strftime("%Y-%m-%d %H:%M:%S")
+                podcast_info["download_command"] = " ".join(cmd)
+                podcast_info["direct_mp3_url"] = download_url
+                
+                # Count downloaded episodes
+                mp3_files = list(output_dir.glob("*.mp3"))
+                
+                # Sanitize filenames for all downloaded MP3 files to ensure consistency
+                for mp3_file in mp3_files:
+                    sanitized_name = sanitize_filename(mp3_file.stem) + ".mp3"
+                    sanitized_path = mp3_file.parent / sanitized_name
+                    
+                    # Only rename if the name has actually changed
+                    if mp3_file.name != sanitized_name:
+                        try:
+                            print(f"Sanitizing filename: {mp3_file.name} -> {sanitized_name}")
+                            mp3_file.rename(sanitized_path)
+                        except Exception as rename_err:
+                            print(f"Warning: Could not rename file {mp3_file.name}: {rename_err}")
+                
+                # Re-count after possible renames
+                mp3_files = list(output_dir.glob("*.mp3"))
+                podcast_info["episodes_count"] = len(mp3_files)
+                podcast_info["episodes"] = [f.name for f in mp3_files]
+                
+                # Save updated podcast info
+                podcast_info_file = output_dir / f"podcast_info_{sanitize_filename(podcast_info.get('title', 'unknown'))}.json"
+                with open(podcast_info_file, "w", encoding="utf-8") as f:
+                    json.dump(podcast_info, f, indent=4, ensure_ascii=False)
+                
+                print(f"Successfully processed SE Radio podcast. Downloaded {len(mp3_files)} episodes.")
+                return True
+                
+            except subprocess.CalledProcessError as e:
+                print(f"Error downloading SE Radio podcast: {e}")
+                if e.stderr:
+                    print(f"Error details: {e.stderr}")
+                
+                # Continue with fallback methods if direct download fails
+                print("Direct download failed, trying fallback methods...")
+                pass
     
     # Set output path and format
     # For single episodes, prioritize title in the filename
@@ -634,11 +870,28 @@ def process_podcast(podcast_url, download_dir, subkind=None):
         
         # Count downloaded episodes
         mp3_files = list(output_dir.glob("*.mp3"))
+        
+        # Sanitize filenames for all downloaded MP3 files to ensure consistency
+        for mp3_file in mp3_files:
+            sanitized_name = sanitize_filename(mp3_file.stem) + ".mp3"
+            sanitized_path = mp3_file.parent / sanitized_name
+            
+            # Only rename if the name has actually changed
+            if mp3_file.name != sanitized_name:
+                try:
+                    print(f"Sanitizing filename: {mp3_file.name} -> {sanitized_name}")
+                    mp3_file.rename(sanitized_path)
+                except Exception as rename_err:
+                    print(f"Warning: Could not rename file {mp3_file.name}: {rename_err}")
+        
+        # Re-count after possible renames
+        mp3_files = list(output_dir.glob("*.mp3"))
         podcast_info["episodes_count"] = len(mp3_files)
         podcast_info["episodes"] = [f.name for f in mp3_files]
         
         # Save updated podcast info
-        with open(output_dir / "podcast_info.json", "w", encoding="utf-8") as f:
+        podcast_info_file = output_dir / f"podcast_info_{sanitize_filename(podcast_info.get('title', 'unknown'))}.json"
+        with open(podcast_info_file, "w", encoding="utf-8") as f:
             json.dump(podcast_info, f, indent=4, ensure_ascii=False)
         
         print(f"Successfully processed podcast. Downloaded {len(mp3_files)} episodes.")
@@ -654,7 +907,8 @@ def process_podcast(podcast_url, download_dir, subkind=None):
             print("Attempting direct download of audio file as fallback")
             try:
                 audio_url = podcast_info['scraped_media']['audio_urls'][0]
-                output_file = output_dir / f"{sanitize_filename(podcast_info.get('title', 'podcast'))}.mp3"
+                sanitized_title = sanitize_filename(podcast_info.get('title', 'podcast'))
+                output_file = output_dir / f"{sanitized_title}.mp3"
                 
                 print(f"Downloading {audio_url} to {output_file}")
                 headers = {
@@ -678,8 +932,9 @@ def process_podcast(podcast_url, download_dir, subkind=None):
                 podcast_info["episodes_count"] = len(mp3_files)
                 podcast_info["episodes"] = [f.name for f in mp3_files]
                 
-                # Save updated podcast info
-                with open(output_dir / "podcast_info.json", "w", encoding="utf-8") as f:
+                # Save updated podcast info with sanitized filename
+                podcast_info_file = output_dir / f"podcast_info_{sanitize_filename(podcast_info.get('title', 'unknown'))}.json"
+                with open(podcast_info_file, "w", encoding="utf-8") as f:
                     json.dump(podcast_info, f, indent=4, ensure_ascii=False)
                 
                 print(f"Successfully downloaded audio file directly.")
@@ -694,7 +949,9 @@ def process_podcast(podcast_url, download_dir, subkind=None):
         podcast_info["error_message"] = str(e)
         podcast_info["download_date"] = time.strftime("%Y-%m-%d %H:%M:%S")
         
-        with open(output_dir / "podcast_info.json", "w", encoding="utf-8") as f:
+        # Save error info with sanitized filename
+        podcast_info_file = output_dir / f"podcast_info_{sanitize_filename(podcast_info.get('title', 'unknown'))}.json"
+        with open(podcast_info_file, "w", encoding="utf-8") as f:
             json.dump(podcast_info, f, indent=4, ensure_ascii=False)
         
         return False
