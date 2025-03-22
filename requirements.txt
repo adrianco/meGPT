@@ -76,7 +76,7 @@ pytesseract==0.3.13
 python-dateutil==2.9.0.post0
 pytorch-lightning==2.4.0
 pytorch-metric-learning==2.6.0
-pytube==15.0.0
+pytube>=12.1.0
 pytz==2024.1
 PyYAML==6.0.2
 requests==2.32.3

@@ -28,16 +28,24 @@ Important Considerations:
 - Output is organized in subdirectories by content kind (e.g., downloads/author/blog/, downloads/author/tweet/).
 
 Usage:
-    build.py <author>
-Example:
-    build.py virtual_adrianco
+    build.py <author> [kind]
+      - author: The author name to process content for
+      - kind (optional): Process only content of this specific kind
+                         When provided, the script will process all content of this kind,
+                         ignoring whether it was previously processed
+
+Examples:
+    build.py virtual_adrianco         # Process all unprocessed content for the author
+    build.py virtual_adrianco podcast # Process all podcast content for the author
 
 Process Flow:
 1. The script reads from the author's published_content.csv file
 2. For each content item, it checks if it's already been processed (via state.json)
+   (This check is skipped when processing a specific kind)
 3. If a local file/directory is found, it copies the files to the kind-specific subdirectory
 4. For other content types, it attempts to find and use a matching processor script
 5. If no processor exists, it creates a JSON file with all the CSV row fields in the kind-specific subdirectory
+6. The state.json file is always updated after successful processing
 
 Instruction:
 This comment provides essential context for the script. If this script is used in a new chat session, 
@@ -64,9 +72,34 @@ def save_state(state_file, state):
         json.dump(state, f, indent=4)
 
 def sanitize_filename(filename):
-    """Replace all punctuation and special characters with underscores."""
-    # Replace any character that is not alphanumeric or underscore with an underscore
-    return re.sub(r'[^\w]', '_', filename)
+    """
+    Replace all punctuation, spaces, and special characters with underscores.
+    This ensures filenames are valid across all operating systems and contain no problematic characters.
+    """
+    if not filename:
+        return "unknown"
+    
+    # First replace common problematic characters with underscores
+    cleaned = re.sub(r'[:\?\*"<>|/\\@]', '_', filename)
+    
+    # Replace any remaining non-alphanumeric characters (including spaces) with underscores
+    cleaned = re.sub(r'[^\w\.]', '_', cleaned)
+    
+    # Replace multiple consecutive underscores with a single underscore
+    cleaned = re.sub(r'_+', '_', cleaned)
+    
+    # Remove leading/trailing underscores
+    cleaned = cleaned.strip('_')
+    
+    # Ensure the filename isn't empty
+    if not cleaned:
+        return "unknown"
+    
+    # Truncate if too long (most filesystems have limits around 255 bytes)
+    if len(cleaned) > 200:
+        cleaned = cleaned[:200]
+    
+    return cleaned
 
 def process_author(author, specific_kind=None):
     # Define paths
@@ -80,6 +113,15 @@ def process_author(author, specific_kind=None):
 
     # Load previous state - always load it for updates
     state = load_state(state_file)
+    
+    # Initialize counters for summary
+    summary = {
+        "total": 0,
+        "successful": 0,
+        "failed": 0,
+        "skipped": 0,
+        "failed_urls": []
+    }
 
     # Read CSV
     if not content_csv.exists():
@@ -98,6 +140,10 @@ def process_author(author, specific_kind=None):
             # Skip if processing specific kind and this row doesn't match
             if specific_kind and kind.lower() != specific_kind.lower():
                 continue
+            
+            # If we're processing podcasts, count this item for our summary
+            if specific_kind and specific_kind.lower() == "podcast" or kind.lower() == "podcast":
+                summary["total"] += 1
 
             # Create kind-specific subdirectory
             kind_dir = download_dir / sanitize_filename(kind.lower())
@@ -115,6 +161,8 @@ def process_author(author, specific_kind=None):
             state_key = f"{url}_{kind}_{subkind}"  # Include SubKind in state key
             if not specific_kind and state.get(state_key):
                 print(f"Skipping {url} as it has already been processed.")
+                if kind.lower() == "podcast":
+                    summary["skipped"] += 1
                 continue
 
             source_path = Path(url)
@@ -159,11 +207,19 @@ def process_author(author, specific_kind=None):
                     )
                     print(f"Successfully processed {url}.")
                     
+                    # For podcasts, count successful processing
+                    if kind.lower() == "podcast":
+                        summary["successful"] += 1
+                    
                     # Always update state regardless of specific_kind
                     state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
                     save_state(state_file, state)
                 except subprocess.CalledProcessError as e:
                     print(f"Error processing {url} with kind {kind}: {e}")
+                    # For podcasts, track failures
+                    if kind.lower() == "podcast":
+                        summary["failed"] += 1
+                        summary["failed_urls"].append(url)
             else:
                 # Instead of just skipping, create a JSON file with all fields from the CSV
                 print(f"No processor found for kind {kind}. Creating JSON file for later processing.")
@@ -181,6 +237,23 @@ def process_author(author, specific_kind=None):
                 # Always update state regardless of specific_kind
                 state[state_key] = {"url": url, "kind": kind, "subkind": subkind}
                 save_state(state_file, state)
+    
+    # Display summary after processing if we were handling podcasts
+    if specific_kind and specific_kind.lower() == "podcast" or summary["total"] > 0:
+        print("\n" + "="*50)
+        print("PODCAST PROCESSING SUMMARY")
+        print("="*50)
+        print(f"Total podcasts processed: {summary['total']}")
+        print(f"Successfully processed:   {summary['successful']}")
+        print(f"Failed to process:        {summary['failed']}")
+        print(f"Skipped (already processed): {summary['skipped']}")
+        
+        if summary["failed"] > 0:
+            print("\nFailed podcast URLs:")
+            for url in summary["failed_urls"]:
+                print(f"  • {url}")
+        
+        print("="*50)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or len(sys.argv) > 3:

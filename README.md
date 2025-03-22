@@ -20,6 +20,22 @@ Creative Commons - attribution share-alike. Permission explicitly granted for an
 # I am not a Python programmer
 All the code in this repo was initially written by the free version of ChatGPT 4 based on short prompts, with no subsequent edits, in a few minutes of my time here and there. I can read Python and mostly make sense of it but I'm not an experienced Python programmer. Look in the relevant issue for a public link to the chat thread that generated the code. This is a ridiculously low friction and easy way to write simple code. Development is being migrated to Cursor as it has a better approach to managing the context of a whole project.
 
+# YouTube Downloads
+YouTube has strict bot detection measures that can make automatic downloads challenging. The script attempts multiple methods to download YouTube content:
+
+1. First, it tries advanced options with yt-dlp to bypass the "Sign in to confirm you're not a robot" check
+2. If that fails, it attempts to use pytube with OAuth (may require user interaction)
+3. Next, it tries using alternative client settings for yt-dlp
+4. Finally, it attempts to download via an Invidious proxy
+
+Despite these measures, YouTube's bot detection is sophisticated and some videos may still fail to download automatically. In such cases, you may need to download the videos manually.
+
+For best results, you can try:
+- Using a different network (some IP addresses are more likely to trigger bot detection)
+- Using a VPN
+- Downloading from mobile networks (often has fewer restrictions)
+- Downloading directly from Invidious instances (e.g., https://invidious.snopyta.org) 
+
 # Building an Author
 To use this repo, clone it to a local disk, setup the python environment, run the build.py script for an author and it will walk through the published content table for that author processing each line in turn. The build script will create a downloads/<author> directory and create a state.json file in it which records successful processing steps so that incremental runs of build.py will not re-run the same downloads. Each kind of data needs a corresponding script in the processors directory.
 
