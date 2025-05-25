@@ -168,16 +168,18 @@ class ContentProcessor:
         tags = set()
         
         try:
-            # Process title
-            title_tokens = word_tokenize(title.lower())
-            title_tokens = [lemmatizer.lemmatize(token) for token in title_tokens if token not in stop_words]
-            tags.update(token for token in title_tokens if token in self.technical_terms)
+            # Process title - simple word splitting
+            title_words = title.lower().split()
+            title_words = [word.strip('.,!?()[]{}":;') for word in title_words]
+            title_words = [word for word in title_words if word and word not in stop_words]
+            tags.update(word for word in title_words if word in self.technical_terms)
             
             # Process content if available
             if content.get('text'):
-                text_tokens = word_tokenize(content['text'].lower())
-                text_tokens = [lemmatizer.lemmatize(token) for token in text_tokens if token not in stop_words]
-                tags.update(token for token in text_tokens if token in self.technical_terms)
+                text_words = content['text'].lower().split()
+                text_words = [word.strip('.,!?()[]{}":;') for word in text_words]
+                text_words = [word for word in text_words if word and word not in stop_words]
+                tags.update(word for word in text_words if word in self.technical_terms)
             
             # Add multi-word terms
             text = f"{title} {content.get('text', '')}"
@@ -274,6 +276,18 @@ def load_csv_content(author: str) -> List[Dict[str, str]]:
             content.append(row)
     return content
 
+def extract_url_from_text_file(file_path: Path) -> Optional[str]:
+    """Extract URL from the first line of a text file if it exists."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            first_line = f.readline().strip()
+            # Check if the first line looks like a URL
+            if first_line.startswith(('http://', 'https://')):
+                return first_line
+    except Exception as e:
+        logger.warning(f"Error reading text file {file_path}: {e}")
+    return None
+
 def load_processed_content(author: str, kind: str) -> List[Dict[str, Any]]:
     """Load processed content from the downloads directory."""
     kind_dir = Path(f"downloads/{author}/{kind}")
@@ -281,9 +295,31 @@ def load_processed_content(author: str, kind: str) -> List[Dict[str, Any]]:
         return []
     
     content = []
+    # Handle JSON files
     for file in kind_dir.glob("*.json"):
-        with open(file, 'r', encoding='utf-8') as f:
-            content.append(json.load(f))
+        try:
+            with open(file, 'r', encoding='utf-8') as f:
+                content.append(json.load(f))
+        except Exception as e:
+            logger.warning(f"Error loading JSON file {file}: {e}")
+    
+    # Handle text files
+    for file in kind_dir.glob("*.txt"):
+        try:
+            url = extract_url_from_text_file(file)
+            with open(file, 'r', encoding='utf-8') as f:
+                text = f.read()
+                # Skip the first line if it's a URL
+                if url:
+                    text = '\n'.join(text.split('\n')[1:])
+                content.append({
+                    'text': text,
+                    'URL': url or str(file),  # Use file path as fallback URL
+                    'title': file.stem  # Use filename as title
+                })
+        except Exception as e:
+            logger.warning(f"Error loading text file {file}: {e}")
+    
     return content
 
 def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processed_content: List[Dict[str, Any]]) -> Dict[str, Any]:

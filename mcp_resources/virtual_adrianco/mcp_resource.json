@@ -2,7 +2,7 @@
   "metadata": {
     "author": "virtual_adrianco",
     "version": "1.0",
-    "last_updated": "2025-05-25T06:48:56.680953+00:00",
+    "last_updated": "2025-05-25T06:58:47.579153+00:00",
     "content_count": 55,
     "content_types": {
       "youtube": 2,
@@ -17,7 +17,7 @@
       "total_items": 55,
       "processed_items": 55,
       "failed_items": 0,
-      "processing_time": 0.033353
+      "processing_time": 0.053874
     }
   },
   "content": [
@@ -36,7 +36,13 @@
           "processing_errors": []
         }
       },
-      "tags": []
+      "tags": [
+        "cloud",
+        "devops",
+        "microservices",
+        "netflix",
+        "sustainability"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_1",
@@ -58,7 +64,9 @@
       "published_date": "3/14/2024",
       "url": "https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/",
       "content": {},
-      "tags": []
+      "tags": [
+        "ai"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_3",
@@ -69,7 +77,10 @@
       "published_date": "3/28/2024",
       "url": "https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/",
       "content": {},
-      "tags": []
+      "tags": [
+        "ai",
+        "monitoring"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_4",
@@ -91,7 +102,9 @@
       "published_date": "",
       "url": "https://www.infoq.com/podcasts/adrian-cockcroft/",
       "content": {},
-      "tags": []
+      "tags": [
+        "microservices"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_6",
@@ -130,7 +143,10 @@
           "processing_errors": []
         }
       },
-      "tags": []
+      "tags": [
+        "engineering",
+        "platform"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_9",
@@ -141,7 +157,10 @@
       "published_date": "",
       "url": "https://cloudfix.com/podcast/when-netflix-bet-on-aws/",
       "content": {},
-      "tags": []
+      "tags": [
+        "aws",
+        "netflix"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_10",
@@ -152,7 +171,10 @@
       "published_date": "",
       "url": "https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience",
       "content": {},
-      "tags": []
+      "tags": [
+        "resilience",
+        "serverless"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_11",
@@ -174,7 +196,9 @@
       "published_date": "5/1/2023",
       "url": "https://orionx.net/2023/05/hpcpodcast-57-decarbonization-renewable-energy-esg-w-adrian-cockcroft/",
       "content": {},
-      "tags": []
+      "tags": [
+        "hpc"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_13",
@@ -185,7 +209,9 @@
       "published_date": "6/17/2016",
       "url": "https://learning.acm.org/techtalks/microservices",
       "content": {},
-      "tags": []
+      "tags": [
+        "microservices"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_14",
@@ -207,7 +233,9 @@
       "published_date": "1/24/2013",
       "url": "https://www.infoq.com/interviews/Adrian-Cockcroft-Netflix/",
       "content": {},
-      "tags": []
+      "tags": [
+        "cloud"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_16",
@@ -229,7 +257,9 @@
       "published_date": "12/10/2014",
       "url": "https://se-radio.net/2014/12/episode-216-adrian-cockcroft-on-the-modern-cloud-based-platform/",
       "content": {},
-      "tags": []
+      "tags": [
+        "microservices"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_18",
@@ -240,7 +270,10 @@
       "published_date": "2022",
       "url": "https://insidehpc.com/2022/09/hpcpodcast-aws-sun-ebay-netflix-and-others-vet-adrian-cockcroft-talks-cloud-hpc-ai-and-the-amazon-sustainability-data-initiative/",
       "content": {},
-      "tags": []
+      "tags": [
+        "cloud",
+        "hpc"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_19",
@@ -268,7 +301,9 @@
           "processing_errors": []
         }
       },
-      "tags": []
+      "tags": [
+        "netflix"
+      ]
     },
     {
       "id": "virtual_adrianco_book_21",
@@ -285,7 +320,11 @@
           "processing_errors": []
         }
       },
-      "tags": []
+      "tags": [
+        "aws",
+        "serverless",
+        "sustainability"
+      ]
     },
     {
       "id": "virtual_adrianco_book_22",
@@ -336,7 +375,9 @@
           "processing_errors": []
         }
       },
-      "tags": []
+      "tags": [
+        "cloud"
+      ]
     },
     {
       "id": "virtual_adrianco_book_25",
@@ -409,7 +450,9 @@
           "processing_errors": []
         }
       },
-      "tags": []
+      "tags": [
+        "performance"
+      ]
     },
     {
       "id": "virtual_adrianco_book_30",
@@ -426,7 +469,9 @@
           "processing_errors": []
         }
       },
-      "tags": []
+      "tags": [
+        "performance"
+      ]
     },
     {
       "id": "virtual_adrianco_story_31",
@@ -437,7 +482,10 @@
       "published_date": "7/11/2014",
       "url": "https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/",
       "content": {},
-      "tags": []
+      "tags": [
+        "devops",
+        "microservices"
+      ]
     },
     {
       "id": "virtual_adrianco_story_32",
@@ -536,7 +584,9 @@
       "published_date": "2014",
       "url": "https://thenewstack.io/why-did-docker-catch-on-quickly-and-why-is-it-so-interesting/",
       "content": {},
-      "tags": []
+      "tags": [
+        "docker"
+      ]
     },
     {
       "id": "virtual_adrianco_story_41",
@@ -547,7 +597,9 @@
       "published_date": "2015",
       "url": "https://thenewstack.io/a-conference-to-discuss-developer-driven-infrastructure/",
       "content": {},
-      "tags": []
+      "tags": [
+        "infrastructure"
+      ]
     },
     {
       "id": "virtual_adrianco_story_42",
@@ -558,7 +610,9 @@
       "published_date": "2020",
       "url": "https://thenewstack.io/the-rise-of-continuous-resilience/",
       "content": {},
-      "tags": []
+      "tags": [
+        "resilience"
+      ]
     },
     {
       "id": "virtual_adrianco_story_43",
@@ -580,7 +634,11 @@
       "published_date": "2024",
       "url": "https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/",
       "content": {},
-      "tags": []
+      "tags": [
+        "aws",
+        "azure",
+        "sustainability"
+      ]
     },
     {
       "id": "virtual_adrianco_story_45",
@@ -591,7 +649,12 @@
       "published_date": "2025",
       "url": "https://thenewstack.io/cloud-pue-comparing-aws-azure-and-gcp-global-regions/",
       "content": {},
-      "tags": []
+      "tags": [
+        "aws",
+        "azure",
+        "cloud",
+        "gcp"
+      ]
     },
     {
       "id": "virtual_adrianco_story_46",
@@ -624,7 +687,9 @@
       "published_date": "2025",
       "url": "https://orionx.net/2025/03/analyst-roundtable-chips-ai-search-quantum-bitcoin-fusion-oxd26/",
       "content": {},
-      "tags": []
+      "tags": [
+        "ai"
+      ]
     },
     {
       "id": "virtual_adrianco_podcast_49",
@@ -646,7 +711,10 @@
       "published_date": "2021",
       "url": "https://dev.to/aws/scaling-aws-costs-to-match-the-business-f9k",
       "content": {},
-      "tags": []
+      "tags": [
+        "aws",
+        "scaling"
+      ]
     },
     {
       "id": "virtual_adrianco_story_51",
@@ -679,7 +747,9 @@
       "published_date": "2021",
       "url": "https://dev.to/aws/what-is-sustainability-transformation-32hi",
       "content": {},
-      "tags": []
+      "tags": [
+        "sustainability"
+      ]
     },
     {
       "id": "virtual_adrianco_story_54",
