@@ -1,0 +1,429 @@
+"""
+Create MCP Resources Script
+
+Purpose:
+This script creates Machine-Controlled Publishing (MCP) resources from an author's content.
+It first ensures that all content is downloaded and processed by running build.py if needed,
+then converts the processed content into MCP-compatible JSON format.
+
+Usage:
+    create_mcp.py <author>
+      - author: The author name to create MCP resources for
+
+Example:
+    create_mcp.py virtual_adrianco
+"""
+
+import os
+import sys
+import json
+import subprocess
+from pathlib import Path
+from datetime import datetime, UTC
+import csv
+import re
+from typing import Dict, List, Any, Optional, Set
+import jsonschema
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from transformers import pipeline
+from tqdm import tqdm
+import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# Download required NLTK data
+try:
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+    logger.info("Successfully downloaded NLTK data")
+except Exception as e:
+    logger.error(f"Failed to download NLTK data: {e}")
+    sys.exit(1)
+
+# Initialize NLTK components
+try:
+    lemmatizer = WordNetLemmatizer()
+    stop_words = set(stopwords.words('english'))
+    logger.info("Successfully initialized NLTK components")
+except Exception as e:
+    logger.error(f"Failed to initialize NLTK components: {e}")
+    sys.exit(1)
+
+# Initialize summarization pipeline
+try:
+    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+    logger.info("Successfully initialized summarization pipeline")
+except Exception as e:
+    logger.warning(f"Failed to load summarization model: {e}")
+    summarizer = None
+
+# MCP Schema definition
+MCP_SCHEMA = {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "author": {"type": "string"},
+                "version": {"type": "string"},
+                "last_updated": {"type": "string", "format": "date-time"},
+                "content_count": {"type": "integer"},
+                "content_types": {
+                    "type": "object",
+                    "additionalProperties": {"type": "integer"}
+                },
+                "processing_stats": {
+                    "type": "object",
+                    "properties": {
+                        "total_items": {"type": "integer"},
+                        "processed_items": {"type": "integer"},
+                        "failed_items": {"type": "integer"},
+                        "processing_time": {"type": "number"}
+                    }
+                }
+            },
+            "required": ["author", "version", "last_updated"]
+        },
+        "content": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"},
+                    "kind": {"type": "string"},
+                    "subkind": {"type": "string"},
+                    "title": {"type": "string"},
+                    "source": {"type": "string"},
+                    "published_date": {"type": "string"},
+                    "url": {"type": "string"},
+                    "content": {
+                        "type": "object",
+                        "properties": {
+                            "text": {"type": "string"},
+                            "transcript": {"type": "string"},
+                            "summary": {"type": "string"},
+                            "chapters": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {"type": "string"},
+                                        "content": {"type": "string"},
+                                        "timestamp": {"type": "string"}
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {"type": "string"}
+                    },
+                    "metadata": {
+                        "type": "object",
+                        "properties": {
+                            "word_count": {"type": "integer"},
+                            "processing_status": {"type": "string"},
+                            "processing_errors": {
+                                "type": "array",
+                                "items": {"type": "string"}
+                            }
+                        }
+                    }
+                },
+                "required": ["id", "kind", "title", "source", "url"]
+            }
+        }
+    },
+    "required": ["metadata", "content"]
+}
+
+class ContentProcessor:
+    def __init__(self):
+        self.technical_terms = {
+            'cloud', 'aws', 'azure', 'gcp', 'microservices', 'devops', 'kubernetes',
+            'docker', 'containers', 'serverless', 'ai', 'ml', 'sustainability',
+            'netflix', 'architecture', 'platform', 'engineering', 'monitoring',
+            'performance', 'scaling', 'resilience', 'hpc', 'podcast', 'video',
+            'machine learning', 'artificial intelligence', 'data science', 'big data',
+            'distributed systems', 'cloud native', 'infrastructure', 'security',
+            'automation', 'ci/cd', 'continuous integration', 'continuous deployment',
+            'agile', 'scrum', 'lean', 'kanban', 'sre', 'site reliability',
+            'observability', 'logging', 'metrics', 'tracing', 'apm'
+        }
+
+    def extract_tags(self, title: str, content: Dict[str, Any]) -> List[str]:
+        """Extract relevant tags using NLP techniques."""
+        tags = set()
+        
+        try:
+            # Process title
+            title_tokens = word_tokenize(title.lower())
+            title_tokens = [lemmatizer.lemmatize(token) for token in title_tokens if token not in stop_words]
+            tags.update(token for token in title_tokens if token in self.technical_terms)
+            
+            # Process content if available
+            if content.get('text'):
+                text_tokens = word_tokenize(content['text'].lower())
+                text_tokens = [lemmatizer.lemmatize(token) for token in text_tokens if token not in stop_words]
+                tags.update(token for token in text_tokens if token in self.technical_terms)
+            
+            # Add multi-word terms
+            text = f"{title} {content.get('text', '')}"
+            for term in self.technical_terms:
+                if ' ' in term and term.lower() in text.lower():
+                    tags.add(term)
+            
+            return sorted(list(tags))
+        except Exception as e:
+            logger.error(f"Error extracting tags: {e}")
+            return []
+
+    def generate_summary(self, text: str, max_length: int = 150) -> Optional[str]:
+        """Generate a summary of the text using BART."""
+        if not text or not summarizer:
+            return None
+        
+        try:
+            # Split text into chunks if it's too long
+            chunks = [text[i:i+1024] for i in range(0, len(text), 1024)]
+            summaries = []
+            
+            for chunk in chunks:
+                summary = summarizer(chunk, max_length=max_length, min_length=30, do_sample=False)
+                summaries.append(summary[0]['summary_text'])
+            
+            return ' '.join(summaries)
+        except Exception as e:
+            logger.error(f"Error generating summary: {e}")
+            return None
+
+    def process_content(self, kind: str, content: Dict[str, Any]) -> Dict[str, Any]:
+        """Process content based on its kind."""
+        processed = {}
+        errors = []
+        
+        try:
+            if kind == 'podcast':
+                if 'transcript' in content:
+                    processed['transcript'] = content['transcript']
+                    processed['summary'] = self.generate_summary(content['transcript'])
+                if 'chapters' in content:
+                    processed['chapters'] = content['chapters']
+            
+            elif kind in ['story', 'file']:
+                if 'text' in content:
+                    processed['text'] = content['text']
+                    processed['summary'] = self.generate_summary(content['text'])
+            
+            elif kind == 'youtube':
+                if 'transcript' in content:
+                    processed['transcript'] = content['transcript']
+                    processed['summary'] = self.generate_summary(content['transcript'])
+                if 'chapters' in content:
+                    processed['chapters'] = content['chapters']
+            
+            # Add word count
+            text = processed.get('text', '') or processed.get('transcript', '')
+            processed['metadata'] = {
+                'word_count': len(text.split()),
+                'processing_status': 'success',
+                'processing_errors': errors
+            }
+            
+        except Exception as e:
+            errors.append(str(e))
+            processed['metadata'] = {
+                'word_count': 0,
+                'processing_status': 'error',
+                'processing_errors': errors
+            }
+        
+        return processed
+
+def ensure_downloads_exist(author: str) -> None:
+    """Check if downloads exist and run build.py if they don't."""
+    download_dir = Path(f"downloads/{author}")
+    if not download_dir.exists() or not any(download_dir.iterdir()):
+        logger.info(f"No downloads found for {author}. Running build.py...")
+        subprocess.run([sys.executable, "build.py", author], check=True)
+    else:
+        logger.info(f"Downloads found for {author}. Skipping build.py.")
+
+def load_csv_content(author: str) -> List[Dict[str, str]]:
+    """Load the published_content.csv file."""
+    csv_path = Path(f"authors/{author}/published_content.csv")
+    if not csv_path.exists():
+        raise FileNotFoundError(f"No published_content.csv found for {author}")
+    
+    content = []
+    with open(csv_path, 'r', newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            content.append(row)
+    return content
+
+def load_processed_content(author: str, kind: str) -> List[Dict[str, Any]]:
+    """Load processed content from the downloads directory."""
+    kind_dir = Path(f"downloads/{author}/{kind}")
+    if not kind_dir.exists():
+        return []
+    
+    content = []
+    for file in kind_dir.glob("*.json"):
+        with open(file, 'r', encoding='utf-8') as f:
+            content.append(json.load(f))
+    return content
+
+def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processed_content: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Create MCP resource from the content."""
+    processor = ContentProcessor()
+    start_time = datetime.now(UTC)
+    
+    # Initialize content type counters
+    content_types = {}
+    
+    mcp_resource = {
+        "metadata": {
+            "author": author,
+            "version": "1.0",
+            "last_updated": datetime.now(UTC).isoformat(),
+            "content_count": len(csv_content),
+            "content_types": content_types,
+            "processing_stats": {
+                "total_items": len(csv_content),
+                "processed_items": 0,
+                "failed_items": 0,
+                "processing_time": 0
+            }
+        },
+        "content": []
+    }
+    
+    # Create a mapping of URLs to processed content
+    processed_map = {item.get('URL', ''): item for item in processed_content}
+    
+    # Process content with progress bar
+    with tqdm(total=len(csv_content), desc="Processing content") as pbar:
+        for item in csv_content:
+            try:
+                url = item.get('URL', '').strip()
+                kind = item.get('Kind', '').strip()
+                subkind = item.get('SubKind', '').strip()
+                title = item.get('What', '').strip()
+                source = item.get('Where', '').strip()
+                published = item.get('Published', '').strip()
+                
+                # Update content type counter
+                content_types[kind] = content_types.get(kind, 0) + 1
+                
+                # Create base content object
+                content_item = {
+                    "id": f"{author}_{kind}_{len(mcp_resource['content'])}",
+                    "kind": kind.lower(),
+                    "subkind": subkind,
+                    "title": title,
+                    "source": source,
+                    "published_date": published,
+                    "url": url,
+                    "content": {},
+                    "tags": []
+                }
+                
+                # Add processed content if available
+                if url in processed_map:
+                    processed = processor.process_content(kind.lower(), processed_map[url])
+                    content_item['content'] = processed
+                
+                # Generate tags
+                content_item['tags'] = processor.extract_tags(title, content_item['content'])
+                
+                mcp_resource['content'].append(content_item)
+                mcp_resource['metadata']['processing_stats']['processed_items'] += 1
+                
+            except Exception as e:
+                logger.error(f"Error processing item {url}: {e}")
+                mcp_resource['metadata']['processing_stats']['failed_items'] += 1
+            
+            pbar.update(1)
+    
+    # Update processing time
+    processing_time = (datetime.now(UTC) - start_time).total_seconds()
+    mcp_resource['metadata']['processing_stats']['processing_time'] = processing_time
+    
+    return mcp_resource
+
+def validate_mcp_resource(mcp_resource: Dict[str, Any]) -> bool:
+    """Validate the MCP resource against the schema."""
+    try:
+        jsonschema.validate(instance=mcp_resource, schema=MCP_SCHEMA)
+        return True
+    except jsonschema.exceptions.ValidationError as e:
+        logger.error(f"Validation error: {e}")
+        return False
+
+def save_mcp_resource(author: str, mcp_resource: Dict[str, Any]) -> None:
+    """Save the MCP resource to a JSON file."""
+    output_dir = Path(f"mcp_resources/{author}")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    output_file = output_dir / "mcp_resource.json"
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(mcp_resource, f, indent=2)
+    
+    logger.info(f"MCP resource saved to {output_file}")
+
+def main():
+    if len(sys.argv) != 2:
+        logger.error("Usage: create_mcp.py <author>")
+        sys.exit(1)
+    
+    author = sys.argv[1]
+    
+    try:
+        # Ensure downloads exist
+        ensure_downloads_exist(author)
+        
+        # Load content
+        csv_content = load_csv_content(author)
+        
+        # Load processed content for each kind
+        processed_content = []
+        for kind in set(item['Kind'].lower() for item in csv_content):
+            processed_content.extend(load_processed_content(author, kind))
+        
+        # Create MCP resource
+        mcp_resource = create_mcp_resource(author, csv_content, processed_content)
+        
+        # Validate the resource
+        if not validate_mcp_resource(mcp_resource):
+            logger.error("MCP resource validation failed")
+            sys.exit(1)
+        
+        # Save the resource
+        save_mcp_resource(author, mcp_resource)
+        
+        # Print summary
+        stats = mcp_resource['metadata']['processing_stats']
+        logger.info(f"Successfully created MCP resource for {author}")
+        logger.info(f"Processed {stats['processed_items']} items in {stats['processing_time']:.2f} seconds")
+        logger.info(f"Failed items: {stats['failed_items']}")
+        logger.info(f"Content types: {mcp_resource['metadata']['content_types']}")
+        
+    except Exception as e:
+        logger.error(f"Error creating MCP resource: {e}")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main() 

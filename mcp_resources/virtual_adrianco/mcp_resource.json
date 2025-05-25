@@ -1,0 +1,696 @@
+{
+  "metadata": {
+    "author": "virtual_adrianco",
+    "version": "1.0",
+    "last_updated": "2025-05-25T06:48:56.680953+00:00",
+    "content_count": 55,
+    "content_types": {
+      "youtube": 2,
+      "podcast": 20,
+      "infoqvideo": 1,
+      "book": 10,
+      "story": 18,
+      "file": 3,
+      "youtube_playlist": 1
+    },
+    "processing_stats": {
+      "total_items": 55,
+      "processed_items": 55,
+      "failed_items": 0,
+      "processing_time": 0.033353
+    }
+  },
+  "content": [
+    {
+      "id": "virtual_adrianco_youtube_0",
+      "kind": "youtube",
+      "subkind": "",
+      "title": "From Netflix to the Cloud: DevOps, Microservices and Sustainability",
+      "source": "Platform Engineering Podcast",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=FY3asCV9qOE",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_1",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Chat about open source and platforms",
+      "source": "Kubernetes for Humans",
+      "published_date": "3/27/2024",
+      "url": "https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_2",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Nvidia\u2019s Superchips for AI: Talk about GH200 and flip.ai",
+      "source": "The New Stack Analysts with Alex Williams and Sunil Mallya",
+      "published_date": "3/14/2024",
+      "url": "https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_3",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Monitoring for AI",
+      "source": "The New Stack Analysts with Alex Williams",
+      "published_date": "3/28/2024",
+      "url": "https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_4",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "From Code to Climate",
+      "source": "Unlearn Podcast with Barry O'Reilly",
+      "published_date": "1/31/2024",
+      "url": "https://barryoreilly.com/explore/podcast/sustainable-future-for-technology/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_5",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Microservices and Teraservices",
+      "source": "Infoq with Wesley Reisz",
+      "published_date": "",
+      "url": "https://www.infoq.com/podcasts/adrian-cockcroft/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_6",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Episode 15",
+      "source": "MIK+1",
+      "published_date": "",
+      "url": "https://flowframework.org/ffc-podcast/adrian-cockcroft/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_7",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Episode 24",
+      "source": "MIK+1",
+      "published_date": "",
+      "url": "https://flowframework.org/ffc-podcast/adrian-cockcroft-ep-24/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_8",
+      "kind": "youtube",
+      "subkind": "",
+      "title": "Platform Engineering Done Right",
+      "source": "John Myer",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=muKaB4f2qJU",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_9",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Netflix on AWS",
+      "source": "CloudFix",
+      "published_date": "",
+      "url": "https://cloudfix.com/podcast/when-netflix-bet-on-aws/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_10",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Serverless and continuous resilience",
+      "source": "Charles Humble/Container Solutions",
+      "published_date": "",
+      "url": "https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_11",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Future Architectures",
+      "source": "HPC Podcastmwith Shahin/OrionX",
+      "published_date": "11/1/2023",
+      "url": "https://orionx.net/2023/11/hpcpodcast-77-adrian-cockcroft-on-future-architectures/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_12",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "ESG and HPC",
+      "source": "HPC Podcast with Shahin/OrionX",
+      "published_date": "5/1/2023",
+      "url": "https://orionx.net/2023/05/hpcpodcast-57-decarbonization-renewable-energy-esg-w-adrian-cockcroft/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_13",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Evolution of Microservices",
+      "source": "ACM Bytecast",
+      "published_date": "6/17/2016",
+      "url": "https://learning.acm.org/techtalks/microservices",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_14",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Scheduling",
+      "source": "Software Engineering Daily",
+      "published_date": "7/6/2016",
+      "url": "https://softwareengineeringdaily.com/2016/07/06/schedulers-with-adrian-cockcroft/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_15",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Architecting for cloud",
+      "source": "Infoq interview with Michael Floyd",
+      "published_date": "1/24/2013",
+      "url": "https://www.infoq.com/interviews/Adrian-Cockcroft-Netflix/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_16",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Interview, early life etc",
+      "source": "Sam Newman's Magpie Talkshow",
+      "published_date": "10/8/2016",
+      "url": "https://samnewman.io/blog/2016/10/08/magpie-talkshow-episode-22-adrian-cockcroft/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_17",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Microservices",
+      "source": "SE Radio with Stefan Tilkov",
+      "published_date": "12/10/2014",
+      "url": "https://se-radio.net/2014/12/episode-216-adrian-cockcroft-on-the-modern-cloud-based-platform/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_18",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Cloud and HPC",
+      "source": "Inside HPC with Shahin Khan and Doug Black",
+      "published_date": "2022",
+      "url": "https://insidehpc.com/2022/09/hpcpodcast-aws-sun-ebay-netflix-and-others-vet-adrian-cockcroft-talks-cloud-hpc-ai-and-the-amazon-sustainability-data-initiative/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_19",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "SC23 summary",
+      "source": "Inside HPC with Shahin Khan and Doug Black",
+      "published_date": "2023",
+      "url": "https://insidehpc.com/2023/11/hpcpodcast-tech-analyst-adrian-cockcroft-on-trends-driving-future-hpc-architectures/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_infoqvideo_20",
+      "kind": "infoqvideo",
+      "subkind": "",
+      "title": "What we learned and didn't learn from Netflix",
+      "source": "Infoq - QCon London talk/video integrated together",
+      "published_date": "3/28/2023",
+      "url": "https://www.infoq.com/presentations/microservices-netflix-industry/",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_21",
+      "kind": "book",
+      "subkind": "",
+      "title": "Q&A: Serverless Development on AWS - sustainability expert section",
+      "source": "O'Reilly - Sheen Brisals and Luke Hedger",
+      "published_date": "3/14/2024",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_22",
+      "kind": "book",
+      "subkind": "",
+      "title": "Foreword: Building Green Software",
+      "source": "O'Reilly - Anne Curry",
+      "published_date": "",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_23",
+      "kind": "book",
+      "subkind": "",
+      "title": "Foreword1: The Value Flywheel Effect",
+      "source": "IT Revolution - David Anderson",
+      "published_date": "",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_24",
+      "kind": "book",
+      "subkind": "",
+      "title": "Foreword2: Reaching Cloud Velocity",
+      "source": "AWS: Jonathan Allen, Thomas Blood",
+      "published_date": "",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_25",
+      "kind": "book",
+      "subkind": "",
+      "title": "Foreword: In Search of Certainty 2nd Edition",
+      "source": "Mark Burgess",
+      "published_date": "",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_26",
+      "kind": "book",
+      "subkind": "",
+      "title": "Foreword: Irresistable APIs",
+      "source": "Kirsten Hunter",
+      "published_date": "",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_27",
+      "kind": "book",
+      "subkind": "1,21-187,215-233",
+      "title": "Capacity Planning for Internet Services",
+      "source": "Sun Press Blueprints - adrianco, Walker",
+      "published_date": "2000",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/caphi.pdf",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_28",
+      "kind": "book",
+      "subkind": "1,31-65,80-107,117-148,339-356",
+      "title": "Resource Management",
+      "source": "Sun Press Blueprints  - McDougall, adrianco etc.",
+      "published_date": "1999",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/rm.pdf",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_29",
+      "kind": "book",
+      "subkind": "",
+      "title": "Sun Performance and Tuning: Java and the Internet",
+      "source": "Prentice Hall - adrianco and Rich Pettit",
+      "published_date": "1998",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_book_30",
+      "kind": "book",
+      "subkind": "",
+      "title": "Sun Performance and Tuning: SPARC and Solaris",
+      "source": "Prentice Hall - adrianco",
+      "published_date": "1995",
+      "url": "",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_31",
+      "kind": "story",
+      "subkind": "",
+      "title": "Microservices and DevOps",
+      "source": "Infoq Charles Humble",
+      "published_date": "7/11/2014",
+      "url": "https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_32",
+      "kind": "story",
+      "subkind": "",
+      "title": "High availability",
+      "source": "Richard Seroter on Infoq",
+      "published_date": "",
+      "url": "https://www.infoq.com/articles/cockcroft-high-availability/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_33",
+      "kind": "story",
+      "subkind": "",
+      "title": "Failing Over Without Falling Over",
+      "source": "Stackoverflow",
+      "published_date": "2020",
+      "url": "https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_file_34",
+      "kind": "file",
+      "subkind": "",
+      "title": "Lots of blog post text extracted from medium archive",
+      "source": "Directory created by code/medium_posts.py",
+      "published_date": "2025",
+      "url": "./authors/virtual_adrianco/medium_adrianco/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_file_35",
+      "kind": "file",
+      "subkind": "",
+      "title": "Lots of blog post text extracted from blogger archive",
+      "source": "Directory created by code/extract_blogger_posts.py",
+      "published_date": "2014",
+      "url": "./authors/virtual_adrianco/blogger_perfcap_posts/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_36",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft Appearance Playlist on YouTube",
+      "source": "Many different accounts - technical content",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_37",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "Enterprise Indigestion at NVIDIA GTC",
+      "source": "The New Stack",
+      "published_date": "2024",
+      "url": "https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_38",
+      "kind": "story",
+      "subkind": "",
+      "title": "SC23 update",
+      "source": "InsideHPC",
+      "published_date": "2023",
+      "url": "https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_39",
+      "kind": "story",
+      "subkind": "",
+      "title": "SC22 predictions",
+      "source": "InsideHPC",
+      "published_date": "2022",
+      "url": "https://insidehpc.com/2022/12/sc22-cxl3-0-the-future-of-hpc-interconnects-and-frontier-vs-fugaku/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_40",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "Why did Docker Catch on Quickly and Why is it so Interesting",
+      "source": "The New Stack",
+      "published_date": "2014",
+      "url": "https://thenewstack.io/why-did-docker-catch-on-quickly-and-why-is-it-so-interesting/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_41",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "A Conference to Discuss Developer-Driven Infrastructure",
+      "source": "The New Stack",
+      "published_date": "2015",
+      "url": "https://thenewstack.io/a-conference-to-discuss-developer-driven-infrastructure/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_42",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "The Rise of Continuous Resilience",
+      "source": "The New Stack",
+      "published_date": "2020",
+      "url": "https://thenewstack.io/the-rise-of-continuous-resilience/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_43",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "Nvidia GTC: Hyperscaler Happiness and Enterprise Indigestion",
+      "source": "The New Stack",
+      "published_date": "2024",
+      "url": "https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_44",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "Sustainability: Comparing AWS, Azure and Google",
+      "source": "The New Stack",
+      "published_date": "2024",
+      "url": "https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_45",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "Cloud PUE: Comparing AWS, Azure and GCP Global Regions",
+      "source": "The New Stack",
+      "published_date": "2025",
+      "url": "https://thenewstack.io/cloud-pue-comparing-aws-azure-and-gcp-global-regions/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_46",
+      "kind": "story",
+      "subkind": "tns-post-body-content",
+      "title": "NVIDIA Unveils Next Gen Rubin and Feynman Architectures",
+      "source": "The New Stack",
+      "published_date": "2025",
+      "url": "https://thenewstack.io/nvidia-unveils-next-gen-rubin-and-feynman-architectures-pushing-ai-power-limits/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_file_47",
+      "kind": "file",
+      "subkind": "",
+      "title": "Presentation decks",
+      "source": "Directory of greatest hits slide decks",
+      "published_date": "",
+      "url": "./authors/virtual_adrianco/presentations/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_48",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Analyst Roundtable: Chips, AI, Search, Quantum, Bitcoin, Fusion \u2013 OXD26",
+      "source": "OrionX Download",
+      "published_date": "2025",
+      "url": "https://orionx.net/2025/03/analyst-roundtable-chips-ai-search-quantum-bitcoin-fusion-oxd26/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_49",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "SC24, Supercomputing, CryptoSuper500, Quantum, RISC-V Summit \u2013 OXD25",
+      "source": "OrionX Download",
+      "published_date": "2024",
+      "url": "https://orionx.net/2024/12/sc24-supercomputing-cryptosuper500-quantum-risc-v-summit-oxd25/",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_50",
+      "kind": "story",
+      "subkind": "crayons-article__main",
+      "title": "Scaling AWS Costs to Match the Business",
+      "source": "Dev.to",
+      "published_date": "2021",
+      "url": "https://dev.to/aws/scaling-aws-costs-to-match-the-business-f9k",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_51",
+      "kind": "story",
+      "subkind": "crayons-article__main",
+      "title": "Why are services slow sometimes?",
+      "source": "Dev.to",
+      "published_date": "2020",
+      "url": "https://dev.to/aws/why-are-services-slow-sometimes-mn3",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_52",
+      "kind": "story",
+      "subkind": "crayons-article__main",
+      "title": "If at first you don't get an answer...",
+      "source": "Dev.to",
+      "published_date": "2020",
+      "url": "https://dev.to/aws/if-at-first-you-don-t-get-an-answer-3e85",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_53",
+      "kind": "story",
+      "subkind": "crayons-article__main",
+      "title": "Sustainability transformation and DevSusOps",
+      "source": "Dev.to",
+      "published_date": "2021",
+      "url": "https://dev.to/aws/what-is-sustainability-transformation-32hi",
+      "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_story_54",
+      "kind": "story",
+      "subkind": "crayons-article__main",
+      "title": "Measuring energy usage",
+      "source": "Dev.to",
+      "published_date": "2021",
+      "url": "https://dev.to/adrianco/measuring-energy-usage-5ip",
+      "content": {},
+      "tags": []
+    }
+  ]
+}
