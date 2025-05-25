@@ -32,6 +32,7 @@ from transformers import pipeline
 from tqdm import tqdm
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import hashlib
 
 # Configure logging
 logging.basicConfig(
@@ -322,23 +323,58 @@ def load_processed_content(author: str, kind: str) -> List[Dict[str, Any]]:
     
     return content
 
+def walk_all_downloaded_content(author: str) -> List[Dict[str, Any]]:
+    """Recursively walk all files in downloads/{author}/ and load their content."""
+    base_dir = Path(f"downloads/{author}")
+    discovered = []
+    for file_path in base_dir.rglob("*"):
+        if file_path.is_file():
+            ext = file_path.suffix.lower()
+            try:
+                if ext == ".json":
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        # Try to extract URL if present
+                        url = data.get('URL') or data.get('url') or str(file_path)
+                        title = data.get('title') or file_path.stem
+                        discovered.append({
+                            'kind': file_path.parent.name,
+                            'url': url,
+                            'title': title,
+                            'content': data,
+                            'file_path': str(file_path)
+                        })
+                elif ext == ".txt":
+                    url = extract_url_from_text_file(file_path)
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        text = f.read()
+                        if url:
+                            text = '\n'.join(text.split('\n')[1:])
+                        discovered.append({
+                            'kind': file_path.parent.name,
+                            'url': url or str(file_path),
+                            'title': file_path.stem,
+                            'content': {'text': text},
+                            'file_path': str(file_path)
+                        })
+            except Exception as e:
+                logger.warning(f"Error loading file {file_path}: {e}")
+    return discovered
+
 def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processed_content: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Create MCP resource from the content."""
+    """Create MCP resource from the content, including all discovered files."""
     processor = ContentProcessor()
     start_time = datetime.now(UTC)
-    
-    # Initialize content type counters
     content_types = {}
-    
     mcp_resource = {
         "metadata": {
             "author": author,
             "version": "1.0",
             "last_updated": datetime.now(UTC).isoformat(),
-            "content_count": len(csv_content),
+            "content_count": 0,  # Will update later
             "content_types": content_types,
             "processing_stats": {
-                "total_items": len(csv_content),
+                "total_items": 0,  # Will update later
                 "processed_items": 0,
                 "failed_items": 0,
                 "processing_time": 0
@@ -346,58 +382,86 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
         },
         "content": []
     }
-    
-    # Create a mapping of URLs to processed content
-    processed_map = {item.get('URL', ''): item for item in processed_content}
-    
-    # Process content with progress bar
-    with tqdm(total=len(csv_content), desc="Processing content") as pbar:
-        for item in csv_content:
+    # Map URLs from CSV for deduplication
+    csv_urls = set(item.get('URL', '').strip() for item in csv_content if item.get('URL'))
+    # Map URLs from processed_content for deduplication
+    processed_urls = set(item.get('URL', '').strip() for item in processed_content if item.get('URL'))
+    # Walk all discovered files
+    discovered = walk_all_downloaded_content(author)
+    discovered_urls = set(item['url'] for item in discovered)
+    # Merge all URLs for deduplication
+    all_urls = csv_urls | processed_urls | discovered_urls
+    # Build a lookup for discovered content
+    discovered_map = {item['url']: item for item in discovered}
+    # Build MCP entries from CSV (with processed content if available)
+    for idx, item in enumerate(csv_content):
+        try:
+            url = item.get('URL', '').strip()
+            kind = item.get('Kind', '').strip() or discovered_map.get(url, {}).get('kind', '')
+            subkind = item.get('SubKind', '').strip()
+            title = item.get('What', '').strip() or discovered_map.get(url, {}).get('title', '')
+            source = item.get('Where', '').strip()
+            published = item.get('Published', '').strip()
+            # Update content type counter
+            content_types[kind] = content_types.get(kind, 0) + 1
+            content_item = {
+                "id": f"{author}_{kind}_{idx}",
+                "kind": kind.lower(),
+                "subkind": subkind,
+                "title": title,
+                "source": source,
+                "published_date": published,
+                "url": url,
+                "content": {},
+                "tags": []
+            }
+            # Add processed content if available
+            if url in discovered_map:
+                content_item['content'] = processor.process_content(kind.lower(), discovered_map[url]['content'])
+            elif url in processed_urls:
+                # fallback to processed_content
+                match = next((pc for pc in processed_content if pc.get('URL', '').strip() == url), None)
+                if match:
+                    content_item['content'] = processor.process_content(kind.lower(), match)
+            # Generate tags
+            content_item['tags'] = processor.extract_tags(title, content_item['content'])
+            mcp_resource['content'].append(content_item)
+            mcp_resource['metadata']['processing_stats']['processed_items'] += 1
+        except Exception as e:
+            logger.error(f"Error processing item {item.get('URL', '')}: {e}")
+            mcp_resource['metadata']['processing_stats']['failed_items'] += 1
+    # Add discovered content not in CSV
+    csv_and_processed = csv_urls | processed_urls
+    for item in discovered:
+        if item['url'] not in csv_and_processed:
             try:
-                url = item.get('URL', '').strip()
-                kind = item.get('Kind', '').strip()
-                subkind = item.get('SubKind', '').strip()
-                title = item.get('What', '').strip()
-                source = item.get('Where', '').strip()
-                published = item.get('Published', '').strip()
-                
+                kind = item.get('kind', '')
+                title = item.get('title', '')
+                url = item.get('url', '')
                 # Update content type counter
                 content_types[kind] = content_types.get(kind, 0) + 1
-                
-                # Create base content object
+                # Use a hash of the file path for unique id
+                file_hash = hashlib.md5(item['file_path'].encode()).hexdigest()[:8]
                 content_item = {
-                    "id": f"{author}_{kind}_{len(mcp_resource['content'])}",
+                    "id": f"{author}_{kind}_{file_hash}",
                     "kind": kind.lower(),
-                    "subkind": subkind,
+                    "subkind": "",
                     "title": title,
-                    "source": source,
-                    "published_date": published,
+                    "source": "",
+                    "published_date": "",
                     "url": url,
-                    "content": {},
-                    "tags": []
+                    "content": processor.process_content(kind.lower(), item['content']),
+                    "tags": processor.extract_tags(title, item['content'])
                 }
-                
-                # Add processed content if available
-                if url in processed_map:
-                    processed = processor.process_content(kind.lower(), processed_map[url])
-                    content_item['content'] = processed
-                
-                # Generate tags
-                content_item['tags'] = processor.extract_tags(title, content_item['content'])
-                
                 mcp_resource['content'].append(content_item)
                 mcp_resource['metadata']['processing_stats']['processed_items'] += 1
-                
             except Exception as e:
-                logger.error(f"Error processing item {url}: {e}")
+                logger.error(f"Error processing discovered file {item.get('file_path', '')}: {e}")
                 mcp_resource['metadata']['processing_stats']['failed_items'] += 1
-            
-            pbar.update(1)
-    
-    # Update processing time
-    processing_time = (datetime.now(UTC) - start_time).total_seconds()
-    mcp_resource['metadata']['processing_stats']['processing_time'] = processing_time
-    
+    # Update counts
+    mcp_resource['metadata']['content_count'] = len(mcp_resource['content'])
+    mcp_resource['metadata']['processing_stats']['total_items'] = len(mcp_resource['content'])
+    mcp_resource['metadata']['processing_stats']['processing_time'] = (datetime.now(UTC) - start_time).total_seconds()
     return mcp_resource
 
 def validate_mcp_resource(mcp_resource: Dict[str, Any]) -> bool:

@@ -2,22 +2,23 @@
   "metadata": {
     "author": "virtual_adrianco",
     "version": "1.0",
-    "last_updated": "2025-05-25T06:58:47.579153+00:00",
-    "content_count": 55,
+    "last_updated": "2025-05-25T07:05:03.041366+00:00",
+    "content_count": 187,
     "content_types": {
       "youtube": 2,
-      "podcast": 20,
+      "podcast": 52,
       "infoqvideo": 1,
       "book": 10,
       "story": 18,
       "file": 3,
-      "youtube_playlist": 1
+      "youtube_playlist": 100,
+      "virtual_adrianco": 1
     },
     "processing_stats": {
-      "total_items": 55,
-      "processed_items": 55,
+      "total_items": 187,
+      "processed_items": 187,
       "failed_items": 0,
-      "processing_time": 0.053874
+      "processing_time": 0.037346
     }
   },
   "content": [
@@ -313,13 +314,7 @@
       "source": "O'Reilly - Sheen Brisals and Luke Hedger",
       "published_date": "3/14/2024",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": [
         "aws",
         "serverless",
@@ -334,13 +329,7 @@
       "source": "O'Reilly - Anne Curry",
       "published_date": "",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": []
     },
     {
@@ -351,13 +340,7 @@
       "source": "IT Revolution - David Anderson",
       "published_date": "",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": []
     },
     {
@@ -368,13 +351,7 @@
       "source": "AWS: Jonathan Allen, Thomas Blood",
       "published_date": "",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": [
         "cloud"
       ]
@@ -387,13 +364,7 @@
       "source": "Mark Burgess",
       "published_date": "",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": []
     },
     {
@@ -404,13 +375,7 @@
       "source": "Kirsten Hunter",
       "published_date": "",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": []
     },
     {
@@ -443,13 +408,7 @@
       "source": "Prentice Hall - adrianco and Rich Pettit",
       "published_date": "1998",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": [
         "performance"
       ]
@@ -462,13 +421,7 @@
       "source": "Prentice Hall - adrianco",
       "published_date": "1995",
       "url": "",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": [
         "performance"
       ]
@@ -539,7 +492,13 @@
       "source": "Many different accounts - technical content",
       "published_date": "",
       "url": "https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
-      "content": {},
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
       "tags": []
     },
     {
@@ -760,6 +719,2604 @@
       "published_date": "2021",
       "url": "https://dev.to/adrianco/measuring-energy-usage-5ip",
       "content": {},
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_virtual_adrianco_b473175c",
+      "kind": "virtual_adrianco",
+      "subkind": "",
+      "title": "state",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/state.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_9afc0481",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Open source, open data, open standards with Adrian Cockcroft and Zaheda Bhorat (AWS)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=htUGrDBKAMg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_61fb83c4",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Keynote: Cloud Trends, DevOps and Microservices",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=c0wSmr-u5vQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "devops",
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_1f4a0f0b",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Innovating at speed : AWS and Formula 1",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=D7usPAR9a1k&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_24aaa906",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "SC24, Supercomputing, CryptoSuper500, Quantum, RISC-V Summit \u2013 OXD25",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=d5mr6Ib5ygQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_3fe114ba",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Ep#113 Platform Engineering Teams Done RIGHT with Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=muKaB4f2qJU&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "engineering",
+        "platform"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_c0d38f6e",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS Summit Series 2017 - Chicago: Keynote",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=tMUKC6eBjL8&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_aa9914f2",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS Executive Forum 2019 - Positioning Large Transformation Efforts to the Board",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=L2N9y9ovKuk&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_c271c9aa",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft | A Journey from Chaos Monkey to Sustainability",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=jwRVtUEND8c&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_56e28b53",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Coffee with Mr. IoT: Adrian Cockcroft- Amazon's pathway to sustainability through technology",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=hFVxkdHh9To&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_24f4b932",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Systems for Innovation - Adrian Cockcroft, at USI",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=-vlOG3UIp9c&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_501573d6",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Migrating to Cloud - Lessons from Netflix, Brought Up to Date",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=XrWII4ewrXA&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "netflix"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_6b94f65d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS Summit Stockholm 2017: Opening Keynote with Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=GgkAhTtZugc&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_a0ab891d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS Summit Seoul 2017 | Day2 \uae30\uc870\uc5f0\uc124 Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=061bsq0jVYU&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_2bba1da4",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Keynote : Modern App Development - Adrian Cockcroft, VP Cloud Architecture Strategy, AWS",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=wYCLbLrEoqs&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture",
+        "aws",
+        "cloud"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_0b91b72e",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Open Source in the enterprise with Zaheda Bhorat and Adrian Cockcroft (AWS)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=YMKsEmlw6V4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_a91b1289",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "DOES15 - Adrian Cockcroft - Systems for Innovation",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=SaMIiLF1w20&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_758f31cc",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Speeding Up Innovation \u2022 Adrian Cockcroft \u2022 YOW! 2019",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=QlqQmHLXNiY&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_4a4d1f40",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Developing a Chaos Architecture Mindset \u2022 Adrian Cockcroft \u2022 GOTO 2018",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=vHl7EZ5o0uY&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_3a5a3f8a",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Mik + One: Adrian Cockcroft (Episode 24)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=fDgqiA2yZ7g&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_ef6d4346",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Rapid Development - Why Serverless First Is Like Building with Lego",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=5siD210Grr4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "serverless"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_516faa89",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Chaos Architecture",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=ja6n5etN8hk&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_b3a66590",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Don't Miss | How Cloud Architect Adrian Cockcroft Transformed Tech | A Candid Conversation with Jani",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=vNIDssi4FK4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_2bf1b7ab",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Panel \u2022 Nicole Forsgren, Joshua Corman, Dan North & Adrian Cockcroft \u2022 GOTO 2015",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=1qyljMck9Ng&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_54d6a2c2",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "2023 Monitorama Live Stream Day 1",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=CRJcc1TqBhM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_08534d10",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Mapping Your Stack",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=mzIdKGCOf1g&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_2409435d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Failing Over without Falling Over - Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=R3_ccsuPoD8&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_41bc5bf7",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "From Code to Climate with Adrian Cockcroft (Clip)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=5YF68KFGSzk&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_689f9a01",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Mik + One  Adrian Cockcroft Episode 15",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=nFiauu-qMV4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_d256b4c8",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Speeding Up Innovation - Adrian Cockcroft | Craft 2019",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=rnygCAvVBj8&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_72f3acfe",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Welcome Keynote \u2022 Adrian Cockcroft \u2022 GOTO 2015",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=SBp7AWelOhM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_4fcf3e23",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "microXchg 2016 - Adrian Cockcroft : Analyzing Response Time Distributions for Microservices",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=5DPr4x76nvQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_fdaba369",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft - Speeding Up Innovation",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=4jYYrkmAnS0&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_e15445be",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Episode 216: Adrian Cockcroft on the Modern Cloud-based Platform",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=qQzPmzVfmYA&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "platform"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_5e225bf8",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft - Migrating to Cloud (Netflix Cloud Journey)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=U88QkaDGx6k&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "netflix"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_8f5788ba",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Paul Borrill on Time clocks and the reordering of events",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=CWF3QnfihL4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_a67395fa",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "ACD22-1-01 Adrian Cockcroft AWS",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Qu1MLtHg2so&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_d8038a74",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Fast Delivery \u2022 Adrian Cockcroft \u2022 GOTO 2014",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=hvFo3Q2PIQ0&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_524defe3",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Purpose Driven Development - Adrian Cockcroft - SpringOne Platform",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=sll9RNHz3t0&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "platform"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_aa72ed79",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "@HPCpodcast-77: Adrian Cockcroft on Future Architectures",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=2jrCvon9oTE&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_507fb1d0",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Fast Delivery - Adrian Cockcroft (@adrianco)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=icvtIK83I_g&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_af1685f5",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Reflections on Monitorama 2015 with Adrian Cockcroft and James Turnbull",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=LuA1AjorCQs&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_db02d984",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Microservices Retrospective \u2013 What We Learned (and Didn\u2019t Learn) from Netflix",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=TOM6UhCetQ0&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices",
+        "netflix"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_cfcf3cb2",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Simplifying the Future \u2014 Adrian Cockcroft, Battery Ventures",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=DGK6jjamzfY&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_b4832c15",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Top Technical Talent Programs - Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=CSL-vNQW3SM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_126fc8f6",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Day 1 Keynote by  Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=O2UzvvtHkL4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_563af582",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=6aC_nes9LIk&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_e42ee2bd",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Developing a Chaos Architecture Mindset - Adrian Cockcroft (AWS)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=4VleTKY0QAM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture",
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_4245e935",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Deep Dive into the Cloud Native Open Source with NetflixOSS \u2022 Adrian Cockcroft \u2022 GOTO 2014",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=R2kKmMyqTfc&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "cloud native"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_3465ac8f",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft, AWS | KubeCon + CloudNativeCon EU 2018",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=iqVtGmNgSJk&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_45695cd5",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Chaos Carnival 2023-Day 2 Keynote 1 - Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=noKPM4UlJDk&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_fc20e78d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockroft: \"Chaos Engineering - What is it, and where it's going\" - Chaos Conf 2018",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=cefJd2v037U&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "engineering"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_2bbce1cf",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Managing Failure Modes in Microservice Architectures",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=v5Gwi9AYvm4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_0a40ff96",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Safety Margins and Availability with Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=NRCQngvRNng&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_160ef93e",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockroft - DevOps Enterprise Summit 2015 - theCUBE - #DOES15",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=pfEKVDWUknU&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_b66c1e7c",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Keynote: Cloud Native at AWS - Adrian Cockcroft, Amazon Web Services",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=5U-6sxR5DaQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws",
+        "cloud",
+        "cloud native"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_8088d939",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Dynamic Non-Events \u2022 Adrian Cockcroft \u2022 GOTO 2018",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=mFQRn_m2mP4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_5c9e502d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "GopherCon 2016: Communicating Sequential Goroutines - Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=gO1qF19y6KQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_71186756",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Cloud Trends \u2022 Adrian Cockcroft \u2022 GOTO 2017",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=EDZBYbEwhm8&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_0e8e3430",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Fast Delivery: Adrian Cockcroft @nginxconf 2014",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=5qJ_BibbMLw&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_5b2a0d90",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS re:Invent 2014 | (ARC201) Cloud-Native Cost Optimization",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=LZwlkqERv2g&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_b7513390",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "OSCON Roundtable: The Future of IT Infrastructure",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=9q08veg5WkY&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_bacbb957",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft on The New De-Normal - Untangling \"Kitchen Sink\" Database Schemas",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Y6nKD-sK6tg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_1aa92a10",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Live from the NY Summit | Interview with Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=7CJrAhpZlXE&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_bf906148",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "It's Complicated\u2026 \u2022 Adrian Cockcroft \u2022 YOW! 2015",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=NJ-3eNx8iBo&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_a750c4bb",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "The Evolution of Microservices",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=b8TDodu5E0k&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_24c30dea",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "OpenStack Silicon Valley 2015 - Web Services and Microservices: The Effect on Vendor Lock In",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=ewuw1s4cnJA&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_383bf17a",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "DevOpsDays Silicon Valley 2018 - Dynamic Non-Events by Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=C9VchTAd7AM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_005c7861",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS Summit Tel Aviv 2017: Keynote with Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Cg79AaEAPwA&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_33c3a973",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Fireside Chat: Adrian Cockcroft Talks with the Authors of The Value Flywheel Effect",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=713_6MBW7q0&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_5f6526aa",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "OpenStack:Now Podcast, Episode 5: Adrian Cockcroft, Battery Ventures",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=jOxFFmoRkzw&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "podcast"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_ddd7a9c5",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "\"The Evolution of Microservices,\" Adrian Cockroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Mg4Cs2K7f98&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_122b7734",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS re:Invent 2019: Innovation at speed (ARC203)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=8ona5ZTu4_E&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_79c67458",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Migrating to Cloud Native with Microservices \u2022 Adrian Cockcroft \u2022 GOTO 2014",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=DvLvHnHNT2w&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "cloud native",
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_e0b4474e",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft Presents: The Startup Lifecycle",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=uRcSFXafIWM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_cdb270fe",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Microservices and the Importance of Next-Gen Apps for Businesses",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=4ClmJxVz1SM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_b4e92ecc",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "microXchg 2017 - Adrian Cockcroft: Shrinking Microservices to Functions",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=ZgxZCXouBkY&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_d4e1feaf",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "#022 - Kubernetes for Humans with Adrian Cockcroft (Nubank)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=xSy-usyvWC4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "kubernetes"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_1f4fb26e",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Monitoring Microservices - A Challenge - Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Q3-XKQbMkXg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_1480175d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft, OrionX | Supercloud 5",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=phZabEbs2-4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_777b8129",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft | DockerCon 2015",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=K4rcnaiyc_M&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_6feb9ce7",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Map Camp 2020 | Maps, Games and Morality",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=qtMHOuGw0lI&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_c862cdbc",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "\"Monitoring Microservices: A Challenge\" - Adrian Cockcroft Keynote",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=smEuX-Hq6RI&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_ba25eb2a",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS re:Invent 2015 | (SPOT304) How Adrian Cockcroft Helped Move Customers to AWS",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=LMYYJuh9t70&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_30897c52",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft Interview at DevOps Summit 2015",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=htIO8ydywa4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "devops"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_1d79885d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian\u2019s Greatest Hits, B-Sides & Re-issues \u2022 Adrian Cockcroft \u2022 YOW! 2022",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=kc9dyTF2PjI&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_aacc11e2",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Digital Transformation",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=7lDWXtNjVyQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_4ecbc421",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "The Lotus Elise was unlike any other car ever made | Revelations with Jason Cammisa | Ep. 21",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=h0jXhOmL7Xg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_9571b041",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft on the Evolution of Business Logic from Monoliths, to Microservices, to Functions",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=aBcG57Gw9k0&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_21954b98",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "AWS re:Invent 2020: Adrian Cockcroft\u2019s architecture trends and topics for 2021",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=4rLVJFHfK98&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture",
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_3cf41300",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Microservices: What's Missing?",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=p848Dr3EtQg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_e19ef5b2",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft on the importance of the culture at Amazon",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=eMXMJ2lV1_g&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_abf41572",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Adrian Cockcroft, AWS | AWS re:Invent 2018",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=lhHmXNDvd3M&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_a22200b9",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "It's Simple... \u2022 Adrian Cockcroft \u2022 GOTO 2016",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=JSnOk-4m7C4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_4123607e",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Mendix World 2016 Adrian Cockcroft Keynote: It's Simple",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Bn2WLIpPxX8&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_39c09f4b",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "It's Simple\u2026 \u2022 Adrian Cockcroft \u2022 GOTO 2016",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=a8Re9Cvv6nU&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_eb325380",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "The State of the Art in Microservices by Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=pwpxq9-uw_0&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_6c22674d",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Open Source Force Multipliers - Adrian Cockcroft (Amazon Web Services)",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=E1aAG2iftMo&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_a1b57997",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Keynote Speakers Adrian Cockcroft and Nicholas Heller Interview at TM Forum Live 2014",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=dWPdsd8m8KM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_f89ac464",
+      "kind": "youtube_playlist",
+      "subkind": "",
+      "title": "Battery Ventures: Simulating and Visualizing Large Scale Cassandra Deployments",
+      "source": "",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Ev3rIMLujTM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_88906036",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Episode 15: Adrian Cockcroft - Flow Framework",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Episode_15_Adrian_Cockcroft_Flow_Framework.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_952d222b",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Supercomputing-24, CryptoSuper500, Quantum, RISC-V - OXD25",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Supercomputing_24_CryptoSuper500_Quantum_RISC_V_OXD25.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_fb1f310c",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "The New Monitoring for Services That Feed from LLMs",
+      "source": "",
+      "published_date": "",
+      "url": "https://cdn.simplecast.com/audio/5672b58f-7201-4e0e-b0af-da702259d97f/episodes/940fbd39-3936-441f-8087-4ce99b7be568/audio/050961ea-530c-49a0-ae27-046982856d34/default_tc.mp3",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "monitoring"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_679acf4e",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "#022 - Kubernetes for Humans with Adrian Cockcroft (Nubank) | Komodor",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/022_Kubernetes_for_Humans_with_Adrian_Cockcroft_Nubank_Komodor_info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "kubernetes"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_f2851ff9",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "From Netflix to the Cloud: Adrian Cockroft on DevOps, Microservices, and Sustainability",
+      "source": "",
+      "published_date": "",
+      "url": "https://rr3---sn-n4v7sns7.googlevideo.com/videoplayback?expire=1742628032&ei=YBDeZ-z8KIKRsfIPj6-B4Qo&ip=71.198.156.212&id=o-ALRdyd3qfKsy1G9HxamFg5Jlp29gbc4zvxFPOtQwDmJy&itag=251&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&met=1742606432%2C&mh=8F&mm=31%2C26&mn=sn-n4v7sns7%2Csn-a5msenek&ms=au%2Conr&mv=m&mvi=3&pl=22&rms=au%2Cau&initcwndbps=4841250&bui=AccgBcMw4zqjQxITUESI3F4OdfRvFZOxrqDk-TUOZn4x7eCCs205IRITjiaZ0dzbr0GdxJw9s8JX8zL8&spc=_S3wKgfT7Xqfy-T0aMoIB3PSIXueOFKlyiIvrfsx4jJ7TPkKtHTx8VviE8JJhRrTMnY7&vprv=1&svpuc=1&mime=audio%2Fwebm&rqh=1&gir=yes&clen=54880774&dur=3681.281&lmt=1724191440499505&mt=1742605973&fvip=3&keepalive=yes&c=ANDROID&txp=6208224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRgIhAMckZWnpsB3fBlBTaiYaBnYTtPLf7dxFgvURPohpW8q6AiEA2NBOIgXi3JB21VU2yn8fZq8omdk17NCABrNukbiJMNo%3D&lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=AFVRHeAwRgIhANvmiGQSkP7c4tahT-l3TG0XWq4jeEcTCua8y5FqJnCqAiEAzd4tM3x1zU7kiX_g6k48CXhwlGAIQfqZEgKqK60yRQY%3D",
+      "content": {
+        "chapters": [
+          {
+            "start_time": 0.0,
+            "title": "Intro",
+            "end_time": 38.0
+          },
+          {
+            "start_time": 38.0,
+            "title": "Adrians early career",
+            "end_time": 213.0
+          },
+          {
+            "start_time": 213.0,
+            "title": "The Netflix outage",
+            "end_time": 424.0
+          },
+          {
+            "start_time": 424.0,
+            "title": "The biggest challenge in migration to AWS",
+            "end_time": 648.0
+          },
+          {
+            "start_time": 648.0,
+            "title": "DevOps culture at Netflix",
+            "end_time": 854.0
+          },
+          {
+            "start_time": 854.0,
+            "title": "Microservices at Netflix",
+            "end_time": 982.0
+          },
+          {
+            "start_time": 982.0,
+            "title": "DevOps at Netflix",
+            "end_time": 1097.0
+          },
+          {
+            "start_time": 1097.0,
+            "title": "Cloud vs DevOps",
+            "end_time": 1284.0
+          },
+          {
+            "start_time": 1284.0,
+            "title": "Building throwaway prototypes",
+            "end_time": 1758.0
+          },
+          {
+            "start_time": 1758.0,
+            "title": "Serverless pitfalls",
+            "end_time": 2232.0
+          },
+          {
+            "start_time": 2232.0,
+            "title": "Platform engineering",
+            "end_time": 2277.0
+          },
+          {
+            "start_time": 2277.0,
+            "title": "Rebranding platform engineering",
+            "end_time": 2472.0
+          },
+          {
+            "start_time": 2472.0,
+            "title": "Repatriation",
+            "end_time": 2692.0
+          },
+          {
+            "start_time": 2692.0,
+            "title": "AI in Platform Engineering",
+            "end_time": 2812.0
+          },
+          {
+            "start_time": 2812.0,
+            "title": "Sustainability at Amazon",
+            "end_time": 3067.0
+          },
+          {
+            "start_time": 3067.0,
+            "title": "Impact on sustainability",
+            "end_time": 3132.0
+          },
+          {
+            "start_time": 3132.0,
+            "title": "Green Software Foundation",
+            "end_time": 3681
+          }
+        ],
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "devops",
+        "microservices",
+        "netflix",
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_ad774650",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "From Netflix to the Cloud: Adrian Cockroft on DevOps, Microservices, and Sustainability",
+      "source": "",
+      "published_date": "",
+      "url": "https://rr3---sn-n4v7sns7.googlevideo.com/videoplayback?expire=1742628024&ei=WBDeZ7nKBbOWsfIPhpCtgA4&ip=71.198.156.212&id=o-AJVQQivjY88dhhg9gljXdceHbQmr6Lyc6-02WD9zBIiZ&itag=251&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&met=1742606424%2C&mh=8F&mm=31%2C29&mn=sn-n4v7sns7%2Csn-o097znsd&ms=au%2Crdu&mv=m&mvi=3&pl=22&rms=au%2Cau&initcwndbps=4841250&bui=AccgBcNS3vFqoapn2rXkMIxcI1MX3Z2bIKmie9TZ-dqQIiYCvHUuJdg73wmlfWCcdJ8yTntmdBmuruuL&spc=_S3wKi4z4DPgT8nu312evHyNCFxrXsReJNelRbqUtemQiLgCxg34NboTSt1hY9o94IFI&vprv=1&svpuc=1&mime=audio%2Fwebm&rqh=1&gir=yes&clen=54880774&dur=3681.281&lmt=1724191440499505&mt=1742605973&fvip=3&keepalive=yes&c=ANDROID&txp=6208224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhANKPHEhIXUjzklRAhlQU1ZhVlRkwrVgx3EH94x7mBDQFAiBJKmW4DbD5xYvMlvB-rKLq6fr3QTxp9wjfHFmTCFWWnA%3D%3D&lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=AFVRHeAwRAIgEDNtYM-MWxZhuooRi_jNP5Q51AN6oKRsEnxFblq3qJYCIBhhL1wzEun4pSgzvsfjcyq_PzgIST3xi5naspt8wASR",
+      "content": {
+        "chapters": [
+          {
+            "start_time": 0.0,
+            "title": "Intro",
+            "end_time": 38.0
+          },
+          {
+            "start_time": 38.0,
+            "title": "Adrians early career",
+            "end_time": 213.0
+          },
+          {
+            "start_time": 213.0,
+            "title": "The Netflix outage",
+            "end_time": 424.0
+          },
+          {
+            "start_time": 424.0,
+            "title": "The biggest challenge in migration to AWS",
+            "end_time": 648.0
+          },
+          {
+            "start_time": 648.0,
+            "title": "DevOps culture at Netflix",
+            "end_time": 854.0
+          },
+          {
+            "start_time": 854.0,
+            "title": "Microservices at Netflix",
+            "end_time": 982.0
+          },
+          {
+            "start_time": 982.0,
+            "title": "DevOps at Netflix",
+            "end_time": 1097.0
+          },
+          {
+            "start_time": 1097.0,
+            "title": "Cloud vs DevOps",
+            "end_time": 1284.0
+          },
+          {
+            "start_time": 1284.0,
+            "title": "Building throwaway prototypes",
+            "end_time": 1758.0
+          },
+          {
+            "start_time": 1758.0,
+            "title": "Serverless pitfalls",
+            "end_time": 2232.0
+          },
+          {
+            "start_time": 2232.0,
+            "title": "Platform engineering",
+            "end_time": 2277.0
+          },
+          {
+            "start_time": 2277.0,
+            "title": "Rebranding platform engineering",
+            "end_time": 2472.0
+          },
+          {
+            "start_time": 2472.0,
+            "title": "Repatriation",
+            "end_time": 2692.0
+          },
+          {
+            "start_time": 2692.0,
+            "title": "AI in Platform Engineering",
+            "end_time": 2812.0
+          },
+          {
+            "start_time": 2812.0,
+            "title": "Sustainability at Amazon",
+            "end_time": 3067.0
+          },
+          {
+            "start_time": 3067.0,
+            "title": "Impact on sustainability",
+            "end_time": 3132.0
+          },
+          {
+            "start_time": 3132.0,
+            "title": "Green Software Foundation",
+            "end_time": 3681
+          }
+        ],
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "devops",
+        "microservices",
+        "netflix",
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_30a97b41",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "@HPCpodcast: AWS, Sun, eBay, Netflix (and Others) Vet Adrian Cockcroft Talks Cloud HPC-AI and the Amazon Sustainability Data Initiative - High-Performance Computing News Analysis | insideHPC",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/HPCpodcast_AWS_Sun_eBay_Netflix_and_Others_Vet_Adrian_Cockcroft_Talks_Cloud_HPC_AI_and_the_Amazon_Sustainability_Data_Initiative_High_Performance_Computing_News_Analysis_insideHPC.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws",
+        "cloud",
+        "netflix",
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_8942a077",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "@HPCpodcast: AWS, Sun, eBay, Netflix (and Others) Vet Adrian Cockcroft Talks Cloud HPC-AI and the Amazon Sustainability Data Initiative - High-Performance Computing News Analysis | insideHPC (1)",
+      "source": "",
+      "published_date": "",
+      "url": "http://orionx.net/wp-content/uploads/2022/09/036@HPCpodcas_Adrian-Cockcroft_Cloud_ESG_20220914.mp3?_=1",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws",
+        "cloud",
+        "netflix",
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_2ac3f298",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Microservices, Terraservices and Serverless Computing",
+      "source": "",
+      "published_date": "",
+      "url": "https://cf-hls-opus-media.sndcdn.com/playlist/PDgfxySYwdWO.64.opus/playlist.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1vcHVzLW1lZGlhLnNuZGNkbi5jb20vcGxheWxpc3QvUERnZnh5U1l3ZFdPLjY0Lm9wdXMvcGxheWxpc3QubTN1OCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3NDI2MDQ1MzB9fX1dfQ__&Signature=M7LCJcOysGLmo0khzuJvnby05s8k6RXaFozS0DQzzfhv41VUmroFPw5UmZJRY6CXvE4lwVXQ8kK4hnRzIqmYJijoP7f8Shxb46VOfwtKvJPjLO~Nv9zWOHkfJH0x2Z0SZvD-cMzI1zQJHYEbAMmAp3sSmy04vfQ9TMpzmHNvtHFWb~xa3hwXIlEWJQ538OSY2ahtPOnFZgrsxCQTaXC0hVihgRWlWMLSsQ0MF-4JvXc4kXl75j6GAPC7LAKWxc6mBTPrst8MDV6dgPHcUFURE5aIkQceyUjGSM5lun1T0tjyp8vcwiEe~yjt64gh6gXpIGAPJDHJmCX7aDMPgfS0Kg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices",
+        "serverless"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_c81fdf34",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Podcast: Adrian Cockcroft on Serverless, Continuous Resilience, Wardley Mapping, Large Memory Systems and Sustainability",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Podcast_Adrian_Cockcroft_on_Serverless_Continuous_Resilience_Wardley_Mapping_Large_Memory_Systems_and_Sustainability_info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "podcast",
+        "resilience",
+        "serverless",
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_1c136d4a",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "The New Monitoring for Services That Feed from LLMs",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/The_New_Monitoring_for_Services_That_Feed_from_LLMs.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "monitoring"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_661d1309",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Episode 24: Adrian Cockcroft - Flow Framework",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Episode_24_Adrian_Cockcroft_Flow_Framework.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_c430cead",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Nvidia\u2019s Superchips for AI: \u2018Radical,\u2019 but a Work in Progress",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Nvidia_s_Superchips_for_AI_Radical_but_a_Work_in_Progress.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_4daa27aa",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Decarbonization, ESG, w Adrian Cockcroft - @HPCpodcast (1)",
+      "source": "",
+      "published_date": "",
+      "url": "https://orionx.net/wp-content/uploads/2023/05/057@HPCpodcast_Adrian-Cockcroft_Carbon-ESG_20230503.mp3?_=1",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_0077348d",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Nvidia\u2019s Superchips for AI: \u2018Radical,\u2019 but a Work in Progress",
+      "source": "",
+      "published_date": "",
+      "url": "https://cdn.simplecast.com/audio/5672b58f-7201-4e0e-b0af-da702259d97f/episodes/c27ff629-b50f-4c9d-a4b8-154adb18e4a5/audio/21249ddc-8d38-4138-8e5d-612df9cfb2b5/default_tc.mp3",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_7ce99b25",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Schedulers with Adrian Cockcroft - Software Engineering Daily (1)",
+      "source": "",
+      "published_date": "",
+      "url": "https://traffic.megaphone.fm/SED1616041688.mp3?_=1",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "engineering"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_e7746e70",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Architecture for the Cloud - InfoQ",
+      "source": "",
+      "published_date": "",
+      "url": "http://ress.infoq.com/downloads/mp3downloads/interviews/infoq-12-nov-adrian-cockcroft.mp3?Policy=eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6IioiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3NDI2MDkxNzN9LCJJcEFkZHJlc3MiOnsiQVdTOlNvdXJjZUlwIjoiMC4wLjAuMC8wIn19fV19&Signature=Fj4ki7BoXgztHB73H9~FwnuDJgKS1LnMG2XTsJD6D8Gbk0-6sMON8rsDY1mdGExfsssrSZnvsbdfLTcmYEhd8w07G0RyJzxmFRa25asaM~MSJIOgdZjRZ3A7j0WfQ631a3YOC2blChyTN62yUQl1YFNxSFF8yQeHkMOqiugL8v4_&Key-Pair-Id=APKAIMZVI7QH4C5YKH6Q",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture",
+        "cloud"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_37088807",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Schedulers with Adrian Cockcroft - Software Engineering Daily",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Schedulers_with_Adrian_Cockcroft_Software_Engineering_Daily.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "engineering"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_fe5deddf",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Sam Newman - Magpie Talkshow Episode 22 - Adrian Cockcroft",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Sam_Newman_Magpie_Talkshow_Episode_22_Adrian_Cockcroft.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_b992a1d6",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Future Architectures - @HPCpodcast (1)",
+      "source": "",
+      "published_date": "",
+      "url": "https://orionx.net/wp-content/uploads/2023/11/077@HPCpodcast_Adrian-Cockcrofy_Future-Architectures_20231130.mp3?_=1",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_dda23231",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Episode 15: Adrian Cockcroft - Flow Framework",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Episode_15_Adrian_Cockcroft_Flow_Framework_info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_96f5f367",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "unknown_info",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/unknown_info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_a3b59454",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Decarbonization, ESG, w Adrian Cockcroft - @HPCpodcast",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Decarbonization_ESG_w_Adrian_Cockcroft_HPCpodcast.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_408c6038",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "@HPCpodcast: Tech Analyst Adrian Cockcroft on Trends Driving Future HPC Architectures - High-Performance Computing News Analysis | insideHPC",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/HPCpodcast_Tech_Analyst_Adrian_Cockcroft_on_Trends_Driving_Future_HPC_Architectures_High_Performance_Computing_News_Analysis_insideHPC.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "hpc"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_68a8dc78",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "When Netflix Bet On AWS",
+      "source": "",
+      "published_date": "",
+      "url": "https://cdn.simplecast.com/audio/62cedf3d-2540-4354-85b4-8a5e293d1104/episodes/bb12eeb0-7db8-413c-b7b1-aa3a17a1ae64/audio/91c97a87-12d7-4be9-b628-85e82601b948/default_tc.mp3",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws",
+        "netflix"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_322fe17a",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "The Evolution of Microservices with Adrian Cockroft",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/The_Evolution_of_Microservices_with_Adrian_Cockroft_info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_7444c172",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "@HPCpodcast: Tech Analyst Adrian Cockcroft on Trends Driving Future HPC Architectures - High-Performance Computing News Analysis | insideHPC (1)",
+      "source": "",
+      "published_date": "",
+      "url": "https://orionx.net/wp-content/uploads/2023/11/077@HPCpodcast_Adrian-Cockcrofy_Future-Architectures_20231130.mp3?_=1",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "hpc"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_20f355ec",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Analyst Roundtable: Chips, AI, Search, Quantum, Bitcoin, Fusion - OXD26",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Analyst_Roundtable_Chips_AI_Search_Quantum_Bitcoin_Fusion_OXD26.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_c90d0bb5",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Episode 24: Adrian Cockcroft - Flow Framework",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Episode_24_Adrian_Cockcroft_Flow_Framework_info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_d85c66c4",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Microservices, Terraservices and Serverless Computing",
+      "source": "",
+      "published_date": "",
+      "url": "https://cf-hls-opus-media.sndcdn.com/playlist/PDgfxySYwdWO.64.opus/playlist.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1vcHVzLW1lZGlhLnNuZGNkbi5jb20vcGxheWxpc3QvUERnZnh5U1l3ZFdPLjY0Lm9wdXMvcGxheWxpc3QubTN1OCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3NDI2MDM4MTJ9fX1dfQ__&Signature=XDo1OiQ7kO0RHU3Y5WAHECtOp57K7B1AXwhxGedTt2jQibFn0Kv8dhm-Oa~YtSbBpiXaF~C2wu5qPqmOPcz~dxoxiprzRxlr-IZ1dsiT0KrCV6Z-b9uQFTsXlwXtGHmABI4oBCocspLkVf-Zi4znHEPFE7HmjnscSrw~rvmiuLY9eLHc4pR3hLQtFkg-ALmovjKh281H8Pa0RZSK3rQcNe-vKREBK6MZ7D9KyP3AhQ8RAvOEvRFhdoFDlOQ~9F1HuY3Ak06u7SNvHnk7qq1Ut~f61NAN0Fzz-4~S0844RCfzMDNQuM3z6zWQjYArarAEYMnRvOEKcFN2fjiPMOxgaw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "microservices",
+        "serverless"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_podcast_fd5fa227",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Magpie Talkshow Episode 22 - Adrian Cockcroft (Spaghetti Monster Simulation Edition)",
+      "source": "",
+      "published_date": "",
+      "url": "https://cf-hls-opus-media.sndcdn.com/playlist/DwsToh00RUjc.64.opus/playlist.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1vcHVzLW1lZGlhLnNuZGNkbi5jb20vcGxheWxpc3QvRHdzVG9oMDBSVWpjLjY0Lm9wdXMvcGxheWxpc3QubTN1OCoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3NDI2MDQ3OTR9fX1dfQ__&Signature=Gvi1r7yNumawbEeJuvVaDfsMUiBQDoJHIR1e7r~QADr7yNVD1D03NomYjlAfDXQaKNpRcomVgYN~bAJ03fJuNjTUn39oWi33Vh9-8S6J0pAXhZWXC6FyamS7ea4ZJ5DKgrhsWQn5v~FVeGQ5K-K87~lOqNDsmFUHNA2DeShEiNZz3uWjmgFNj-SVhCfFhZDQreJac117RfAZNmNB4eIifgHa806fPBl2FelYrdo17yhaHWE2Yak6FEjBtJQEjDEn3cyFikDrtbh2~~5idW6P6VyBrmWtNMJpwm5RJNrSNKIJpleK5XTZ3xhGQF6GM93tMe~ahD37nnDVTLxrvWpkWA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_podcast_4977fa3d",
+      "kind": "podcast",
+      "subkind": "",
+      "title": "Adrian Cockcroft on Future Architectures - @HPCpodcast",
+      "source": "",
+      "published_date": "",
+      "url": "downloads/virtual_adrianco/podcast/Adrian_Cockcroft_on_Future_Architectures_HPCpodcast.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
       "tags": []
     }
   ]
