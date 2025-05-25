@@ -323,42 +323,191 @@ def load_processed_content(author: str, kind: str) -> List[Dict[str, Any]]:
     
     return content
 
-def walk_all_downloaded_content(author: str) -> List[Dict[str, Any]]:
-    """Recursively walk all files in downloads/{author}/ and load their content."""
-    base_dir = Path(f"downloads/{author}")
+def walk_all_downloaded_content(author: str) -> List[Dict]:
+    """Walk through all downloaded content for an author and return a list of content items."""
     discovered = []
-    for file_path in base_dir.rglob("*"):
-        if file_path.is_file():
-            ext = file_path.suffix.lower()
-            try:
-                if ext == ".json":
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        data = json.load(f)
-                        # Try to extract URL if present
-                        url = data.get('URL') or data.get('url') or str(file_path)
-                        title = data.get('title') or file_path.stem
-                        discovered.append({
-                            'kind': file_path.parent.name,
-                            'url': url,
-                            'title': title,
-                            'content': data,
-                            'file_path': str(file_path)
-                        })
-                elif ext == ".txt":
-                    url = extract_url_from_text_file(file_path)
-                    with open(file_path, 'r', encoding='utf-8') as f:
-                        text = f.read()
-                        if url:
-                            text = '\n'.join(text.split('\n')[1:])
-                        discovered.append({
-                            'kind': file_path.parent.name,
-                            'url': url or str(file_path),
-                            'title': file_path.stem,
-                            'content': {'text': text},
-                            'file_path': str(file_path)
-                        })
-            except Exception as e:
-                logger.warning(f"Error loading file {file_path}: {e}")
+    downloads_dir = Path(f"downloads/{author}")
+    
+    # Special directories for blog archives
+    blog_dirs = {
+        'medium_adrianco': 'medium',
+        'blogger_perfcap_posts': 'blogger'
+    }
+    
+    # Process blog archive directories
+    for dir_name, content_type in blog_dirs.items():
+        blog_dir = downloads_dir / dir_name
+        if blog_dir.exists():
+            for file_path in blog_dir.glob("*.txt"):
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        lines = f.readlines()
+                        url = None
+                        content_lines = []
+                        
+                        # Check first line for URL
+                        if lines and (lines[0].startswith("http://") or lines[0].startswith("https://")):
+                            url = lines[0].strip()
+                            content_lines = lines[1:]
+                        else:
+                            content_lines = lines
+                        
+                        # Always use file name as title
+                        title = file_path.stem.replace("_", " ")
+                        
+                        content = {
+                            "id": f"virtual_{author}_{content_type}_{hash(str(file_path))}",
+                            "kind": content_type,
+                            "subkind": "blog_post",
+                            "title": title,
+                            "source": dir_name,
+                            "published_date": "",
+                            "url": url or str(file_path),
+                            "content": {
+                                "text": "".join(content_lines),
+                                "metadata": {
+                                    "word_count": len("".join(content_lines).split()),
+                                    "processing_status": "success",
+                                    "processing_errors": []
+                                }
+                            }
+                        }
+                        discovered.append(content)
+                except Exception as e:
+                    logging.error(f"Error loading blog file {file_path}: {str(e)}")
+    
+    # Process files in the file directory
+    file_dir = downloads_dir / "file"
+    if file_dir.exists():
+        for file_path in file_dir.glob("*"):
+            if file_path.is_file():
+                try:
+                    # Determine subkind based on file extension
+                    subkind = "document"
+                    if file_path.suffix.lower() in [".pdf", ".pptx", ".ppt"]:
+                        subkind = "presentation"
+                    elif file_path.suffix.lower() == ".txt":
+                        subkind = "blog_post"
+                    
+                    # Always use file name as title
+                    title = file_path.stem.replace("_", " ")
+                    
+                    # For text files, read content and extract URL
+                    if file_path.suffix.lower() == ".txt":
+                        with open(file_path, "r", encoding="utf-8") as f:
+                            lines = f.readlines()
+                            url = None
+                            content_lines = []
+                            
+                            # Check first line for URL
+                            if lines and (lines[0].startswith("http://") or lines[0].startswith("https://")):
+                                url = lines[0].strip()
+                                content_lines = lines[1:]
+                            else:
+                                content_lines = lines
+                            
+                            content = {
+                                "id": f"virtual_{author}_file_{hash(str(file_path))}",
+                                "kind": "file",
+                                "subkind": subkind,
+                                "title": title,
+                                "source": "file",
+                                "published_date": "",
+                                "url": url or str(file_path),
+                                "content": {
+                                    "text": "".join(content_lines),
+                                    "metadata": {
+                                        "word_count": len("".join(content_lines).split()),
+                                        "processing_status": "success",
+                                        "processing_errors": []
+                                    }
+                                }
+                            }
+                            discovered.append(content)
+                    else:
+                        # For non-text files, just include metadata
+                        content = {
+                            "id": f"virtual_{author}_file_{hash(str(file_path))}",
+                            "kind": "file",
+                            "subkind": subkind,
+                            "title": title,
+                            "source": "file",
+                            "published_date": "",
+                            "url": str(file_path),
+                            "content": {
+                                "metadata": {
+                                    "word_count": 0,
+                                    "processing_status": "success",
+                                    "processing_errors": []
+                                }
+                            }
+                        }
+                        discovered.append(content)
+                except Exception as e:
+                    logging.error(f"Error loading file {file_path}: {str(e)}")
+    
+    # Process other directories
+    for kind_dir in downloads_dir.glob("*"):
+        if kind_dir.is_dir() and kind_dir.name not in ["file"] + list(blog_dirs.keys()):  # Skip already processed directories
+            for file_path in kind_dir.glob("*"):
+                if file_path.is_file():
+                    try:
+                        # Always use file name as title for these entries as well
+                        title = file_path.stem.replace("_", " ")
+                        if file_path.suffix.lower() == ".json":
+                            with open(file_path, "r", encoding="utf-8") as f:
+                                data = json.load(f)
+                                content = {
+                                    "id": f"virtual_{author}_{kind_dir.name}_{hash(str(file_path))}",
+                                    "kind": kind_dir.name,
+                                    "subkind": "",
+                                    "title": title,
+                                    "source": kind_dir.name,
+                                    "published_date": "",
+                                    "url": data.get("url", str(file_path)),
+                                    "content": {
+                                        "metadata": {
+                                            "word_count": 0,
+                                            "processing_status": "success",
+                                            "processing_errors": []
+                                        }
+                                    }
+                                }
+                                discovered.append(content)
+                        elif file_path.suffix.lower() == ".txt":
+                            with open(file_path, "r", encoding="utf-8") as f:
+                                lines = f.readlines()
+                                url = None
+                                content_lines = []
+                                
+                                # Check first line for URL
+                                if lines and (lines[0].startswith("http://") or lines[0].startswith("https://")):
+                                    url = lines[0].strip()
+                                    content_lines = lines[1:]
+                                else:
+                                    content_lines = lines
+                                
+                                content = {
+                                    "id": f"virtual_{author}_{kind_dir.name}_{hash(str(file_path))}",
+                                    "kind": kind_dir.name,
+                                    "subkind": "",
+                                    "title": title,
+                                    "source": kind_dir.name,
+                                    "published_date": "",
+                                    "url": url or str(file_path),
+                                    "content": {
+                                        "text": "".join(content_lines),
+                                        "metadata": {
+                                            "word_count": len("".join(content_lines).split()),
+                                            "processing_status": "success",
+                                            "processing_errors": []
+                                        }
+                                    }
+                                }
+                                discovered.append(content)
+                    except Exception as e:
+                        logging.error(f"Error loading file {file_path}: {str(e)}")
+    
     return discovered
 
 def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processed_content: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -382,6 +531,7 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
         },
         "content": []
     }
+    
     # Map URLs from CSV for deduplication
     csv_urls = set(item.get('URL', '').strip() for item in csv_content if item.get('URL'))
     # Map URLs from processed_content for deduplication
@@ -393,15 +543,21 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
     all_urls = csv_urls | processed_urls | discovered_urls
     # Build a lookup for discovered content
     discovered_map = {item['url']: item for item in discovered}
+    
     # Build MCP entries from CSV (with processed content if available)
     for idx, item in enumerate(csv_content):
         try:
             url = item.get('URL', '').strip()
             kind = item.get('Kind', '').strip() or discovered_map.get(url, {}).get('kind', '')
             subkind = item.get('SubKind', '').strip()
-            title = item.get('What', '').strip() or discovered_map.get(url, {}).get('title', '')
+            title = item.get('What', '').strip() or discovered_map.get(url, {}).get('title', '') or 'Untitled'
             source = item.get('Where', '').strip()
             published = item.get('Published', '').strip()
+            
+            # Skip file kind entries from CSV as we'll handle them separately
+            if kind.lower() == 'file':
+                continue
+                
             # Update content type counter
             content_types[kind] = content_types.get(kind, 0) + 1
             content_item = {
@@ -415,6 +571,7 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                 "content": {},
                 "tags": []
             }
+            
             # Add processed content if available
             if url in discovered_map:
                 content_item['content'] = processor.process_content(kind.lower(), discovered_map[url]['content'])
@@ -423,41 +580,51 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                 match = next((pc for pc in processed_content if pc.get('URL', '').strip() == url), None)
                 if match:
                     content_item['content'] = processor.process_content(kind.lower(), match)
+            
             # Generate tags
             content_item['tags'] = processor.extract_tags(title, content_item['content'])
             mcp_resource['content'].append(content_item)
             mcp_resource['metadata']['processing_stats']['processed_items'] += 1
+            
         except Exception as e:
             logger.error(f"Error processing item {item.get('URL', '')}: {e}")
             mcp_resource['metadata']['processing_stats']['failed_items'] += 1
-    # Add discovered content not in CSV
+    
+    # Add all discovered content not in CSV
     csv_and_processed = csv_urls | processed_urls
     for item in discovered:
         if item['url'] not in csv_and_processed:
             try:
                 kind = item.get('kind', '')
-                title = item.get('title', '')
+                subkind = item.get('subkind', '')
+                title = item.get('title', '') or 'Untitled'
                 url = item.get('url', '')
+                source = item.get('source', '')
+                content = item.get('content', {})
+                
                 # Update content type counter
                 content_types[kind] = content_types.get(kind, 0) + 1
-                # Use a hash of the file path for unique id
-                file_hash = hashlib.md5(item['file_path'].encode()).hexdigest()[:8]
+                
+                # Use a hash of the URL for unique id
+                url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
                 content_item = {
-                    "id": f"{author}_{kind}_{file_hash}",
+                    "id": f"{author}_{kind}_{url_hash}",
                     "kind": kind.lower(),
-                    "subkind": "",
+                    "subkind": subkind,
                     "title": title,
-                    "source": "",
+                    "source": source,
                     "published_date": "",
                     "url": url,
-                    "content": processor.process_content(kind.lower(), item['content']),
-                    "tags": processor.extract_tags(title, item['content'])
+                    "content": content,
+                    "tags": processor.extract_tags(title, content)
                 }
                 mcp_resource['content'].append(content_item)
                 mcp_resource['metadata']['processing_stats']['processed_items'] += 1
+                
             except Exception as e:
-                logger.error(f"Error processing discovered file {item.get('file_path', '')}: {e}")
+                logger.error(f"Error processing discovered file {url}: {e}")
                 mcp_resource['metadata']['processing_stats']['failed_items'] += 1
+    
     # Update counts
     mcp_resource['metadata']['content_count'] = len(mcp_resource['content'])
     mcp_resource['metadata']['processing_stats']['total_items'] = len(mcp_resource['content'])
