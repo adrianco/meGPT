@@ -1,4 +1,119 @@
 """
+================================================================================
+MCP RESOURCE CREATION SCRIPT - DEVELOPMENT CONTEXT
+================================================================================
+
+OVERVIEW:
+This script creates Machine-Controlled Publishing (MCP) resources from an 
+author's content by processing downloaded files and CSV metadata to generate
+a comprehensive JSON resource with enhanced metadata, tags, and summaries.
+
+DEVELOPMENT HISTORY:
+1. Initial Request: User wanted to convert content into MCP resources and 
+   requested guidance on the process and schema structure.
+
+2. Schema Development: Created a detailed MCP JSON schema with metadata 
+   properties including author info, content types, and processing statistics.
+
+3. Basic Script Creation: Built initial create_mcp.py to process CSV content
+   and convert to MCP format with basic functionality.
+
+4. Enhancement Phase: Added comprehensive improvements including:
+   - NLP-based tag extraction using NLTK (lemmatization, stopword removal)
+   - Content summarization using BART model from Hugging Face Transformers
+   - Enhanced metadata with content statistics and processing info
+   - Improved error handling and logging throughout
+   - Progress reporting with tqdm progress bars
+   - ContentProcessor class for organized processing logic
+
+5. File Processing Expansion: Extended script to walk through all downloaded
+   content files, not just CSV-referenced content:
+   - Added walk_all_downloaded_content() function
+   - Processed both JSON and text files from downloads directory
+   - Extracted URLs from first line of text files
+   - Avoided duplicate processing by URL matching
+
+6. Blog Archive Integration: Added special handling for blog archives:
+   - medium_adrianco directory → 'medium' content type
+   - blogger_perfcap_posts directory → 'blogger' content type
+   - Each blog post becomes individual entry with proper metadata
+
+7. File Directory Processing: Enhanced to handle the 'file' directory:
+   - Categorized files by extension (pdf/pptx/ppt → presentation, txt → blog_post)
+   - Processed each file as individual entry with proper subkind classification
+   - Maintained file path references and metadata
+
+8. Title Standardization: Ensured all file-based entries use filename as title:
+   - File stem (name without extension) becomes title
+   - Underscores replaced with spaces for readability
+   - Consistent across all file types and directories
+
+9. URL Extraction Improvements: Enhanced URL detection and processing:
+   - Changed from startswith() to regex pattern matching
+   - Finds URLs anywhere on first line (not just at start)
+   - Properly removes URL lines from content text
+   - Handles formats like "[URL] https://..." correctly
+
+10. Code Generalization: Removed hardcoded author-specific references:
+    - Eliminated "virtual_" prefix hardcoding
+    - Made script work with any author name provided as argument
+    - Dynamic processing based on actual directory structure
+
+11. URL Standardization: Enhanced URL handling for proper resource linking:
+    - Convert relative file paths to full GitHub repository URLs
+    - For PDFs, use processed files from downloads directory as source
+    - Ensure all URLs are absolute and accessible
+    - Handle both local file references and web URLs consistently
+
+12. PDF Processing Architecture: Moved PDF text extraction to preprocessing pipeline:
+    - PDF text extraction now handled by book_processor.py during build phase
+    - MCP script reads preprocessed text files created by book processor
+    - Copy PDFs to mcp_resources directory for persistent storage
+    - Reference copied PDFs in mcp_resources (downloads is ephemeral)
+    - Simplified MCP script to focus on resource assembly rather than content extraction
+
+CURRENT FUNCTIONALITY:
+- Processes CSV metadata for published content
+- Walks all downloaded content directories recursively
+- Extracts and processes text files with URL detection
+- Generates NLP-based tags from titles and content
+- Creates summaries using BART transformer model
+- Handles multiple content types (youtube, podcast, story, book, etc.)
+- Special processing for blog archives (medium, blogger)
+- File categorization by extension and content type
+- Converts relative paths to full GitHub repository URLs
+- Reads preprocessed text content from book processor output
+- Copies PDFs to mcp_resources directory for persistent storage
+- Generates summaries from preprocessed text content for books/presentations
+- Comprehensive error handling and logging
+- JSON schema validation for output
+- Deduplication by URL to avoid processing same content multiple times
+
+DEPENDENCIES:
+- nltk: Natural language processing (tokenization, stopwords, lemmatization)
+- transformers: BART model for text summarization
+- tqdm: Progress bar display
+- jsonschema: MCP resource validation
+- Standard libraries: json, csv, pathlib, datetime, re, logging, hashlib, shutil
+
+USAGE:
+    python create_mcp.py <author_name>
+    
+OUTPUTS:
+- MCP resource JSON file at: mcp_resources/<author>/mcp_resource.json
+- Copied PDF files at: mcp_resources/<author>/pdfs/
+- Comprehensive logging of processing statistics
+- Content type breakdown and processing metrics
+
+SCHEMA COMPLIANCE:
+Generates MCP resources following defined JSON schema with:
+- Metadata section (author, version, timestamps, statistics)
+- Content array with standardized entry format
+- Proper validation and error handling
+================================================================================
+"""
+
+"""
 Create MCP Resources Script
 
 Purpose:
@@ -33,6 +148,7 @@ from tqdm import tqdm
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
+import shutil
 
 # Configure logging
 logging.basicConfig(
@@ -40,6 +156,110 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+# GitHub repository base URL for converting relative paths
+GITHUB_REPO_BASE = "https://raw.githubusercontent.com/adrianco/meGPT/main/"
+
+def convert_to_full_url(url_or_path: str, author: str) -> str:
+    """Convert relative file paths to full GitHub repository URLs."""
+    if not url_or_path:
+        return url_or_path
+    
+    # If it's already a full URL, return as-is
+    if url_or_path.startswith(('http://', 'https://')):
+        return url_or_path
+    
+    # If it's a relative path starting with ./authors/, convert to GitHub URL
+    if url_or_path.startswith('./authors/'):
+        return GITHUB_REPO_BASE + url_or_path[2:]  # Remove './' prefix
+    
+    # If it's a downloads path, convert to GitHub URL
+    if url_or_path.startswith('downloads/'):
+        return GITHUB_REPO_BASE + url_or_path
+    
+    # If it's an mcp_resources path, convert to GitHub URL
+    if url_or_path.startswith('mcp_resources/'):
+        return GITHUB_REPO_BASE + url_or_path
+    
+    # If it's just a filename or other relative path, assume it's in authors directory
+    if not url_or_path.startswith('/'):
+        return GITHUB_REPO_BASE + f"authors/{author}/" + url_or_path
+    
+    return url_or_path
+
+def copy_pdf_to_mcp_resources(pdf_path: Path, author: str) -> Optional[str]:
+    """Copy PDF to mcp_resources directory and return the new path."""
+    try:
+        # Create mcp_resources/author/pdfs directory
+        mcp_pdfs_dir = Path(f"mcp_resources/{author}/pdfs")
+        mcp_pdfs_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Copy PDF to mcp_resources directory
+        destination = mcp_pdfs_dir / pdf_path.name
+        shutil.copy2(pdf_path, destination)
+        
+        # Return relative path for URL conversion
+        return f"mcp_resources/{author}/pdfs/{pdf_path.name}"
+        
+    except Exception as e:
+        logger.error(f"Error copying PDF {pdf_path} to mcp_resources: {e}")
+        return None
+
+def get_processed_file_url(file_path: str, author: str) -> str:
+    """For PDF and other files, check if there's a processed version in downloads directory."""
+    if not file_path:
+        return file_path
+    
+    # Extract filename from path
+    path_obj = Path(file_path)
+    filename = path_obj.name
+    
+    # For PDFs, copy to mcp_resources and return that path
+    if filename.endswith('.pdf'):
+        # Check if PDF exists in original location
+        if path_obj.exists():
+            copied_path = copy_pdf_to_mcp_resources(path_obj, author)
+            if copied_path:
+                return convert_to_full_url(copied_path, author)
+        
+        # Check if PDF exists in downloads directory
+        downloads_file_path = Path(f"downloads/{author}/file/{filename}")
+        if downloads_file_path.exists():
+            copied_path = copy_pdf_to_mcp_resources(downloads_file_path, author)
+            if copied_path:
+                return convert_to_full_url(copied_path, author)
+    
+    # Check if there's a processed version in downloads
+    downloads_file_path = Path(f"downloads/{author}/file/{filename}")
+    if downloads_file_path.exists():
+        return GITHUB_REPO_BASE + f"downloads/{author}/file/{filename}"
+    
+    # If no processed version, convert the original path
+    return convert_to_full_url(file_path, author)
+
+def get_pdf_text_content(file_path: str, author: str) -> Optional[str]:
+    """Get PDF text content from preprocessed text files created by book processor."""
+    if not file_path or not file_path.endswith('.pdf'):
+        return None
+    
+    # Extract filename from path
+    path_obj = Path(file_path)
+    filename = path_obj.name
+    base_name = filename.replace('.pdf', '')
+    
+    # Look for preprocessed text file in downloads/author/book/ directory
+    text_file_path = Path(f"downloads/{author}/book/{base_name}.txt")
+    if text_file_path.exists():
+        try:
+            with open(text_file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                logger.info(f"Found preprocessed text content for PDF: {filename} ({len(content)} characters)")
+                return content.strip()
+        except Exception as e:
+            logger.warning(f"Error reading preprocessed text file {text_file_path}: {e}")
+    
+    logger.info(f"No preprocessed text content found for PDF: {filename}")
+    return None
 
 # Download required NLTK data
 try:
@@ -282,9 +502,10 @@ def extract_url_from_text_file(file_path: Path) -> Optional[str]:
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             first_line = f.readline().strip()
-            # Check if the first line looks like a URL
-            if first_line.startswith(('http://', 'https://')):
-                return first_line
+            # Look for URL anywhere on the first line
+            url_match = re.search(r'https?://\S+', first_line)
+            if url_match:
+                return url_match.group(0)
     except Exception as e:
         logger.warning(f"Error reading text file {file_path}: {e}")
     return None
@@ -345,18 +566,20 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
                         url = None
                         content_lines = []
                         
-                        # Check first line for URL
-                        if lines and (lines[0].startswith("http://") or lines[0].startswith("https://")):
-                            url = lines[0].strip()
-                            content_lines = lines[1:]
-                        else:
-                            content_lines = lines
+                        # Check first line for URL using regex
+                        if lines:
+                            url_match = re.search(r'https?://\S+', lines[0])
+                            if url_match:
+                                url = url_match.group(0)
+                                content_lines = lines[1:]
+                            else:
+                                content_lines = lines
                         
                         # Always use file name as title
                         title = file_path.stem.replace("_", " ")
                         
                         content = {
-                            "id": f"virtual_{author}_{content_type}_{hash(str(file_path))}",
+                            "id": f"{author}_{content_type}_{hash(str(file_path))}",
                             "kind": content_type,
                             "subkind": "blog_post",
                             "title": title,
@@ -399,15 +622,17 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
                             url = None
                             content_lines = []
                             
-                            # Check first line for URL
-                            if lines and (lines[0].startswith("http://") or lines[0].startswith("https://")):
-                                url = lines[0].strip()
-                                content_lines = lines[1:]
-                            else:
-                                content_lines = lines
+                            # Check first line for URL using regex
+                            if lines:
+                                url_match = re.search(r'https?://\S+', lines[0])
+                                if url_match:
+                                    url = url_match.group(0)
+                                    content_lines = lines[1:]
+                                else:
+                                    content_lines = lines
                             
                             content = {
-                                "id": f"virtual_{author}_file_{hash(str(file_path))}",
+                                "id": f"{author}_file_{hash(str(file_path))}",
                                 "kind": "file",
                                 "subkind": subkind,
                                 "title": title,
@@ -427,7 +652,7 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
                     else:
                         # For non-text files, just include metadata
                         content = {
-                            "id": f"virtual_{author}_file_{hash(str(file_path))}",
+                            "id": f"{author}_file_{hash(str(file_path))}",
                             "kind": "file",
                             "subkind": subkind,
                             "title": title,
@@ -458,7 +683,7 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
                             with open(file_path, "r", encoding="utf-8") as f:
                                 data = json.load(f)
                                 content = {
-                                    "id": f"virtual_{author}_{kind_dir.name}_{hash(str(file_path))}",
+                                    "id": f"{author}_{kind_dir.name}_{hash(str(file_path))}",
                                     "kind": kind_dir.name,
                                     "subkind": "",
                                     "title": title,
@@ -480,15 +705,17 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
                                 url = None
                                 content_lines = []
                                 
-                                # Check first line for URL
-                                if lines and (lines[0].startswith("http://") or lines[0].startswith("https://")):
-                                    url = lines[0].strip()
-                                    content_lines = lines[1:]
-                                else:
-                                    content_lines = lines
+                                # Check first line for URL using regex
+                                if lines:
+                                    url_match = re.search(r'https?://\S+', lines[0])
+                                    if url_match:
+                                        url = url_match.group(0)
+                                        content_lines = lines[1:]
+                                    else:
+                                        content_lines = lines
                                 
                                 content = {
-                                    "id": f"virtual_{author}_{kind_dir.name}_{hash(str(file_path))}",
+                                    "id": f"{author}_{kind_dir.name}_{hash(str(file_path))}",
                                     "kind": kind_dir.name,
                                     "subkind": "",
                                     "title": title,
@@ -557,6 +784,16 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
             # Skip file kind entries from CSV as we'll handle them separately
             if kind.lower() == 'file':
                 continue
+            
+            # Convert URL to full URL if it's a relative path
+            original_url = url
+            if url:
+                if kind.lower() in ['book'] and url.endswith('.pdf'):
+                    # For PDFs, check for processed version in downloads
+                    url = get_processed_file_url(url, author)
+                else:
+                    # For other content, convert relative paths to full URLs
+                    url = convert_to_full_url(url, author)
                 
             # Update content type counter
             content_types[kind] = content_types.get(kind, 0) + 1
@@ -581,6 +818,19 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                 if match:
                     content_item['content'] = processor.process_content(kind.lower(), match)
             
+            # For books and presentations with PDFs, try to get PDF text content and generate summary
+            if kind.lower() in ['book'] and original_url and original_url.endswith('.pdf'):
+                pdf_text = get_pdf_text_content(original_url, author)
+                if pdf_text:
+                    content_item['content']['text'] = pdf_text
+                    content_item['content']['summary'] = processor.generate_summary(pdf_text, max_length=200)
+                    content_item['content']['metadata'] = {
+                        'word_count': len(pdf_text.split()),
+                        'processing_status': 'success',
+                        'processing_errors': []
+                    }
+                    logger.info(f"Added PDF content and summary for book: {title}")
+            
             # Generate tags
             content_item['tags'] = processor.extract_tags(title, content_item['content'])
             mcp_resource['content'].append(content_item)
@@ -601,6 +851,28 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                 url = item.get('url', '')
                 source = item.get('source', '')
                 content = item.get('content', {})
+                
+                # Convert URL to full URL if it's a relative path
+                if url and not url.startswith(('http://', 'https://')):
+                    url = convert_to_full_url(url, author)
+                
+                # For presentations (PDFs), try to get PDF text content and generate summary
+                if subkind == 'presentation' and kind == 'file':
+                    # The URL might be a file path, extract filename for PDF text lookup
+                    file_path = item.get('url', '')
+                    if file_path.endswith('.pdf'):
+                        pdf_text = get_pdf_text_content(file_path, author)
+                        if pdf_text:
+                            content['text'] = pdf_text
+                            content['summary'] = processor.generate_summary(pdf_text, max_length=200)
+                            if 'metadata' not in content:
+                                content['metadata'] = {}
+                            content['metadata'].update({
+                                'word_count': len(pdf_text.split()),
+                                'processing_status': 'success',
+                                'processing_errors': []
+                            })
+                            logger.info(f"Added PDF content and summary for presentation: {title}")
                 
                 # Update content type counter
                 content_types[kind] = content_types.get(kind, 0) + 1
