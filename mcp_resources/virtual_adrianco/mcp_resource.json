@@ -2,40 +2,38 @@
   "metadata": {
     "author": "virtual_adrianco",
     "version": "1.0",
-    "last_updated": "2025-05-26T13:27:47.780035+00:00",
-    "content_count": 204,
+    "last_updated": "2025-05-26T14:14:46.456213+00:00",
+    "content_count": 216,
     "content_types": {
-      "youtube": 4,
+      "youtube_playlist": 102,
       "podcast": 52,
       "infoqvideo": 2,
       "book": 10,
       "story": 18,
-      "youtube_playlist": 100,
-      "file": 18
+      "file": 18,
+      "youtube": 2,
+      "youtube_playlist_test": 2,
+      "summaries": 7,
+      "youtube_playlist_test_playlist": 2,
+      "youtube_playlist_test_individual": 1
     },
     "processing_stats": {
-      "total_items": 204,
-      "processed_items": 204,
+      "total_items": 216,
+      "processed_items": 216,
       "failed_items": 0,
-      "processing_time": 239.086324
+      "processing_time": 0.059903
     }
   },
   "content": [
     {
-      "id": "virtual_adrianco_youtube_0",
-      "kind": "youtube",
+      "id": "virtual_adrianco_youtube_playlist_0",
+      "kind": "youtube_playlist",
       "subkind": "",
       "title": "From Netflix to the Cloud: DevOps, Microservices and Sustainability",
       "source": "Platform Engineering Podcast",
       "published_date": "",
       "url": "https://www.youtube.com/watch?v=FY3asCV9qOE",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": [
         "cloud",
         "devops",
@@ -129,20 +127,14 @@
       "tags": []
     },
     {
-      "id": "virtual_adrianco_youtube_8",
-      "kind": "youtube",
+      "id": "virtual_adrianco_youtube_playlist_8",
+      "kind": "youtube_playlist",
       "subkind": "",
       "title": "Platform Engineering Done Right",
       "source": "John Myer",
       "published_date": "",
       "url": "https://www.youtube.com/watch?v=muKaB4f2qJU",
-      "content": {
-        "metadata": {
-          "word_count": 0,
-          "processing_status": "success",
-          "processing_errors": []
-        }
-      },
+      "content": {},
       "tags": [
         "engineering",
         "platform"
@@ -726,7 +718,7 @@
       "url": "https://thenewstack.io/nvidia-unveils-next-gen-rubin-and-feynman-architectures-pushing-ai-power-limits/",
       "content": {
         "text": "\n\nSAN JOSE, Calif \u2014 NVIDIA has cemented its central position in the technology industry over the last few years. It has the most in-demand products and amongst the biggest revenue and biggest market capitalization. It\u2019s a once-in-a-lifetime moment for everyone involved, as the Talking Heads once sang, but the torrent of product releases is extremely hard to keep up with and make sense of.\n\nThere is an impressive amount of business agility and relentless progress, but sometimes headline-making announcements are quietly forgotten or superseded by even better products before people have had a chance to get their hands on them. NVIDIA is announcing new hardware that effectively obsoletes its previous products well before they are available, but customers are buying whatever they can get, as it appears.\n\nMeanwhile \u201cthe new stack\u201d of AI software is maturing rapidly, easy-to-use, pre-tuned, high-performance open source models are available, and a plethora of AI-based services and tools are competing for everyone\u2019s attention. Development is also being accelerated by a variety of AI-backed tools that are improving rapidly.\n\nLast year, I predicted that enterprise customers would find it extremely difficult to manage the pace of change, and get \u201centerprise indigestion,\u201d but that hyperscalers would be happy. This year, I think the hyperscaler customers and cloud providers have indigestion as well. It takes a few years to plan and build a data center, but the specification of the racks and the power density keeps going up, so they must be replanning before they are finished building. NVIDIA is responding by releasing a very wide range of packaging options to target various points in the market and providing more information about its future roadmap, which helps but is making it even harder to keep track of what\u2019s going on.\n\nHow Did We Get Here?\n\nBefore we can make sense of what was announced by Jensen Huang , the CEO of NVIDIA, in his annual GTC keynote Tuesday , we need to establish some context by looking back at previous keynotes and additional announcements over the last year. There is a big disconnect between the GPUs that most people are using now (the ones that just started shipping, but that most people haven\u2019t used yet) and those that are being announced this week. I\u2019ve summarized them here, with links to in-depth stories for people interested in more detail.\n\nThe GPU servers that most people are familiar with right now have two Intel CPUs and eight NVIDIA Hopper H100 GPUs as the nodes that can be clustered. They were announced three years ago and are the mainstream workhorse underpinning most of the AI-based products and services we use today.\n\nTwo years ago in his keynote, Jensen announced the Grace Hopper GH200 combined CPU/GPU architecture. Grace was the first CPU designed by NVIDIA and uses ARM architecture rather than Intel, with an NVlink interface to couple it directly to a slightly upgraded Hopper H200 GPU. While it shipped in volume, the GH200 one-to-one mix of CPU to GPU is the wrong ratio for many AI training customers, who wanted more of their dollars and power budget to be spent purely on additional GPU capacity. Most H200 GPUs are actually being delivered in the same kind of 8-way with two Intel CPU packages as the H100s.\n\nGH200 was the first attempt at a new shared memory system architecture where the GPU is driving the NVlink cluster interconnect, and the CPUs are hanging on around the edge. This is reversed from conventional architectures where the CPUs are in the center (that\u2019s what the C in CPU stands for!) driving interconnection traffic, and GPUs are attached to them.\n\nThe difference is that when an H200 GPU wants to send data to another H200 GPU in the same system in a cluster, it goes directly across NVlink. This is far faster than a traditional GPU sending via a PCI bus to an Intel CPU then over a network to another Intel CPU, then via PCI to the other GPU. However, when one Grace CPUs wants to communicate with another, the data passes through at least two Hopper GPUs to get there.\n\nGH200 systems seem to be more suited to the HPC Supercomputer market than the much bigger AI training and inference market. NVIDIA told me in 2024:\n\n\u201cThe largest early systems are in Supercomputing including the Swiss National Computer Center \u2018Alps\u2019 system, Los Alamos National Labs \u2018Venado\u2019, Texas Advanced Computing Center \u2018Vista\u2019 and the J\u00fclich Supercomputing Centre\u2019s JUPITER system with close to 24,000 GH200 Superchips. These systems and more will be coming online throughout 2024. Combined, these GH200-powered centers represent some 200 exaflops of AI performance to drive scientific innovation.\u201d\n\n\u201cThe largest early systems are in Supercomputing including the Swiss National Computer Center \u2018Alps\u2019 system, Los Alamos National Labs \u2018Venado\u2019, Texas Advanced Computing Center \u2018Vista\u2019 and the J\u00fclich Supercomputing Centre\u2019s JUPITER system with close to 24,000 GH200 Superchips. These systems and more will be coming online throughout 2024. Combined, these GH200-powered centers represent some 200 exaflops of AI performance to drive scientific innovation.\u201d\n\nBlackwell GPU\n\nIn 2024, Jensen announced the Blackwell architecture GPU and the GB200 system. To get around limitations in the maximum size of chips that can be made, the Blackwell GPU is made from two of the largest possible chips, connected directly together. One Grace CPU is combined with two Blackwell GPU packages to make a GB200 node (addressing the issue with the 1:1 CPU/GPU ratio in GH200).\n\nBlackwell GB200 modules have around four times the silicon area dedicated to GPU, and the same area for CPU, compared to GH200 modules. Two modules fit on a 1 rack-unit-high, water-cooled motherboard, and 18 compute boards fit in a 72 GPU NVL72 rack, along with switchboards to interconnect them.\n\nNVIDIA has introduced several variations of the Blackwell and packaging options since launch, including a reduced-performance single-chip B200A variation that can be configured to be air-cooled as part of its MGX line of products. In the MGX GB200A NVL36 rack, each board takes two rack units and has a single Grace CPU resulting in a 9-CPU/36-GPU rack that needs 40kW of cooling, which is still a challenge but is easier to deploy in existing data centers.\n\nAt the end of 2024, it was disclosed that a new process from chip supplier TSMC allows for 50% higher performance Blackwell Ultra \u2013 B300 GPUs. These also use even more power, pushing the NVL72 rack from 132kW to 163kW, but it appears that many of the orders and plans that were in place for B200 have now switched to Blackwell Ultra.\n\nIt also has more flexibility in its design options, allowing customers like AWS to customize its deployments to integrate with its custom packaging and network architecture. The Blackwell Ultra provides a rack-compatible upgrade to the NVL72 so that existing installations can extend their lifespan, and work done on productizing data centers to support the original NVL72 rack isn\u2019t wasted.\n\nNVIDIA revealing Blackwell Ultra NVL72 onstage at GTC.\n\nThe highly structured AWS cloud architecture doesn\u2019t naturally support dropping in a product like NVL72, and while Blackwell GPUs are available from cloud providers including Azure in late 2024, Google Cloud in January 2025, and Coreweave , the latest AWS GPU that is generally available as of March 18, 2025 is the p5 that has eight H200 with two Intel CPUs . Amazon Web Services is currently only shipping Blackwell privately to its biggest customers. In the header shot for this story, you can see the variants of Blackwell-based racks that are deployed by each provider.\n\nLooking closely, it appears that most of the racks including Azure and Oracle cloud are NVL72, but AWS and GCP are using the air-cooled MGX36, and HP has its own custom Cray architecture rack for HPC that hosts 244 Blackwell GPUs. I haven\u2019t seen any new announcements from AWS at GTC and confirmed that it has no announced Blackwell-based products right now after visiting its expo booth. And you may ask yourself, how did they get here?\n\nThere was already some disclosure in mid-2024 but Jensen provided more details of the next-generation 2026 Vera CPU and Rubin GPU , which has even higher per-rack power requirements. To reduce \u201chyperscaler indigestion,\u201d the first version of Rubin also delivers into the same NVL72 rack architecture, with another bump in power consumption and a change in naming convention to Vera Rubin NVL144. Jensen said that they are reverting to calling a two-die module two GPUs for Rubin rather than one, as Blackwell was too confusing.\n\nNVIDIA revealing Vera Rubin NVL144 onstage at GTC.\n\nThe Vera Rubin NVL144 has 3.6 exaflops of FP4 inference performance, up from 1.1 exaflops for Blackwell Ultra GB300, and 1.2 exaflops of FP8 for training, up from 0.36, which is 3.3x the performance. It\u2019s targeted to ship in the second half of 2026.\n\nEscalating per-rack power requirements are just one of the problems, but the next-generation Rubin Ultra racks are up to 600kW according to Jensen, containing 576 GPUs in 144 modules that each have four Rubin GPUs sharing 1 terabyte of high-bandwidth memory. This is useful information for people designing for data center builds completing 2-3 years out who want to take these next-generation racks. However, it emphasizes that running an AI factory data center is a new set of challenges, even for the hyperscalers and cloud providers, let alone the more traditional enterprise customers.\n\nNVIDIA revealing Robin Ultra NVL576 onstage at GTC.\n\nLooking beyond Rubin Ultra in 2027, the next-generation architecture will be named Feynman in 2028, so we can expect to hear more about the performance of that GPU architecture next year.\n\nNVIDIA showing its next-gen architecture onstage at GTC.\n\nAt the lower end of the scale, NVIDIA is launching a range of desktop and deskside Blackwell-based workstations for the enterprise market. These are particularly useful for accelerated computer-aided engineering (CAE) workloads and Jensen mentioned that many of the standard CAE tools for chip simulation and design, mechanical simulation, etc., are now accelerated.\n\nNVIDIA revealing AI infrastructure for enterprise computing onstage at GTC.\n\nBenchmarking\n\nLast year, NVIDIA claimed Blackwell was 4x the performance per GPU for FP8 compared to H100. Blackwell adds a new FP4 capability for inference that doubles the performance and there are additional optimizations for inference that give rise to a 30x improvement claim. I analyzed the 2024 benchmark claims in detail and decided that a more reasonable expectation for configurations of up to eight Blackwell GPUs that most people actually use would be 2.5x the H100 (not 4x) for training, and 8-10x the H100 (not 30x) for inference. These are good improvements in any case. For 2025, the B300 has a 50% increase in raw floating point performance and increased memory capacity to 288GB.\n\nThe way Jensen positioned performance was in the context of an AI Factory, which needs to operate in a sweet spot between large efficient batches of work vs. quick responses to interactive queries. That\u2019s where the extra memory and memory bandwidth makes the GPU operate closer to its maximum potential capacity. To further optimize this workload, NVIDIA will release a new open source distributed inference serving library called Dynamo (which isn\u2019t on GitHub as I write this). This helps push the sweet spot further out to have lower interactive latency for larger batches. They are also releasing FP4 optimized open source models.\n\nNVIDIA announcing Dynamo onstage at GTC.\n\nThe latest performance claim is that with Dynamo and scale-up benefits from the larger NVL72, Blackwell is \u201c40x better\u201d than Hopper at AI Factory hyperscale inference serving. I think the benchmark was explained better this year, than last year, and it\u2019s a relevant application-level benchmark, but I also hope that people don\u2019t assume that a single Blackwell is 30x or 40x faster than a single H100.\n\nRepeated attempts to architect the largest-scale SuperPods at GTC.\n\nWater-Cooled Optical Switches\n\nA big announcement from two years ago was that NVlink could replace the network for up to 256 GH200s combined into a single system connected by 900GB/s interfaces to NVswitch chips. That would have contained 120TB of CPU-hosted memory and 24TB of GPU-hosted high-bandwidth memory, but this configuration seems to have never shipped in volume.\n\nNVlink is a copper-cabling system that operates inside a rack and can reach the next rack over, but won\u2019t reach far enough to build a fully interconnected SuperPod. So in addition to the over-provisioning of CPU capacity with GH200, an additional issue was the high cost of NVlink optical transceivers for building such a big system. For AI training workloads, it\u2019s common to arrange GPUs in a \u201crail\u201d architecture where they are connected in parallel lines that don\u2019t need to cross-connect. This seems plausible to configure using copper NVlink from one rack to the next on each side, but a system configured this way is only useful for training workloads.\n\nThere was an update in 2024 to the shared memory cluster plans, abandoning the GH200 approach and focusing on a GB200-based configuration where the maximum number of GPUs in the shared memory cluster more than doubles from 256 to 576. Again, this seems like a theoretical architecture at this point.\n\nI haven\u2019t been able to find anyone talking about more than 36 or 72 GPUs, and Coreweave \u2019s documentation implies that they configure the NVL72 racks as individual 4-GPU boards networked together. The previously announced deal with AWS to deploy a cluster of GH200s for NVIDIA called Project Ceiba was upgraded (and delayed somewhat) to be a GB200 NVL72-based system with more than 20,000 GPUs instead, as of October 2024. It was not mentioned this year at GTC. I expect that to switch again to be based on GB300 if it\u2019s ever completed.\n\nA key new announcement for 2025 is a very efficient, highly integrated water-cooled optical switch, NVIDIA Photonics. This is going to take out a lot of the complexity, cost and power consumption of larger clusters. The optics terminate directly on the switch chip without needing expensive transceivers. This was probably the biggest surprise announcement in the GTC keynote.\n\nThe latest attempt to build a SuperPod appears to be the Rubin NVL576, where the attitude after two previous attempts seems to be, \u201cscrew it, put everything in the same rack\u201d and it can all be wired together with low-latency copper cables. This is truly an HPC supercomputer approach, similar to the HP Cray Blackwell rack with 288 GPUs. A prototype of the packaging using Blackwell GPUs and current switch chips was shown in the expo and I took a few pictures.\n\nCan You Afford To Own GPUs?\n\nSame as it ever was. The challenge for customers buying GPUs is that they need to decide what the real useful life of a GPU is before it\u2019s obsolete. It\u2019s far shorter than CPUs, so instead of depreciating like most hardware over 5 or 6 years as seems to be common nowadays, it likely makes sense to depreciate GPUs over 2 or 3 years. That makes them even more expensive to own, and perhaps it\u2019s better to get whatever the latest GPU is available from cloud providers and have them deal with depreciation.\n\nOld GPU capacity tends to end up as a cheap option on a spot market but at some point, it will cost more to power it than it\u2019s worth as a GPU. Jensen said during his keynote that H100 GPUs aren\u2019t generally useful at this point for building AI factories, and sales of Blackwell are much higher than Hopper already.\n\nNew Capabilities for Building AI Apps and More\n\nJust like last year, there were many more announcements for markets like robotics, automotive, healthcare, quantum computing, digital twins and cool virtual reality demos that you can watch in the keynote or read about elsewhere, but I\u2019m most impressed by the new GPU hardware specifications and the optical interconnect.\n\nThe new stack for AI development has some kind of Blackwell GPU at the base, most likely obtained from one of the GPU cloud vendors like Coreweave rather than AWS or GCP. There\u2019s a CUDA variant for every industry to drive the GPU, the new Dynamo software to operate inference efficiently, optimized models, a large range of third-party packages to get started with and a choice of development tools to help write the remaining code for you.\n\nJensen started with his favorite slide and I\u2019ll end with it. This is far more than fast hardware: NVIDIA is doing a much better job than its competitors at building the software that makes it easy to build applications and has open sourced most of it. Letting the days go by, once in a lifetime.\n\nNVIDIA onstage at GTC showing CUDA-X for every industry.",
-        "summary": " NVIDIA is announcing new hardware that effectively obsoletes its previous products. Customers are buying whatever they can get, as it appears. \"The new stack\" of AI software is maturing rapidly. Last year I predicted that enterprise customers would find it extremely difficult to manage the pace of change. This year, I think the hyperscaler customers and cloud providers have indigestion as well. Development is also being accelerated by a variety of AI-backed tools. There is a big disconnect between the GPUs that most people are using now and those that are being announced this week. I\u2019ve summarized them here, with links to in-depth stories for people interested in more detail. GH200 was the first attempt at a new shared memory system architecture where the GPU is driving the NVlink cluster interconnect, and the CPUs are hanging on around the edge. Most H200 GPUs are actually being delivered in the same kind of 8-way with two Intel CPU packages as H100s. The largest early systems are in Supercomputing including the Swiss National Computer Center \u2018Alps\u2019 system, Los Alamos National Labs \u2018Venado\u2019 and the J\u00fclich Supercom computing Centre\u2019s JUPITER system with close to 24,000 GH200 Superchips. These systems and more will be coming online throughout 2024. Blackwell is made from two of the largest possible chips, connected directly together. Two modules fit on a 1 rack-unit-high, water-cooled motherboard. 18 compute boards fit in a 72 GPU NVL72 rack. Blackwell Ultra \u2013 B300 has 50% higher performance than B200. New process from chip supplier TSMC allows for even more power. The Blackwell Ultra provides a rack-compatible upgrade to the NVL72. Amazon Web Services is currently only shipping Blackwell privately to its biggest customers. Blackwell GPUs are available from cloud providers including Azure in late 2024, Google Cloud in January 2025, and Coreweave. The Vera Rubin NVL144 has 3.6 exaflops of FP4 inference performance. It\u2019s targeted to ship in the second half of 2026. The next-generation Rubin Ultra racks are up to 600kW. The next-generation architecture will be named Feynman in 2028. The company is launching a range of desktop and deskside Blackwell-based workstations for the enterprise market. Last year, NVIDIA claimed Blackwell was 4x the performance per GPU for FP8 compared to H100. For 2025, the B300 has a 50% increase in raw floating point performance and increased memory capacity to 288GB.  NVIDIA will release a new open source distributed inference serving library called Dynamo. This helps push the sweet spot further out to have lower interactive latency for larger batches. They are also releasing FP4 optimized open source models.  NVlink is a copper-cabling system that operates inside a rack. It can reach the next rack over, but won\u2019t reach far enough to build a fully interconnected SuperPod. The NVL72-based system with more than 20,000 GPUs will be deployed by October 2024. GPUs in the shared memory cluster more than doubles from 256 to 576. The latest attempt to build a SuperPod appears to be the Rubin NVL576, where the attitude after two previous attempts seems to be, \u201cscrew it, put everything in the same rack\u201d This is truly an HPC supercomputer approach, similar to the HP Cray Blackwell rack with 288 GPUs. The new stack for AI development has some kind of Blackwell GPU at the base, most likely obtained from one of the GPU cloud vendors like Coreweave rather than AWS or GCP. There\u2019s a CUDA variant for every industry to drive the GPU. Jensen started with his favorite slide and I\u2019ll end with it. This is far more than fast hardware: NVIDIA is doing a much better job than its competitors.",
+        "summary": "NVIDIA is announcing new hardware that effectively obsoletes its previous products. Customers are buying whatever they can get, as it appears. \"The new stack\" of AI software is maturing rapidly. Last year I predicted that enterprise customers would find it extremely difficult to manage the pace of change. This year, I think the hyperscaler customers and cloud providers have indigestion as well. Development is also being accelerated by a variety of AI-backed tools. There is a big disconnect between the GPUs that most people are using now and those that are being announced this week. I\u2019ve summarized them here, with links to in-depth stories for people interested in more detail. GH200 was the first attempt at a new shared memory system architecture where the GPU is driving the NVlink cluster interconnect, and the CPUs are hanging on around the edge. Most H200 GPUs are actually being delivered in the same kind of 8-way with two Intel CPU packages as H100s. The largest early systems are in Supercomputing including the Swiss National Computer Center \u2018Alps\u2019 system, Los Alamos National Labs \u2018Venado\u2019 and the J\u00fclich Supercom computing Centre\u2019s JUPITER system with close to 24,000 GH200 Superchips. These systems and more will be coming online throughout 2024. Blackwell is made from two of the largest possible chips, connected directly together. Two modules fit on a 1 rack-unit-high, water-cooled motherboard. 18 compute boards fit in a 72 GPU NVL72 rack. Blackwell Ultra \u2013 B300 has 50% higher performance than B200. New process from chip supplier TSMC allows for even more power. The Blackwell Ultra provides a rack-compatible upgrade to the NVL72. Amazon Web Services is currently only shipping Blackwell privately to its biggest customers. Blackwell GPUs are available from cloud providers including Azure in late 2024, Google Cloud in January 2025, and Coreweave. The Vera Rubin NVL144 has 3.6 exaflops of FP4 inference performance. It\u2019s targeted to ship in the second half of 2026. The next-generation Rubin Ultra racks are up to 600kW. The next-generation architecture will be named Feynman in 2028. The company is launching a range of desktop and deskside Blackwell-based workstations for the enterprise market. Last year, NVIDIA claimed Blackwell was 4x the performance per GPU for FP8 compared to H100. For 2025, the B300 has a 50% increase in raw floating point performance and increased memory capacity to 288GB.  NVIDIA will release a new open source distributed inference serving library called Dynamo. This helps push the sweet spot further out to have lower interactive latency for larger batches. They are also releasing FP4 optimized open source models.  NVlink is a copper-cabling system that operates inside a rack. It can reach the next rack over, but won\u2019t reach far enough to build a fully interconnected SuperPod. The NVL72-based system with more than 20,000 GPUs will be deployed by October 2024. GPUs in the shared memory cluster more than doubles from 256 to 576. The latest attempt to build a SuperPod appears to be the Rubin NVL576, where the attitude after two previous attempts seems to be, \u201cscrew it, put everything in the same rack\u201d This is truly an HPC supercomputer approach, similar to the HP Cray Blackwell rack with 288 GPUs. The new stack for AI development has some kind of Blackwell GPU at the base, most likely obtained from one of the GPU cloud vendors like Coreweave rather than AWS or GCP. There\u2019s a CUDA variant for every industry to drive the GPU. Jensen started with his favorite slide and I\u2019ll end with it. This is far more than fast hardware: NVIDIA is doing a much better job than its competitors.",
         "metadata": {
           "word_count": 2780,
           "processing_status": "success",
@@ -3013,6 +3005,208 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_playlist_test_a926f53d",
+      "kind": "youtube_playlist_test",
+      "subkind": "",
+      "title": "003 It s Complicated    Adrian Cockcroft   YOW  2015",
+      "source": "youtube_playlist_test",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=NJ-3eNx8iBo&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_test_3733c7ad",
+      "kind": "youtube_playlist_test",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "youtube_playlist_test",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=d5mr6Ib5ygQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_summaries_231201a4",
+      "kind": "summaries",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "summaries",
+      "published_date": "",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/summaries/ad47cc33639a3f9bef442de1de1351cb_summary.txt",
+      "content": {
+        "text": "Amazon Web Services (AWS) sponsored this post, in anticipation of Failover Conf on April 21. Some CIOs admit that they have never tested failover, or that it\u2019s too much work and too disruptive to plan and implement the test. The combination of cloud computing and chaos engineering is leading to \u201ccontinuous resilience.\u201d During Hurricane Sandy, the storm surge flooded basements in Jersey City and Manhattan. It turns out that computers don\u2019t work underwater. It's hard to get a disaster recovery data center implemented. Each installation is a very complex, fully customized \u201csnowflake.\u201d Even such basic things as backups for data need to be tested regularly. The last big project I worked on when I was Cloud Architect at Netflix in 2013, was their active-active multiregion architecture. At that time we tested region failover about once a quarter. In subsequent years, Netflix found that they needed to test more often to catch problems earlier. Netflix operates from AWS regions in Virginia, Oregon and Dublin. The only way to get to this way of operating is to set up the failover testing first, then test that every application deployed into the environment can cope. Netflix is also a leader in Chaos Engineering. It has a team that runs experiments to see what happens when things go wrong. Nowadays more companies are setting up chaos engineering teams. AWS Cloudwatch extended to support cross-account and multiregion dashboards. Partner and Professional Services teams are working with customers as they migrate their business continuity plans to AWS.",
+        "metadata": {
+          "word_count": 251,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture",
+        "aws",
+        "cloud",
+        "engineering",
+        "netflix"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_summaries_e6264bc8",
+      "kind": "summaries",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "summaries",
+      "published_date": "",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/summaries/4c0dc893e5f3b100dac6d23008722f7a_summary.txt",
+      "content": {
+        "text": " NVIDIA is announcing new hardware that effectively obsoletes its previous products. Customers are buying whatever they can get, as it appears. \"The new stack\" of AI software is maturing rapidly. Last year I predicted that enterprise customers would find it extremely difficult to manage the pace of change. This year, I think the hyperscaler customers and cloud providers have indigestion as well. Development is also being accelerated by a variety of AI-backed tools. There is a big disconnect between the GPUs that most people are using now and those that are being announced this week. I\u2019ve summarized them here, with links to in-depth stories for people interested in more detail. GH200 was the first attempt at a new shared memory system architecture where the GPU is driving the NVlink cluster interconnect, and the CPUs are hanging on around the edge. Most H200 GPUs are actually being delivered in the same kind of 8-way with two Intel CPU packages as H100s. The largest early systems are in Supercomputing including the Swiss National Computer Center \u2018Alps\u2019 system, Los Alamos National Labs \u2018Venado\u2019 and the J\u00fclich Supercom computing Centre\u2019s JUPITER system with close to 24,000 GH200 Superchips. These systems and more will be coming online throughout 2024. Blackwell is made from two of the largest possible chips, connected directly together. Two modules fit on a 1 rack-unit-high, water-cooled motherboard. 18 compute boards fit in a 72 GPU NVL72 rack. Blackwell Ultra \u2013 B300 has 50% higher performance than B200. New process from chip supplier TSMC allows for even more power. The Blackwell Ultra provides a rack-compatible upgrade to the NVL72. Amazon Web Services is currently only shipping Blackwell privately to its biggest customers. Blackwell GPUs are available from cloud providers including Azure in late 2024, Google Cloud in January 2025, and Coreweave. The Vera Rubin NVL144 has 3.6 exaflops of FP4 inference performance. It\u2019s targeted to ship in the second half of 2026. The next-generation Rubin Ultra racks are up to 600kW. The next-generation architecture will be named Feynman in 2028. The company is launching a range of desktop and deskside Blackwell-based workstations for the enterprise market. Last year, NVIDIA claimed Blackwell was 4x the performance per GPU for FP8 compared to H100. For 2025, the B300 has a 50% increase in raw floating point performance and increased memory capacity to 288GB.  NVIDIA will release a new open source distributed inference serving library called Dynamo. This helps push the sweet spot further out to have lower interactive latency for larger batches. They are also releasing FP4 optimized open source models.  NVlink is a copper-cabling system that operates inside a rack. It can reach the next rack over, but won\u2019t reach far enough to build a fully interconnected SuperPod. The NVL72-based system with more than 20,000 GPUs will be deployed by October 2024. GPUs in the shared memory cluster more than doubles from 256 to 576. The latest attempt to build a SuperPod appears to be the Rubin NVL576, where the attitude after two previous attempts seems to be, \u201cscrew it, put everything in the same rack\u201d This is truly an HPC supercomputer approach, similar to the HP Cray Blackwell rack with 288 GPUs. The new stack for AI development has some kind of Blackwell GPU at the base, most likely obtained from one of the GPU cloud vendors like Coreweave rather than AWS or GCP. There\u2019s a CUDA variant for every industry to drive the GPU. Jensen started with his favorite slide and I\u2019ll end with it. This is far more than fast hardware: NVIDIA is doing a much better job than its competitors.",
+        "metadata": {
+          "word_count": 601,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "ai",
+        "architecture",
+        "aws",
+        "azure",
+        "cloud",
+        "gcp",
+        "hpc",
+        "performance"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_summaries_8a745726",
+      "kind": "summaries",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "summaries",
+      "published_date": "",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/summaries/3af4c8ed93f7db4c79fdb2b08166055e_summary.txt",
+      "content": {
+        "text": "Amazon released its sustainability report covering the whole of 2023 on July 9. Google released its report on July 2 and Microsoft released its in May. Customers of cloud providers need detailed information to understand and optimize their own workloads. Amazon reduced total carbon 3% from 70.74 MmTCO2e (millions of metric tons of carbon dioxide equivalent) to 68.82 Mm TCO 2e. Normalized against the growth of the business, they were down 13% from 93.0 gCO2/$ to 80.8 g CO2/$. This continues a trend that started last year, of a small reduction in total carbon despite growing the business. The physical delivery and manufacturing business of Amazon dominates its carbon footprint to a much greater extent than its more software-focused competitors. Amazon has also been more aggressive in buying renewable energy than Google and Microsoft. The most progress so far has been made in renewable energy. Carbon-free energy matching was up from 90% to 100% for all of Amazon. Amazon generation portfolio increased from 20GW to 28GW. Forty-two new utility-scale projects came online for Amazon in 2023. The company is investing in nuclear energy alongside solar, wind and battery projects. Amazon has finally caught up with Google, which has been at 100% carbon-free energy match for the last seven years. Amazon committed to reach 100% by 2030, with a goal of 2025. Amazon hides its location-based energy emissions in a footnote of the Scope 1 and 2 Audit report. Most of the difference comes from Amazon\u2019s generation projects, which aren\u2019t counted by theLocation-based method. It takes two to three years to bring a wind or solar farm online. Amazon buys RECs on the open market that match the future generation capacity. This is a good policy, as unbundled REC purchases have a bad reputation. Amazon provides a list of 22 AWS regions where 100% renewable energy is procured in market. Cross-border RECs are used to reach 100% match for Australia, Bahrain, Brazil, Hong Kong, Japan and U.S. Amazon has far more generating capacity in Asia than either Google or Microsoft. Amazon positions cross-border RECs as a last resort, which is the best we can expect in the circumstances. Sustainability scientists in the Amazon central sustainability team. Low-carbon concrete and steel for construction is a good investment and is growing fast. Amazon is correctly positioning investment in nature-based solutions. Sustainability is about a lot more than carbon and climate change. There are global shortages of clean water in particular, and concern about the amount of water used to cool data centers. Cloud providers have targets to use less, and to return more clean water to the locations where they operate. In 2023, water use in the U.S. is expected to rise from 0.3% to 0.4%. The U.N. has set a goal of 0.5% water use by the end of the year. AWS is still not providing power usage effectiveness (PUE) information at all. Google published updated PUE data per region in its sustainability report a few weeks ago. PUE is much higher in hot and humid climates. Microsoft Azure publishes PUE data for all its regions. It\u2019s just not possible to optimize global workload placement without regional PUE and WUE data. There is still no mention of Scope 3 supply chain reporting for AWS customers. Scope 3 refers to emissions from assets not owned or controlled by an organization. It has been many years since Azure and GCP started to report Scope 3. AWS carbon tracking tools from GCP and Azure give you all the details you need, but with AWS you can\u2019t see which region or what service. Escalating to AWS support has produced nothing. AWS Sustainability Reporting Framework Summary. Water Positive Methodology. Accenture report on AWS carbon reduction. Amazon Exchange Carbon Measurement and Reporting guidelines. Amazon Energy Audit.",
+        "metadata": {
+          "word_count": 628,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws",
+        "azure",
+        "cloud",
+        "gcp",
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_summaries_aed6a0bb",
+      "kind": "summaries",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "summaries",
+      "published_date": "",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/summaries/7a6f0946e5c033cac2578c197f73c236_summary.txt",
+      "content": {
+        "text": "Jensen Huang, CEO of Nvidia, gave his annual keynote at the company\u2019s GTC conference. Nvidia is focused on driving forward the state of the art for the hyperscaler users of AI hardware. I think this is the most significant computing technology announcement we are likely to see this year. NVlink replaces the network for up to 256 GH200s combined into a single system connected by 900 Gbyte/s interfaces to NVswitch chips. That allows up to 120 Terabytes of data to be stored. GH200 systems have now started shipping and will deploy in volume this year. At GTC there is a display of 11 partners displaying them, and benchmarks are beginning to be published. The most significant thing about this system architecture is that the GPU is driving the NVlink interconnect. Nvidia announced the next generation Blackwell architecture GPU and the GB200 system. The Blackwell name is in honor of David Blackwell , an African American mathematician and game theory pioneer. Blackwell also includes high-speed encryption and decompression engines so it can operate directly on encrypted and compressed data without involving the CPU. One Grace CPU is combined with two Blackwell GPU packages to make a GB200 node (GH200 has one CPU and one GPU) There\u2019s a new fifth-generation NVswitch design that supports the 1.8 Terabytes/s interfaces from each Blackwell GPU. The NVswitch chips have a much higher performance SHARP v4 processing capacity of 3.6 Teraflops of FP8. The GB200 is delivered in a water-cooled 120kW rack-sized system package called the GB200 NVL72. This contains 18 boards each with two GH200 nodes, for a total of 72 Blackwell GPUs, and nine switch boards with two NVswitch chips which have 14.4 Terabytes/s of bandwidth per board. The Spectrum-X800 platform delivers optimized networking performance for AI cloud and enterprise infrastructure. It includes the Nvidia Quantum Q3400 switch and the Nvidia ConnectXR-8 SuperNIC. The main challenge appears to be building software that can operate these systems reliably. The 72 GB200 system package is likely a good compromise between the failure rate, the ability to physically package, ship and cool a unit. It will be interesting to see if the largest configurations use the NVL72 as their building block or configure for the 576 GB200 SuperPOD domain. The GB200 is so much faster than the GH200, how many customers will want to wait and switch their orders to the GB200? For training workloads that use FP8 the per-GPU gain is offset by using twice the silicon area (and cost) so it is less of an issue. New Capabilities for Building AI Apps and More. Huang announced some new capabilities that make it easier for customers to deploy AI-based applications. Nvidia has expanded its range of API-based services. The new CXL architecture is based on extensions of the PCI bus. It's not going to be competitive for GPU-based AI workloads. But it's a step in the right direction. It\u2019s impressive to see Nvidia executing well, the people I know who work there are happy. I think it will take a while for the software to become optimized for these systems.",
+        "metadata": {
+          "word_count": 514,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "ai",
+        "architecture",
+        "cloud",
+        "infrastructure",
+        "performance",
+        "platform"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_summaries_c7179e5f",
+      "kind": "summaries",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "summaries",
+      "published_date": "",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/summaries/e32aacaccbfe9ec1285bf2c574ea38fd_summary.txt",
+      "content": {
+        "text": "Developers are responsible for the efficiency and safety of products in production. Lean development techniques that take waste out of the process are augmented by cloud-native applications that autoscale capacity on a just-in-time basis. This is the first ever GOTO London conference. The core story is being structured as a single track. On Friday, Sept. 18, the conference is organized as multiple tracks, combining end-user experiences, presentations about open source. There is a repeated pattern for the single-track days. In each half day, there will be four half-hour talks. The talks will be a bit shorter, more focused, and will build on each other. The first evening is the conference party, with an entertaining and informative presentation by Ines Sombra and Adrian Colyer. Over the last year, there has been a rush of interest in academic research papers resulting in Papers-We-Love meetups all over the world. The second day starts with four presentations on Lean. Value chain\u00a0mapping provides the tools for making better decisions about which parts of your\u00a0architecture need to focus on being faster, cheaper or safer. We will take a close look at the Docker ecosystem with Alexis\u00a0Richardson of Weave. We wrap up the second day with a keynote by Rod Johnson on the world of Silicon Valley startups. The final day of the conference puts the concepts into practice, with deep dives into open source tools and the latest products.",
+        "metadata": {
+          "word_count": 236,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "architecture",
+        "docker",
+        "lean"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_summaries_c1a58dbe",
+      "kind": "summaries",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "summaries",
+      "published_date": "",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/summaries/120fb5d4b7c18c7e364683d88278cf21_summary.txt",
+      "content": {
+        "text": "Power Usage Effectiveness (PUE) is a measure of how efficiently a data center uses energy. In addition to the energy that the computers themselves use, there is energy needed to cool the data center. PUE varies between about 1.04 and 2.0 in practice. PUE for data centers in the tropics will tend to be at the high end of the range. PUE for centers in cold and dry parts of the world are at the low end. Lower-cost and older data centers typical of the kind enterprises own tend to have a high WUE as well. The new PUE information from Amazon is described on their sustainability page. They also talk in some detail about new data center technology that will result in a PUE of 1.08 for what they are currently building. Some additional PUE estimates may be available privately under a non-disclosure agreement. Microsoft published a lot of detailed information for 2022 as data center fact sheets including PUE estimates for all of their regions. The 2022 data has since been removed from their website. We\u2019ve archived it as part of the GSF cloud region metadata table. Google has been disclosing PUE data on a quarterly basis for years and includes it in their 2024 annual sustainability report with data for five years, 2019\u20132023. The AWS PUE discussion mentions that as new empty data center buildings are added to a region, it can cause PUE to be worse for a while. GCP has the best transparency, with more data over a longer time period. Microsoft went from providing the most data for 2022 to the least data for 2023. AWS sits in-between, with two years of data, and PUE values that are worse than GCP.  AWS PUE is 1.15 in Virginia, Azure 1.14 in Ireland and GCP 1.08 in Ohio. PUE needs to be multiplied by the PUE of that datacenter or cloud region before accounting for its demand on the grid or its carbon footprint. New data centers being purpose-built for GPU deployments are, in many cases, limited by their available power sources. I\u2019d assume a PUE of 1.08, regardless of who is building it. . at are running today can have some data to use that we think is the best guess available. at the time of this article. We are happy to provide the best data we can.",
+        "metadata": {
+          "word_count": 393,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "aws",
+        "azure",
+        "cloud",
+        "gcp",
+        "sustainability"
+      ]
+    },
+    {
+      "id": "virtual_adrianco_summaries_08d362a7",
+      "kind": "summaries",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "summaries",
+      "published_date": "",
+      "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/summaries/1e8acda77d69c5f5c173fd37a864980c_summary.txt",
+      "content": {
+        "text": "Docker is a great example of how to build a viral, developer-oriented product. A developer can figure out what Docker does, install it and do something useful with it in 15 minutes. The rapid adoption rate took everyone by surprise, and now it\u2019s too late to build a competitor. This is great for developers and end users, but means that several platform-as-a-service (PaaS) vendors have lost control of their destiny. Docker is a portable container that packages any Linux application or service. A package that is created and tested on a developer\u2019s laptop using any language or framework can run unmodified on any public cloud, any private cloud or a bare-metal server. Docker removes much of the need to use tools like CFEngine, Puppet, Chef, Ansible or SaltStack. Docker containers are shared in a public registry at hub. docker.com. This is organized similarly to Github, and already contains tens of thousands of containers. Docker Hub will end up as a far bigger source of off-the-shelf software components and monetization opportunities. There\u2019s a lot of interest in the technology from the VC community.",
+        "metadata": {
+          "word_count": 182,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "cloud",
+        "containers",
+        "docker"
+      ]
+    },
+    {
       "id": "virtual_adrianco_podcast_c3ac9176",
       "kind": "podcast",
       "subkind": "",
@@ -3608,6 +3802,57 @@
       "source": "podcast",
       "published_date": "",
       "url": "https://raw.githubusercontent.com/adrianco/meGPT/main/downloads/virtual_adrianco/podcast/Adrian_Cockcroft_on_Future_Architectures_HPCpodcast.info.json",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_test_playlist_a926f53d",
+      "kind": "youtube_playlist_test_playlist",
+      "subkind": "",
+      "title": "003 It s Complicated    Adrian Cockcroft   YOW  2015",
+      "source": "youtube_playlist_test_playlist",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=NJ-3eNx8iBo&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_test_playlist_3733c7ad",
+      "kind": "youtube_playlist_test_playlist",
+      "subkind": "",
+      "title": "002 SC24  Supercomputing  CryptoSuper500  Quantum  RISC V Summit   OXD25",
+      "source": "youtube_playlist_test_playlist",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=d5mr6Ib5ygQ&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
+      "content": {
+        "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_playlist_test_individual_f276163f",
+      "kind": "youtube_playlist_test_individual",
+      "subkind": "",
+      "title": "001 Understanding the Multicore World experience  Interview with Adrian Cockcroft ",
+      "source": "youtube_playlist_test_individual",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=8Ce-3VPplFg",
       "content": {
         "metadata": {
           "word_count": 0,

@@ -482,6 +482,9 @@ class ContentProcessor:
             'agile', 'scrum', 'lean', 'kanban', 'sre', 'site reliability',
             'observability', 'logging', 'metrics', 'tracing', 'apm'
         }
+        # Create cache directory for summaries
+        self.cache_dir = Path(f"downloads/{author}/summaries")
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     def extract_tags(self, title: str, content: Dict[str, Any]) -> List[str]:
         """Extract relevant tags using NLP techniques."""
@@ -512,13 +515,45 @@ class ContentProcessor:
             logger.error(f"Error extracting tags: {e}")
             return []
 
-    def generate_summary(self, text: str, max_length: int = 150) -> Optional[str]:
-        """Generate a summary of the text using BART (for non-book content)."""
+    def get_cache_key(self, text: str) -> str:
+        """Generate a cache key for the text content."""
+        return hashlib.md5(text.encode('utf-8')).hexdigest()
+    
+    def load_cached_summary(self, cache_key: str) -> Optional[str]:
+        """Load a cached summary if it exists."""
+        cache_file = self.cache_dir / f"{cache_key}_summary.txt"
+        if cache_file.exists():
+            try:
+                with open(cache_file, 'r', encoding='utf-8') as f:
+                    return f.read().strip()
+            except Exception as e:
+                logger.warning(f"Error reading cached summary {cache_file}: {e}")
+        return None
+    
+    def save_cached_summary(self, cache_key: str, summary: str) -> None:
+        """Save a summary to cache."""
+        cache_file = self.cache_dir / f"{cache_key}_summary.txt"
+        try:
+            with open(cache_file, 'w', encoding='utf-8') as f:
+                f.write(summary)
+            logger.debug(f"Cached summary saved to {cache_file}")
+        except Exception as e:
+            logger.warning(f"Error saving cached summary {cache_file}: {e}")
+
+    def generate_summary(self, text: str, max_length: int = 150, content_title: str = "Unknown") -> Optional[str]:
+        """Generate a summary of the text using BART (for non-book content) with caching."""
         if not text or not summarizer:
             return None
         
+        # Check cache first
+        cache_key = self.get_cache_key(text)
+        cached_summary = self.load_cached_summary(cache_key)
+        if cached_summary:
+            logger.info(f"Using cached summary for: {content_title}")
+            return cached_summary
+        
         try:
-            logger.info(f"Generating summary for content...")
+            logger.info(f"Generating summary for: {content_title} ({len(text)} characters)")
             # Split text into chunks if it's too long
             chunks = [text[i:i+1024] for i in range(0, len(text), 1024)]
             summaries = []
@@ -527,12 +562,18 @@ class ContentProcessor:
                 summary = summarizer(chunk, max_length=max_length, min_length=30, do_sample=False)
                 summaries.append(summary[0]['summary_text'])
             
-            return ' '.join(summaries)
+            final_summary = ' '.join(summaries)
+            
+            # Cache the summary
+            self.save_cached_summary(cache_key, final_summary)
+            logger.info(f"Generated and cached summary for: {content_title}")
+            
+            return final_summary
         except Exception as e:
-            logger.error(f"Error generating summary: {e}")
+            logger.error(f"Error generating summary for {content_title}: {e}")
             return None
 
-    def process_content(self, kind: str, content: Dict[str, Any]) -> Dict[str, Any]:
+    def process_content(self, kind: str, content: Dict[str, Any], title: str = "Unknown") -> Dict[str, Any]:
         """Process content based on its kind."""
         processed = {}
         errors = []
@@ -541,19 +582,22 @@ class ContentProcessor:
             if kind == 'podcast':
                 if 'transcript' in content:
                     processed['transcript'] = content['transcript']
-                    processed['summary'] = self.generate_summary(content['transcript'])
+                    content_title = content.get('title', title or 'Unknown Podcast')
+                    processed['summary'] = self.generate_summary(content['transcript'], content_title=content_title)
                 if 'chapters' in content:
                     processed['chapters'] = content['chapters']
             
             elif kind in ['story', 'file']:
                 if 'text' in content:
                     processed['text'] = content['text']
-                    processed['summary'] = self.generate_summary(content['text'])
+                    content_title = content.get('title', title or 'Unknown Story/File')
+                    processed['summary'] = self.generate_summary(content['text'], content_title=content_title)
             
             elif kind == 'youtube':
                 if 'transcript' in content:
                     processed['transcript'] = content['transcript']
-                    processed['summary'] = self.generate_summary(content['transcript'])
+                    content_title = content.get('title', title or 'Unknown YouTube Video')
+                    processed['summary'] = self.generate_summary(content['transcript'], content_title=content_title)
                 if 'chapters' in content:
                     processed['chapters'] = content['chapters']
             
@@ -824,28 +868,34 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
             for file_path in kind_dir.glob("*"):
                 if file_path.is_file():
                     try:
-                        # Always use file name as title for these entries as well
-                        title = file_path.stem.replace("_", " ")
                         if file_path.suffix.lower() == ".json":
                             with open(file_path, "r", encoding="utf-8") as f:
                                 data = json.load(f)
-                                content = {
-                                    "id": f"{author}_{kind_dir.name}_{hash(str(file_path))}",
-                                    "kind": kind_dir.name,
-                                    "subkind": "",
-                                    "title": title,
-                                    "source": kind_dir.name,
-                                    "published_date": "",
-                                    "url": data.get("url", str(file_path)),
-                                    "content": {
-                                        "metadata": {
-                                            "word_count": 0,
-                                            "processing_status": "success",
-                                            "processing_errors": []
+                                
+                                # Check if this is already an MCP-compatible entry (from youtube_playlist_processor)
+                                if kind_dir.name == "youtube_playlist" and "id" in data and "kind" in data:
+                                    # This is already MCP-compatible, use it directly
+                                    discovered.append(data)
+                                else:
+                                    # Legacy format, convert to MCP format
+                                    title = file_path.stem.replace("_", " ")
+                                    content = {
+                                        "id": f"{author}_{kind_dir.name}_{hash(str(file_path))}",
+                                        "kind": kind_dir.name,
+                                        "subkind": "",
+                                        "title": title,
+                                        "source": kind_dir.name,
+                                        "published_date": "",
+                                        "url": data.get("url", str(file_path)),
+                                        "content": {
+                                            "metadata": {
+                                                "word_count": 0,
+                                                "processing_status": "success",
+                                                "processing_errors": []
+                                            }
                                         }
                                     }
-                                }
-                                discovered.append(content)
+                                    discovered.append(content)
                         elif file_path.suffix.lower() == ".txt":
                             with open(file_path, "r", encoding="utf-8") as f:
                                 lines = f.readlines()
@@ -958,12 +1008,12 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
             
             # Add processed content if available
             if url in discovered_map:
-                content_item['content'] = processor.process_content(kind.lower(), discovered_map[url]['content'])
+                content_item['content'] = processor.process_content(kind.lower(), discovered_map[url]['content'], title)
             elif url in processed_urls:
                 # fallback to processed_content
                 match = next((pc for pc in processed_content if pc.get('URL', '').strip() == url), None)
                 if match:
-                    content_item['content'] = processor.process_content(kind.lower(), match)
+                    content_item['content'] = processor.process_content(kind.lower(), match, title)
             
             # For books with PDFs, use the enhanced book processing
             if kind.lower() in ['book'] and original_url and original_url.endswith('.pdf'):
@@ -1016,7 +1066,7 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                                 content['summary'] = summary
                             else:
                                 # Fallback to generating summary for presentations
-                                content['summary'] = processor.generate_summary(pdf_text, max_length=200)
+                                content['summary'] = processor.generate_summary(pdf_text, max_length=200, content_title=title)
                             
                             if 'metadata' not in content:
                                 content['metadata'] = {}

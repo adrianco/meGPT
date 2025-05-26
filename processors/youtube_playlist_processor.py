@@ -1,20 +1,26 @@
 """
 youtube_playlist_processor.py
 
-This script processes YouTube playlists, extracting information about each video 
-and saving them as individual JSON files with metadata.
+This script processes YouTube playlists and individual videos, extracting information 
+and saving them as individual JSON files with MCP-compatible metadata structure.
 
 Key Features:
-- Extracts all videos from a YouTube playlist
-- Saves each video as a separate JSON file with essential metadata
+- Extracts all videos from a YouTube playlist OR processes individual YouTube videos
+- Automatically detects whether URL is a playlist or individual video
+- Saves each video as a separate JSON file with MCP-compatible structure
 - Preserves video titles, URLs, and video IDs
 - Handles YouTube API quota limits gracefully
 - Sanitizes filenames to avoid OS-related issues
 - Uses direct HTTP requests to extract metadata without requiring API keys
 - Optimized for speed and reliability by skipping error-prone extraction methods
+- Generates MCP-compatible JSON format for direct integration
 
 Usage:
-    python youtube_playlist_processor.py <playlist_url> <download_dir> [subkind]
+    python youtube_playlist_processor.py <youtube_url> <download_dir> [subkind]
+    
+    Where youtube_url can be:
+    - A playlist URL (e.g., https://www.youtube.com/playlist?list=...)
+    - An individual video URL (e.g., https://www.youtube.com/watch?v=...)
     
     The optional subkind parameter is maintained for compatibility but has no effect.
 
@@ -33,6 +39,8 @@ import time
 import random
 from bs4 import BeautifulSoup
 import urllib.parse
+import hashlib
+from datetime import datetime, UTC
 
 def sanitize_filename(title):
     """Sanitize the title to create a valid filename."""
@@ -51,6 +59,77 @@ def extract_video_id(url):
         # Short URL format
         return url.split('youtu.be/')[1].split('?')[0]
     return None
+
+def extract_technical_tags(title):
+    """Extract technical tags from video title."""
+    technical_terms = {
+        'cloud', 'aws', 'azure', 'gcp', 'microservices', 'devops', 'kubernetes',
+        'docker', 'containers', 'serverless', 'ai', 'ml', 'sustainability',
+        'netflix', 'architecture', 'platform', 'engineering', 'monitoring',
+        'performance', 'scaling', 'resilience', 'hpc', 'podcast', 'video',
+        'machine learning', 'artificial intelligence', 'data science', 'big data',
+        'distributed systems', 'cloud native', 'infrastructure', 'security',
+        'automation', 'ci/cd', 'continuous integration', 'continuous deployment',
+        'agile', 'scrum', 'lean', 'kanban', 'sre', 'site reliability',
+        'observability', 'logging', 'metrics', 'tracing', 'apm'
+    }
+    
+    tags = set()
+    title_lower = title.lower()
+    
+    # Extract single word terms
+    title_words = title_lower.split()
+    title_words = [word.strip('.,!?()[]{}":;') for word in title_words]
+    tags.update(word for word in title_words if word in technical_terms)
+    
+    # Extract multi-word terms
+    for term in technical_terms:
+        if ' ' in term and term in title_lower:
+            tags.add(term)
+    
+    return sorted(list(tags))
+
+def create_mcp_video_entry(video_metadata, author, playlist_title, playlist_id):
+    """Create an MCP-compatible content entry for a video."""
+    video_id = video_metadata.get('video_id', 'unknown')
+    title = video_metadata.get('title', 'Unknown Title')
+    url = video_metadata.get('url', '')
+    playlist_index = video_metadata.get('playlist_index', 0)
+    
+    # Generate unique ID using video ID and author
+    entry_id = f"{author}_youtube_{video_id}"
+    
+    # Extract tags from title
+    tags = extract_technical_tags(title)
+    
+    # Create MCP-compatible entry
+    mcp_entry = {
+        "id": entry_id,
+        "kind": "youtube",
+        "subkind": "video",
+        "title": title,
+        "source": playlist_title,
+        "published_date": "",  # YouTube API would be needed for actual publish date
+        "url": url,
+        "content": {
+            "metadata": {
+                "video_id": video_id,
+                "playlist_id": playlist_id,
+                "playlist_index": playlist_index,
+                "word_count": 0,  # No transcript available without API
+                "processing_status": "success",
+                "processing_errors": []
+            }
+        },
+        "tags": tags,
+        "metadata": {
+            "word_count": 0,
+            "processing_status": "success", 
+            "processing_errors": []
+        }
+    }
+    
+    return mcp_entry
 
 def extract_video_metadata(video_url, level=None):
     """
@@ -242,91 +321,133 @@ def extract_playlist_urls(playlist_url):
         print(f"Error extracting playlist URLs: {e}")
         return [], f"Playlist_{playlist_id}" if playlist_id else "Unknown_Playlist"
 
+def is_playlist_url(url):
+    """Check if the URL is a playlist URL or an individual video URL."""
+    return 'list=' in url and ('playlist?' in url or ('watch?' in url and 'list=' in url))
+
+def process_individual_video(video_url, download_dir, author):
+    """Process a single YouTube video and save as MCP-compatible JSON."""
+    print(f"Processing individual YouTube video: {video_url}")
+    
+    try:
+        # Extract basic metadata
+        metadata = extract_video_metadata(video_url)
+        
+        # For individual videos, there's no playlist context
+        metadata["playlist_index"] = 1
+        metadata["playlist_id"] = None
+        
+        # Create MCP-compatible entry with "Individual Video" as source
+        mcp_entry = create_mcp_video_entry(metadata, author, "Individual Video", None)
+        
+        # Create a filename based on video title
+        video_title = sanitize_filename(metadata['title'])
+        video_filename = f"001_{video_title}.json"
+        output_path = Path(download_dir) / video_filename
+        
+        # Save MCP-compatible entry to JSON file
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(mcp_entry, f, indent=2, ensure_ascii=False)
+        
+        print(f"Saved individual video metadata to {output_path}")
+        return True
+        
+    except Exception as e:
+        print(f"Error processing individual video {video_url}: {e}")
+        return False
+
 def process_youtube_playlist(playlist_url, download_dir, subkind=None):
     """
-    Process a YouTube playlist, extracting metadata for each video and saving as JSON files.
+    Process a YouTube playlist or individual video, extracting metadata and saving as MCP-compatible JSON files.
     
     Args:
-        playlist_url: URL of the YouTube playlist
+        playlist_url: URL of the YouTube playlist or individual video
         download_dir: Directory to save the JSON files
         subkind: Parameter kept for compatibility but not used
     """
-    print(f"Processing YouTube playlist: {playlist_url}")
+    print(f"Processing YouTube URL: {playlist_url}")
     
     try:
         # Create the output directory
         output_dir = Path(download_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Extract playlist videos and title
-        video_urls, playlist_title = extract_playlist_urls(playlist_url)
+        # Extract author from download directory path
+        # Assuming path structure: downloads/author/youtube_playlist
+        author = Path(download_dir).parent.name
         
-        # Extract playlist ID from URL
-        playlist_id = None
-        if 'list=' in playlist_url:
-            playlist_id = playlist_url.split('list=')[1].split('&')[0]
-        
-        # Playlist metadata
-        playlist_metadata = {
-            "title": playlist_title,
-            "url": playlist_url,
-            "playlist_id": playlist_id,
-            "video_count": len(video_urls)
-        }
-        
-        # Save playlist metadata
-        playlist_filename = f"playlist_{sanitize_filename(playlist_title)}.json"
-        with open(output_dir / playlist_filename, 'w', encoding='utf-8') as f:
-            json.dump(playlist_metadata, f, indent=4, ensure_ascii=False)
-        
-        print(f"Found {len(video_urls)} videos in playlist.")
-        
-        # Process each video in the playlist
-        for index, video_url in enumerate(video_urls):
-            print(f"Processing video {index+1}/{len(video_urls)}: {video_url}")
+        # Check if this is a playlist or individual video
+        if is_playlist_url(playlist_url):
+            print("Detected playlist URL - processing all videos in playlist")
             
-            # Extract metadata
-            metadata = extract_video_metadata(video_url)
+            # Extract playlist videos and title
+            video_urls, playlist_title = extract_playlist_urls(playlist_url)
             
-            # Create a filename based on index and title
-            video_title = sanitize_filename(metadata['title'])
-            video_filename = f"{index+1:03d}_{video_title}.json"
-            output_path = output_dir / video_filename
+            # Extract playlist ID from URL
+            playlist_id = None
+            if 'list=' in playlist_url:
+                playlist_id = playlist_url.split('list=')[1].split('&')[0]
             
-            # Add index in playlist to metadata
-            metadata["playlist_index"] = index + 1
-            metadata["playlist_id"] = playlist_id
+            print(f"Found {len(video_urls)} videos in playlist.")
             
-            # Save metadata to JSON file
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(metadata, f, indent=4, ensure_ascii=False)
+            # Process each video in the playlist
+            for index, video_url in enumerate(video_urls):
+                print(f"Processing video {index+1}/{len(video_urls)}: {video_url}")
+                
+                # Extract basic metadata
+                metadata = extract_video_metadata(video_url)
+                
+                # Add playlist information
+                metadata["playlist_index"] = index + 1
+                metadata["playlist_id"] = playlist_id
+                
+                # Create MCP-compatible entry
+                mcp_entry = create_mcp_video_entry(metadata, author, playlist_title, playlist_id)
+                
+                # Create a filename based on index and title
+                video_title = sanitize_filename(metadata['title'])
+                video_filename = f"{index+1:03d}_{video_title}.json"
+                output_path = output_dir / video_filename
+                
+                # Save MCP-compatible entry to JSON file
+                with open(output_path, 'w', encoding='utf-8') as f:
+                    json.dump(mcp_entry, f, indent=2, ensure_ascii=False)
+                
+                print(f"Saved MCP-compatible metadata to {output_path}")
             
-            print(f"Saved metadata to {output_path}")
+            print(f"Successfully processed all {len(video_urls)} videos from the playlist.")
+            
+        else:
+            print("Detected individual video URL - processing single video")
+            success = process_individual_video(playlist_url, download_dir, author)
+            if not success:
+                return False
+            print("Successfully processed individual video.")
         
-        print(f"Successfully processed all {len(video_urls)} videos from the playlist.")
         return True
     
     except Exception as e:
-        print(f"Error processing playlist {playlist_url}: {e}")
+        print(f"Error processing YouTube URL {playlist_url}: {e}")
         return False
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: youtube_playlist_processor.py <playlist_url> <download_dir> [subkind]")
+        print("Usage: youtube_playlist_processor.py <youtube_url> <download_dir> [subkind]")
+        print("  youtube_url can be a playlist URL or individual video URL")
         sys.exit(1)
 
-    playlist_url = sys.argv[1]
+    youtube_url = sys.argv[1]
     download_directory = sys.argv[2]
     subkind = sys.argv[3] if len(sys.argv) > 3 else None
     
-    print(f"youtube_playlist_processor.py invoked with URL: {playlist_url}, Download Directory: {download_directory}, SubKind: {subkind}")
+    print(f"youtube_playlist_processor.py invoked with URL: {youtube_url}, Download Directory: {download_directory}, SubKind: {subkind}")
     
     try:
-        success = process_youtube_playlist(playlist_url, download_directory, subkind)
+        success = process_youtube_playlist(youtube_url, download_directory, subkind)
         if success:
-            print("YouTube playlist processing completed successfully.")
+            print("YouTube processing completed successfully.")
         else:
-            print("YouTube playlist processing completed with errors.")
+            print("YouTube processing completed with errors.")
     except Exception as e:
-        print(f"Error processing YouTube playlist: {e}")
+        print(f"Error processing YouTube URL: {e}")
         sys.exit(1) 

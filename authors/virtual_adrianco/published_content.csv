@@ -1,5 +1,5 @@
 Kind,SubKind,What,Where,Published,URL
-youtube,,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
+youtube_playlist,,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
 podcast,,Chat about open source and platforms,Kubernetes for Humans,3/27/2024,https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/
 podcast,,Nvidia’s Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
 podcast,,Monitoring for AI,The New Stack Analysts with Alex Williams,3/28/2024,https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/
@@ -7,7 +7,7 @@ podcast,,From Code to Climate,Unlearn Podcast with Barry O'Reilly,1/31/2024,http
 podcast,,Microservices and Teraservices,Infoq with Wesley Reisz,,https://www.infoq.com/podcasts/adrian-cockcroft/
 podcast,,Episode 15,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft/
 podcast,,Episode 24,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft-ep-24/
-youtube,,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
+youtube_playlist,,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
 podcast,,Netflix on AWS,CloudFix,,https://cloudfix.com/podcast/when-netflix-bet-on-aws/
 podcast,,Serverless and continuous resilience,Charles Humble/Container Solutions,,https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience
 podcast,,Future Architectures,HPC Podcastmwith Shahin/OrionX,11/1/2023,https://orionx.net/2023/11/hpcpodcast-77-adrian-cockcroft-on-future-architectures/
