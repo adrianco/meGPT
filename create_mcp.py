@@ -72,19 +72,38 @@ DEVELOPMENT HISTORY:
     - Reference copied PDFs in mcp_resources (downloads is ephemeral)
     - Simplified MCP script to focus on resource assembly rather than content extraction
 
+13. MCP Resource Design Philosophy: Implemented hybrid approach for book content:
+    - Books now include rich summaries instead of full text content
+    - PDFs copied to mcp_resources/author/pdfs/ for persistent storage
+    - URLs updated to point to copied PDFs rather than original GitHub files
+    - Maintains compact MCP resource size while preserving access to full content
+    - Balances self-contained metadata with external file references
+
+14. Summary Generation Architecture: Moved summary generation to book processor:
+    - Summary generation now handled by book_processor.py during preprocessing
+    - Summaries cached in downloads/author/book/filename_summary.txt files
+    - MCP script reads preprocessed summaries instead of generating them
+    - Book processor has --force-summaries flag for cache control
+    - Fixed PDF filename resolution for extracted page subsets
+    - Significant performance improvement for MCP generation (summaries pre-generated)
+    - Proper separation of concerns: preprocessing vs resource assembly
+    - Removed --force-summaries option from MCP script (no longer needed)
+
 CURRENT FUNCTIONALITY:
 - Processes CSV metadata for published content
 - Walks all downloaded content directories recursively
 - Extracts and processes text files with URL detection
 - Generates NLP-based tags from titles and content
-- Creates summaries using BART transformer model
+- Creates summaries using BART transformer model with intelligent caching
 - Handles multiple content types (youtube, podcast, story, book, etc.)
 - Special processing for blog archives (medium, blogger)
 - File categorization by extension and content type
 - Converts relative paths to full GitHub repository URLs
 - Reads preprocessed text content from book processor output
 - Copies PDFs to mcp_resources directory for persistent storage
-- Generates summaries from preprocessed text content for books/presentations
+- Generates cached summaries from preprocessed text content for books/presentations
+- Hybrid content approach: summaries + PDF references for optimal resource size
+- Command line options for cache control (--force-summaries)
 - Comprehensive error handling and logging
 - JSON schema validation for output
 - Deduplication by URL to avoid processing same content multiple times
@@ -98,6 +117,12 @@ DEPENDENCIES:
 
 USAGE:
     python create_mcp.py <author_name>
+    
+    Arguments:
+        author_name: The author name to create MCP resources for
+    
+    Examples:
+        python create_mcp.py virtual_adrianco
     
 OUTPUTS:
 - MCP resource JSON file at: mcp_resources/<author>/mcp_resource.json
@@ -149,6 +174,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import shutil
+import argparse
 
 # Configure logging
 logging.basicConfig(
@@ -159,6 +185,8 @@ logger = logging.getLogger(__name__)
 
 # GitHub repository base URL for converting relative paths
 GITHUB_REPO_BASE = "https://raw.githubusercontent.com/adrianco/meGPT/main/"
+
+
 
 def convert_to_full_url(url_or_path: str, author: str) -> str:
     """Convert relative file paths to full GitHub repository URLs."""
@@ -187,22 +215,33 @@ def convert_to_full_url(url_or_path: str, author: str) -> str:
     
     return url_or_path
 
-def copy_pdf_to_mcp_resources(pdf_path: Path, author: str) -> Optional[str]:
-    """Copy PDF to mcp_resources directory and return the new path."""
-    try:
-        # Create mcp_resources/author/pdfs directory
-        mcp_pdfs_dir = Path(f"mcp_resources/{author}/pdfs")
-        mcp_pdfs_dir.mkdir(parents=True, exist_ok=True)
-        
-        # Copy PDF to mcp_resources directory
-        destination = mcp_pdfs_dir / pdf_path.name
-        shutil.copy2(pdf_path, destination)
-        
-        # Return relative path for URL conversion
-        return f"mcp_resources/{author}/pdfs/{pdf_path.name}"
-        
-    except Exception as e:
-        logger.error(f"Error copying PDF {pdf_path} to mcp_resources: {e}")
+def copy_pdf_to_mcp_resources(author: str, original_pdf_filename: str) -> str:
+    """Copy PDF from downloads to mcp_resources directory and return the new path."""
+    # Find the actual extracted PDF filename
+    actual_pdf_filename = find_extracted_pdf_filename(original_pdf_filename, author)
+    if not actual_pdf_filename:
+        logger.warning(f"No extracted PDF found for: {original_pdf_filename}")
+        return None
+    
+    downloads_pdf_path = f"downloads/{author}/book/{actual_pdf_filename}"
+    mcp_pdf_dir = f"mcp_resources/{author}/pdfs"
+    
+    # Create pdfs directory if it doesn't exist
+    os.makedirs(mcp_pdf_dir, exist_ok=True)
+    
+    # Use the actual extracted filename to preserve page range information
+    mcp_pdf_path = f"{mcp_pdf_dir}/{actual_pdf_filename}"
+    
+    if os.path.exists(downloads_pdf_path):
+        try:
+            shutil.copy2(downloads_pdf_path, mcp_pdf_path)
+            logger.info(f"Copied extracted PDF {actual_pdf_filename} to MCP resources")
+            return mcp_pdf_path
+        except Exception as e:
+            logger.error(f"Failed to copy PDF {actual_pdf_filename}: {e}")
+            return None
+    else:
+        logger.warning(f"Extracted PDF not found in downloads: {actual_pdf_filename}")
         return None
 
 def get_processed_file_url(file_path: str, author: str) -> str:
@@ -218,14 +257,14 @@ def get_processed_file_url(file_path: str, author: str) -> str:
     if filename.endswith('.pdf'):
         # Check if PDF exists in original location
         if path_obj.exists():
-            copied_path = copy_pdf_to_mcp_resources(path_obj, author)
+            copied_path = copy_pdf_to_mcp_resources(author, filename)
             if copied_path:
                 return convert_to_full_url(copied_path, author)
         
         # Check if PDF exists in downloads directory
         downloads_file_path = Path(f"downloads/{author}/file/{filename}")
         if downloads_file_path.exists():
-            copied_path = copy_pdf_to_mcp_resources(downloads_file_path, author)
+            copied_path = copy_pdf_to_mcp_resources(author, filename)
             if copied_path:
                 return convert_to_full_url(copied_path, author)
     
@@ -260,6 +299,65 @@ def get_pdf_text_content(file_path: str, author: str) -> Optional[str]:
     
     logger.info(f"No preprocessed text content found for PDF: {filename}")
     return None
+
+def get_pdf_summary_content(file_path: str, author: str) -> Optional[str]:
+    """Get PDF summary content from preprocessed summary files created by book processor."""
+    if not file_path or not file_path.endswith('.pdf'):
+        return None
+    
+    # Extract filename from path
+    path_obj = Path(file_path)
+    filename = path_obj.name
+    base_name = filename.replace('.pdf', '')
+    
+    # Look for preprocessed summary file in downloads/author/book/ directory
+    summary_file_path = Path(f"downloads/{author}/book/{base_name}_summary.txt")
+    if summary_file_path.exists():
+        try:
+            with open(summary_file_path, 'r', encoding='utf-8') as f:
+                summary = f.read()
+                logger.info(f"Found preprocessed summary for PDF: {filename}")
+                return summary.strip()
+        except Exception as e:
+            logger.warning(f"Error reading preprocessed summary file {summary_file_path}: {e}")
+    
+    logger.info(f"No preprocessed summary found for PDF: {filename}")
+    return None
+
+def find_extracted_pdf_filename(original_filename: str, author: str) -> Optional[str]:
+    """Find the actual extracted PDF filename in downloads directory."""
+    base_name = original_filename.replace('.pdf', '')
+    downloads_dir = Path(f"downloads/{author}/book")
+    
+    if not downloads_dir.exists():
+        return None
+    
+    # Look for files that start with the base name and contain "extracted"
+    for file_path in downloads_dir.glob(f"{base_name}_extracted_*.pdf"):
+        logger.info(f"Found extracted PDF: {file_path.name}")
+        return file_path.name
+    
+    # Fallback: look for the original filename
+    original_path = downloads_dir / original_filename
+    if original_path.exists():
+        return original_filename
+    
+    return None
+
+def get_pdf_metadata(text_content: str) -> dict:
+    """Extract metadata from PDF text content."""
+    lines = text_content.split('\n')
+    word_count = len(text_content.split())
+    
+    # Extract first few paragraphs as excerpt
+    paragraphs = [line.strip() for line in lines if line.strip() and len(line.strip()) > 50]
+    excerpt = '\n\n'.join(paragraphs[:3]) if paragraphs else ""
+    
+    return {
+        "word_count": word_count,
+        "character_count": len(text_content),
+        "excerpt": excerpt[:500] + "..." if len(excerpt) > 500 else excerpt
+    }
 
 # Download required NLTK data
 try:
@@ -371,7 +469,8 @@ MCP_SCHEMA = {
 }
 
 class ContentProcessor:
-    def __init__(self):
+    def __init__(self, author: str):
+        self.author = author
         self.technical_terms = {
             'cloud', 'aws', 'azure', 'gcp', 'microservices', 'devops', 'kubernetes',
             'docker', 'containers', 'serverless', 'ai', 'ml', 'sustainability',
@@ -414,11 +513,12 @@ class ContentProcessor:
             return []
 
     def generate_summary(self, text: str, max_length: int = 150) -> Optional[str]:
-        """Generate a summary of the text using BART."""
+        """Generate a summary of the text using BART (for non-book content)."""
         if not text or not summarizer:
             return None
         
         try:
+            logger.info(f"Generating summary for content...")
             # Split text into chunks if it's too long
             chunks = [text[i:i+1024] for i in range(0, len(text), 1024)]
             summaries = []
@@ -474,6 +574,53 @@ class ContentProcessor:
             }
         
         return processed
+
+    def process_book_content(self, entry: dict) -> tuple[dict, str]:
+        """Process book content with PDF copying and rich metadata. Returns (content, updated_url)."""
+        content = {
+            "metadata": {
+                "word_count": 0,
+                "processing_status": "success",
+                "processing_errors": []
+            }
+        }
+        
+        updated_url = entry.get('URL', '')
+        
+        # Check if there's a PDF URL
+        pdf_url = entry.get('URL', '')
+        if pdf_url and pdf_url.endswith('.pdf'):
+            pdf_filename = os.path.basename(pdf_url)
+            
+            # Look for preprocessed text content
+            text_content = get_pdf_text_content(pdf_filename, self.author)
+            
+            if text_content:
+                # Copy PDF to MCP resources
+                copied_pdf_path = copy_pdf_to_mcp_resources(self.author, pdf_filename)
+                
+                if copied_pdf_path:
+                    # Return updated URL to point to copied PDF with extracted filename
+                    extracted_filename = os.path.basename(copied_pdf_path)
+                    updated_url = f"./mcp_resources/{self.author}/pdfs/{extracted_filename}"
+                
+                # Get PDF metadata
+                pdf_metadata = get_pdf_metadata(text_content)
+                content["metadata"].update(pdf_metadata)
+                
+                # Look for preprocessed summary instead of generating it
+                summary = get_pdf_summary_content(pdf_filename, self.author)
+                if summary:
+                    content["summary"] = summary
+                    logger.info(f"Loaded preprocessed summary for book: {entry.get('What', 'Unknown')}")
+                else:
+                    content["metadata"]["processing_errors"].append("No preprocessed summary found")
+                    logger.warning(f"No preprocessed summary found for book: {entry.get('What', 'Unknown')}")
+            else:
+                content["metadata"]["processing_status"] = "no_pdf_content"
+                content["metadata"]["processing_errors"].append("No preprocessed PDF content found")
+        
+        return content, updated_url
 
 def ensure_downloads_exist(author: str) -> None:
     """Check if downloads exist and run build.py if they don't."""
@@ -739,7 +886,7 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
 
 def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processed_content: List[Dict[str, Any]]) -> Dict[str, Any]:
     """Create MCP resource from the content, including all discovered files."""
-    processor = ContentProcessor()
+    processor = ContentProcessor(author)
     start_time = datetime.now(UTC)
     content_types = {}
     mcp_resource = {
@@ -818,18 +965,16 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                 if match:
                     content_item['content'] = processor.process_content(kind.lower(), match)
             
-            # For books and presentations with PDFs, try to get PDF text content and generate summary
+            # For books with PDFs, use the enhanced book processing
             if kind.lower() in ['book'] and original_url and original_url.endswith('.pdf'):
-                pdf_text = get_pdf_text_content(original_url, author)
-                if pdf_text:
-                    content_item['content']['text'] = pdf_text
-                    content_item['content']['summary'] = processor.generate_summary(pdf_text, max_length=200)
-                    content_item['content']['metadata'] = {
-                        'word_count': len(pdf_text.split()),
-                        'processing_status': 'success',
-                        'processing_errors': []
-                    }
-                    logger.info(f"Added PDF content and summary for book: {title}")
+                book_content, updated_url = processor.process_book_content({
+                    'URL': original_url,
+                    'What': title
+                })
+                content_item['content'].update(book_content)
+                # Update URL to point to copied PDF if available
+                if updated_url != original_url:
+                    content_item['url'] = updated_url
             
             # Generate tags
             content_item['tags'] = processor.extract_tags(title, content_item['content'])
@@ -856,15 +1001,23 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                 if url and not url.startswith(('http://', 'https://')):
                     url = convert_to_full_url(url, author)
                 
-                # For presentations (PDFs), try to get PDF text content and generate summary
+                # For presentations (PDFs), try to get PDF text content and summary
                 if subkind == 'presentation' and kind == 'file':
                     # The URL might be a file path, extract filename for PDF text lookup
                     file_path = item.get('url', '')
                     if file_path.endswith('.pdf'):
+                        pdf_filename = os.path.basename(file_path)
                         pdf_text = get_pdf_text_content(file_path, author)
                         if pdf_text:
                             content['text'] = pdf_text
-                            content['summary'] = processor.generate_summary(pdf_text, max_length=200)
+                            # Try to get preprocessed summary first
+                            summary = get_pdf_summary_content(pdf_filename, author)
+                            if summary:
+                                content['summary'] = summary
+                            else:
+                                # Fallback to generating summary for presentations
+                                content['summary'] = processor.generate_summary(pdf_text, max_length=200)
+                            
                             if 'metadata' not in content:
                                 content['metadata'] = {}
                             content['metadata'].update({
@@ -924,11 +1077,11 @@ def save_mcp_resource(author: str, mcp_resource: Dict[str, Any]) -> None:
     logger.info(f"MCP resource saved to {output_file}")
 
 def main():
-    if len(sys.argv) != 2:
-        logger.error("Usage: create_mcp.py <author>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description='Create MCP resources from author content')
+    parser.add_argument('author', help='Author name to create MCP resources for')
     
-    author = sys.argv[1]
+    args = parser.parse_args()
+    author = args.author
     
     try:
         # Ensure downloads exist
