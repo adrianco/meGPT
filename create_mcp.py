@@ -244,6 +244,27 @@ def copy_pdf_to_mcp_resources(author: str, original_pdf_filename: str) -> str:
         logger.warning(f"Extracted PDF not found in downloads: {actual_pdf_filename}")
         return None
 
+def copy_story_pdf_to_mcp_resources(author: str, pdf_filename: str, source_path: str) -> Optional[str]:
+    """Copy story PDF to mcp_resources directory and return the new path."""
+    mcp_pdf_dir = f"mcp_resources/{author}/pdfs"
+    
+    # Create pdfs directory if it doesn't exist
+    os.makedirs(mcp_pdf_dir, exist_ok=True)
+    
+    mcp_pdf_path = f"{mcp_pdf_dir}/{pdf_filename}"
+    
+    if os.path.exists(source_path):
+        try:
+            shutil.copy2(source_path, mcp_pdf_path)
+            logger.info(f"Copied story PDF {pdf_filename} to MCP resources")
+            return mcp_pdf_path
+        except Exception as e:
+            logger.error(f"Failed to copy story PDF {pdf_filename}: {e}")
+            return None
+    else:
+        logger.warning(f"Story PDF not found: {source_path}")
+        return None
+
 def get_processed_file_url(file_path: str, author: str) -> str:
     """For PDF and other files, check if there's a processed version in downloads directory."""
     if not file_path:
@@ -618,6 +639,66 @@ class ContentProcessor:
             }
         
         return processed
+
+    def process_story_content(self, entry: dict) -> tuple[dict, str]:
+        """Process story content with PDF copying for stories without subkind. Returns (content, updated_url)."""
+        content = {
+            "metadata": {
+                "word_count": 0,
+                "processing_status": "success",
+                "processing_errors": []
+            }
+        }
+        
+        updated_url = entry.get('URL', '')
+        
+        # Check if there's a PDF file in the story downloads directory
+        story_dir = Path(f"downloads/{self.author}/story")
+        if story_dir.exists():
+            # Look for PDF files that might correspond to this story
+            story_title = entry.get('What', 'Unknown')
+            sanitized_title = story_title.replace(" ", "_").replace("/", "-").replace("\\", "-").replace(":", "-")
+            
+            pdf_file = story_dir / f"{sanitized_title}.pdf"
+            if pdf_file.exists():
+                # Copy PDF to MCP resources
+                copied_pdf_path = copy_story_pdf_to_mcp_resources(self.author, pdf_file.name, str(pdf_file))
+                
+                if copied_pdf_path:
+                    # Return updated URL to point to copied PDF
+                    updated_url = f"./mcp_resources/{self.author}/pdfs/{pdf_file.name}"
+                    logger.info(f"Copied story PDF to MCP resources: {pdf_file.name}")
+                    
+                    # Set basic metadata for PDF
+                    content["metadata"]["processing_status"] = "pdf_copied"
+                else:
+                    content["metadata"]["processing_errors"].append("Failed to copy PDF to MCP resources")
+            else:
+                # Check if there's text content with summary
+                text_file = story_dir / f"{sanitized_title}.txt"
+                if text_file.exists():
+                    try:
+                        with open(text_file, 'r', encoding='utf-8') as f:
+                            text_content = f.read()
+                        
+                        content["text"] = text_content
+                        content["metadata"]["word_count"] = len(text_content.split())
+                        
+                        # Look for cached summary
+                        summary_file = story_dir / f"{sanitized_title}_summary.txt"
+                        if summary_file.exists():
+                            try:
+                                with open(summary_file, 'r', encoding='utf-8') as f:
+                                    content["summary"] = f.read().strip()
+                                logger.info(f"Loaded story summary for: {story_title}")
+                            except Exception as e:
+                                logger.warning(f"Error reading story summary {summary_file}: {e}")
+                        
+                    except Exception as e:
+                        content["metadata"]["processing_errors"].append(f"Error reading story text: {e}")
+                        logger.warning(f"Error reading story text file {text_file}: {e}")
+        
+        return content, updated_url
 
     def process_book_content(self, entry: dict) -> tuple[dict, str]:
         """Process book content with PDF copying and rich metadata. Returns (content, updated_url)."""
@@ -1022,6 +1103,17 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
                     'What': title
                 })
                 content_item['content'].update(book_content)
+                # Update URL to point to copied PDF if available
+                if updated_url != original_url:
+                    content_item['url'] = updated_url
+            
+            # For stories, use the enhanced story processing to handle PDFs and cached summaries
+            if kind.lower() == 'story':
+                story_content, updated_url = processor.process_story_content({
+                    'URL': original_url,
+                    'What': title
+                })
+                content_item['content'].update(story_content)
                 # Update URL to point to copied PDF if available
                 if updated_url != original_url:
                     content_item['url'] = updated_url
