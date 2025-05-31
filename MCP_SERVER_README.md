@@ -8,10 +8,12 @@ The MCP server transforms your content collection into an AI-accessible knowledg
 
 ## Prerequisites
 
-1. **Generate MCP Resources**: First, create the MCP JSON resources:
-   ```bash
-   python create_mcp.py <author_name>
-   ```
+1. **MCP Resources**: 
+   - For the **default author (`virtual_adrianco`)**: MCP resources are already included in the repository at `mcp_resources/virtual_adrianco/`
+   - For **other authors**: Generate MCP resources first:
+     ```bash
+     python create_mcp.py <author_name>
+     ```
 
 2. **Install Dependencies**: The MCP server dependencies are included in the repository:
    ```bash
