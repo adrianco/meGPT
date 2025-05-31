@@ -11,6 +11,10 @@ Usage:
 
 import sys
 from pathlib import Path
+
+# Add parent directory to path to import mcp_server
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from mcp_server import ContentMCPServer
 
 def test_mcp_server(author: str = "virtual_adrianco"):
