@@ -13,9 +13,9 @@ The MCP server transforms your content collection into an AI-accessible knowledg
    python create_mcp.py <author_name>
    ```
 
-2. **Install Dependencies**: The MCP server requires additional packages:
+2. **Install Dependencies**: The MCP server dependencies are included in the repository:
    ```bash
-   pip install mcp fastmcp
+   pip install -r requirements.txt
    ```
 
 ## Quick Start
@@ -200,7 +200,7 @@ curl -X GET http://localhost:8000/resources/content://tags
    - Check that `mcp_resources/<author_name>/mcp_resource.json` exists
 
 2. **"Module 'fastmcp' not found"**
-   - Install dependencies: `pip install mcp fastmcp`
+   - Install dependencies: `pip install -r requirements.txt`
 
 3. **"Port already in use"**
    - Use a different port: `python mcp_server.py --port 8001`
