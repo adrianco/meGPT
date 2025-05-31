@@ -25,14 +25,19 @@ The MCP server transforms your content collection into an AI-accessible knowledg
    python test_mcp_server.py --author <author_name>
    ```
 
-2. **Start the Server**:
+2. **Start the Server (STDIO - Default)**:
    ```bash
    python mcp_server.py --author <author_name>
    ```
 
-3. **Custom Configuration**:
+3. **Start the Server (HTTP)**:
    ```bash
-   python mcp_server.py --author <author_name> --port 8080
+   python mcp_server.py --author <author_name> --transport streamable-http --port 8080
+   ```
+
+4. **Start the Server (SSE - Legacy)**:
+   ```bash
+   python mcp_server.py --author <author_name> --transport sse --port 8080
    ```
 
 ## Server Capabilities
@@ -60,7 +65,7 @@ The MCP server transforms your content collection into an AI-accessible knowledg
 
 ## Integration Examples
 
-### 1. Claude Desktop
+### 1. Claude Desktop (STDIO)
 
 Add to your Claude Desktop configuration:
 
@@ -76,7 +81,7 @@ Add to your Claude Desktop configuration:
 }
 ```
 
-### 2. Cursor IDE
+### 2. Cursor IDE (STDIO)
 
 Configure in Cursor settings to enable content-aware coding assistance:
 
@@ -91,7 +96,7 @@ Configure in Cursor settings to enable content-aware coding assistance:
 }
 ```
 
-### 3. Custom Python Agent
+### 3. Custom Python Agent (STDIO)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -113,6 +118,19 @@ async with stdio_client(server_params) as (read, write):
             arguments={"query": "microservices", "limit": 5}
         )
         print(result.content[0].text)
+```
+
+### 4. HTTP Client (Streamable HTTP)
+
+```python
+from fastmcp import Client
+
+async def main():
+    # Connect to HTTP server
+    async with Client("http://localhost:8000/mcp") as client:
+        # Search for content
+        result = await client.call_tool("search_content", {"query": "microservices", "limit": 5})
+        print(result[0].text)
 ```
 
 ### 4. LangGraph Integration
@@ -161,17 +179,27 @@ python mcp_server.py --help
 ```
 
 - `--author`: Author name for content (default: virtual_adrianco)
-- `--port`: Port to run server on (default: 8000)
+- `--transport`: Transport type: stdio, streamable-http, or sse (default: stdio)
+- `--port`: Port to run server on for HTTP transports (default: 8000)
+- `--host`: Host to run the server on for HTTP transports (default: 127.0.0.1)
+
+### Transport Types
+
+- **STDIO (Default)**: Best for local tools and command-line scripts. Used by Claude Desktop, Cursor, etc.
+- **Streamable HTTP**: Recommended for web deployments and remote access
+- **SSE**: Legacy web transport (deprecated, use Streamable HTTP instead)
 
 ### Environment Variables
 
 - `MCP_AUTHOR`: Default author name
-- `MCP_PORT`: Default port number
+- `MCP_TRANSPORT`: Default transport type
+- `MCP_PORT`: Default port number for HTTP transports
+- `MCP_HOST`: Default host for HTTP transports
 - `MCP_LOG_LEVEL`: Logging level (DEBUG, INFO, WARNING, ERROR)
 
 ## API Examples
 
-### Search for Microservices Content
+### Search for Microservices Content (HTTP)
 
 ```bash
 curl -X POST http://localhost:8000/tools/search_content \
@@ -179,13 +207,13 @@ curl -X POST http://localhost:8000/tools/search_content \
   -d '{"query": "microservices", "limit": 3}'
 ```
 
-### Get Content Statistics
+### Get Content Statistics (HTTP)
 
 ```bash
 curl -X POST http://localhost:8000/tools/get_content_statistics
 ```
 
-### Access All Tags
+### Access All Tags (HTTP)
 
 ```bash
 curl -X GET http://localhost:8000/resources/content://tags

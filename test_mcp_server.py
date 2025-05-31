@@ -52,6 +52,10 @@ def test_mcp_server(author: str = "virtual_adrianco"):
             
         print("\n✓ All tests passed! MCP server is ready to run.")
         print(f"To start the server, run: python mcp_server.py --author {author}")
+        print("\nTransport options:")
+        print("  STDIO (default):     python mcp_server.py --author <author_name>")
+        print("  HTTP:               python mcp_server.py --author <author_name> --transport streamable-http --port 8080")
+        print("  SSE (legacy):       python mcp_server.py --author <author_name> --transport sse --port 8080")
         return True
         
     except Exception as e:

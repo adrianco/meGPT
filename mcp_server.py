@@ -81,15 +81,17 @@ DEPENDENCIES:
 - Standard libraries: json, pathlib, dataclasses, argparse, typing
 
 USAGE:
-    python mcp_server.py [--author AUTHOR] [--port PORT]
+    python mcp_server.py [--author AUTHOR] [--transport TRANSPORT] [--port PORT] [--host HOST]
     
     Arguments:
         --author: Author name for content (default: virtual_adrianco)
-        --port: Port to run server on (default: 8000)
+        --transport: Transport type: stdio, streamable-http, or sse (default: stdio)
+        --port: Port to run server on for HTTP transports (default: 8000)
+        --host: Host to run the server on for HTTP transports (default: 127.0.0.1)
     
     Examples:
         python mcp_server.py
-        python mcp_server.py --author virtual_adrianco --port 8080
+        python mcp_server.py --author virtual_adrianco --transport streamable-http --port 8080 --host 0.0.0.0
 
 SERVER ENDPOINTS:
 Once running, the server provides:
@@ -145,13 +147,15 @@ Important Considerations:
 - Resource URIs follow content:// scheme for standardized access
 
 Usage:
-    mcp_server.py [--author AUTHOR] [--port PORT]
+    mcp_server.py [--author AUTHOR] [--transport TRANSPORT] [--port PORT] [--host HOST]
       - author (optional): Author name for content (default: virtual_adrianco)
-      - port (optional): Port to run server on (default: 8000)
+      - transport (optional): Transport type: stdio, streamable-http, or sse (default: stdio)
+      - port (optional): Port to run server on for HTTP transports (default: 8000)
+      - host (optional): Host to run the server on for HTTP transports (default: 127.0.0.1)
 
 Examples:
     mcp_server.py                                    # Default author and port
-    mcp_server.py --author virtual_adrianco --port 8080  # Custom configuration
+    mcp_server.py --author virtual_adrianco --transport streamable-http --port 8080 --host 0.0.0.0  # Custom configuration
 
 Integration:
 The server can be integrated with various MCP-compatible applications:
@@ -551,8 +555,12 @@ def main():
     parser = argparse.ArgumentParser(description="meGPT Author Content MCP Server")
     parser.add_argument("--author", default="virtual_adrianco", 
                        help="Author name for content (default: virtual_adrianco)")
+    parser.add_argument("--transport", default="stdio",
+                       help="Transport type: stdio, streamable-http, or sse (default: stdio)")
     parser.add_argument("--port", type=int, default=8000,
-                       help="Port to run the server on (default: 8000)")
+                       help="Port to run the server on for HTTP transports (default: 8000)")
+    parser.add_argument("--host", default="127.0.0.1",
+                       help="Host to run the server on for HTTP transports (default: 127.0.0.1)")
     
     args = parser.parse_args()
     
@@ -560,7 +568,9 @@ def main():
     server = ContentMCPServer(author=args.author)
     
     print(f"Starting meGPT Content MCP Server for author: {args.author}")
-    print(f"Server will be available at http://localhost:{args.port}")
+    print(f"Transport: {args.transport}")
+    if args.transport in ["streamable-http", "sse"]:
+        print(f"Server will be available at http://{args.host}:{args.port}")
     print(f"Loaded {len(server.content_items)} content items")
     print("\nAvailable tools:")
     print("- search_content: Search through content by query")
@@ -578,8 +588,16 @@ def main():
     print("- content_recommendation: Get content recommendations")
     print("- content_summary_report: Generate summary report")
     
-    # Run the server
-    server.mcp.run(port=args.port)
+    # Run the server with appropriate transport
+    if args.transport == "stdio":
+        server.mcp.run()
+    elif args.transport == "streamable-http":
+        server.mcp.run(transport="streamable-http", host=args.host, port=args.port)
+    elif args.transport == "sse":
+        server.mcp.run(transport="sse", host=args.host, port=args.port)
+    else:
+        print(f"Error: Unknown transport '{args.transport}'. Use stdio, streamable-http, or sse.")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main() 
