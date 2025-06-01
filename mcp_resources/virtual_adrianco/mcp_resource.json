@@ -2,10 +2,10 @@
   "metadata": {
     "author": "virtual_adrianco",
     "version": "1.0",
-    "last_updated": "2025-06-01T09:34:19.957998+00:00",
-    "content_count": 211,
+    "last_updated": "2025-06-01T09:47:33.914917+00:00",
+    "content_count": 242,
     "content_types": {
-      "youtube": 104,
+      "youtube": 135,
       "podcast": 52,
       "infoqvideo": 2,
       "book": 10,
@@ -14,10 +14,10 @@
       "summaries": 7
     },
     "processing_stats": {
-      "total_items": 211,
-      "processed_items": 211,
+      "total_items": 242,
+      "processed_items": 242,
       "failed_items": 0,
-      "processing_time": 0.064295
+      "processing_time": 0.060544
     }
   },
   "content": [
@@ -891,6 +891,17 @@
       "tags": []
     },
     {
+      "id": "virtual_adrianco_youtube_55",
+      "kind": "youtube",
+      "subkind": "",
+      "title": "Adrian's Youtube Channel, cars, music and random stuff",
+      "source": "Mostly non-technical content",
+      "published_date": "2025",
+      "url": "https://www.youtube.com/@adriancockcroft/videos",
+      "content": {},
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_file_cadcf9fb",
       "kind": "file",
       "subkind": "presentation",
@@ -1265,6 +1276,48 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_6c6d2a41",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Lotus Elise S1 - Laguna Seca - GGLC 2025",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=SA7xjh1TTNk",
+      "content": {
+        "metadata": {
+          "video_id": "SA7xjh1TTNk",
+          "playlist_id": null,
+          "playlist_index": 1,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_f286801c",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Tesla Telemetry Test Video for rs-tesla-telemetry viewer",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=wMQZDMQ8bLQ",
+      "content": {
+        "metadata": {
+          "video_id": "wMQZDMQ8bLQ",
+          "playlist_id": null,
+          "playlist_index": 21,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "video"
+      ]
+    },
+    {
       "id": "virtual_adrianco_youtube_80cdf542",
       "kind": "youtube",
       "subkind": "",
@@ -1340,6 +1393,26 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_08c5f116",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Thunderhill Raceway - West Circuit - Spinning in Turn 3",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Zs9f700DgJM",
+      "content": {
+        "metadata": {
+          "video_id": "Zs9f700DgJM",
+          "playlist_id": null,
+          "playlist_index": 30,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_c3f015ec",
       "kind": "youtube",
       "subkind": "",
@@ -1378,6 +1451,26 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_11345db5",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Avi Ronen exploring the sounds of the Boss OD-200 programmable distortion pedal",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=uVglE4kiYDE",
+      "content": {
+        "metadata": {
+          "video_id": "uVglE4kiYDE",
+          "playlist_id": null,
+          "playlist_index": 22,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_d5f9baf9",
       "kind": "youtube",
       "subkind": "",
@@ -1397,6 +1490,28 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_038c23c8",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Tesla Model 3 Performance at Laguna Seca",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=4k-yyMh6eMY",
+      "content": {
+        "metadata": {
+          "video_id": "4k-yyMh6eMY",
+          "playlist_id": null,
+          "playlist_index": 23,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": [
+        "performance"
+      ]
+    },
+    {
       "id": "virtual_adrianco_youtube_67c72125",
       "kind": "youtube",
       "subkind": "",
@@ -1406,6 +1521,26 @@
       "url": "https://www.youtube.com/watch?v=-vlOG3UIp9c&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
       "content": {
         "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_a412e1c7",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Aftermath - Fractal at Skyline",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=QcpdiPOGzo8",
+      "content": {
+        "metadata": {
+          "video_id": "QcpdiPOGzo8",
+          "playlist_id": null,
+          "playlist_index": 19,
           "word_count": 0,
           "processing_status": "success",
           "processing_errors": []
@@ -1605,6 +1740,26 @@
       "tags": []
     },
     {
+      "id": "virtual_adrianco_youtube_881cfc28",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Fireworks at Weymouth August 29th 2022 - End of Summer Bank Holiday",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=duYujRI5dFk",
+      "content": {
+        "metadata": {
+          "video_id": "duYujRI5dFk",
+          "playlist_id": null,
+          "playlist_index": 12,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_d8950de9",
       "kind": "youtube",
       "subkind": "",
@@ -1730,6 +1885,26 @@
       "tags": []
     },
     {
+      "id": "virtual_adrianco_youtube_7c0e1852",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Elise K20A Dyno test",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=S9JaYNz4xZo",
+      "content": {
+        "metadata": {
+          "video_id": "S9JaYNz4xZo",
+          "playlist_id": null,
+          "playlist_index": 17,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_48a8bc62",
       "kind": "youtube",
       "subkind": "",
@@ -1776,6 +1951,26 @@
       "url": "https://www.youtube.com/watch?v=nFiauu-qMV4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
       "content": {
         "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_83742d02",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Eric Tessmer closing the show with Voodoo Chile",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=YOqa9Fv7tXA",
+      "content": {
+        "metadata": {
+          "video_id": "YOqa9Fv7tXA",
+          "playlist_id": null,
+          "playlist_index": 26,
           "word_count": 0,
           "processing_status": "success",
           "processing_errors": []
@@ -1854,6 +2049,26 @@
       "tags": []
     },
     {
+      "id": "virtual_adrianco_youtube_165bbd84",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Install rs-tesla-telemetry",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=pJ1_Kv36w4M",
+      "content": {
+        "metadata": {
+          "video_id": "pJ1_Kv36w4M",
+          "playlist_id": null,
+          "playlist_index": 20,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_1679c42f",
       "kind": "youtube",
       "subkind": "",
@@ -1903,6 +2118,26 @@
       "url": "https://www.youtube.com/watch?v=CWF3QnfihL4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
       "content": {
         "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_e3b6b22d",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Thunderhill Raceway West - September 2016 - Spinning in Turn 2",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=03dqCR9xX0I",
+      "content": {
+        "metadata": {
+          "video_id": "03dqCR9xX0I",
+          "playlist_id": null,
+          "playlist_index": 29,
           "word_count": 0,
           "processing_status": "success",
           "processing_errors": []
@@ -2125,6 +2360,46 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_c7b196b1",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Baby humpback whale with it's mother off Maui",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=B4meOfmcgMU",
+      "content": {
+        "metadata": {
+          "video_id": "B4meOfmcgMU",
+          "playlist_id": null,
+          "playlist_index": 7,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_40ac5b1c",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Elise S1 K20A Thunderhill West",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=B3KQ_-X5E74",
+      "content": {
+        "metadata": {
+          "video_id": "B3KQ_-X5E74",
+          "playlist_id": null,
+          "playlist_index": 16,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_3d0218df",
       "kind": "youtube",
       "subkind": "",
@@ -2173,6 +2448,26 @@
       "url": "https://www.youtube.com/watch?v=noKPM4UlJDk&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
       "content": {
         "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_8d02fc0c",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "First ride in rebuilt Elise with K20A2 engine",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=1s-dp6k2uBc",
+      "content": {
+        "metadata": {
+          "video_id": "1s-dp6k2uBc",
+          "playlist_id": null,
+          "playlist_index": 18,
           "word_count": 0,
           "processing_status": "success",
           "processing_errors": []
@@ -2274,6 +2569,26 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_a20ac9db",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Two male humpback whales competing for a female near Maui",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=t09PgDzkM7g",
+      "content": {
+        "metadata": {
+          "video_id": "t09PgDzkM7g",
+          "playlist_id": null,
+          "playlist_index": 8,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_b23f3d66",
       "kind": "youtube",
       "subkind": "",
@@ -2308,6 +2623,26 @@
       "tags": []
     },
     {
+      "id": "virtual_adrianco_youtube_0106dd69",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "DIYrobocar race 2 and crash",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=7Txm0Dkc-TY",
+      "content": {
+        "metadata": {
+          "video_id": "7Txm0Dkc-TY",
+          "playlist_id": null,
+          "playlist_index": 14,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_20107970",
       "kind": "youtube",
       "subkind": "",
@@ -2325,6 +2660,26 @@
       "tags": [
         "cloud"
       ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_43bd54d8",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Lotus Elise S1 VTEC Autocross 2016",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=y-55GnL7SGc",
+      "content": {
+        "metadata": {
+          "video_id": "y-55GnL7SGc",
+          "playlist_id": null,
+          "playlist_index": 28,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
     },
     {
       "id": "virtual_adrianco_youtube_6466ddfb",
@@ -2382,6 +2737,26 @@
       "tags": [
         "infrastructure"
       ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_a6928be7",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "GGLC Autocross at Crows Landing - Oct 31, 2021",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=yQ5vQxflDk0",
+      "content": {
+        "metadata": {
+          "video_id": "yQ5vQxflDk0",
+          "playlist_id": null,
+          "playlist_index": 13,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
     },
     {
       "id": "virtual_adrianco_youtube_befeedd7",
@@ -2509,6 +2884,26 @@
       ]
     },
     {
+      "id": "virtual_adrianco_youtube_c6b7b76b",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "First try at a clear lap at Sonoma Raceway - Elise S1/K20",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=E5ueghmX2PU",
+      "content": {
+        "metadata": {
+          "video_id": "E5ueghmX2PU",
+          "playlist_id": null,
+          "playlist_index": 5,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_c057b69d",
       "kind": "youtube",
       "subkind": "",
@@ -2613,6 +3008,46 @@
       "url": "https://www.youtube.com/watch?v=uRcSFXafIWM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
       "content": {
         "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_5814af06",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "WCLM22 Mount Palomar Hillclimb #1 - Lotus Elise S1",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=pYcYBuwYRzo",
+      "content": {
+        "metadata": {
+          "video_id": "pYcYBuwYRzo",
+          "playlist_id": null,
+          "playlist_index": 11,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_4e3a3691",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Eric Tessmer Band Gold Digger LA - Nov 1, 2018",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=fIAQIWp04EY",
+      "content": {
+        "metadata": {
+          "video_id": "fIAQIWp04EY",
+          "playlist_id": null,
+          "playlist_index": 25,
           "word_count": 0,
           "processing_status": "success",
           "processing_errors": []
@@ -2841,6 +3276,26 @@
       "tags": []
     },
     {
+      "id": "virtual_adrianco_youtube_a6e572a5",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "WCLM22 Mount Palomar Hillclimb #3 (foggy) - Lotus Elise S1",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=tvATIaHZ_Uo",
+      "content": {
+        "metadata": {
+          "video_id": "tvATIaHZ_Uo",
+          "playlist_id": null,
+          "playlist_index": 9,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_65efc3e6",
       "kind": "youtube",
       "subkind": "",
@@ -2895,6 +3350,46 @@
         "architecture",
         "aws"
       ]
+    },
+    {
+      "id": "virtual_adrianco_youtube_b24ce550",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Fireworks on Weymouth Beach for Guy Fawkes 2024",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=Dh61G9ZLaRc",
+      "content": {
+        "metadata": {
+          "video_id": "Dh61G9ZLaRc",
+          "playlist_id": null,
+          "playlist_index": 2,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_2a9ef97d",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Humpback whales flapping flippers and tails off Maui",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=FQJ4JDpw58Q",
+      "content": {
+        "metadata": {
+          "video_id": "FQJ4JDpw58Q",
+          "playlist_id": null,
+          "playlist_index": 6,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
     },
     {
       "id": "virtual_adrianco_youtube_b4111520",
@@ -2961,6 +3456,26 @@
       "url": "https://www.youtube.com/watch?v=JSnOk-4m7C4&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
       "content": {
         "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_0662662c",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Red Dirt at the Willie K blues festival",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=8alqoL0UggY",
+      "content": {
+        "metadata": {
+          "video_id": "8alqoL0UggY",
+          "playlist_id": null,
+          "playlist_index": 24,
           "word_count": 0,
           "processing_status": "success",
           "processing_errors": []
@@ -3056,6 +3571,86 @@
       "tags": []
     },
     {
+      "id": "virtual_adrianco_youtube_7cbdb04f",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Heading home through the mudslides",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=bdTMAyllZj8",
+      "content": {
+        "metadata": {
+          "video_id": "bdTMAyllZj8",
+          "playlist_id": null,
+          "playlist_index": 27,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_39ae9f5a",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Salinas AutoX GGLC Lotus Elise S1 K20 - best lap",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=6CDHNPA5-FI",
+      "content": {
+        "metadata": {
+          "video_id": "6CDHNPA5-FI",
+          "playlist_id": null,
+          "playlist_index": 3,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_eb7ae537",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "WCLM22 Mount Palomar Hillclimb #2 - Lotus Elise S1",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=tSV7LZA_oK0",
+      "content": {
+        "metadata": {
+          "video_id": "tSV7LZA_oK0",
+          "playlist_id": null,
+          "playlist_index": 10,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_b0b95053",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Avi Ronen showing what the Boss DD-8 delay pedal can do",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=TBT5t79E3TI",
+      "content": {
+        "metadata": {
+          "video_id": "TBT5t79E3TI",
+          "playlist_id": null,
+          "playlist_index": 15,
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
       "id": "virtual_adrianco_youtube_8aeb3627",
       "kind": "youtube",
       "subkind": "",
@@ -3065,6 +3660,26 @@
       "url": "https://www.youtube.com/watch?v=Ev3rIMLujTM&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5",
       "content": {
         "metadata": {
+          "word_count": 0,
+          "processing_status": "success",
+          "processing_errors": []
+        }
+      },
+      "tags": []
+    },
+    {
+      "id": "virtual_adrianco_youtube_75aa4cef",
+      "kind": "youtube",
+      "subkind": "video",
+      "title": "Salinas AutoX GGLC Lotus Elise S1 K20 - almost spin\u2026",
+      "source": "Adrian Cockcroft",
+      "published_date": "",
+      "url": "https://www.youtube.com/watch?v=v6iLLejY5To",
+      "content": {
+        "metadata": {
+          "video_id": "v6iLLejY5To",
+          "playlist_id": null,
+          "playlist_index": 4,
           "word_count": 0,
           "processing_status": "success",
           "processing_errors": []

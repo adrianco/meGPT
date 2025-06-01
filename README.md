@@ -11,7 +11,7 @@ My own content is stored or linked to in authors/virtual_adrianco and consists o
 - Blog posts from https://perfcap.blogspot.com extracted as text to authors/virtual_adrianco/blogger_percap_posts (with extraction script)
 - ~100 presentation decks (images) greatest hits: https://github.com/adrianco/slides/tree/master/Greatest%20Hits
 - ~20 podcasts (audio conversations, should be good Q&A training material)
-- ~50 videos of talks and interviews (audio/video/YouTube playlists)
+- over 100 videos of talks and interviews (audio/video/YouTube individual videos, playlists, and entire channels)
 
 If another author wants to use this repo as a starting point, clone it and add your own directory of content under authors. If you want to contribute the content freely for other people to use as a training data set, then send a pull request and I'll include it here. The scripts in the code directory are there to help pre-process content for an author by extracting from a twitter or medium archive that has to be downloaded by the account owner.
 
@@ -20,21 +20,49 @@ Creative Commons - attribution share-alike. Permission explicitly granted for an
 # I am not a Python programmer
 All the code in this repo was initially written by the free version of ChatGPT 4 or Cursor Claude Sonnet3.7 based on short prompts, with no subsequent edits, in a few minutes of my time here and there. I can read Python and mostly make sense of it but I'm not an experienced Python programmer. Look in the relevant issue for a public link to the chat thread that generated the code fro ChatGPT.  When I transitioned to Cursor I got the context included as a block comment at the start of each file. This is a ridiculously low friction and easy way to write simple code. Development was migrated to Cursor as it has a much better approach to managing the context of a whole project.
 
-# YouTube Downloads
-YouTube has strict bot detection measures that can make automatic downloads challenging. The script attempts multiple methods to download YouTube content:
+# YouTube Processing
+The YouTube processor has been enhanced to handle multiple types of YouTube content automatically:
 
-1. First, it tries advanced options with yt-dlp to bypass the "Sign in to confirm you're not a robot" check
-2. If that fails, it attempts to use pytube with OAuth (may require user interaction)
-3. Next, it tries using alternative client settings for yt-dlp
-4. Finally, it attempts to download via an Invidious proxy
+## Supported YouTube URL Types
+- **Individual Videos**: `https://www.youtube.com/watch?v=VIDEO_ID`
+- **Playlists**: `https://www.youtube.com/playlist?list=PLAYLIST_ID`
+- **Entire Channels**: `https://www.youtube.com/@username/videos` or `https://www.youtube.com/c/channelname/videos`
 
-Despite these measures, YouTube's bot detection is sophisticated and some videos may still fail to download automatically. In such cases, you may need to download the videos manually.
+## Processing Features
+- **Automatic Detection**: The processor automatically detects whether a URL is an individual video, playlist, or channel
+- **Bulk Processing**: Channels and playlists are automatically expanded into individual video entries
+- **Consent Page Handling**: Automatically handles YouTube's "Before you continue" consent pages
+- **Robust Extraction**: Multiple fallback methods for extracting video metadata and IDs
+- **MCP Compatibility**: All videos are saved as individual MCP-compatible JSON files
+
+## YouTube Downloads
+YouTube has strict bot detection measures that can make automatic downloads challenging. The script attempts multiple methods to process YouTube content:
+
+1. First, it tries to extract video metadata directly from the page HTML
+2. For consent pages, it automatically submits the consent form
+3. Uses multiple regex patterns to find video IDs in the page source
+4. Falls back to alternative extraction methods if standard approaches fail
+5. Creates placeholder entries for channels when individual videos can't be extracted
+
+Despite these measures, YouTube's bot detection is sophisticated and some content may still fail to process automatically. In such cases, the processor will create placeholder entries that reference the original URLs.
 
 For best results, you can try:
 - Using a different network (some IP addresses are more likely to trigger bot detection)
 - Using a VPN
-- Downloading from mobile networks (often has fewer restrictions)
-- Downloading directly from Invidious instances (e.g., https://invidious.snopyta.org) 
+- Processing from mobile networks (often has fewer restrictions)
+- Processing during off-peak hours when YouTube's systems are less restrictive
+
+## Example Usage
+In your `published_content.csv`, you can now include any of these YouTube URL types:
+
+```csv
+Kind,SubKind,What,Where,Published,URL
+youtube,,Individual Tech Talk,Conference Name,2024,https://www.youtube.com/watch?v=VIDEO_ID
+youtube,,My Tech Talks Playlist,Various Conferences,2024,https://www.youtube.com/playlist?list=PLAYLIST_ID
+youtube,,My Complete YouTube Channel,Personal Channel,2024,https://www.youtube.com/@username/videos
+```
+
+The processor will automatically expand playlists and channels into individual video entries, making all content searchable and accessible through the MCP server.
 
 # Building an Author
 To use this repo, clone it to a local disk, setup the python environment, run the build.py script for an author and it will walk through the published content table for that author processing each line in turn. The build script will create a downloads/<author> directory and create a state.json file in it which records successful processing steps so that incremental runs of build.py will not re-run the same downloads. Each kind of data needs a corresponding script in the processors directory.
