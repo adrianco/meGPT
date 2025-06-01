@@ -1,5 +1,5 @@
 """
-youtube_playlist_processor.py
+youtube_processor.py
 
 This script processes YouTube playlists and individual videos, extracting information 
 and saving them as individual JSON files with MCP-compatible metadata structure.
@@ -16,7 +16,7 @@ Key Features:
 - Generates MCP-compatible JSON format for direct integration
 
 Usage:
-    python youtube_playlist_processor.py <youtube_url> <download_dir> [subkind]
+    python youtube_processor.py <youtube_url> <download_dir> [subkind]
     
     Where youtube_url can be:
     - A playlist URL (e.g., https://www.youtube.com/playlist?list=...)
@@ -356,16 +356,16 @@ def process_individual_video(video_url, download_dir, author):
         print(f"Error processing individual video {video_url}: {e}")
         return False
 
-def process_youtube_playlist(playlist_url, download_dir, subkind=None):
+def process_youtube(youtube_url, download_dir, subkind=None):
     """
     Process a YouTube playlist or individual video, extracting metadata and saving as MCP-compatible JSON files.
     
     Args:
-        playlist_url: URL of the YouTube playlist or individual video
+        youtube_url: URL of the YouTube playlist or individual video
         download_dir: Directory to save the JSON files
         subkind: Parameter kept for compatibility but not used
     """
-    print(f"Processing YouTube URL: {playlist_url}")
+    print(f"Processing YouTube URL: {youtube_url}")
     
     try:
         # Create the output directory
@@ -373,20 +373,20 @@ def process_youtube_playlist(playlist_url, download_dir, subkind=None):
         output_dir.mkdir(parents=True, exist_ok=True)
         
         # Extract author from download directory path
-        # Assuming path structure: downloads/author/youtube_playlist
+        # Assuming path structure: downloads/author/youtube
         author = Path(download_dir).parent.name
         
         # Check if this is a playlist or individual video
-        if is_playlist_url(playlist_url):
+        if is_playlist_url(youtube_url):
             print("Detected playlist URL - processing all videos in playlist")
             
             # Extract playlist videos and title
-            video_urls, playlist_title = extract_playlist_urls(playlist_url)
+            video_urls, playlist_title = extract_playlist_urls(youtube_url)
             
             # Extract playlist ID from URL
             playlist_id = None
-            if 'list=' in playlist_url:
-                playlist_id = playlist_url.split('list=')[1].split('&')[0]
+            if 'list=' in youtube_url:
+                playlist_id = youtube_url.split('list=')[1].split('&')[0]
             
             print(f"Found {len(video_urls)} videos in playlist.")
             
@@ -419,7 +419,7 @@ def process_youtube_playlist(playlist_url, download_dir, subkind=None):
             
         else:
             print("Detected individual video URL - processing single video")
-            success = process_individual_video(playlist_url, download_dir, author)
+            success = process_individual_video(youtube_url, download_dir, author)
             if not success:
                 return False
             print("Successfully processed individual video.")
@@ -427,12 +427,12 @@ def process_youtube_playlist(playlist_url, download_dir, subkind=None):
         return True
     
     except Exception as e:
-        print(f"Error processing YouTube URL {playlist_url}: {e}")
+        print(f"Error processing YouTube URL {youtube_url}: {e}")
         return False
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: youtube_playlist_processor.py <youtube_url> <download_dir> [subkind]")
+        print("Usage: youtube_processor.py <youtube_url> <download_dir> [subkind]")
         print("  youtube_url can be a playlist URL or individual video URL")
         sys.exit(1)
 
@@ -440,10 +440,10 @@ if __name__ == "__main__":
     download_directory = sys.argv[2]
     subkind = sys.argv[3] if len(sys.argv) > 3 else None
     
-    print(f"youtube_playlist_processor.py invoked with URL: {youtube_url}, Download Directory: {download_directory}, SubKind: {subkind}")
+    print(f"youtube_processor.py invoked with URL: {youtube_url}, Download Directory: {download_directory}, SubKind: {subkind}")
     
     try:
-        success = process_youtube_playlist(youtube_url, download_directory, subkind)
+        success = process_youtube(youtube_url, download_directory, subkind)
         if success:
             print("YouTube processing completed successfully.")
         else:

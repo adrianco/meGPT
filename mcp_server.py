@@ -152,7 +152,7 @@ class ContentMCPServer:
             
             Args:
                 query: Search term to look for in titles, tags, and sources
-                content_type: Optional filter by content type (podcast, youtube_playlist, book, etc.)
+                content_type: Optional filter by content type (podcast, youtube, book, etc.)
                 limit: Maximum number of results to return (default 10)
             """
             query_lower = query.lower()
@@ -214,7 +214,7 @@ class ContentMCPServer:
             Get all content items of a specific type.
             
             Args:
-                content_type: Type of content (podcast, youtube_playlist, book, story, etc.)
+                content_type: Type of content (podcast, youtube, book, story, etc.)
                 limit: Maximum number of items to return (default 20)
             """
             items = [item for item in self.content_items if item.kind == content_type][:limit]

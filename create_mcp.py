@@ -953,8 +953,8 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
                             with open(file_path, "r", encoding="utf-8") as f:
                                 data = json.load(f)
                                 
-                                # Check if this is already an MCP-compatible entry (from youtube_playlist_processor)
-                                if kind_dir.name == "youtube_playlist" and "id" in data and "kind" in data:
+                                # Check if this is already an MCP-compatible entry (from youtube_processor)
+                                if kind_dir.name == "youtube" and "id" in data and "kind" in data:
                                     # This is already MCP-compatible, use it directly
                                     discovered.append(data)
                                 else:

@@ -1,13 +1,13 @@
 Kind,SubKind,What,Where,Published,URL
-youtube_playlist,,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
+youtube,,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
 podcast,,Chat about open source and platforms,Kubernetes for Humans,3/27/2024,https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/
-podcast,,Nvidia’s Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
+podcast,,Nvidia's Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
 podcast,,Monitoring for AI,The New Stack Analysts with Alex Williams,3/28/2024,https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/
 podcast,,From Code to Climate,Unlearn Podcast with Barry O'Reilly,1/31/2024,https://barryoreilly.com/explore/podcast/sustainable-future-for-technology/
 podcast,,Microservices and Teraservices,Infoq with Wesley Reisz,,https://www.infoq.com/podcasts/adrian-cockcroft/
 podcast,,Episode 15,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft/
 podcast,,Episode 24,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft-ep-24/
-youtube_playlist,,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
+youtube,,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
 podcast,,Netflix on AWS,CloudFix,,https://cloudfix.com/podcast/when-netflix-bet-on-aws/
 podcast,,Serverless and continuous resilience,Charles Humble/Container Solutions,,https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience
 podcast,,Future Architectures,HPC Podcastmwith Shahin/OrionX,11/1/2023,https://orionx.net/2023/11/hpcpodcast-77-adrian-cockcroft-on-future-architectures/
@@ -35,7 +35,7 @@ story,,High availability,Richard Seroter on Infoq,,https://www.infoq.com/article
 story,,Failing Over Without Falling Over,Stackoverflow,2020,https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
 file,,Lots of blog post text extracted from medium archive,Directory created by code/medium_posts.py,2025,./authors/virtual_adrianco/medium_adrianco/
 file,,Lots of blog post text extracted from blogger archive,Directory created by code/extract_blogger_posts.py,2014,./authors/virtual_adrianco/blogger_perfcap_posts/
-youtube_playlist,,Adrian Cockcroft Appearance Playlist on YouTube,Many different accounts - technical content,,https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5
+youtube,,Adrian Cockcroft Appearance Playlist on YouTube,Many different accounts - technical content,,https://www.youtube.com/watch?v=8Ce-3VPplFg&list=PL_KXMLr8jNTkLhrFZBPjuVp8KXcCXbIo5
 story,tns-post-body-content,Enterprise Indigestion at NVIDIA GTC,The New Stack,2024,https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/
 story,,SC23 update,InsideHPC,2023,https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/
 story,,SC22 predictions,InsideHPC,2022,https://insidehpc.com/2022/12/sc22-cxl3-0-the-future-of-hpc-interconnects-and-frontier-vs-fugaku/
