@@ -1,5 +1,5 @@
 Kind,SubKind,What,Where,Published,URL
-youtube,,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
+youtube,transcript,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
 podcast,,Chat about open source and platforms,Kubernetes for Humans,3/27/2024,https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/
 podcast,,Nvidia's Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
 podcast,,Monitoring for AI,The New Stack Analysts with Alex Williams,3/28/2024,https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/

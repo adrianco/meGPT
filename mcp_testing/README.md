@@ -85,7 +85,7 @@ When tests pass, you should see:
 - 5 tools discovered and tested
 - 4 resources accessed successfully
 - 3 prompts generated correctly
-- Real content data from virtual_adrianco collection (216 items)
+- Real content data from virtual_adrianco collection (611 items)
 - Sub-second response times for all operations
 
 ## Troubleshooting

@@ -89,6 +89,29 @@ DEVELOPMENT HISTORY:
     - Proper separation of concerns: preprocessing vs resource assembly
     - Removed --force-summaries option from MCP script (no longer needed)
 
+15. YouTube Processor Enhancement and Renaming:
+    - Renamed youtube_playlist_processor.py to youtube_processor.py for consistency
+    - Updated all references from "youtube_playlist" to "youtube" throughout codebase
+    - Enhanced YouTube processor to handle entire channels in addition to playlists
+    - Added channel URL detection and video extraction capabilities
+    - Implemented consent page handling for YouTube channel processing
+    - Updated CSV files and MCP resources to use "youtube" content type
+
+16. File Kind Processing Enhancement: Added comprehensive file kind processing:
+    - Enhanced CSV file kind entries to process directory contents
+    - Added support for medium and blogger archive formats
+    - Implemented URL extraction from different file formats (medium vs blogger)
+    - Created proper MCP entries with appropriate subkinds (medium_post, blogger_post)
+    - Generated summaries for substantial content automatically
+    - Proper error handling and logging for file processing operations
+
+17. Cache Directory Exclusion Fix: Fixed summaries content type issue:
+    - Identified that summaries directory was being processed as content type
+    - Added "summaries" to excluded directories in walk_all_downloaded_content()
+    - Prevented cached summary files from appearing as content items
+    - Reduced content count from 618 to 611 items (removed 7 cache files)
+    - Cleaned up content types to show only actual content categories
+
 CURRENT FUNCTIONALITY:
 - Processes CSV metadata for published content
 - Walks all downloaded content directories recursively
@@ -97,16 +120,17 @@ CURRENT FUNCTIONALITY:
 - Creates summaries using BART transformer model with intelligent caching
 - Handles multiple content types (youtube, podcast, story, book, etc.)
 - Special processing for blog archives (medium, blogger)
+- Enhanced file kind processing for directory-based content
 - File categorization by extension and content type
 - Converts relative paths to full GitHub repository URLs
 - Reads preprocessed text content from book processor output
 - Copies PDFs to mcp_resources directory for persistent storage
 - Generates cached summaries from preprocessed text content for books/presentations
 - Hybrid content approach: summaries + PDF references for optimal resource size
-- Command line options for cache control (--force-summaries)
 - Comprehensive error handling and logging
 - JSON schema validation for output
 - Deduplication by URL to avoid processing same content multiple times
+- Excludes cache directories (summaries) from content processing
 
 DEPENDENCIES:
 - nltk: Natural language processing (tokenization, stopwords, lemmatization)
@@ -175,6 +199,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import shutil
 import argparse
+from urllib.parse import urlparse, urljoin
 
 # Configure logging
 logging.basicConfig(
@@ -945,7 +970,7 @@ def walk_all_downloaded_content(author: str) -> List[Dict]:
     
     # Process other directories
     for kind_dir in downloads_dir.glob("*"):
-        if kind_dir.is_dir() and kind_dir.name not in ["file"] + list(blog_dirs.keys()):  # Skip already processed directories
+        if kind_dir.is_dir() and kind_dir.name not in ["file", "summaries"] + list(blog_dirs.keys()):  # Skip already processed directories
             for file_path in kind_dir.glob("*"):
                 if file_path.is_file():
                     try:
@@ -1059,9 +1084,118 @@ def create_mcp_resource(author: str, csv_content: List[Dict[str, str]], processe
             source = item.get('Where', '').strip()
             published = item.get('Published', '').strip()
             
-            # Skip file kind entries from CSV as we'll handle them separately
+            # Handle file kind entries specially - process the directory they point to
             if kind.lower() == 'file':
-                continue
+                logger.info(f"Processing file kind entry: {title} -> {url}")
+                
+                # Extract directory path from URL
+                if url.startswith('./authors/'):
+                    # Remove './' prefix and get the directory path
+                    dir_path = Path(url[2:])
+                elif url.startswith('authors/'):
+                    dir_path = Path(url)
+                else:
+                    logger.warning(f"Unexpected file URL format: {url}")
+                    continue
+                
+                if not dir_path.exists():
+                    logger.warning(f"File directory does not exist: {dir_path}")
+                    continue
+                
+                # Process all files in the directory
+                for file_path in dir_path.glob("*.txt"):
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as f:
+                            lines = f.readlines()
+                        
+                        # Extract URL and content based on file format
+                        file_url = None
+                        content_lines = []
+                        file_title = file_path.stem.replace("_", " ").replace("-", " ")
+                        extracted_date = ""
+                        
+                        # Check for medium format: [URL] https://...
+                        if lines and lines[0].strip().startswith('[URL]'):
+                            url_match = re.search(r'https?://\S+', lines[0])
+                            if url_match:
+                                file_url = url_match.group(0)
+                                content_lines = lines[2:]  # Skip URL line and empty line
+                        
+                        # Check for blogger format: Title: ... \n URL: https://...
+                        elif len(lines) >= 2 and lines[0].startswith('Title:') and lines[1].startswith('URL:'):
+                            file_title = lines[0].replace('Title:', '').strip()
+                            url_match = re.search(r'https?://\S+', lines[1])
+                            if url_match:
+                                file_url = url_match.group(0)
+                                content_lines = lines[3:]  # Skip title, URL, and empty line
+                        
+                        # Fallback: look for URL anywhere in first few lines
+                        else:
+                            for i, line in enumerate(lines[:3]):
+                                url_match = re.search(r'https?://\S+', line)
+                                if url_match:
+                                    file_url = url_match.group(0)
+                                    content_lines = lines[i+1:]
+                                    break
+                            if not file_url:
+                                content_lines = lines
+                        
+                        # Create content entry
+                        file_content = "".join(content_lines).strip()
+                        
+                        # Determine subkind based on source directory
+                        if 'medium' in str(dir_path):
+                            file_subkind = 'medium_post'
+                            file_source = 'Medium Archive'
+                            # Extract date from Medium post title and clean it up
+                            file_title, extracted_date = extract_date_from_medium_title(file_title)
+                        elif 'blogger' in str(dir_path):
+                            file_subkind = 'blogger_post'
+                            file_source = 'Blogger Archive'
+                        else:
+                            file_subkind = 'blog_post'
+                            file_source = source or 'File Archive'
+                        
+                        # Update content type counter
+                        content_types[kind] = content_types.get(kind, 0) + 1
+                        
+                        # Use extracted date if available, otherwise fall back to CSV published date
+                        final_published_date = extracted_date if extracted_date else published
+                        
+                        # Create MCP entry
+                        content_item = {
+                            "id": f"{author}_{kind}_{hashlib.md5(str(file_path).encode()).hexdigest()[:8]}",
+                            "kind": kind.lower(),
+                            "subkind": file_subkind,
+                            "title": file_title,
+                            "source": file_source,
+                            "published_date": final_published_date,
+                            "url": file_url or str(file_path),
+                            "content": {
+                                "text": file_content,
+                                "metadata": {
+                                    "word_count": len(file_content.split()),
+                                    "processing_status": "success",
+                                    "processing_errors": []
+                                }
+                            },
+                            "tags": processor.extract_tags(file_title, {"text": file_content})
+                        }
+                        
+                        # Generate summary if content is substantial
+                        if len(file_content) > 100:
+                            summary = processor.generate_summary(file_content, content_title=file_title)
+                            if summary:
+                                content_item["content"]["summary"] = summary
+                        
+                        mcp_resource['content'].append(content_item)
+                        mcp_resource['metadata']['processing_stats']['processed_items'] += 1
+                        
+                    except Exception as e:
+                        logger.error(f"Error processing file {file_path}: {e}")
+                        mcp_resource['metadata']['processing_stats']['failed_items'] += 1
+                
+                continue  # Skip the rest of the processing for file entries
             
             # Convert URL to full URL if it's a relative path
             original_url = url
@@ -1217,6 +1351,46 @@ def save_mcp_resource(author: str, mcp_resource: Dict[str, Any]) -> None:
         json.dump(mcp_resource, f, indent=2)
     
     logger.info(f"MCP resource saved to {output_file}")
+
+def extract_date_from_medium_title(title: str) -> tuple[str, str]:
+    """
+    Extract date from Medium post title and return cleaned title and date.
+    
+    Medium titles typically start with dates in format:
+    - "YYYY MM DD Title text hash" (from filename processing)
+    - "YYYY-MM-DD_Title-text-hash.txt" (from filename)
+    
+    Returns:
+        tuple: (cleaned_title, extracted_date_string)
+    """
+    # Pattern for date at start: YYYY MM DD or YYYY-MM-DD
+    date_pattern = r'^(\d{4})[_\s-](\d{1,2})[_\s-](\d{1,2})[_\s]+'
+    
+    match = re.match(date_pattern, title)
+    if match:
+        year, month, day = match.groups()
+        # Normalize date format
+        extracted_date = f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+        
+        # Remove date from title and clean up
+        cleaned_title = re.sub(date_pattern, '', title)
+        
+        # Remove hash at end (pattern: space + 12-16 hex characters at end)
+        cleaned_title = re.sub(r'\s+[a-f0-9]{12,16}$', '', cleaned_title)
+        
+        # Clean up extra spaces and formatting
+        cleaned_title = re.sub(r'\s+', ' ', cleaned_title).strip()
+        
+        # Replace underscores and dashes with spaces for readability
+        cleaned_title = cleaned_title.replace('_', ' ').replace('-', ' ')
+        
+        # Clean up multiple spaces again
+        cleaned_title = re.sub(r'\s+', ' ', cleaned_title).strip()
+        
+        return cleaned_title, extracted_date
+    
+    # If no date pattern found, return original title
+    return title, ""
 
 def main():
     parser = argparse.ArgumentParser(description='Create MCP resources from author content')

@@ -11,7 +11,7 @@ My own content is stored or linked to in authors/virtual_adrianco and consists o
 - Blog posts from https://perfcap.blogspot.com extracted as text to authors/virtual_adrianco/blogger_percap_posts (with extraction script)
 - ~100 presentation decks (images) greatest hits: https://github.com/adrianco/slides/tree/master/Greatest%20Hits
 - ~20 podcasts (audio conversations, should be good Q&A training material)
-- over 100 videos of talks and interviews (audio/video/YouTube individual videos, playlists, and entire channels)
+- over 135 videos of talks and interviews (audio/video/YouTube individual videos, playlists, and entire channels)
 
 If another author wants to use this repo as a starting point, clone it and add your own directory of content under authors. If you want to contribute the content freely for other people to use as a training data set, then send a pull request and I'll include it here. The scripts in the code directory are there to help pre-process content for an author by extracting from a twitter or medium archive that has to be downloaded by the account owner.
 
@@ -63,6 +63,75 @@ youtube,,My Complete YouTube Channel,Personal Channel,2024,https://www.youtube.c
 ```
 
 The processor will automatically expand playlists and channels into individual video entries, making all content searchable and accessible through the MCP server.
+
+# Enhanced Content Processing
+
+The content processing system has been significantly enhanced to handle complex content structures and archives:
+
+## File Kind Processing
+The system now supports "file" kind entries in CSV that point to directories containing multiple content files:
+
+```csv
+Kind,SubKind,What,Where,Published,URL
+file,,Lots of blog post text extracted from medium archive,Medium Archive,2025,./authors/virtual_adrianco/medium_adrianco/
+file,,Lots of blog post text extracted from blogger archive,Blogger Archive,2014,./authors/virtual_adrianco/blogger_perfcap_posts/
+```
+
+### Supported Archive Formats
+- **Medium Archives**: Automatically detects `[URL] https://...` format and extracts individual posts
+- **Blogger Archives**: Handles `Title: ...\nURL: https://...` format for post extraction
+- **Generic Text Files**: Processes any text files with URL extraction capabilities
+
+### Processing Features
+- **Automatic URL Extraction**: Finds URLs in various formats within text files
+- **Content Classification**: Assigns appropriate subkinds (medium_post, blogger_post, etc.)
+- **Summary Generation**: Creates summaries for substantial content automatically
+- **Deduplication**: Prevents processing the same content multiple times
+- **Error Handling**: Robust processing with comprehensive logging
+
+## Content Types Supported
+- **YouTube**: Individual videos, playlists, entire channels (135 items)
+- **Podcasts**: Episodes with transcripts and summaries (52 items)
+- **Books**: PDFs with extracted text and summaries (10 items)
+- **Stories**: Narrative content with optional attachments (18 items)
+- **Files**: Blog archives, presentations, documents (394 items)
+- **InfoQ Videos**: Technical presentations (2 items)
+
+Total: **611 content items** processed and accessible through the MCP server.
+
+# MCP Server Integration
+
+This repository now includes a comprehensive Model Context Protocol (MCP) server that makes the content collection accessible to AI applications. The MCP server transforms the processed content into an AI-accessible knowledge base.
+
+## Current Content Statistics (virtual_adrianco)
+- **Total Items**: 611 content pieces
+- **YouTube Videos**: 135 (individual videos, playlists, channels)
+- **File Archives**: 394 (Medium posts, Blogger posts, presentations)
+- **Podcast Episodes**: 52 (with transcripts and summaries)
+- **Stories**: 18 (narrative content)
+- **Books**: 10 (PDFs with extracted text and summaries)
+- **InfoQ Videos**: 2 (technical presentations)
+
+## MCP Server Features
+- **Content Search**: Semantic search across titles, tags, and sources
+- **Content Filtering**: Filter by type, tags, and metadata
+- **Analytics**: Collection statistics and content analysis
+- **AI Integration**: Compatible with Claude Desktop, Cursor, custom AI agents
+- **Multiple Transports**: STDIO, HTTP, and SSE support
+
+## Usage
+```bash
+# Start MCP server (default STDIO mode for Claude Desktop)
+python mcp_server.py --author virtual_adrianco
+
+# Start HTTP server for web applications
+python mcp_server.py --author virtual_adrianco --transport streamable-http --port 8080
+
+# Generate MCP resources for any author
+python create_mcp.py virtual_adrianco
+```
+
+For detailed testing and integration examples, see the `mcp_testing/` directory.
 
 # Building an Author
 To use this repo, clone it to a local disk, setup the python environment, run the build.py script for an author and it will walk through the published content table for that author processing each line in turn. The build script will create a downloads/<author> directory and create a state.json file in it which records successful processing steps so that incremental runs of build.py will not re-run the same downloads. Each kind of data needs a corresponding script in the processors directory.

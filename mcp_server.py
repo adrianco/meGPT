@@ -24,11 +24,37 @@ FUNCTIONALITY:
 - Offers intelligent prompts for content analysis scenarios
 - Handles multiple authors through command-line configuration
 
+CONTENT TYPES SUPPORTED:
+- YouTube videos: Individual videos, playlists, and entire channels
+- Podcasts: Episodes with transcripts and summaries
+- Books: PDFs with extracted text and summaries
+- Stories: Narrative content with optional PDF attachments
+- Files: Blog archives (Medium, Blogger), presentations, documents
+- InfoQ videos: Technical conference presentations
+
+ENHANCED FEATURES:
+- File kind processing: Automatically processes directory-based content
+- Blog archive support: Medium and Blogger post collections
+- YouTube channel processing: Extracts all videos from channels
+- PDF handling: Preprocessed text extraction and summary generation
+- URL standardization: Converts relative paths to full GitHub URLs
+- Content deduplication: Prevents duplicate processing by URL matching
+- Cache management: Excludes internal cache files from content listings
+
 INTEGRATION CAPABILITIES:
 - Claude Desktop: Direct integration for content-aware conversations
 - Cursor/Windsurf: Enhanced coding assistance with domain knowledge
 - Custom AI Agents: LangGraph, OpenAI SDK, Firebase Genkit workflows
 - Personal AI Assistants: Content-aware chatbots and research tools
+
+CURRENT CONTENT STATISTICS (virtual_adrianco):
+- Total items: 611 content pieces
+- YouTube videos: 135 (including channels, playlists, individual videos)
+- File archives: 394 (Medium posts, Blogger posts, presentations)
+- Podcast episodes: 52 (with transcripts and summaries)
+- Stories: 18 (narrative content)
+- Books: 10 (PDFs with extracted text)
+- InfoQ videos: 2 (technical presentations)
 
 DEPENDENCIES:
 - fastmcp: Simplified MCP server framework with automatic JSON-RPC handling
@@ -59,7 +85,10 @@ DEVELOPMENT CONTEXT:
 This server was developed to demonstrate MCP capabilities with real content data.
 It transforms the meGPT content collection into an AI-accessible knowledge base
 that enhances conversations, provides context-aware assistance, and enables
-content discovery across various AI applications and frameworks.
+content discovery across various AI applications and frameworks. The server
+has been enhanced to support comprehensive file processing, YouTube channel
+extraction, and blog archive integration, making it a robust content platform
+for AI-powered applications.
 ================================================================================
 """
 
