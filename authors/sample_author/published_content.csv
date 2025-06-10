@@ -1,0 +1,13 @@
+Kind,SubKind,What,Where,Published,URL
+youtube,,Introduction to Cloud Native Architecture,Platform Engineering Podcast,2024-01-15,https://youtube.com/watch?v=example123
+youtube,,Sample Author Tech Talks Playlist,Various Conferences and Events,2024,https://youtube.com/playlist?list=example456
+podcast,,Future of Platform Engineering,The Platform Engineering Show,2024-02-01,https://platformengineering.org/podcast/sample-episode
+podcast,,Microservices Evolution and Patterns,Software Engineering Daily,2024-02-15,https://softwareengineeringdaily.com/sample-episode
+book,"1,31-65",Cloud Architecture Patterns,Example Technical Press,2024-03-01,books/cloud_patterns.pdf
+book,,Foreword: Modern System Design,O'Reilly - Jane Smith,2024-03-15,books/modern_system_design.pdf
+story,tns-post-body-content,The Evolution of Platform Engineering,The New Stack,2024-04-01,https://thenewstack.io/evolution-platform-engineering
+story,tns-post-body-content,Sustainability in Cloud Computing,The New Stack,2024-04-15,https://thenewstack.io/sustainability-cloud-computing
+file,,Blog posts from Medium,Directory created by code/medium_posts.py,2024,./authors/sample_author/medium_posts/
+file,,Blog posts from Blogger,Directory created by code/extract_blogger_posts.py,2024,./authors/sample_author/blogger_posts/
+file,,Presentation decks,Directory of conference presentations,,./authors/sample_author/presentations/
+infoqvideo,,Building Resilient Systems,InfoQ - QCon London talk/video,2024-05-01,https://www.infoq.com/presentations/sample-talk/ 

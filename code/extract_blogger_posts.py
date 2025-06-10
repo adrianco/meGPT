@@ -1,3 +1,24 @@
+"""
+Script to extract published blog posts from a Blogger XML export.
+
+Purpose:
+- Parses a Blogger XML archive to extract only original published posts (excluding drafts and comments).
+- Saves each post as an individual text file in a specified output directory.
+
+Key Design Choices:
+- Uses XML parsing to identify entries categorized as blog posts (`kind#post`).
+- Skips drafts by checking the `<blogger:draft>` tag.
+- Extracts the title, URL, and content of each post and saves them in separate files.
+- Generates filenames based on sanitized post titles to avoid issues with special characters.
+
+Important Considerations:
+- Requires two command-line arguments: input XML file and output directory.
+- Creates the output directory if it doesn’t exist.
+- Handles missing links or content gracefully.
+
+This instruction block should always be included at the top of the script to maintain context for future modifications.
+"""
+
 import os
 import sys
 import xml.etree.ElementTree as ET

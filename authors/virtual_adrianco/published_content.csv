@@ -1,13 +1,13 @@
 Kind,SubKind,What,Where,Published,URL
-podcast,,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
+youtube,transcript,"From Netflix to the Cloud: DevOps, Microservices and Sustainability",Platform Engineering Podcast,,https://www.youtube.com/watch?v=FY3asCV9qOE
 podcast,,Chat about open source and platforms,Kubernetes for Humans,3/27/2024,https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/
-podcast,,Nvidia’s Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
+podcast,,Nvidia's Superchips for AI: Talk about GH200 and flip.ai,The New Stack Analysts with Alex Williams and Sunil Mallya,3/14/2024,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/
 podcast,,Monitoring for AI,The New Stack Analysts with Alex Williams,3/28/2024,https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/
 podcast,,From Code to Climate,Unlearn Podcast with Barry O'Reilly,1/31/2024,https://barryoreilly.com/explore/podcast/sustainable-future-for-technology/
 podcast,,Microservices and Teraservices,Infoq with Wesley Reisz,,https://www.infoq.com/podcasts/adrian-cockcroft/
 podcast,,Episode 15,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft/
 podcast,,Episode 24,MIK+1,,https://flowframework.org/ffc-podcast/adrian-cockcroft-ep-24/
-podcast,,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
+youtube,,Platform Engineering Done Right,John Myer ,,https://www.youtube.com/watch?v=muKaB4f2qJU
 podcast,,Netflix on AWS,CloudFix,,https://cloudfix.com/podcast/when-netflix-bet-on-aws/
 podcast,,Serverless and continuous resilience,Charles Humble/Container Solutions,,https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience
 podcast,,Future Architectures,HPC Podcastmwith Shahin/OrionX,11/1/2023,https://orionx.net/2023/11/hpcpodcast-77-adrian-cockcroft-on-future-architectures/
@@ -45,3 +45,13 @@ story,tns-post-body-content,"The Rise of Continuous Resilience",The New Stack,20
 story,tns-post-body-content,"Nvidia GTC: Hyperscaler Happiness and Enterprise Indigestion",The New Stack,2024,https://thenewstack.io/nvidia-gtc-hyperscaler-happiness-and-enterprise-indigestion/
 story,tns-post-body-content,"Sustainability: Comparing AWS, Azure and Google",The New Stack,2024,https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/
 story,tns-post-body-content,"Cloud PUE: Comparing AWS, Azure and GCP Global Regions",The New Stack,2025,https://thenewstack.io/cloud-pue-comparing-aws-azure-and-gcp-global-regions/
+story,tns-post-body-content,NVIDIA Unveils Next Gen Rubin and Feynman Architectures,The New Stack,2025,https://thenewstack.io/nvidia-unveils-next-gen-rubin-and-feynman-architectures-pushing-ai-power-limits/
+file,,Presentation decks,Directory of greatest hits slide decks,,./authors/virtual_adrianco/presentations/
+podcast,,"Analyst Roundtable: Chips, AI, Search, Quantum, Bitcoin, Fusion – OXD26",OrionX Download,2025,https://orionx.net/2025/03/analyst-roundtable-chips-ai-search-quantum-bitcoin-fusion-oxd26/
+podcast,,"SC24, Supercomputing, CryptoSuper500, Quantum, RISC-V Summit – OXD25",OrionX Download,2024,https://orionx.net/2024/12/sc24-supercomputing-cryptosuper500-quantum-risc-v-summit-oxd25/
+story,crayons-article__main ,Scaling AWS Costs to Match the Business,Dev.to,2021,https://dev.to/aws/scaling-aws-costs-to-match-the-business-f9k
+story,crayons-article__main ,Why are services slow sometimes?,Dev.to,2020,https://dev.to/aws/why-are-services-slow-sometimes-mn3
+story,crayons-article__main ,If at first you don't get an answer...,Dev.to,2020,https://dev.to/aws/if-at-first-you-don-t-get-an-answer-3e85
+story,crayons-article__main ,Sustainability transformation and DevSusOps,Dev.to,2021,https://dev.to/aws/what-is-sustainability-transformation-32hi
+story,crayons-article__main ,Measuring energy usage,Dev.to,2021,https://dev.to/adrianco/measuring-energy-usage-5ip
+youtube,,"Adrian's Youtube Channel, cars, music and random stuff",Mostly non-technical content,2025,https://www.youtube.com/@adriancockcroft/videos

@@ -1,3 +1,30 @@
+"""
+Text File Processor for GitHub Directories
+
+Purpose:
+This script downloads all text files from a specified GitHub directory (provided as a URL) and saves them to a local directory. 
+It is designed to work with the same calling convention as other processor scripts.
+
+Key Design Choices:
+- Uses the GitHub API to list files in a repository directory.
+- Filters and downloads only `.txt` files.
+- Handles missing or malformed API responses gracefully.
+- Supports a "subkind" argument for consistency with other processors, though it is not actively used in this script.
+
+Important Considerations:
+- The GitHub URL provided must be a directory, not an individual file.
+- The URL is automatically converted to the GitHub API format.
+- The script ensures all downloaded files are saved with UTF-8 encoding.
+- Debug messages help diagnose issues such as missing files or incorrect directory paths.
+
+Usage:
+    textfiles_processor.py <github_directory_url> <download_dir> <subkind>
+Example:
+    textfiles_processor.py https://github.com/user/repo/tree/main/texts ./downloads debug
+
+    This instruction block should always be included at the top of the script to maintain context for future modifications.
+"""
+
 import sys
 import os
 import requests

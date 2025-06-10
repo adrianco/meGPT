@@ -1,3 +1,35 @@
+"""
+Twitter Archive Conversation Extractor
+
+This script processes a Twitter archive to extract all conversation tweets (replies)
+from potentially multiple tweet files.
+
+How to use:
+1. Download your Twitter archive
+2. Run the script using: python extract_conversations.py
+3. Enter the path to your Twitter archive directory when prompted
+
+The script handles:
+- Multiple tweet files (tweets.js, tweets-part1.js, tweets-part2.js, etc.)
+- Correctly parsing the JavaScript-wrapped JSON data
+- Identifying tweets that are part of conversations by checking:
+  - in_reply_to_status_id (indicating replies to specific tweets)
+  - in_reply_to_user_id (indicating replies to specific users)
+
+Features:
+- Automatically finds all tweet files using glob patterns
+- Provides progress updates during processing
+- Consolidates conversations from all tweet parts into a single JSON file
+- Saves conversations to [archive_directory]/data/conversations.json
+
+Example output:
+$ python3 extract_conversations.py
+Enter the path to your Twitter archive directory: twitter-2022-11-19-[...]
+Processed [...]/data/tweets.js: Found 12931 conversation tweets
+Processed [...]/data/tweets-part1.js: Found 1487 conversation tweets
+Extracted a total of 14418 conversation tweets to [...]/data/conversations.json
+"""
+
 import os
 import json
 import glob

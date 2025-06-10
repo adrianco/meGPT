@@ -1,3 +1,28 @@
+"""
+Medium Blog Extractor
+
+This script processes a Medium blog archive to extract published stories.
+
+How to use:
+1. Download your Medium blog archive from https://medium.com/me/settings/security
+2. Wait for the email notification (within 24 hours)
+3. Run the script using:
+   python code/medium_posts.py <path_to_zip_or_directory> <output_directory>
+
+The script operates in two modes:
+- It can process a ZIP file directly from Medium
+- It can process an already expanded directory containing the Medium archive
+
+Features:
+- Extracts only published stories (ignores drafts)
+- Maintains the original filename structure
+- Processes HTML content into readable text format
+- Includes the original Medium URL with each story
+- Preserves the author's profile information
+
+The extracted stories are saved as text files in the specified output directory.
+"""
+
 import os
 import zipfile
 import sys
