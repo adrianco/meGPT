@@ -1,6 +1,21 @@
 import os
 import sys
 import xml.etree.ElementTree as ET
+import re
+
+def sanitize_filename(filename):
+    """Sanitize filename to be compatible across operating systems."""
+    # Replace invalid characters with underscore
+    # This includes: < > : " / \ | ? * and any control characters
+    sanitized = re.sub(r'[<>:"/\\|?*\x00-\x1F]', '_', filename)
+    # Remove leading/trailing spaces and dots
+    sanitized = sanitized.strip('. ')
+    # Replace multiple consecutive underscores with a single one
+    sanitized = re.sub(r'_+', '_', sanitized)
+    # Ensure the filename isn't empty after sanitization
+    if not sanitized:
+        sanitized = 'untitled_post'
+    return sanitized
 
 # Check if the correct number of arguments is provided
 if len(sys.argv) < 3:
@@ -47,7 +62,7 @@ for entry in root.findall('atom:entry', ns):
         link = link_element.get('href')
         
         # Create a filename based on the post title
-        filename = f"{title.replace(' ', '_').replace('/', '-')}.txt"
+        filename = sanitize_filename(title) + '.txt'
         filepath = os.path.join(output_dir, filename)
 
         # Write the post content to a file

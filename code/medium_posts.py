@@ -1,9 +1,26 @@
 import os
 import zipfile
 import sys
+import re
 from pathlib import Path
 from bs4 import BeautifulSoup
 import urllib.parse
+
+def sanitize_filename(filename):
+    """Sanitize filename to be compatible across operating systems."""
+    # Remove the .html extension if present
+    filename = filename.replace('.html', '')
+    # Replace invalid characters with underscore
+    # This includes: < > : " / \ | ? * and any control characters
+    sanitized = re.sub(r'[<>:"/\\|?*\x00-\x1F]', '_', filename)
+    # Remove leading/trailing spaces and dots
+    sanitized = sanitized.strip('. ')
+    # Replace multiple consecutive underscores with a single one
+    sanitized = re.sub(r'_+', '_', sanitized)
+    # Ensure the filename isn't empty after sanitization
+    if not sanitized:
+        sanitized = 'untitled_post'
+    return sanitized
 
 def get_profile_url(archive_path):
     """Extract the base URL of the Medium profile from profile/profile.html."""
@@ -67,7 +84,8 @@ def extract_stories_from_zip(zip_file_path, output_dir, base_url, username):
                 with zip_ref.open(file_info) as file:
                     story_content = file.read().decode('utf-8')
                     story_filename = Path(file_info.filename).name
-                    output_file_path = output_path / story_filename.replace('.html', '.txt')
+                    sanitized_name = sanitize_filename(story_filename)
+                    output_file_path = output_path / f"{sanitized_name}.txt"
 
                     extracted_text = extract_content_from_html(story_content, base_url, username, file_info.filename)
                     if extracted_text:
@@ -90,7 +108,8 @@ def copy_stories_from_directory(source_dir, output_dir, base_url, username):
         if story_file.name.startswith('draft'):
             continue
         
-        output_file_path = output_path / story_file.name.replace('.html', '.txt')
+        sanitized_name = sanitize_filename(story_file.name)
+        output_file_path = output_path / f"{sanitized_name}.txt"
         process_and_save_story(story_file, output_file_path, base_url, username)
 
 def process_medium_archive(input_path, output_dir):
