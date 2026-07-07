@@ -1,0 +1,39 @@
+Kind,SubKind,What,Where,Published,URL,SlidesURL,Tags
+podcast,episode,Chat about open source and platforms,Komodor,2023,https://komodor.com/resources/022-kubernetes-for-humans-with-adrian-cockcroft-nubank/,,kubernetes,open-source,platforms
+podcast,episode,Nvidia's Superchips for AI: GH200 and flip.ai,The New Stack,2023,https://thenewstack.io/nvidias-superchips-for-ai-radical-but-a-work-in-progress/,,ai,hardware,nvidia
+podcast,episode,Monitoring for AI,The New Stack,2023,https://thenewstack.io/the-new-monitoring-for-services-that-feed-from-llms/,,observability,llm,monitoring
+podcast,episode,From Code to Climate,Barry O'Reilly,2023,https://barryoreilly.com/explore/podcast/sustainable-future-for-technology/,,sustainability,climate,technology
+podcast,episode,Microservices and Teraservices,InfoQ,2017,https://www.infoq.com/podcasts/adrian-cockcroft/,,microservices,architecture,cloud
+podcast,episode,Episode 15,Flow Framework,2021,https://flowframework.org/ffc-podcast/adrian-cockcroft/,,flow-framework,value-stream,devops
+podcast,episode,Episode 24,Flow Framework,2022,https://flowframework.org/ffc-podcast/adrian-cockcroft-ep-24/,,flow-framework,value-stream,devops
+podcast,episode,Netflix on AWS,CloudFix,2022,https://cloudfix.com/podcast/when-netflix-bet-on-aws/,,netflix,aws,cloud-migration
+podcast,episode,Serverless and continuous resilience,Container Solutions,2021,https://blog.container-solutions.com/adrian-cockcroft-on-serverless-continuous-resilience,,serverless,resilience,chaos-engineering
+podcast,episode,Future Architectures,HPC Podcast,2023,https://orionx.net/2023/11/hpcpodcast-77-adrian-cockcroft-on-future-architectures/,,hpc,architecture,cloud
+podcast,episode,ESG and HPC,HPC Podcast,2023,https://orionx.net/2023/05/hpcpodcast-57-decarbonization-renewable-energy-esg-w-adrian-cockcroft/,,sustainability,esg,hpc,renewable-energy
+podcast,episode,Evolution of Microservices,ACM Tech Talks,2022,https://learning.acm.org/techtalks/microservices,,microservices,cloud-native,architecture
+podcast,episode,Scheduling,Software Engineering Daily,2016,https://softwareengineeringdaily.com/2016/07/06/schedulers-with-adrian-cockcroft/,,scheduling,distributed-systems,containers
+podcast,episode,Architecting for cloud,InfoQ,2013,https://www.infoq.com/interviews/Adrian-Cockcroft-Netflix/,,netflix,cloud,architecture
+podcast,episode,Interview early life etc,Magpie Talk Show,2016,https://samnewman.io/blog/2016/10/08/magpie-talkshow-episode-22-adrian-cockcroft/,,career,netflix,microservices
+podcast,episode,Microservices,SE Radio,2014,https://se-radio.net/2014/12/episode-216-adrian-cockcroft-on-the-modern-cloud-based-platform/,,microservices,cloud-platform,netflix
+podcast,episode,Cloud and HPC,Inside HPC,2022,https://insidehpc.com/2022/09/hpcpodcast-aws-sun-ebay-netflix-and-others-vet-adrian-cockcroft-talks-cloud-hpc-ai-and-the-amazon-sustainability-data-initiative/,,cloud,hpc,sustainability,aws
+podcast,episode,SC23 summary,Inside HPC,2023,https://insidehpc.com/2023/11/hpcpodcast-tech-analyst-adrian-cockcroft-on-trends-driving-future-hpc-architectures/,,hpc,supercomputing,ai,architecture
+podcast,roundtable,Analyst Roundtable OXD26,OrionX,2025,https://orionx.net/2025/03/analyst-roundtable-chips-ai-search-quantum-bitcoin-fusion-oxd26/,,ai,quantum,chips,fusion
+podcast,roundtable,SC24 Supercomputing OXD25,OrionX,2024,https://orionx.net/2024/12/sc24-supercomputing-cryptosuper500-quantum-risc-v-summit-oxd25/,,supercomputing,quantum,risc-v
+story,,Microservices and DevOps,InfoQ,2014,https://www.infoq.com/interviews/adrian-cockcroft-microservices-devops/,,microservices,devops
+story,,High Availability,InfoQ,,https://www.infoq.com/articles/cockcroft-high-availability/,,availability,resilience
+story,,Failing Over Without Falling Over,Stack Overflow,2020,https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/,,chaos-engineering,availability,aws
+story,tns-post-body-content,Why Did Docker Catch on Quickly,The New Stack,2014,https://thenewstack.io/why-did-docker-catch-on-quickly-and-why-is-it-so-interesting/,,docker,containers
+story,tns-post-body-content,A Conference to Discuss Developer-Driven Infrastructure,The New Stack,2015,https://thenewstack.io/a-conference-to-discuss-developer-driven-infrastructure/,,developer-tools,infrastructure
+story,tns-post-body-content,The Rise of Continuous Resilience,The New Stack,2020,https://thenewstack.io/the-rise-of-continuous-resilience/,,resilience,chaos-engineering,cloud
+story,tns-post-body-content,Sustainability Comparing AWS Azure and Google,The New Stack,2024,https://thenewstack.io/sustainability-how-did-amazon-azure-google-perform-in-2023/,,sustainability,aws,azure,gcp
+story,tns-post-body-content,Cloud PUE Comparing AWS Azure and GCP,The New Stack,2025,https://thenewstack.io/cloud-pue-comparing-aws-azure-and-gcp-global-regions/,,sustainability,cloud,pue
+story,tns-post-body-content,NVIDIA Next Gen Rubin and Feynman Architectures,The New Stack,2025,https://thenewstack.io/nvidia-unveils-next-gen-rubin-and-feynman-architectures-pushing-ai-power-limits/,,ai,nvidia,hardware
+story,,SC23 Top500 Trends AI HPC,InsideHPC,2023,https://insidehpc.com/2023/11/sc23-top500-trends-the-ai-hpc-crossover-chiplet-standardization-the-emergence-of-ucie-and-cxl-advancements/,,hpc,supercomputing,ai
+story,,SC22 CXL3 and Frontier vs Fugaku,InsideHPC,2022,https://insidehpc.com/2022/12/sc22-cxl3-0-the-future-of-hpc-interconnects-and-frontier-vs-fugaku/,,hpc,interconnects,frontier
+story,crayons-article__main,Scaling AWS Costs to Match the Business,Dev.to,2021,https://dev.to/aws/scaling-aws-costs-to-match-the-business-f9k,,aws,cost,cloud
+story,crayons-article__main,Why Are Services Slow Sometimes?,Dev.to,2020,https://dev.to/aws/why-are-services-slow-sometimes-mn3,,distributed-systems,performance,latency
+story,crayons-article__main,If at First You Don't Get an Answer,Dev.to,2020,https://dev.to/aws/if-at-first-you-don-t-get-an-answer-3e85,,reliability,sla,availability
+story,crayons-article__main,Sustainability Transformation and DevSusOps,Dev.to,2021,https://dev.to/aws/what-is-sustainability-transformation-32hi,,sustainability,devops
+story,crayons-article__main,Measuring Energy Usage,Dev.to,2021,https://dev.to/adrianco/measuring-energy-usage-5ip,,sustainability,energy,measurement
+book,"1,21-187,215-233",Capacity Planning for Internet Services,Sun Press,2000,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/caphi.pdf,,performance,capacity-planning,java
+book,"1,31-65,80-107,117-148,339-356",Resource Management,Sun Press,1999,https://raw.githubusercontent.com/adrianco/meGPT/main/authors/virtual_adrianco/rm.pdf,,performance,resource-management,solaris

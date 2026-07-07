@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Who needs a custom built Myphone?"
+description: ""
+resource: "https://perfcap.blogspot.com/2007/02/who-needs-custom-built-myphone.html"
+tags:
+  - article
+---
+
+# Who needs a custom built Myphone?
+
+
+
+
+
+
+## Excerpt
+
+Title: Who needs a custom built Myphone?
+URL: https://perfcap.blogspot.com/2007/02/who-needs-custom-built-myphone.html
+
+The mainstream phone manufacturers are looking for hits in the mass market, and looking for large niches to broaden their market. However if you take a "long tail" viewpoint, everyone wants a slightly different phone, and many people have phones that are the <span style="font-style: italic;">least bad</span> one they could find.<br /><br />How about phones for people with poor eyesight? If you are over 50, can you read the small print on your phone's screen without reading glasses? I have a friend who has a medical condition that causes very poor eyesight, and sets her 17" laptop screen resolution very low so she can read it. She would like a phone that has just the applications she needs, big easy to find icons for them, and big fonts on a large screen for the address list and other applications. Hard to find in the shops, but easy to custom build.
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2007/02/who-needs-custom-built-myphone.html

@@ -1,0 +1,28 @@
+---
+type: Article
+title: "FREE this weekend, iPhone Instant Queue Add for Netflix"
+description: ""
+resource: "https://perfcap.blogspot.com/2009/10/free-this-weekend-iphone-instant-queue.html"
+tags:
+  - article
+---
+
+# FREE this weekend, iPhone Instant Queue Add for Netflix
+
+
+
+
+
+
+## Excerpt
+
+Title: FREE this weekend, iPhone Instant Queue Add for Netflix
+URL: https://perfcap.blogspot.com/2009/10/free-this-weekend-iphone-instant-queue.html
+
+The latest version 5 of IQ+ was released this week, and it is currently Free until Monday morning.<br /><br />You get your queue, recently watched, and up to 100 movies per list for new releases, new TV, the 12 top level genres, movies you'll love, and seven highly personalized sub-genre and similars lists. All the lists are personally optimized for you by Netflix and will be the same as the lists currently shown on Xbox 360 or Media Center if you have one. <br /><br />It's a free update for existing users (the app has been out for over a year now) and normally 99c for new users. The app also provides searching the instant catalog and sorting the lists by title, rating, maturity, ending soon etc. Sorting the queue doesn't (yet) change it at Netflix, but helps you find titles that you can then pop to the front or back of the queue with one click. <br /><br /><a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=293419823&mt=8 ">http://itunes.apple.com/</a><br /><br />Please review/rate the latest release. So far th
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2009/10/free-this-weekend-iphone-instant-queue.html

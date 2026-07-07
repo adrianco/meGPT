@@ -1,0 +1,25 @@
+# Generated audio files (download on demand)
+**/*.mp3
+**/*.m4a
+**/*.wav
+**/*.ogg
+
+# Raw caption/subtitle files (can be re-extracted)
+**/*.vtt
+**/*.srt
+
+# Raw transcript JSON (large, derivable from audio)
+**/*_transcript.json
+
+# LLM enrichment JSON (derivable)
+**/*_enrichment.json
+
+# Extracted PDF text (large, derivable)
+**/*.txt
+
+# Cached PDF copies
+**/*.pdf
+
+# Build state (machine-specific)
+.okf_state.json
+.topic_clusters.json

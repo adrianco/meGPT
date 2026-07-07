@@ -1,0 +1,12 @@
+{
+  "video_url": "https://www.youtube.com/watch?v=b8TDodu5E0k",
+  "title": "The Evolution of Microservices",
+  "author": "Adrian Cockcroft",
+  "channel": "HashiCorp, an IBM Company",
+  "upload_date": "20160917",
+  "duration": 1863,
+  "transcript_chars": 33674,
+  "slides_url": null,
+  "enrichment": {},
+  "okf_path": "okf/virtual_adrianco/talks/068-the-evolution-of-microservices.md"
+}

@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Garage - Pouring and Finishing the Foundation"
+description: ""
+resource: "https://perfcap.blogspot.com/2010/04/garage-pouring-and-finishing-foundation.html"
+tags:
+  - article
+---
+
+# Garage - Pouring and Finishing the Foundation
+
+
+
+
+
+
+## Excerpt
+
+Title: Garage - Pouring and Finishing the Foundation
+URL: https://perfcap.blogspot.com/2010/04/garage-pouring-and-finishing-foundation.html
+
+Last Friday we poured concrete, and then it poured rain. Here's a stop-motion video of the work. Six concrete trucks came, we are high on the mountain, so they may not have been carrying a full load each time. The foundation is very deep on the downhill side, and the slab is 6" deep rather than the 4" minimum used for the walkway down the side and the parking apron.<br /><br />The first few seconds of each video look messy, this was introduced when youtube encoded it, my original video is fine.<br /><br /><object width="420" height="320"><param name="movie" value="http://www.youtube.com/v/m1rKRilg5BQ&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/m1rKRilg5BQ&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="420" height="320"></embed></object><br /><br />On Saturday, the weather was better, and the team came back to finish the surface and tidy up.<br /><br /><object w
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2010/04/garage-pouring-and-finishing-foundation.html

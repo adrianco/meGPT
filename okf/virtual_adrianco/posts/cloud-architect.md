@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Cloud Architect"
+description: ""
+resource: "authors/virtual_adrianco/blogger_perfcap_posts/Cloud_Architect.txt"
+tags:
+  - article
+---
+
+# Cloud Architect
+
+
+
+
+
+
+## Excerpt
+
+Title: Cloud Architect
+URL: https://perfcap.blogspot.com/2010/05/cloud-architect.html
+
+my role at Netflix just changed, from managing development of personalization in the cloud, to over-all cloud architect for Netflix. New challenges and a much broader scope. One challenge we have as we migrate to the cloud is that we need to build a new way to log and analyze what the systems in the cloud are doing, and we are basing this on Chukwa, Hadoop and Hive, all running in AWS. So we are <a href="http://jobs.netflix.com/DetailFlix.asp?jobid=flix3708">looking to hire a Hadoop developer</a>, and are looking at the <a href="http://perspectives.mvdirona.com/2010/05/04/PattersonOnCloudComputing.aspx">research going on at Berkeley's RAD lab</a> with interest.
+...
+
+
+## Sources
+
+[1] Source file: authors/virtual_adrianco/blogger_perfcap_posts/Cloud_Architect.txt

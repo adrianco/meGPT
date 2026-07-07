@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Tagging Blogger and Technorati | Adrian Cockcroft | 8th March 2006"
+description: ""
+resource: "https://perfcap.blogspot.com/2006/03/tagging-blogger-and-technorati-adrian.html"
+tags:
+  - article
+---
+
+# Tagging Blogger and Technorati | Adrian Cockcroft | 8th March 2006
+
+
+
+
+
+
+## Excerpt
+
+Title: Tagging Blogger and Technorati | Adrian Cockcroft | 8th March 2006
+URL: https://perfcap.blogspot.com/2006/03/tagging-blogger-and-technorati-adrian.html
+
+Blogger doesn't provide an integrated way to tag my postings (as far as I can tell) but at ETech we were advised to tag our blog entries with Etech and Etech06 so I tried to figure this out during one of the less interesting talks (yes I know I should have figured this out ages ago). Despite a slow and intermittent wireless internet connection I found that I could use Technorati to do this by embedding some html in my blog. The frustrating problem I ran into was that Technorati seemed to be completely overloaded and was largely unresponsive. When I did finally get my blog entry tagged I went to Technorati and searched for Etech, and after a long wait it came up with no results at all... I figured I had done something wrong, but late at night the load dropped off and the site now does actually find Etech tags, including my own one. I celebrated by adding "florwax" as a tag, so we will see how that goes...<br /><br />Another site that seems a victim of its success is Myspace, their music delivery service has become overloaded,
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2006/03/tagging-blogger-and-technorati-adrian.html

@@ -1,0 +1,28 @@
+---
+type: Article
+title: "I will be at Usenix 09 - San Diego - June 15-17"
+description: ""
+resource: "https://perfcap.blogspot.com/2009/06/i-will-be-at-usenix-09-san-diego-june.html"
+tags:
+  - article
+---
+
+# I will be at Usenix 09 - San Diego - June 15-17
+
+
+
+
+
+
+## Excerpt
+
+Title: I will be at Usenix 09 - San Diego - June 15-17
+URL: https://perfcap.blogspot.com/2009/06/i-will-be-at-usenix-09-san-diego-june.html
+
+I'm attending a tutorial on care and feeding of Hadoop on Monday, teaching my own tutorial on tuning and tools tuesday, and staying for the first day of papers on wednesday. See you there...<br /><br /><a href="http://www.usenix.org/usenix09/promote"> <img src="http://www.usenix.org/events/usenix09/art/usenix09_button.jpg" border="0" width="125" height="125" alt="USENIX '09"> </a>
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2009/06/i-will-be-at-usenix-09-san-diego-june.html

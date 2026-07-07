@@ -1,0 +1,28 @@
+---
+type: Article
+title: "GP Musumeci joins Netflix...."
+description: ""
+resource: "https://perfcap.blogspot.com/2009/09/adrian-cockcrofts-blog-are-any-ex-pae.html"
+tags:
+  - article
+---
+
+# GP Musumeci joins Netflix....
+
+
+
+
+
+
+## Excerpt
+
+Title: GP Musumeci joins Netflix....
+URL: https://perfcap.blogspot.com/2009/09/adrian-cockcrofts-blog-are-any-ex-pae.html
+
+<a href="http://perfcap.blogspot.com/2009/08/are-any-ex-pae-snorclers-looking-for.html">Adrian Cockcroft&#39;s Blog: Are any (ex-)PAE Snorclers looking for a new career?</a><br /><br />My call was answered.... GP Musumeci started work last week at Netflix. He's the author of O'Reilly System Performance Tuning, and we worked together at Sun PAE in 2000-2002. Since then he worked on the operations side, building Time Warner AoL's video streaming service, and Salesforce.com's infrastructure, then moved to become a developer of recommendation systems and distributed databases. The perfect mix...
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2009/09/adrian-cockcrofts-blog-are-any-ex-pae.html

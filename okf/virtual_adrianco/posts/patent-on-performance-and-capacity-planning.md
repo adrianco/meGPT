@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Patent on Performance and Capacity Planning"
+description: ""
+resource: "https://perfcap.blogspot.com/2008/03/patent-on-performance-and-capacity.html"
+tags:
+  - article
+---
+
+# Patent on Performance and Capacity Planning
+
+
+
+
+
+
+## Excerpt
+
+Title: Patent on Performance and Capacity Planning
+URL: https://perfcap.blogspot.com/2008/03/patent-on-performance-and-capacity.html
+
+Here is another patent that I filed while working at Sun.<br /><br /><a href="http://www.freepatentsonline.com/20070124353.html">System and method for generating a probability distribution of computer performance ratios</a><br /><br /><blockquote>A system and method for generating a probability distribution indicating the probability of a range of performance ratios between computer systems. Benchmark and/or other testing results are obtained for both computer systems. For each test, a ratio of one system's performance to the other is calculated. The ratios and/or testing results may be weighted. From the performance ratios, a histogram is produced to indicate the probabilities of achieving the various ratios. Based on the distribution of probabilities, a particular performance ratio can be predicted with a corresponding level of confidence, and used for capacity planning or configuring a computing environment.</blockquote>
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2008/03/patent-on-performance-and-capacity.html

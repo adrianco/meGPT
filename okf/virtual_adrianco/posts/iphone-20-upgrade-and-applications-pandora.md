@@ -1,0 +1,28 @@
+---
+type: Article
+title: "iPhone 2.0 upgrade and applications - Pandora"
+description: ""
+resource: "https://perfcap.blogspot.com/2008/07/iphone-20-upgrade-and-applications.html"
+tags:
+  - article
+---
+
+# iPhone 2.0 upgrade and applications - Pandora
+
+
+
+
+
+
+## Excerpt
+
+Title: iPhone 2.0 upgrade and applications - Pandora
+URL: https://perfcap.blogspot.com/2008/07/iphone-20-upgrade-and-applications.html
+
+I waited until Saturday evening to attempt an upgrade on my iPhone, and it completed with no problems, so I guess Apple fixed their site and the rush had died down a bit.<br /><br />I looked through some of the applications and loaded Pandora, eBay, Paypal (for old times sake), Weatherbug, Remote (I also upgraded my AppleTV so this will come in useful) and Facebook. Enough to get me started. I also saw a nice star mapping application, I used to have one of these on my Palm/Treo but it wasn't free, so I decided to leave it for later.<br /><br />The Pandora application is my favorite. I am an intermittent user of Pandora, as I didn't like being tethered to my laptop to listen. However the iPhone version works fine even over a fairly poor EDGE signal. There are some pauses between songs and the occasional pause during a song, but overall its a nice way to listen to the channels I had already setup, and discover new music that is similar to my favorites. I suspect that this is going to get a lot of usage since I can listen to it on the go.<br /><br />T
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2008/07/iphone-20-upgrade-and-applications.html

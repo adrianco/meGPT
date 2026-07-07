@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Garage Framing Walkaround"
+description: ""
+resource: "authors/virtual_adrianco/blogger_perfcap_posts/Garage_Framing_Walkaround.txt"
+tags:
+  - article
+---
+
+# Garage Framing Walkaround
+
+
+
+
+
+
+## Excerpt
+
+Title: Garage Framing Walkaround
+URL: https://perfcap.blogspot.com/2010/04/garage-framing-walkaround.html
+
+The walls are up, but the trusses for the roof aren't ready, so it will be finished off next week. Luckily the weather looks good for the next week or so.<br /><br /><object width="420" height="320"><param name="movie" value="http://www.youtube.com/v/HHiw3Mg74T4&hl=en_US&fs=1&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/HHiw3Mg74T4&hl=en_US&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="420" height="320"></embed></object>
+...
+
+
+## Sources
+
+[1] Source file: authors/virtual_adrianco/blogger_perfcap_posts/Garage_Framing_Walkaround.txt

@@ -1,0 +1,34 @@
+---
+type: Article
+title: "Benchmarks"
+description: ""
+resource: "authors/virtual_adrianco/blogger_perfcap_posts/Benchmarks.txt"
+tags:
+  - article
+---
+
+# Benchmarks
+
+
+
+
+
+
+## Excerpt
+
+Title: Benchmarks
+URL: https://perfcap.blogspot.com/2004/06/benchmarks.html
+
+Google of ["web services" benchmark] comes up with a SPEC benchmark development, controversial because price/perf was voted out of the spec, and a <a href="http://www.hanselman.com/blog/PermaLink.aspx?guid=294">Doculabs @Bench evaluation of several platforms</a>
+<br />
+<br /><a href=http://www.sarvega.com/xslt-benchmark.php>
+<br />An XML benchmark</a>
+<br />
+<br /><a href=http://www.spec.org/appPlatform/>
+<br />SPEC appPlatform</a>
+...
+
+
+## Sources
+
+[1] Source file: authors/virtual_adrianco/blogger_perfcap_posts/Benchmarks.txt

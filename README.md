@@ -20,6 +20,118 @@ Creative Commons - attribution share-alike. Permission explicitly granted for an
 # I am not a Python programmer
 All the code in this repo was initially written by the free version of ChatGPT 4 or Cursor Claude Sonnet3.7 based on short prompts, with no subsequent edits, in a few minutes of my time here and there. I can read Python and mostly make sense of it but I'm not an experienced Python programmer. Look in the relevant issue for a public link to the chat thread that generated the code fro ChatGPT.  When I transitioned to Cursor I got the context included as a block comment at the start of each file. This is a ridiculously low friction and easy way to write simple code. Development was migrated to Cursor as it has a much better approach to managing the context of a whole project.
 
+# OKF Bundle Pipeline (New)
+
+This branch adds a complete **Open Knowledge Format (OKF)** pipeline that transforms the author's raw content into a structured, citable knowledge bundle — the "wiki layer" between raw sources and the LLM.
+
+## What is OKF?
+
+OKF documents are Markdown files with YAML frontmatter. Every document has:
+- `type`: content type (Podcast Interview, YouTube Talk, Article, Book, Topic)
+- `title`, `description`: human-readable metadata
+- `resource`: **the original source URL** (ensures every answer cites its source)
+- `tags`: searchable topics
+- `timestamp`: publication date
+
+The Concept ID for each document is its file path (e.g., `podcasts/schedulers-with-adrian-cockcroft`).
+
+## Quick Start
+
+```bash
+git clone https://github.com/adrianco/megpt.git
+cd megpt
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+# Set your API key for LLM enrichment (Q&A extraction, topic synthesis)
+export ANTHROPIC_API_KEY=sk-ant-...
+
+# Build the full OKF bundle for an author
+python build_okf.py virtual_adrianco --author-display "Adrian Cockcroft"
+
+# Build specific content types
+python build_okf.py virtual_adrianco podcast --whisper-model tiny
+python build_okf.py virtual_adrianco youtube
+python build_okf.py virtual_adrianco story
+
+# Process local file archives (Medium/Blogger posts)
+python batch_local_files.py authors/virtual_adrianco/medium_adrianco okf/virtual_adrianco/posts
+python batch_local_files.py authors/virtual_adrianco/blogger_perfcap_posts okf/virtual_adrianco/posts
+
+# Generate synthesized topic pages (requires ANTHROPIC_API_KEY)
+python okf_synthesizer.py virtual_adrianco
+
+# Start the MCP server (for Claude Desktop / Cursor integration)
+python mcp_server_v2.py virtual_adrianco
+```
+
+## OKF Bundle Contents (virtual_adrianco)
+
+The pre-built bundle in `okf/virtual_adrianco/` contains **466 OKF documents**:
+
+| Type | Count | Source |
+|------|-------|--------|
+| YouTube Talks | 104 | Caption extraction via yt-dlp (no video download) |
+| Articles/Posts | 342 | Medium (64), Blogger (264), web articles (14) |
+| Podcast Interviews | 20 | Whisper transcription + Simplecast/Libsyn/SoundCloud resolution |
+| Books | 2 | PDF extraction (selected page ranges) |
+
+## Pipeline Architecture
+
+```
+published_content_v2.csv  →  build_okf.py  →  processors/
+                                               ├── podcast_processor_v2.py   (audio → transcript → OKF)
+                                               ├── youtube_processor_v2.py   (captions → OKF)
+                                               ├── story_processor_v2.py     (HTML/text → OKF)
+                                               └── book_processor_v2.py      (PDF → OKF)
+                                          ↓
+                                   okf/<author>/
+                                       ├── podcasts/
+                                       ├── talks/
+                                       ├── posts/
+                                       ├── books/
+                                       └── topics/   ← okf_synthesizer.py
+                                          ↓
+                                   mcp_server_v2.py  →  Claude Desktop / Cursor
+```
+
+## Content Manifest (v2 CSV Format)
+
+The enhanced manifest format (`published_content_v2.csv`) adds `SlidesURL` and `Tags` columns:
+
+```csv
+Kind,SubKind,What,Where,Published,URL,SlidesURL,Tags
+podcast,episode,Scheduling,Software Engineering Daily,2016,https://...,, scheduling,distributed-systems
+youtube,,GOTO 2018 Talk,GOTO Conf,2018,https://...,https://slides.pdf,chaos-engineering
+book,"1-50,100-150",My Book,Publisher,2024,https://...,, architecture
+```
+
+## Citation Requirement
+
+Every OKF document includes a `resource` field with the **original source URL**, and every podcast/talk includes a `## Sources` section. The MCP server includes these citations in all search results, ensuring every answer from the LLM traces back to the original content.
+
+## MCP Server v2 (OKF-Native)
+
+The new `mcp_server_v2.py` reads OKF documents directly, providing:
+- `search(query)`: Keyword search across all 466 docs with source citations
+- `get_document(id)`: Full content of any OKF doc
+- `list_by_type(type)`: Browse by content type
+- `get_topics()`: List synthesized cross-linked topic pages
+- `answer_question(question)`: Pre-built prompt with source context
+- `summarize_topic(topic)`: Synthesis prompt across the author's body of work
+
+```json
+// Claude Desktop config (~/.claude/claude_desktop_config.json)
+{
+  "mcpServers": {
+    "megpt-adrianco": {
+      "command": "python",
+      "args": ["/path/to/megpt/mcp_server_v2.py", "virtual_adrianco"]
+    }
+  }
+}
+```
+
 # YouTube Processing
 The YouTube processor has been enhanced to handle multiple types of YouTube content automatically:
 

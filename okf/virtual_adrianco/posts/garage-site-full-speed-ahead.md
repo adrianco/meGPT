@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Garage Site - full speed ahead"
+description: ""
+resource: "https://perfcap.blogspot.com/2010/03/garage-site-full-speed-ahead.html"
+tags:
+  - article
+---
+
+# Garage Site - full speed ahead
+
+
+
+
+
+
+## Excerpt
+
+Title: Garage Site - full speed ahead
+URL: https://perfcap.blogspot.com/2010/03/garage-site-full-speed-ahead.html
+
+Pictures taken this morning, before digging started for the new leach field pipe that's getting inspected and filled back in on Thursday. The foundation layout and trenching will be done on Thursday and Friday, hopefully pouring concrete Monday and inspections on Tuesday. Everything just went from glacially slow to full speed....<br /><br />In the first picture, taken from a window in the house, the white blob is the propane tank, and you can see the leaning tree.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMfvOYfIwTudvHpoQ5bl-joPK0jCWx6FhaxB5FwZRWTpp7ZLePlMvyfCsP7RviN_STCnClubrJm3wwTQxh53YEhAFtpL2LSkX1zppI0A_zbdoYaFfOOZOFbAGWQZwLotq_QzAB/s1600/GarageSiteBefore1.jpg"><img style="cursor:pointer; cursor:hand;width: 320px; height: 239px;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMfvOYfIwTudvHpoQ5bl-joPK0jCWx6FhaxB5FwZRWTpp7ZLePlMvyfCsP7RviN_STCnClubrJm3wwTQxh53YEhAFtpL2LSkX1zppI0A_zbdoYaFfOOZOFbAGWQZwLotq_QzAB/s320/GarageSiteBefore1.jpg" border="
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2010/03/garage-site-full-speed-ahead.html

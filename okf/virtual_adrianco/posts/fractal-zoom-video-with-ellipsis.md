@@ -1,0 +1,28 @@
+---
+type: Article
+title: "Fractal Zoom video with Ellipsis"
+description: ""
+resource: "https://perfcap.blogspot.com/2009/01/fractal-zoom-video-with-ellipsis.html"
+tags:
+  - article
+---
+
+# Fractal Zoom video with Ellipsis
+
+
+
+
+
+
+## Excerpt
+
+Title: Fractal Zoom video with Ellipsis
+URL: https://perfcap.blogspot.com/2009/01/fractal-zoom-video-with-ellipsis.html
+
+Here is a collaboration between Eric Bigas, who makes Fractal Zoom videos and the band Fractal who have provided Ellipsis as the soundtrack to this video.<br /><br /><object width="480" height="295"><param name="movie" value="http://www.youtube.com/v/eXoSIN3HNUs&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/eXoSIN3HNUs&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="295"></embed></object>
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2009/01/fractal-zoom-video-with-ellipsis.html

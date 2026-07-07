@@ -1,0 +1,28 @@
+---
+type: Article
+title: "What's on my iPhone: i.Wund.com"
+description: ""
+resource: "https://perfcap.blogspot.com/2009/01/whats-on-my-iphone-iwundcom.html"
+tags:
+  - article
+---
+
+# What's on my iPhone: i.Wund.com
+
+
+
+
+
+
+## Excerpt
+
+Title: What's on my iPhone: i.Wund.com
+URL: https://perfcap.blogspot.com/2009/01/whats-on-my-iphone-iwundcom.html
+
+My favorite weather app is actually a lauchpad bookmarked web site rather than an appstore download. http://i.wund.com/ is an iPhone optimized version of the Weather Underground site www.wunderground.com that I upload to from the personal weather station at my house. The best features are a zoomable local weather radar view, and the option to show the detailed technical weather forecast in the form that meterologists use to talk to each other, rather than the dumbed down version everyone else sees.
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2009/01/whats-on-my-iphone-iwundcom.html

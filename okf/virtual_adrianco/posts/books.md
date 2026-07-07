@@ -1,0 +1,39 @@
+---
+type: Article
+title: "Books"
+description: ""
+resource: "authors/virtual_adrianco/blogger_perfcap_posts/Books.txt"
+tags:
+  - article
+---
+
+# Books
+
+
+
+
+
+
+## Excerpt
+
+Title: Books
+URL: https://perfcap.blogspot.com/2004/07/books.html
+
+Web Services Explained - Solutions and Applications for the Real World by Joe Clabby - Prentice Hall 2002
+<br />
+<br />An introductory primer suitable for less-technical managers, but with good coverage of what the technology is supposed to be for, issues and gotchas.
+<br />
+<br />
+<br />Developing Enterprise Web Services - An Architects Guide by Sandeep Chatterjee and James Webber - Prentice Hall 2004
+<br />
+<br />Much more in depth and up to date coverage. I'm still reading it, more comments later.
+<br />
+<br />
+<br />
+<br />
+...
+
+
+## Sources
+
+[1] Source file: authors/virtual_adrianco/blogger_perfcap_posts/Books.txt

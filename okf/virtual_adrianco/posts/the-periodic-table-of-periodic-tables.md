@@ -1,0 +1,28 @@
+---
+type: Article
+title: "The Periodic Table of Periodic Tables"
+description: ""
+resource: "https://perfcap.blogspot.com/2010/03/periodic-table-of-periodic-tables.html"
+tags:
+  - article
+---
+
+# The Periodic Table of Periodic Tables
+
+
+
+
+
+
+## Excerpt
+
+Title: The Periodic Table of Periodic Tables
+URL: https://perfcap.blogspot.com/2010/03/periodic-table-of-periodic-tables.html
+
+<div style="float: right; margin-left: 10px; margin-bottom: 10px;"><a href="http://www.flickr.com/photos/bk/4455590301/" title="photo sharing"><img src="http://farm3.static.flickr.com/2699/4455590301_fbe525d0b2_m.jpg" alt="" style="border: solid 2px #000000;" /></a><br /><span style="font-size: 0.9em; margin-top: 0px;"><a href="http://www.flickr.com/photos/bk/4455590301/">The Periodic Table of Periodic Tables</a><br />Originally uploaded by <a href="http://www.flickr.com/people/bk/">★keaggy.com</a></span></div>Excellent science geekery<br clear="all" />
+...
+
+
+## Sources
+
+[1] Source: https://perfcap.blogspot.com/2010/03/periodic-table-of-periodic-tables.html
