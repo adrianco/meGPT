@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/adrianco-megpt-badge.png)](https://mseep.ai/app/adrianco-megpt)
+
 # meGPT - upload an author's content into an LLM
 
 I have 20 years of public content I've produced and presented over my career, and I'd like to have an LLM that is trained to answer questions and generate summaries of my opinions, in my "voice", At this point, I've found a few companies that are building persona's and tried out soopra.ai. To encourage development and competition in this space I have organized my public content and references to sources in this repo.  
